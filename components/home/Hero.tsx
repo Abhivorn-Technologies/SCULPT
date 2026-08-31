@@ -52,7 +52,7 @@ const heroSlides = [
 ];
 
 const stats = [
-  { icon: Award, value: "14+", label: "Years of Experience" },
+  { icon: Award, value: "20+", label: "Years of Experience" },
   { icon: Users, value: "5000+", label: "Happy Patients" },
   { icon: Cpu, value: "Advanced", label: "Technology" },
   { icon: Sparkles, value: "Personalized", label: "Treatment" },

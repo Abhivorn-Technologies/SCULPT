@@ -56,7 +56,7 @@ export default function About() {
               <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-[#EFE8E0] shadow-xl">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#E6663A] text-white flex items-center justify-center font-bold text-lg shrink-0">
-                    14+
+                    20+
                   </div>
                   <div>
                     <h4 className="font-serif text-lg font-bold text-[#151515]">
