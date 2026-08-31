@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #E6663A;
+    --primary-deep: #C94F2D;
+    --primary-warm: #F28C28;
+    --gold: #F6B73C;
+    --bg-main: #F8F6F2;
+    --bg-secondary: #EFE8E0;
+    --dark: #151515;
+    --text-muted: #555555;
+    --white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+.bg-sculpt-main {
+  background-color: #F8F6F2;
+}
+
+.bg-sculpt-secondary {
+  background-color: #EFE8E0;
+}
+
+.bg-sculpt-dark {
+  background-color: #151515;
+}
+
+.text-sculpt-primary {
+  color: #E6663A;
+}
+
+.text-sculpt-dark {
+  color: #151515;
+}
+
+.text-sculpt-muted {
+  color: #555555;
+}
+
+.btn-sculpt-gradient {
+  background: linear-gradient(135deg, #E6663A 0%, #F28C28 50%, #F6B73C 100%);
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.btn-sculpt-gradient:hover {
+  opacity: 0.95;
+  box-shadow: 0 10px 25px -5px rgba(230, 102, 58, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-sculpt-outline {
+  border: 1px solid #E6663A;
+  color: #E6663A;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-sculpt-outline:hover {
+  background-color: #E6663A;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F6F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #E6663A;
+  border-radius: 4px;
+}
+
+/* Shining text effect for ABHIVORN TECHNOLOGIES */
+@keyframes shiny-text-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shiny-text {
+  background: linear-gradient(
+    110deg,
+    #E6663A 0%,
+    #F28C28 20%,
+    #FFFFFF 50%,
+    #F6B73C 80%,
+    #E6663A 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: shiny-text-sweep 3s infinite linear;
+  font-weight: 700;
+}
+
