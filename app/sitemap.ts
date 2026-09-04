@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { servicesData } from "@/lib/servicesData";
+import { getAllBlogPosts } from "@/lib/blogData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://thesculptaesthetics.com";
@@ -51,5 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...serviceRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: currentDate,
+    changeFrequency: "weekly",
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...blogRoutes];
 }

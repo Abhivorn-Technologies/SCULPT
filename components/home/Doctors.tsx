@@ -68,29 +68,29 @@ export default function Doctors({ onViewProfile }: DoctorsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EFE8E0] flex flex-col justify-between group h-full"
+              className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EFE8E0] flex flex-col group h-full"
             >
-              <div>
-                {/* Doctor Portrait */}
-                <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-[#EFE8E0]">
-                  <Image
-                    src={doc.image}
-                    alt={doc.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className={`${doc.imageClassName || "object-cover object-top group-hover:scale-105"} transition-transform duration-500`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
-                  {/* Experience Badge */}
-                  <div className="absolute bottom-4 left-4 bg-[#E6663A] text-white px-3.5 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-md">
-                    <Award className="w-3.5 h-3.5" />
-                    <span>{doc.experience}</span>
-                  </div>
+              {/* Doctor Portrait */}
+              <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-[#EFE8E0] shrink-0">
+                <Image
+                  src={doc.image}
+                  alt={doc.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className={`${doc.imageClassName || "object-cover object-top group-hover:scale-105"} transition-transform duration-500`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                
+                {/* Experience Badge */}
+                <div className="absolute bottom-4 left-4 bg-[#E6663A] text-white px-3.5 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-md">
+                  <Award className="w-3.5 h-3.5" />
+                  <span>{doc.experience}</span>
                 </div>
+              </div>
 
-                {/* Doctor Details */}
-                <div className="p-6 space-y-4">
+              {/* Doctor Details */}
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-4">
                   <div>
                     <h3 className="font-serif text-2xl font-bold text-[#151515] group-hover:text-[#E6663A] transition-colors">
                       {doc.name}
@@ -113,27 +113,27 @@ export default function Doctors({ onViewProfile }: DoctorsProps) {
                       </span>
                     ))}
                   </div>
+                </div>
 
-                  {/* VIEW PROFILE BUTTON */}
-                  <div className="pt-3">
-                    {onViewProfile ? (
-                      <button
-                        onClick={() => onViewProfile(doc.id)}
-                        className="w-full py-2.5 px-4 rounded-full border border-[#151515] text-[#151515] hover:bg-[#151515] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 group/btn"
-                      >
-                        <span>VIEW PROFILE</span>
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </button>
-                    ) : (
-                      <Link
-                        href={`/about?doctor=${doc.id}#detailed-doctors`}
-                        className="w-full py-2.5 px-4 rounded-full border border-[#151515] text-[#151515] hover:bg-[#151515] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 group/btn"
-                      >
-                        <span>VIEW PROFILE</span>
-                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                      </Link>
-                    )}
-                  </div>
+                {/* VIEW PROFILE BUTTON */}
+                <div className="pt-3 mt-auto">
+                  {onViewProfile ? (
+                    <button
+                      onClick={() => onViewProfile(doc.id)}
+                      className="w-full py-2.5 px-4 rounded-full border border-[#151515] text-[#151515] hover:bg-[#151515] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 group/btn"
+                    >
+                      <span>VIEW PROFILE</span>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  ) : (
+                    <Link
+                      href={`/about?doctor=${doc.id}#detailed-doctors`}
+                      className="w-full py-2.5 px-4 rounded-full border border-[#151515] text-[#151515] hover:bg-[#151515] hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 group/btn"
+                    >
+                      <span>VIEW PROFILE</span>
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </motion.div>
