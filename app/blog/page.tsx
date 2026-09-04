@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Calendar, User, Clock, ArrowRight, BookOpen } from "lucide-react";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "Blog & Patient Guide — The Sculpt Aesthetics",

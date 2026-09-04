@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { servicesData } from "@/lib/servicesData";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -53,7 +54,7 @@ export default function Contact() {
             Book Consultation
           </span>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#151515]">
-            WE'RE HERE TO <span className="text-[#E6663A]">HELP YOU.</span>
+            WE&apos;RE HERE TO <span className="text-[#E6663A]">HELP YOU.</span>
           </h2>
           <p className="text-[#555555] text-base sm:text-lg">
             Ready to start your transformation journey? Schedule a confidential consultation with our leading aesthetic specialists.
@@ -250,28 +251,11 @@ export default function Contact() {
                     className="w-full px-4 py-3 rounded-xl bg-[#F8F6F2] border border-[#EFE8E0] focus:border-[#E6663A] focus:outline-none text-sm text-[#151515]"
                   >
                     <option value="">Select a procedure or service</option>
-                    <option value="Facial Rejuvenation">Facial Rejuvenation</option>
-                    <option value="Rhinoplasty (Nose Reshaping)">Rhinoplasty (Nose Reshaping)</option>
-                    <option value="Lip Augmentation & Sculpting">Lip Augmentation & Sculpting</option>
-                    <option value="Liposuction & Fat Removal">Liposuction & Fat Removal</option>
-                    <option value="High-Definition Body Contouring">High-Definition Body Contouring</option>
-                    <option value="Tummy Tuck / Abdominoplasty">Tummy Tuck / Abdominoplasty</option>
-                    <option value="Mommy Makeover">Mommy Makeover</option>
-                    <option value="Breast Procedures (Augmentation & Balance)">Breast Procedures (Augmentation & Balance)</option>
-                    <option value="Gynecomastia (Male Breast Reduction)">Gynecomastia (Male Breast Reduction)</option>
-                    <option value="Skin Rejuvenation">Skin Rejuvenation</option>
-                    <option value="Anti-Aging Treatments">Anti-Aging Treatments</option>
-                    <option value="Chemical Peels">Chemical Peels</option>
-                    <option value="Laser Rejuvenation">Laser Rejuvenation</option>
-                    <option value="Acne Scar Treatment">Acne Scar Treatment</option>
-                    <option value="Weight Loss & Bariatric Procedures">Weight Loss & Bariatric Procedures</option>
-                    <option value="Butt Lift & Augmentation">Butt Lift & Augmentation</option>
-                    <option value="Dimple Creation">Dimple Creation</option>
-                    <option value="Blepharoplasty (Eyelid Surgery)">Blepharoplasty (Eyelid Surgery)</option>
-                    <option value="Hymenoplasty & Intimate Care">Hymenoplasty & Intimate Care</option>
-                    <option value="Facial Contouring (Buccal Fat Removal)">Facial Contouring (Buccal Fat Removal)</option>
-                    <option value="Chin Augmentation">Chin Augmentation</option>
-                    <option value="Ear Correction / Split Earlobe Repair">Ear Correction / Split Earlobe Repair</option>
+                    {servicesData.map((s) => (
+                      <option key={s.id} value={s.name}>
+                        {s.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
 

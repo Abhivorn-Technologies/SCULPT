@@ -50,7 +50,7 @@ export default function BeforeAfterSlider({
     setIsDragging(false);
     try {
       e.currentTarget.releasePointerCapture(e.pointerId);
-    } catch (_) {}
+    } catch {}
   };
 
   const isCompositeImage = beforeImage === afterImage;

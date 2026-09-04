@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us — SCULPT Aesthetics | Transforming Confidence",
-  description: "Learn about SCULPT Cosmetic Surgery Center. Over 20 years of clinical excellence, led by senior surgeons Dr. Jagadish Kiran, Dr. Suma Sandhyala, and Dr. M. Madhusudhan.",
+  title: "About The Sculpt Aesthetics — Leading Plastic Surgery Clinic in Hyderabad",
+  description:
+    "Learn about The Sculpt Aesthetics, founded by board-certified plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala in Madhapur, Hyderabad.",
+  alternates: {
+    canonical: "https://thesculptaesthetics.com/about",
+  },
+  openGraph: {
+    title: "About The Sculpt Aesthetics | Plastic Surgery & Cosmetic Clinic",
+    description:
+      "Learn about The Sculpt Aesthetics, our board-certified surgeons, surgical excellence, and patient-first approach in Madhapur, Hyderabad.",
+    url: "https://thesculptaesthetics.com/about",
+    siteName: "The Sculpt Aesthetics",
+    type: "website",
+  },
 };
 
 export default function AboutLayout({

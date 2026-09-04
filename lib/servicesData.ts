@@ -1,832 +1,3230 @@
+export interface ProcedureStep {
+  stepNumber: number;
+  title: string;
+  description: string;
+}
+
+export interface ApproachSubSection {
+  title: string;
+  content: string;
+}
+
+export interface ServiceFaq {
+  question: string;
+  answer: string;
+}
+
+export interface ServiceSeo {
+  metaTitle: string;
+  metaDescription: string;
+  focusKeywords?: string;
+  canonicalUrl?: string;
+}
+
+export type PrimaryCategory = "FACE" | "BODY" | "BREAST" | "SKIN" | "INTIMATE" | "WELLNESS";
+
 export interface ServiceItem {
   id: string;
   slug: string;
   name: string;
-  category: "Face" | "Body" | "Breast" | "Intimate" | "Minor Surgical";
+  category: PrimaryCategory;
+  isPlasticSurgery: boolean;
+  filterCategories: string[];
   featured: boolean;
   image: string;
   shortDescription: string;
   heroHeadline: string;
-  introduction: string;
-  whatIsIt: string;
-  benefits: string[];
-  candidateCriteria: string[];
-  procedureOverview: string;
-  recoveryInfo: string;
-  faqs: { question: string; answer: string }[];
-  relatedServiceSlugs: string[];
+  isEmpty?: boolean;
+  // 1. SERVICE INTRO / HERO
+  introHeadline?: string;
+  introParagraphs?: string[];
+  // 2. UNDERSTANDING THE SERVICE
+  understandingHeadline?: string;
+  understandingParagraphs?: string[];
+  // 3. KEY BENEFITS / CLINICAL ADVANTAGES
+  benefits?: string[];
+  // 4. IDEAL CANDIDATE
+  candidateIntro?: string;
+  candidateItems?: string[];
+  candidateSummary?: string;
+  // 5. PROCEDURE OVERVIEW (Steps)
+  procedureSteps?: ProcedureStep[];
+  // 6. OUR APPROACH / TECHNIQUES
+  approachParagraphs?: string[];
+  approachSubSections?: ApproachSubSection[];
+  // 7. RECOVERY & AFTERCARE
+  recoveryParagraphs?: string[];
+  // 8. PRICING
+  pricingText?: string;
+  // 9. SCARS & MARKS
+  scarsText?: string;
+  // 10. SAFETY & THINGS TO CONSIDER
+  safetyText?: string;
+  // 11. FREQUENTLY ASKED QUESTIONS
+  faqs?: ServiceFaq[];
+  relatedServiceSlugs?: string[];
+  seo?: ServiceSeo;
 }
+
+export const serviceFilterTabs = [
+  "ALL",
+  "FACE",
+  "BODY",
+  "BREAST",
+  "SKIN",
+  "INTIMATE",
+  "PLASTIC SURGERY",
+  "WELLNESS",
+] as const;
+
+export type ServiceFilterTab = (typeof serviceFilterTabs)[number];
+
+// Exactly 10 featured services for Homepage (2 rows × 5 columns)
+export const homepageFeaturedSlugs: string[] = [
+  "facial-rejuvenation",
+  "liposuction",
+  "gynecomastia-surgery",
+  "mommy-makeover",
+  "tummy-tuck-abdominoplasty",
+  "rhinoplasty",
+  "body-contouring",
+  "breast-augmentation",
+  "facelift",
+  "blepharoplasty",
+];
 
 export const servicesData: ServiceItem[] = [
   {
-    id: "gynecomastia",
-    slug: "gynecomastia",
-    name: "Gynecomastia (Male Breast Reduction)",
-    category: "Body",
-    featured: true,
-    image: "/assets/services/Gynecomastia.png",
-    shortDescription: "Surgical reduction of enlarged male breast tissue to achieve a firm, flat, and masculine chest contour.",
-    heroHeadline: "Restore Masculine Chest Contours with Precision Surgical Care",
-    introduction: "Gynecomastia is a condition characterized by enlarged glandular tissue and localized fat deposition in the male chest area. Sculpt Aesthetics provides advanced micro-incision surgical techniques to restore a natural, firm, and masculine chest wall profile.",
-    whatIsIt: "Male breast reduction surgery involves surgical excision of excess glandular tissue combined with liposuction to eliminate excess adipose tissue. This dual-approach treatment permanently removes glandular enlargement and restores aesthetic chest proportions.",
-    benefits: [
-      "Permanent removal of enlarged glandular breast tissue",
-      "Sculpted, firm, and natural masculine chest wall",
-      "Concealed micro-incisions hidden along the areolar border",
-      "Minimal downtime with rapid return to daily routine",
-      "Restored self-confidence in fitted clothing and outdoors"
+    "id": "liposuction",
+    "slug": "liposuction",
+    "name": "Liposuction",
+    "category": "BODY",
+    "filterCategories": [
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Men experiencing enlarged glandular or fatty tissue in the chest area",
-      "Individuals whose condition has not resolved through diet and exercise",
-      "Non-smokers in good general health with stable body weight",
-      "Men seeking a permanent solution for male chest enlargement"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/liposuction.png",
+    "isEmpty": false,
+    "shortDescription": "Liposuction removes localized fat deposits from areas resistant to diet and exercise, creating a more sculpted, proportionate body profile. At Sculpt Aesthetics in Madhapur, Hyderabad, Liposuction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Sculpt stubborn areas resistant to diet and exercise",
+    "introHeadline": "Sculpt stubborn areas resistant to diet and exercise",
+    "introParagraphs": [
+      "Liposuction removes localized fat deposits from areas resistant to diet and exercise, creating a more sculpted, proportionate body profile. At Sculpt Aesthetics in Madhapur, Hyderabad, Liposuction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Performed under general or twilight anesthesia, the surgeon combines high-definition VASER or traditional liposuction with a small infra-areolar incision to meticulously excise dense glandular tissue and contour the pectoral region.",
-    recoveryInfo: "Patients typically wear a light compression garment for 2–4 weeks. Mild swelling and bruising subside within 10–14 days. Routine sedentary work can be resumed in 3–5 days, while heavy lifting or chest exercises can be resumed after 4 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Liposuction",
+    "understandingParagraphs": [
+      "Liposuction is a surgical procedure that removes excess, stubborn fat from specific body areas using thin cannulas, helping refine body contour rather than achieve overall weight loss. Many people considering Liposuction have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Sculpted, more proportionate body profile",
+      "Precision fat removal in stubborn areas",
+      "Improved clothing fit",
+      "Boost in body confidence"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals near their ideal weight with localized fat deposits",
+      "Patients with good skin elasticity",
+      "Those seeking body contouring rather than weight loss",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Is male breast reduction surgery permanent?",
-        answer: "Yes. The excised glandular tissue cannot grow back. Maintaining a stable body weight and balanced lifestyle ensures permanent, long-lasting aesthetic chest contours."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Liposuction is right for you."
       },
       {
-        question: "Will there be visible scars after gynecomastia surgery?",
-        answer: "Incisions are placed discreetly along the natural boundary of the dark areolar skin or within natural chest folds, making scars virtually imperceptible once fully healed."
-      }
-    ],
-    relatedServiceSlugs: ["liposuction", "body-contouring", "tummy-tuck"]
-  },
-  {
-    id: "liposuction",
-    slug: "liposuction",
-    name: "Liposuction & Fat Removal",
-    category: "Body",
-    featured: true,
-    image: "/assets/services/Liposuction.png",
-    shortDescription: "Targeted body sculpting and fat removal to refine stubborn localized deposits and enhance body proportions.",
-    heroHeadline: "Sculpt Your Ideal Silhouette with Advanced Micro-Liposuction",
-    introduction: "Liposuction is a gold-standard body contouring procedure designed to eliminate stubborn localized fat deposits resistant to diet and exercise. Our plastic surgeons combine artful technique with medical precision to sculpt harmonious bodily contours.",
-    whatIsIt: "Liposuction uses thin hollow tubes (cannulas) connected to a gentle vacuum device to selectively remove stubborn subcutaneous fat deposits from areas such as the abdomen, flanks, thighs, arms, and neck.",
-    benefits: [
-      "Targeted elimination of diet-resistant fat pockets",
-      "Enhanced body definition, waistline, and muscle visibility",
-      "Minimally invasive incisions with concealed placement",
-      "Permanent reduction in localized fat cells",
-      "Tailored contouring designed around individual body geometry"
-    ],
-    candidateCriteria: [
-      "Adults within 30% of their ideal body weight with firm, elastic skin",
-      "Individuals troubled by stubborn localized fat deposits",
-      "Healthy individuals without life-threatening illnesses or medical conditions",
-      "Nonsmokers committed to a healthy lifestyle"
-    ],
-    procedureOverview: "Through 3–4mm micro-incisions, tumescent solution is infused to minimize bleeding and comfort. Power-assisted or ultrasound-assisted cannulas then gently break down and aspirate targeted fat deposits while preserving surrounding nerves and vascularity.",
-    recoveryInfo: "Compression garments are worn for 3–6 weeks to support newly contoured tissue and reduce fluid retention. Light activities can be resumed in 3 days, with normal work routines within a week.",
-    faqs: [
-      {
-        question: "Is liposuction a weight loss procedure?",
-        answer: "No. Liposuction is a body contouring procedure aimed at refining body shape and proportions rather than overall weight reduction."
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Liposuction that fits your anatomy, so results look natural and balanced."
       },
       {
-        question: "Do fat cells return after liposuction?",
-        answer: "Removed fat cells do not regenerate. However, remaining fat cells can expand if significant weight gain occurs post-procedure."
-      }
-    ],
-    relatedServiceSlugs: ["body-contouring", "tummy-tuck", "mommy-makeover"]
-  },
-
-  {
-    id: "rhinoplasty",
-    slug: "rhinoplasty",
-    name: "Rhinoplasty (Nose Reshaping)",
-    category: "Face",
-    featured: true,
-    image: "/assets/services/Nose surgery.png",
-    shortDescription: "Structural nose reshaping surgery to enhance facial harmony, refine nasal tip and bridge, and improve airway flow.",
-    heroHeadline: "Achieve Facial Symmetry with Masterful Nasal Reshaping",
-    introduction: "As the central feature of the face, the nose plays a crucial role in overall facial harmony. Rhinoplasty at Sculpt Aesthetics balances aesthetic proportions while optimizing structural airway function.",
-    whatIsIt: "Rhinoplasty is a delicate plastic surgery procedure that reshapes the nasal bone, cartilage, and soft tissue matrix to modify the nasal bridge width, profile bump, tip projection, or nostril width.",
-    benefits: [
-      "Enhanced facial balance and overall aesthetic proportion",
-      "Correction of dorsal humps, wide bridges, or drooping tips",
-      "Improved nasal airway flow and breathing quality",
-      "Correction of congenital deformities or traumatic injuries",
-      "Subtle, natural-looking refinement tailored to your ethnicity and features"
-    ],
-    candidateCriteria: [
-      "Individuals with fully developed facial bone structures (typically age 16+)",
-      "Patients seeking correction of nasal hump, tip asymmetry, or breathing obstruction",
-      "Nonsmokers with realistic expectations for aesthetic improvement"
-    ],
-    procedureOverview: "Performed via open or closed technique depending on surgical requirements. The nasal cartilage and bones are reshaped with sub-millimeter precision, followed by delicate redraping of internal lining and external skin.",
-    recoveryInfo: "A lightweight external nasal splint is worn for 7 days. Most social swelling dissipates in 10–14 days, with final refined contouring evolving over 6–12 months.",
-    faqs: [
-      {
-        question: "Will rhinoplasty improve my breathing?",
-        answer: "Yes. Functional septorhinoplasty corrects deviated septums and internal valve collapse alongside aesthetic refinement."
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Liposuction is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
       },
       {
-        question: "How long until I see final rhinoplasty results?",
-        answer: "Initial shape is clear after splint removal at 1 week, but subtle nasal tip swelling resolves gradually over 9 to 12 months."
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["buccal-fat-removal", "facelift", "blepharoplasty"]
-  },
-  {
-    id: "mommy-makeover",
-    slug: "mommy-makeover",
-    name: "Mommy Makeover",
-    category: "Body",
-    featured: true,
-    image: "/assets/services/Mummy Makeover.png",
-    shortDescription: "Tailored combination procedure restoring pre-pregnancy body contours, abdominal firmness, and breast shape.",
-    heroHeadline: "Reclaim Your Pre-Pregnancy Figure with Custom Combined Care",
-    introduction: "Pregnancy, childbirth, and breastfeeding cause lasting changes to a woman's abdominal muscles, skin elasticity, and breast volume. A Mommy Makeover combines targeted procedures into a single surgical plan to restore pre-pregnancy contours.",
-    whatIsIt: "A customized multi-procedure treatment that typically combines abdominoplasty (tummy tuck), breast enhancement (augmentation, lift, or reduction), and high-definition liposuction tailored to your goals.",
-    benefits: [
-      "Single surgery and recovery timeline for multiple structural improvements",
-      "Repaired abdominal muscle separation (diastasis recti)",
-      "Restored breast volume, lift, and aesthetic youthful contour",
-      "Elimination of stretch-marked abdominal skin and localized fat",
-      "Customized treatment plan based on individual post-maternity changes"
+    "approachParagraphs": [
+      "Commonly treated areas include the arms, thighs, abdomen, love handles, flanks, bra rolls, and buttocks. Advanced techniques are used to remove fat precisely while sculpting a smooth, natural contour tailored to the patient's frame."
     ],
-    candidateCriteria: [
-      "Women who have completed childbearing and breastfeeding (at least 6 months post)",
-      "Women seeking to address sagging abdominal skin, split muscles, and altered breast shape",
-      "Nonsmokers at a stable target weight in good overall medical health"
-    ],
-    procedureOverview: "In a single anesthesia session, the surgeon performs abdominoplasty muscle repair and skin removal, targeted liposuction of waistline/hips, and breast lift or augmentation procedures.",
-    recoveryInfo: "Full physical rest is required for 2 weeks with assistance at home. Light normal activities resume by week 3, while exercise can be resumed around 6 weeks post-surgery.",
-    faqs: [
+    "approachSubSections": [
       {
-        question: "Can I have more children after a Mommy Makeover?",
-        answer: "While safe, future pregnancies can stretch repaired muscles and skin. It is recommended to undergo the procedure after childbearing is complete."
+        "title": "Areas We Treat",
+        "content": "Liposuction can sculpt the arms, inner and outer thighs, love handles and flanks, bra rolls, abdomen, buttocks, saddle bags, back, lower legs, and neck — treatment areas are chosen based on your specific concerns and can often be combined in a single session."
       },
       {
-        question: "Is it safe to perform multiple procedures at once?",
-        answer: "Yes, when performed by experienced board-certified plastic surgeons in accredited surgical suites with strict duration guidelines."
+        "title": "Is Liposuction Right for Your BMI?",
+        "content": "Liposuction works best for patients close to their ideal body weight (generally within a healthy-to-moderately-elevated BMI range) who have stubborn, localized fat rather than overall excess weight. Your surgeon will assess your BMI and overall health during consultation to confirm suitability and discuss realistic outcomes."
+      },
+      {
+        "title": "Ultrasound-Assisted & Power-Assisted Liposuction",
+        "content": "We offer advanced liposuction technologies including Ultrasound-Assisted Liposuction, which gently liquefies fat for smoother, more precise removal, and Power-Assisted Liposuction, which uses rapid mechanical vibration to loosen fat more efficiently — both designed to improve precision and reduce recovery time compared to traditional techniques."
       }
     ],
-    relatedServiceSlugs: ["tummy-tuck", "breast-procedures", "liposuction"]
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients return to light activity within a few days, with a compression garment worn for a few weeks to support healing and contour. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Liposuction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Liposuction is performed through tiny entry points, just a few millimeters long, which typically fade to be barely noticeable within several months.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Does liposuction tighten skin?",
+        "answer": "Liposuction mainly removes fat. Skin tightening depends on skin elasticity and may require additional procedures."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Liposuction itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Is there a limit to how much fat can be removed safely in one session?",
+        "answer": "Yes, your surgeon follows established safety limits per session to protect your health, and may recommend multiple sessions for larger-volume goals."
+      },
+      {
+        "question": "Will the fat come back after liposuction?",
+        "answer": "Treated fat cells are permanently removed, though remaining fat cells can still grow with significant weight gain, so a stable lifestyle helps maintain results."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty",
+      "mommy-makeover"
+    ],
+    "seo": {
+      "metaTitle": "Liposuction Hyderabad | Body Contouring Surgery | Sculpt Aesthetics",
+      "metaDescription": "Advanced liposuction in Madhapur, Hyderabad for the abdomen, thighs, arms, flanks, and more. Precision fat removal for a sculpted body contour.",
+      "focusKeywords": "liposuction Hyderabad, fat removal surgery, body sculpting, tummy liposuction",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/liposuction"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "body-contouring",
-    slug: "body-contouring",
-    name: "High-Definition Body Contouring",
-    category: "Body",
-    featured: true,
-    image: "/assets/services/Body contouring.png",
-    shortDescription: "Comprehensive body shaping and skin tightening procedures to create athletic, defined bodily lines.",
-    heroHeadline: "Sculpt Athletic Contours and Refined Body Architecture",
-    introduction: "High-Definition Body Contouring goes beyond standard fat removal to sculpt the underlying muscular anatomy, creating defined waistlines, athletic abdominal lines, and proportionate body transitions.",
-    whatIsIt: "HD Body Contouring utilizes specialized liposculpture and radiofrequency/ultrasound skin tightening technologies to carve muscle grooves and tighten skin along the abdomen, back, flanks, and thighs.",
-    benefits: [
-      "Sculpted abdominal lines and athletic body definition",
-      "Simultaneous fat removal and thermal skin contraction",
-      "Enhanced waist-to-hip ratio and aesthetic bodily harmony",
-      "Long-lasting permanent definition when weight is maintained",
-      "Precise anatomical sculpting tailored for men and women"
+    "id": "vaser-liposuction",
+    "slug": "vaser-liposuction",
+    "name": "Vaser Liposuction",
+    "category": "BODY",
+    "filterCategories": [
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Individuals near their target weight with good muscle tone beneath surface fat",
-      "Patients seeking enhanced anatomical athletic definition",
-      "Nonsmokers with elastic skin and healthy medical status"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/Vaser Liposuction.png",
+    "isEmpty": true,
+    "shortDescription": "Advanced ultrasound-assisted body contouring for precision fat emulsification and sculpted definition.",
+    "heroHeadline": "Advanced Ultrasound-Assisted Vaser Body Contouring",
+    "introHeadline": "Advanced Ultrasound-Assisted Vaser Body Contouring",
+    "introParagraphs": [
+      "Advanced ultrasound-assisted body contouring for precision fat emulsification and sculpted definition."
     ],
-    procedureOverview: "Using energy-assisted liposuction technology, deep and superficial fat layers are selectively carved along anatomical muscular landmarks while tightening the overlying dermal layer.",
-    recoveryInfo: "Specialized foam compression garments are worn for 4 weeks to promote smooth adherence. Normal non-strenuous daily work resumes in 4–7 days.",
-    faqs: [
-      {
-        question: "How is HD Body Contouring different from regular liposuction?",
-        answer: "Regular liposuction focuses on volume reduction, whereas HD Body Contouring selectively highlights anatomical muscle grooves (such as abdominal lines and obliques)."
-      }
+    "understandingHeadline": "Understanding Vaser Liposuction",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "tummy-tuck-abdominoplasty",
+      "mommy-makeover"
     ],
-    relatedServiceSlugs: ["liposuction", "tummy-tuck", "butt-lift"]
+    "seo": {
+      "metaTitle": "Vaser Liposuction in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Vaser Liposuction at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "vaser liposuction, vaser liposuction hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/vaser-liposuction"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "facial-rejuvenation",
-    slug: "facial-rejuvenation",
-    name: "Facial Rejuvenation",
-    category: "Face",
-    featured: true,
-    image: "/assets/services/Facial rejuvenation.png",
-    shortDescription: "Surgical and non-surgical facial treatments to smooth wrinkles, restore volume, and revive youthful skin brilliance.",
-    heroHeadline: "Revive Youthful Vitality and Natural Radiance to Your Face",
-    introduction: "Facial aging involves skin laxity, volume loss, and wrinkle formation. Our facial rejuvenation protocols combine advanced surgical tightening with medical-grade skin treatments to restore youthful vitality without looking artificial.",
-    whatIsIt: "A comprehensive umbrella of aesthetic treatments including fat grafting, laser resurfacing, chemical peels, dermal fillers, and mini-facelifts customized to address specific age-related changes.",
-    benefits: [
-      "Smooths deep facial lines, nasolabial folds, and wrinkles",
-      "Restores lost cheek, temple, and under-eye volume",
-      "Improves skin texture, tone, and collagen production",
-      "Customized combination of non-surgical or surgical modalities",
-      "Natural-looking refreshed appearance without stiffness"
+    "id": "tummy-tuck-abdominoplasty",
+    "slug": "tummy-tuck-abdominoplasty",
+    "name": "Tummy Tuck (Abdominoplasty)",
+    "category": "BODY",
+    "filterCategories": [
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Men and women noticing skin laxity, fine lines, volume loss, or dull tone",
-      "Patients wanting customized anti-aging prevention or restoration",
-      "Healthy adults seeking youthful facial revitalization"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/tummy-tuck-abdominoplasty.png",
+    "isEmpty": false,
+    "shortDescription": "A tummy tuck tightens abdominal muscles and removes excess skin to create a firmer, flatter abdominal profile, especially after pregnancy or significant weight loss. At Sculpt Aesthetics in Madhapur, Hyderabad, Tummy Tuck is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "A firmer, flatter abdominal profile",
+    "introHeadline": "A firmer, flatter abdominal profile",
+    "introParagraphs": [
+      "A tummy tuck tightens abdominal muscles and removes excess skin to create a firmer, flatter abdominal profile, especially after pregnancy or significant weight loss. At Sculpt Aesthetics in Madhapur, Hyderabad, Tummy Tuck is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Depending on individual needs, procedures range from 30-minute laser and injectable sessions to minor surgical autologous fat transfer under local anesthesia.",
-    recoveryInfo: "Non-surgical treatments have zero to 2 days of minor redness. Surgical volume restoration or laser therapy may require 5–7 days of skin recovery.",
-    faqs: [
+    "understandingHeadline": "Understanding Tummy Tuck",
+    "understandingParagraphs": [
+      "Abdominoplasty is a surgical procedure that removes excess skin and fat from the abdomen while tightening underlying weakened or separated abdominal muscles for a smoother, firmer contour. Many people considering Tummy Tuck have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Firmer, flatter abdominal profile ✓ Tightened abdominal muscles ✓ Removal of excess loose skin ✓",
+      "Improved body confidence"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with loose abdominal skin after pregnancy",
+      "Patients following significant weight loss",
+      "Those with weakened abdominal muscles unresponsive to exercise",
+      "history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health",
+    "procedureSteps": [
       {
-        question: "What age is appropriate for facial rejuvenation?",
-        answer: "Facial rejuvenation is customized for all adult ages—preventative treatments in the 30s, volume restoration in the 40s, and structural rejuvenation in the 50s and beyond."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Tummy Tuck is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Tummy Tuck that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Tummy Tuck is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["facelift", "buccal-fat-removal", "rhinoplasty"]
+    "approachParagraphs": [
+      "The procedure addresses excess skin, fat, and muscle separation through a carefully planned incision, often combined with liposuction for a more comprehensive, contoured result."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Tummy Tuck with 360° Liposuction",
+        "content": "For a more complete waistline transformation, a tummy tuck can be combined with 360° liposuction — contouring not just the front of the abdomen but also the flanks and lower back — giving a smoother, more balanced silhouette from every angle."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Recovery generally spans 2–4 weeks for daily activities, with strenuous exercise resumed gradually over 6 weeks as advised by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Tummy Tuck depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "The main incision is placed low on the abdomen, typically within or just below the natural bikini line, so it can be concealed by most underwear and swimwear once healed and faded.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is tummy tuck a weight loss surgery?",
+        "answer": "No. It is a body contouring procedure, not a method for losing weight."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Tummy Tuck itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Will a tummy tuck remove stretch marks?",
+        "answer": "Stretch marks located on the skin that is removed will be eliminated; those on remaining skin will remain, though the overall abdominal appearance is often significantly improved."
+      },
+      {
+        "question": "Can I have more children after a tummy tuck?",
+        "answer": "It's generally recommended to complete your family before this surgery, as pregnancy afterward can affect the results and may require revision."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "mommy-makeover"
+    ],
+    "seo": {
+      "metaTitle": "Tummy Tuck Surgery Hyderabad | Abdominoplasty | Sculpt Aesthetics",
+      "metaDescription": "Tummy tuck surgery in Madhapur, Hyderabad to remove excess skin and tighten abdominal muscles after pregnancy or weight loss.",
+      "focusKeywords": "tummy tuck Hyderabad, abdominoplasty surgery, post pregnancy tummy tuck",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/tummy-tuck-abdominoplasty"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "breast-procedures",
-    slug: "breast-procedures",
-    name: "Breast Procedures (Augmentation & Balance)",
-    category: "Breast",
-    featured: true,
-    image: "/assets/services/Breast lift surgery.png",
-    shortDescription: "Harmonious breast enhancement, volume restoration, and symmetry correction tailored to your body.",
-    heroHeadline: "Achieve Natural Breast Proportion and Confident Silhouette",
-    introduction: "Breast procedures encompass silicone implant augmentation, fat transfer augmentation, and symmetry corrections designed to enhance volume, firmness, and natural cleavage proportions.",
-    whatIsIt: "Breast augmentation and balancing procedures place high-cohesive gel implants or autologous fat into the submammary space to increase size, improve fullness, or correct developmental asymmetry.",
-    benefits: [
-      "Enhanced breast volume, upper pole fullness, and cleavage",
-      "Correction of asymmetry between breasts",
-      "High-grade US FDA approved cohesive silicone gel implants",
-      "Concealed incisions in natural infra-mammary or periareolar creases",
-      "Long-lasting aesthetic balance customized to torso width"
+    "id": "mommy-makeover",
+    "slug": "mommy-makeover",
+    "name": "Mommy Makeover",
+    "category": "BODY",
+    "filterCategories": [
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Women seeking increased breast size, volume restoration after weight loss/pregnancy",
-      "Patients with asymmetrical breast volume or shape",
-      "Women in good general health with realistic surgical goals"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/mommy-makeover.png",
+    "isEmpty": false,
+    "shortDescription": "your pre-pregnancy confidence A mommy makeover combines customized procedures designed to restore body confidence after pregnancy and childbirth, addressing changes to the breasts and abdomen in a single, coordinated plan. At Sculpt Aesthetics in Madhapur, Hyderabad, Mommy Makeover is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "A customized combination of procedures to restore",
+    "introHeadline": "A customized combination of procedures to restore",
+    "introParagraphs": [
+      "your pre-pregnancy confidence A mommy makeover combines customized procedures designed to restore body confidence after pregnancy and childbirth, addressing changes to the breasts and abdomen in a single, coordinated plan. At Sculpt Aesthetics in Madhapur, Hyderabad, Mommy Makeover is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Implants are placed beneath the pectoral muscle or breast tissue through small concealed incisions during a 90-minute outpatient surgical procedure under general anesthesia.",
-    recoveryInfo: "A supportive surgical bra is worn for 4 weeks. Most patients resume office work in 5–7 days, avoiding strenuous upper body workouts for 4–6 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Mommy Makeover",
+    "understandingParagraphs": [
+      "A mommy makeover is a personalized combination of surgical procedures — typically drawn from breast enhancement, breast lift, liposuction, and tummy tuck — tailored to address the specific changes each woman experiences after pregnancy. Many people considering Mommy Makeover have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Comprehensive restoration in a coordinated plan",
+      "Addresses both breast and abdominal changes",
+      "Personalized to each woman's body and goals",
+      "Renewed body confidence"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Women who have completed their family and are not planning further pregnancies",
+      "Those with breast volume loss, sagging, or abdominal skin/muscle changes post-",
+      "pregnancy",
+      "Patients in good general health seeking comprehensive body restoration",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Are cohesive gel implants safe?",
-        answer: "Yes, modern US FDA-approved cohesive gel implants are engineered for high safety, durability, and a natural soft tactile feel."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Mommy Makeover is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Mommy Makeover that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Mommy Makeover is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["breast-lift", "breast-reduction", "mommy-makeover"]
+    "approachParagraphs": [
+      "During consultation, Dr. Suma Sandhyala evaluates each patient's concerns and combines procedures such as breast enhancement, breast lift, liposuction, and tummy tuck into a coordinated surgical plan for balanced, natural results."
+    ],
+    "approachSubSections": [
+      {
+        "title": "What's Typically Included",
+        "content": "A mommy makeover is fully customized, but commonly combines two or more of the following: breast augmentation or lift to restore breast volume and position, a tummy tuck to tighten abdominal skin and muscle, and liposuction to refine body contour — all planned together for a cohesive, natural result."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: As this combines multiple procedures, recovery is individualized and discussed in detail during consultation, typically ranging from 2‒6 weeks depending on the combination chosen. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Mommy Makeover itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Can all procedures be done in a single surgery?",
+        "answer": "Many patients combine procedures into one surgical session for convenience and a single recovery period, though your surgeon will confirm what's safe based on your health and the combination chosen."
+      },
+      {
+        "question": "When is the best time to have a mommy makeover?",
+        "answer": "Most surgeons recommend waiting until you've finished breastfeeding and your weight has stabilized for at least a few months, to get the most lasting results."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Mommy Makeover Hyderabad | Post-Pregnancy Surgery | Sculpt Aesthetics",
+      "metaDescription": "Restore your body after pregnancy with a customized mommy makeover in Madhapur, Hyderabad — combining breast and body contouring procedures.",
+      "focusKeywords": "mommy makeover Hyderabad, post pregnancy body surgery, breast and tummy tuck combo",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/mommy-makeover"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "tummy-tuck",
-    slug: "tummy-tuck",
-    name: "Tummy Tuck / Abdominoplasty",
-    category: "Body",
-    featured: true,
-    image: "/assets/services/Tummy tuck surgery.png",
-    shortDescription: "Surgical removal of loose abdominal skin and repair of underlying split abdominal muscles for a flat waistline.",
-    heroHeadline: "Flatten and Restore Your Abdominal Contour and Waistline",
-    introduction: "Abdominoplasty (Tummy Tuck) addresses loose skin, stretched abdominal muscles, and excess lower abdominal tissue that cannot be corrected through exercise alone.",
-    whatIsIt: "Surgical procedure that removes hanging abdominal skin, performs muscular repair of diastasis recti, relocates the navel aesthetically, and tightens the central torso wall.",
-    benefits: [
-      "Removes overhanging skin folds and apron-like abdominal tissue",
-      "Tightens separated core abdominal wall muscles (diastasis recti)",
-      "Creates a firm, flat, and sculpted waistline",
-      "Removes lower abdominal stretch marks within excised skin zone",
-      "Improves posture and core abdominal support"
+    "id": "body-contouring",
+    "slug": "body-contouring",
+    "name": "Body Contouring",
+    "category": "BODY",
+    "filterCategories": [
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Men and women with excess loose abdominal skin after significant weight loss or pregnancy",
-      "Patients with weakened core abdominal muscles",
-      "Non-smokers at a stable body weight"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/body-contouring.png",
+    "isEmpty": true,
+    "shortDescription": "Tailored surgical and clinical body sculpting to restore athletic tone and harmonious proportions.",
+    "heroHeadline": "Comprehensive Surgical & Clinical Body Contouring",
+    "introHeadline": "Comprehensive Surgical & Clinical Body Contouring",
+    "introParagraphs": [
+      "Tailored surgical and clinical body sculpting to restore athletic tone and harmonious proportions."
     ],
-    procedureOverview: "A low bikini-line incision is made. The abdominal fascia is tightened with permanent sutures, excess skin is trimmed, and the belly button is repositioned in a natural contour.",
-    recoveryInfo: "Drainage tubes and compression garments are managed during the first 7-10 days. Walking upright returns fully by week 2, with normal work resumed at 2-3 weeks.",
-    faqs: [
-      {
-        question: "Where is the abdominoplasty scar located?",
-        answer: "The scar is positioned horizontally low across the lower abdomen so it remains completely hidden within standard swimwear and undergarments."
-      }
+    "understandingHeadline": "Understanding Body Contouring",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
     ],
-    relatedServiceSlugs: ["liposuction", "mommy-makeover", "body-contouring"]
+    "seo": {
+      "metaTitle": "Body Contouring in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Body Contouring at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "body contouring, body contouring hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/body-contouring"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "lip-augmentation",
-    slug: "lip-augmentation",
-    name: "Lip Augmentation & Sculpting",
-    category: "Face",
-    featured: true,
-    image: "/assets/services/Lip augmentation.png",
-    shortDescription: "Precision lip sculpting with dermal fillers or fat grafting for plump, symmetrical, and youthful lips.",
-    heroHeadline: "Enhance Lip Volume, Symmetry, and Cupid’s Bow Definition",
-    introduction: "Full, well-defined lips are a symbol of youth and facial attractiveness. Lip augmentation at Sculpt Aesthetics subtly enhances volume, defines lip borders, and corrects asymmetry.",
-    whatIsIt: "Treatment utilizing hyaluronic acid dermal fillers or microscopic autologous fat transfer to refine lip fullness, hydrate vertical lip lines, and enhance the cupid’s bow.",
-    benefits: [
-      "Immediate enhancement of lip volume and natural softness",
-      "Enhanced cupid's bow and vermilion border definition",
-      "Correction of upper and lower lip volume imbalance",
-      "Smooths fine vertical lines around the mouth",
-      "Reversible and customizable treatment options"
+    "id": "arm-and-thigh-lift",
+    "slug": "arm-and-thigh-lift",
+    "name": "Arm & Thigh Lift",
+    "category": "BODY",
+    "filterCategories": [
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Individuals with naturally thin or age-thinning lips",
-      "Patients seeking improved lip balance or border definition",
-      "Healthy adults with realistic expectations"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/arm-and-thigh-lift.png",
+    "isEmpty": false,
+    "shortDescription": "Brachioplasty (arm lift) removes excess skin and fat from the upper arms, addressing sagging that commonly develops after significant weight loss or with age. At Sculpt Aesthetics in Madhapur, Hyderabad, Brachioplasty (Arm Lift) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Firmer, more toned upper arms",
+    "introHeadline": "Firmer, more toned upper arms",
+    "introParagraphs": [
+      "Brachioplasty (arm lift) removes excess skin and fat from the upper arms, addressing sagging that commonly develops after significant weight loss or with age. At Sculpt Aesthetics in Madhapur, Hyderabad, Brachioplasty (Arm Lift) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Under topical numbing cream, precise micro-injections of premium hyaluronic acid filler are administered along key anatomical lip zones in a 20-minute procedure.",
-    recoveryInfo: "Minor swelling resolves in 24–48 hours. Immediate results with full final appearance settling at 3–5 days.",
-    faqs: [
+    "understandingHeadline": "Understanding Brachioplasty (Arm Lift)",
+    "understandingParagraphs": [
+      "Brachioplasty tightens and reshapes the upper arm by removing loose, hanging skin and excess fat, often combined with liposuction, to create a firmer, more toned contour from shoulder to elbow. Many people considering Brachioplasty (Arm Lift) have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Firmer, more toned upper arms ✓ Removes excess sagging skin ✓",
+      "Improved confidence in sleeveless clothing"
+    ],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [
+      "An incision is placed along the inner or back of the upper arm, through which excess skin is removed and underlying tissue tightened; liposuction is often used alongside to refine the final contour."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume light activities within a week or two, with arm- intensive exercise restricted for around 4-6 weeks. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Brachioplasty (Arm Lift) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "The incision generally runs along the inner or back portion of the upper arm from the armpit toward the elbow; while it does fade over time, this is discussed openly during consultation since it's a visible trade-off for skin removal.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection- control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
       {
-        question: "How long do lip fillers last?",
-        answer: "Hyaluronic acid lip fillers typically last 9 to 12 months, after which they naturally dissolve and can be refreshed."
+        "question": "Will there be a visible scar?",
+        "answer": "Yes — the incision, usually along the inner arm, is a trade-off for removing excess skin; your surgeon will explain expected scar appearance and how it typically fades."
+      },
+      {
+        "question": "Can this be combined with liposuction?",
+        "answer": "Yes, combining arm liposuction with the lift is common for smoother overall contouring."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Brachioplasty (Arm Lift) itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Is arm lift surgery only for patients after major weight loss?",
+        "answer": "No — it can also help patients with age-related skin laxity or those who simply have excess skin unrelated to major weight change."
       }
     ],
-    relatedServiceSlugs: ["facial-rejuvenation", "buccal-fat-removal", "rhinoplasty"]
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Brachioplasty Hyderabad | Arm Lift Surgery | Sculpt",
+      "metaDescription": "Brachioplasty (arm lift) surgery in Madhapur, Hyderabad to remove excess skin and fat for firmer, more toned upper arms. •",
+      "focusKeywords": "brachioplasty Hyderabad, arm lift surgery, arm tuck surgery •",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/arm-and-thigh-lift"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "buccal-fat-removal",
-    slug: "buccal-fat-removal",
-    name: "Buccal Fat Pad Removal",
-    category: "Face",
-    featured: false,
-    image: "/assets/services/Buccal fat pad removal.png",
-    shortDescription: "Targeted cheek fat reduction to carve sculpted cheekbones and refine a rounded lower face.",
-    heroHeadline: "Sculpt High Cheekbones and Refine Facial Contours",
-    introduction: "Buccal Fat Pad Removal reduces rounded 'baby face' fullness in the lower cheeks to highlight natural cheekbone structures and create a chiseled facial profile.",
-    whatIsIt: "A quick intraoral surgical procedure that extracts the buccal fat pads located inside the cheek cavity through microscopic incisions inside the mouth.",
-    benefits: [
-      "Permanently reduces round cheek fullness",
-      "Highlights cheekbone projection and jawline contour",
-      "Zero external visible scars (incisions are inside the mouth)",
-      "Short 30-minute procedure under local anesthesia",
-      "Quick recovery with minimal disruption"
+    "id": "lipoma-removal",
+    "slug": "lipoma-removal",
+    "name": "Lipoma Removal",
+    "category": "BODY",
+    "filterCategories": [
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Adults with naturally chubby or round cheeks despite low body weight",
-      "Patients seeking an angular, sculpted facial appearance",
-      "Nonsmokers with good oral hygiene"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/lipoma-removal.png",
+    "isEmpty": false,
+    "shortDescription": "Lipoma removal addresses benign fatty lumps under the skin, offering both cosmetic improvement and relief from any associated discomfort. At Sculpt Aesthetics in Madhapur, Hyderabad, Lipoma Removal is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Safe removal of benign fatty lumps",
+    "introHeadline": "Safe removal of benign fatty lumps",
+    "introParagraphs": [
+      "Lipoma removal addresses benign fatty lumps under the skin, offering both cosmetic improvement and relief from any associated discomfort. At Sculpt Aesthetics in Madhapur, Hyderabad, Lipoma Removal is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Small 1cm incisions are made inside the mouth opposite the upper molar teeth. The cheek fat pads are gently teased out, excised, and closed with self-dissolving sutures.",
-    recoveryInfo: "Soft diet for 3–5 days alongside antiseptic mouthwashes. Swelling dissipates in 7–10 days, revealing final sculpted contours at 4–6 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Lipoma Removal",
+    "understandingParagraphs": [
+      "A lipoma is a soft, benign, slow-growing lump of fat cells that forms beneath the skin. While generally harmless, removal may be recommended for cosmetic reasons, growth, or discomfort. Many people considering Lipoma Removal have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Removal of the visible lump",
+      "Relief from any associated discomfort",
+      "Quick outpatient procedure"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with a lipoma causing discomfort or cosmetic concern",
+      "Patients with a growing or changing lump requiring evaluation",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Will buccal fat removal leave scars on my face?",
-        answer: "No. The procedure is performed completely inside the mouth, leaving no external visible scars whatsoever."
+        "stepNumber": 1,
+        "title": "Consultation & Diagnosis",
+        "description": "Your surgeon examines the area and confirms whether Lipoma Removal is the right treatment for your specific situation."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Preparing for the Procedure",
+        "description": "You'll receive simple pre-procedure instructions, and the treatment area is prepared under sterile conditions."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Lipoma Removal is usually completed quickly, often under local anesthesia, in a single outpatient visit."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare",
+        "description": "You'll get straightforward aftercare guidance to support quick, comfortable healing."
       }
     ],
-    relatedServiceSlugs: ["facial-rejuvenation", "rhinoplasty", "lip-augmentation"]
+    "approachParagraphs": [
+      "The lipoma is surgically excised through a small, precisely placed incision, with the tissue typically sent for evaluation to confirm diagnosis."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Lipomas vs. Cysts",
+        "content": "While a lipoma is a soft lump of fat cells beneath the skin, a cyst is typically a fluid- or keratin- filled sac. Both are usually benign but are treated slightly differently — your surgeon will confirm the type through examination (and, if needed, imaging) before recommending the right removal technique."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume normal activity within a few days, with minimal downtime. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Lipoma Removal depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "The incision is kept as small as possible and placed to blend with natural skin lines, healing into a fine, faint scar over time.",
+    "safetyText": "This is a minor procedure with a low overall risk profile when performed by an experienced surgeon under sterile conditions. Your surgeon will still walk you through the small risks involved, such as infection or scarring, so you know exactly what to expect.",
+    "faqs": [
+      {
+        "question": "Will I need general anesthesia?",
+        "answer": "Most minor procedures like this are done comfortably under local anesthesia, so you stay awake but feel no pain in the area."
+      },
+      {
+        "question": "Will there be a visible scar?",
+        "answer": "Incisions are small and carefully placed to minimize visible scarring, and they typically fade well over time."
+      },
+      {
+        "question": "Can a lipoma or cyst come back after removal?",
+        "answer": "Complete removal significantly reduces the chance of recurrence at the same site, though new lipomas can occasionally develop elsewhere."
+      },
+      {
+        "question": "Is a biopsy needed after removal?",
+        "answer": "Removed tissue is often sent for routine evaluation to confirm the diagnosis, especially for larger or unusual-looking lumps."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Lipoma Removal Surgery Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Lipoma removal surgery in Madhapur, Hyderabad — safe, minor surgical removal of benign fatty lumps under the skin.",
+      "focusKeywords": "lipoma removal Hyderabad, fatty lump removal surgery",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/lipoma-removal"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "labiaplasty",
-    slug: "labiaplasty",
-    name: "Labiaplasty",
-    category: "Intimate",
-    featured: false,
-    image: "/assets/services/Labiaplasty.png",
-    shortDescription: "Discreet surgical reshaping of the labia minora for functional comfort, aesthetic symmetry, and confidence.",
-    heroHeadline: "Restore Intimate Comfort, Symmetry, and Confidence",
-    introduction: "Labiaplasty addresses enlarged, elongated, or asymmetrical labia minora that cause physical discomfort during exercise, clothing friction, or intimate distress.",
-    whatIsIt: "Surgical trimming and reshaping of excess labia minora tissue to achieve natural symmetry and comfort while preserving sensitive neural structures.",
-    benefits: [
-      "Eliminates pinching, pulling, and discomfort during sports or tight clothing",
-      "Achieves neat, symmetrical, and comfortable intimate aesthetics",
-      "Preserves natural sensation and delicate tissue margins",
-      "Perceived boost in personal comfort and self-esteem",
-      "Discreet, confidential outpatient surgical care"
+    "id": "breast-augmentation",
+    "slug": "breast-augmentation",
+    "name": "Breast Augmentation / Breast Implant",
+    "category": "BREAST",
+    "filterCategories": [
+      "Breast",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Women experiencing physical discomfort, irritation, or self-consciousness due to enlarged labia",
-      "Women in good general health with clear aesthetic goals",
-      "Non-pregnant adults with healthy tissue"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/Breast Augmentation Breast Implant.png",
+    "isEmpty": false,
+    "shortDescription": "natural-looking results Breast augmentation enhances breast volume, shape, and symmetry using implants or fat transfer techniques, helping restore balanced body proportions and confidence. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Augmentation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Enhance volume, shape, and symmetry with",
+    "introHeadline": "Enhance volume, shape, and symmetry with",
+    "introParagraphs": [
+      "natural-looking results Breast augmentation enhances breast volume, shape, and symmetry using implants or fat transfer techniques, helping restore balanced body proportions and confidence. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Augmentation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Performed under local anesthesia or sedation using precise trim or wedge excision techniques. Dissolvable microscopic sutures close the refined tissue borders.",
-    recoveryInfo: "Rest for 3–5 days with cold compress application. Light walking is fine immediately. Avoid sexual activity and tampons for 4–6 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Breast Augmentation",
+    "understandingParagraphs": [
+      "Breast augmentation is a surgical procedure that increases breast size and improves shape using implants, or in some cases, the patient's own fat through fat grafting. Implant type, size, and placement are customized to each individual's anatomy and goals. Many people considering Breast Augmentation have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Improved breast volume ✓ Enhanced body proportions ✓ Natural-",
+      "looking, symmetrical results ✓ Boost in self-confidence"
+    ],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [
+      "Following a detailed consultation with Dr. Suma Sandhyala, implant type, size, and incision approach are selected based on body structure and desired outcome. The goal is always a natural-looking result that maintains harmony with the patient's frame."
+    ],
+    "approachSubSections": [
       {
-        question: "Does labiaplasty affect sexual sensation?",
-        answer: "No. The nerve pathways supplying sensation are carefully preserved by experienced plastic surgeons."
+        "title": "No-Touch Technique",
+        "content": "Sculpt Aesthetics uses a No-Touch Technique during implant placement, where the implant never directly contacts the skin or surgical instruments before insertion. This reduces the risk of contamination and infection, supporting safer healing and better long-term outcomes."
+      },
+      {
+        "title": "Choosing the Right Implant",
+        "content": "During consultation, your surgeon discusses implant shape (round or anatomical), profile, and size using 3D sizing tools where available, so you can visualize your result before surgery and choose a size that fits your frame and lifestyle."
       }
     ],
-    relatedServiceSlugs: ["clitoral-hood-correction", "g-spot-amplification", "hymenoplasty"]
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume light activities within a few days, with strenuous exercise typically avoided for 4–6 weeks. Follow-up visits monitor healing and implant positioning. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Breast Augmentation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Incisions are typically placed in well-hidden locations, such as the fold beneath the breast or around the areola, so resulting scars are discreet and fade significantly over 6-12 months.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection- control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Are breast implants safe?",
+        "answer": "Modern breast implants are designed with strict safety standards. Proper consultation and follow-up are essential."
+      },
+      {
+        "question": "Will breast implants look natural?",
+        "answer": "Yes. Implant selection is customized according to body structure and desired appearance."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Breast Augmentation itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the    procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "How long do breast implants last?",
+        "answer": "Implants are not considered lifetime devices; many last well over a decade, and your surgeon will guide you on monitoring and eventual replacement if needed."
+      },
+      {
+        "question": "Can I breastfeed after breast augmentation?",
+        "answer": "Many women are able to breastfeed after augmentation, especially with careful incision placement; this is discussed individually during consultation."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Breast Augmentation Hyderabad | Breast Implant",
+      "metaDescription": "Breast augmentation in Madhapur, Hyderabad using implants or fat transfer. Personalized planning with Dr. Suma Sandhyala for natural, proportionate results. •",
+      "focusKeywords": "breast augmentation Hyderabad, breast implants, breast enhancement surgery, fat transfer breast •",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/breast-augmentation"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "butt-lift",
-    slug: "butt-lift",
-    name: "Butt Lift & Augmentation",
-    category: "Body",
-    featured: false,
-    image: "/assets/services/Buttock.png",
-    shortDescription: "Contouring and volume enhancement of the gluteal region using autologous fat transfer or surgical lifting.",
-    heroHeadline: "Sculpt Full, Lifted, and Proportionate Gluteal Curves",
-    introduction: "Gluteal sculpting enhances buttock volume, projection, and shape to achieve an attractive hourglass silhouette using your body's natural fat reserves.",
-    whatIsIt: "Commonly known as a Brazilian Butt Lift (BBL), this procedure uses liposuction to harvest fat from the waist/flanks and micro-injects purified fat into the gluteal muscles.",
-    benefits: [
-      "Restores volume and projection to flat or sagging buttocks",
-      "Slims the waistline and lower back simultaneously via liposuction",
-      "Uses 100% natural autologous tissue with soft touch",
-      "Improves overall body proportions and clothing fit",
-      "Long-lasting permanent fat integration"
+    "id": "breast-reduction",
+    "slug": "breast-reduction",
+    "name": "Breast Reduction",
+    "category": "BREAST",
+    "filterCategories": [
+      "Breast",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Patients seeking fuller, firmer gluteal contours",
-      "Individuals with sufficient donor fat in abdomen, flanks, or thighs",
-      "Nonsmokers capable of avoiding direct sitting on buttocks during early recovery"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/breast-reduction.png",
+    "isEmpty": false,
+    "shortDescription": "Breast reduction removes excess breast tissue, fat, and skin to achieve a lighter, more proportionate breast size — relieving physical discomfort and improving daily comfort. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Reduction Surgery is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Lighter, proportionate, and more comfortable",
+    "introHeadline": "Lighter, proportionate, and more comfortable",
+    "introParagraphs": [
+      "Breast reduction removes excess breast tissue, fat, and skin to achieve a lighter, more proportionate breast size — relieving physical discomfort and improving daily comfort. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Reduction Surgery is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Liposuction harvests fat from waist and thighs. Harvested fat is centrifuged and purified, then meticulously reinjected in small aliquots into gluteal tissue planes.",
-    recoveryInfo: "Special BBL pillow used to avoid direct pressure on buttocks when sitting for 3 weeks. Compression garment worn for 6 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Breast Reduction Surgery",
+    "understandingParagraphs": [
+      "Breast reduction (reduction mammaplasty) is a surgical procedure that removes excess breast tissue, fat, and skin to reduce breast size and reshape the breasts for better proportion and comfort. Many people considering Breast Reduction Surgery have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Relief from back and neck discomfort",
+      "Improved posture",
+      "Better physical comfort during activity",
+      "Enhanced confidence and clothing fit"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Women experiencing back, neck, or shoulder discomfort from breast weight",
+      "Those with skin irritation or posture issues linked to breast size",
+      "Women facing difficulty with physical activity or clothing fit",
+      "Patients seeking better body proportion",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "How long does transferred fat last?",
-        answer: "Roughly 60-70% of transferred fat cells permanently integrate into the target area and behave like normal body tissue."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Breast Reduction Surgery is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Breast Reduction Surgery that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Breast Reduction Surgery is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["liposuction", "body-contouring", "tummy-tuck"]
+    "approachParagraphs": [
+      "The procedure is tailored to remove the appropriate volume of tissue while reshaping and repositioning the breast and nipple for a natural, balanced result, following a thorough evaluation of each patient's anatomy and goals."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Mastopexy (Breast Lift) & Sagging",
+        "content": "Breast reduction often naturally lifts the breast as part of the procedure, but in some cases a dedicated breast lift (mastopexy) technique is combined to further correct sagging and reposition the nipple for a more youthful, uplifted shape."
+      },
+      {
+        "title": "Addressing Asymmetry",
+        "content": "For patients with uneven breast size alongside excess volume, your surgeon can tailor the amount of tissue removed on each side to improve both size and symmetry in the same procedure."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume normal daily activities within 1‒2 weeks, with full recovery and return to strenuous activity over several weeks, guided by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Breast Reduction Surgery depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Scar pattern depends on the amount of reduction needed — commonly an anchor- or lollipop-shaped incision is used, which fades considerably over the first year while still delivering meaningfully lighter, better-shaped breasts.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Who is a candidate for breast reduction?",
+        "answer": "Women experiencing discomfort, oversized breasts, or difficulty with daily activities may benefit from evaluation."
+      },
+      {
+        "question": "Will breast reduction leave visible scars?",
+        "answer": "Some scarring is expected with any surgical incision; technique and placement are chosen to minimize visibility."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Breast Reduction Surgery itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Will breast reduction affect nipple sensation?",
+        "answer": "Some temporary changes in sensation are common after surgery and typically improve as healing progresses; permanent changes are uncommon but will be discussed as part of informed consent."
+      },
+      {
+        "question": "Can breast reduction help with back pain from large breasts?",
+        "answer": "Yes — relieving the physical weight and strain of oversized breasts is one of the most common and effective benefits of this surgery."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Breast Reduction Surgery Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Breast reduction surgery in Madhapur, Hyderabad to relieve discomfort and achieve proportionate breast size. Expert care from experienced plastic surgeons.",
+      "focusKeywords": "breast reduction surgery Hyderabad, reduction mammaplasty, large breast surgery",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/breast-reduction"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "blepharoplasty",
-    slug: "blepharoplasty",
-    name: "Blepharoplasty (Eyelid Surgery)",
-    category: "Face",
-    featured: false,
-    image: "/assets/services/Blepharoplasty.png",
-    shortDescription: "Surgical removal of drooping upper eyelid skin and under-eye bags for a youthful, awake gaze.",
-    heroHeadline: "Rejuvenate Tired Eyes and Restore a Bright, Youthful Gaze",
-    introduction: "Eyelid surgery (Blepharoplasty) corrects drooping upper lids and puffy under-eye bags that create a tired or aged appearance and can impair peripheral vision.",
-    whatIsIt: "Plastic surgery that excises excess skin, muscle, and herniated fat pads from the upper and lower eyelids to refresh the periorbital facial area.",
-    benefits: [
-      "Removes heavy, sagging upper eyelid skin folds",
-      "Eliminates stubborn under-eye bags and puffiness",
-      "Improves obstructed upper peripheral vision field",
-      "Concealed incisions inside natural eyelid creases",
-      "Long-lasting refreshed and youthful eye appearance"
+    "id": "breast-lift",
+    "slug": "breast-lift",
+    "name": "Breast Lift Surgery",
+    "category": "BREAST",
+    "filterCategories": [
+      "Breast",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Adults with excess upper lid skin or under-eye fat bags",
-      "Patients without severe dry eye syndrome or untreated glaucoma",
-      "Nonsmokers seeking a refreshed periorbital appearance"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/breast-lift.png",
+    "isEmpty": false,
+    "shortDescription": "A breast lift (mastopexy) raises and reshapes breasts that have begun to sag due to pregnancy, breastfeeding, weight changes, or natural aging — restoring a firmer, more youthful position without necessarily changing breast size. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Lift (Mastopexy) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Restore a firmer, more youthful breast position",
+    "introHeadline": "Restore a firmer, more youthful breast position",
+    "introParagraphs": [
+      "A breast lift (mastopexy) raises and reshapes breasts that have begun to sag due to pregnancy, breastfeeding, weight changes, or natural aging — restoring a firmer, more youthful position without necessarily changing breast size. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Lift (Mastopexy) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Under local anesthesia, upper eyelid incisions are hidden within the natural lid crease. Lower eyelid fat pads are removed or repositioned via transconjunctival or subciliary incisions.",
-    recoveryInfo: "Mild bruising and swelling peak at 3 days and resolve by day 10. Sutures are removed at 5 days, returning to public activities in 1 week.",
-    faqs: [
+    "understandingHeadline": "Understanding Breast Lift (Mastopexy)",
+    "understandingParagraphs": [
+      "Mastopexy is a surgical procedure that removes excess, stretched skin and repositions breast tissue and the nipple-areola complex higher on the chest, correcting sagging (ptosis) for a more lifted, youthful contour. Many people considering Breast Lift (Mastopexy) have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Firmer, more youthful breast position",
+      "Improved nipple position and symmetry",
+      "Can be combined with augmentation for added volume",
+      "Boost in confidence and comfort in clothing"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Women with breasts that have lost firmness and now sit lower on the chest",
+      "Those whose nipples point downward or fall below the breast crease",
+      "Women who have finished breastfeeding and are not planning further pregnancies",
+      "Patients who want a lifted shape without significantly changing size",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Will eyelid surgery leave noticeable scars?",
-        answer: "Upper eyelid scars rest invisibly within natural lid folds. Lower lid incisions are placed inside the eyelid or right below lower lashes."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Breast Lift (Mastopexy) is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Breast Lift (Mastopexy) that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Breast Lift (Mastopexy) is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["facelift", "facial-rejuvenation", "rhinoplasty"]
+    "approachParagraphs": [
+      "Depending on the degree of sagging, your surgeon selects the appropriate lift technique — ranging from a minimal-scar approach for mild sagging to a full anchor-pattern lift for more significant cases — always aiming for the least visible scarring needed to achieve a lasting result. A lift can also be combined with implants or fat grafting if added volume is desired."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume light activities within a week, with full recovery and return to exercise over 4-6 weeks as guided by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Breast Lift (Mastopexy) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Scar extent depends on the technique used, ranging from a scar around the areola only for mild lifts to an anchor-shaped incision for more significant sagging; all incisions are planned to fade and be as inconspicuous as possible.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Will a breast lift make my breasts smaller?",
+        "answer": "A lift primarily repositions tissue rather than removing significant volume; if you'd also like a size change, this can be combined with reduction or augmentation."
+      },
+      {
+        "question": "How long do breast lift results last?",
+        "answer": "Results are long-lasting, though future pregnancy, significant weight change, or natural aging can affect breast position over time."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Breast Lift (Mastopexy) itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Can a breast lift be combined with a reduction?",
+        "answer": "Yes — many patients with both sagging and excess volume benefit from combining a lift with a reduction in the same surgery."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Breast Lift Surgery Hyderabad | Mastopexy | Sculpt Aesthetics",
+      "metaDescription": "Breast lift (mastopexy) in Madhapur, Hyderabad to correct sagging and restore a firmer, more youthful breast shape and position.",
+      "focusKeywords": "breast lift Hyderabad, mastopexy surgery, sagging breast correction",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/breast-lift"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "hymenoplasty",
-    slug: "hymenoplasty",
-    name: "Hymenoplasty",
-    category: "Intimate",
-    featured: false,
-    image: "/assets/services/Hymenoplasty.png",
-    shortDescription: "Surgical reconstruction of the hymenal membrane performed under strict clinical confidentiality.",
-    heroHeadline: "Confidential Intimate Surgical Reconstruction",
-    introduction: "Hymenoplasty (hymen restoration) is a delicate intimate surgical procedure performed with high precision and absolute patient confidentiality.",
-    whatIsIt: "Reconstructive procedure that carefully re-approximates torn hymenal tissue remnants using microscopic dissolvable sutures to reconstruct an intact membrane.",
-    benefits: [
-      "Surgical reconstruction of the hymenal layer",
-      "100% confidential, respectful, and compassionate care",
-      "Outpatient procedure under local anesthesia",
-      "Dissolvable sutures requiring no removal",
-      "Quick healing timeline"
+    "id": "gynecomastia-surgery",
+    "slug": "gynecomastia-surgery",
+    "name": "Gynecomastia Surgery (Male Chest Reduction)",
+    "category": "BREAST",
+    "filterCategories": [
+      "Breast",
+      "Body",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Women seeking confidential hymenal reconstruction for personal, cultural, or physical reasons",
-      "Healthy adults with realistic expectations"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/gynecomastia-surgery.png",
+    "isEmpty": false,
+    "shortDescription": "Gynecomastia is the enlargement of male breast tissue caused by glandular growth, excess fat, hormonal changes, genetics, weight fluctuation, or certain medications. It can affect confidence, body image, and quality of life — and it's more common than most men realize. At Sculpt Aesthetics in Madhapur, Hyderabad, Gynecomastia Surgery is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Restore a firmer, more masculine chest contour",
+    "introHeadline": "Restore a firmer, more masculine chest contour",
+    "introParagraphs": [
+      "Gynecomastia is the enlargement of male breast tissue caused by glandular growth, excess fat, hormonal changes, genetics, weight fluctuation, or certain medications. It can affect confidence, body image, and quality of life — and it's more common than most men realize. At Sculpt Aesthetics in Madhapur, Hyderabad, Gynecomastia Surgery is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Performed under local anesthesia in 45 minutes. Remaining tissue edges are sutured in a fine layer using delicate bio-absorbable thread.",
-    recoveryInfo: "Light rest for 2 days. Normal light activities resume quickly. Full tissue healing occurs in 3–4 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Gynecomastia Surgery",
+    "understandingParagraphs": [
+      "Gynecomastia refers to swollen or enlarged breast tissue in men, resulting from an imbalance of estrogen and testosterone, certain medications, genetics, or excess fat deposition. It can occur at any age, including in otherwise fit and lean individuals, and is not solely linked to obesity. Many people considering Gynecomastia Surgery have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Masculine, flatter chest appearance",
+      "Improved body confidence",
+      "Better fit in fitted clothing",
+      "Long-lasting results with proper technique"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Men with persistently enlarged breast tissue unresponsive to diet or exercise",
+      "Individuals with glandular enlargement confirmed on clinical evaluation",
+      "Men experiencing self-consciousness or discomfort related to chest appearance",
+      "Patients in good general health without underlying untreated hormonal disorders",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Is the consultation completely private?",
-        answer: "Yes, all consultations and medical records at Sculpt Aesthetics are strictly confidential under medical privacy standards."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Gynecomastia Surgery is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Gynecomastia Surgery that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Gynecomastia Surgery is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["labiaplasty", "clitoral-hood-correction", "g-spot-amplification"]
+    "approachParagraphs": [
+      "At Sculpt Aesthetics, gynecomastia correction is tailored to each patient and may involve advanced liposuction to remove excess fat, surgical excision of glandular tissue, or a combination of both techniques for optimal chest contouring. Dr. Jagadish Kiran evaluates chest composition during consultation to design the most effective, minimally invasive approach."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Understanding Gynecomastia Grades",
+        "content": "Gynecomastia is often classified into grades — from mild glandular fullness (Grade 1) to more significant enlargement with excess skin (Grade 3-4). Your surgeon will assess your grade during consultation, since it directly shapes which technique (liposuction alone, gland excision, or both, sometimes with skin removal) will give the best result."
+      },
+      {
+        "title": "Male Mastectomy Technique",
+        "content": "For more significant or purely glandular gynecomastia, a male mastectomy technique may be used — this involves precise surgical removal of the glandular breast tissue through a small, well-hidden incision, often combined with liposuction for the most natural chest contour."
+      },
+      {
+        "title": "Ultrasound-Assisted & Power-Assisted Liposuction",
+        "content": "Sculpt Aesthetics uses advanced liposuction technologies, including Ultrasound-Assisted Liposuction (which liquefies fat before removal for smoother extraction, especially helpful in fibrous chest tissue) and Power-Assisted Liposuction (which uses rapid, gentle vibration to remove fat more efficiently with less physical trauma) — both aimed at more precise contouring with faster recovery."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients return to light daily activities within a few days and resume normal routines, including exercise, within a few weeks, depending on the extent of the procedure. A compression garment is typically recommended during initial recovery. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Gynecomastia Surgery depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "When only liposuction is used, scarring is minimal — limited to a few small entry points. When gland excision or skin removal is needed, an incision is placed around the areola edge where it blends naturally with the surrounding skin tone.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is gynecomastia only caused by obesity?",
+        "answer": "No. Gynecomastia can occur even in lean individuals due to glandular tissue growth or hormonal factors."
+      },
+      {
+        "question": "Is gynecomastia surgery permanent?",
+        "answer": "Yes — when glandular tissue is properly treated, results are generally long-lasting."
+      },
+      {
+        "question": "How much recovery time is required?",
+        "answer": "Most patients return to normal activities within a few days to weeks, depending on the procedure performed."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Gynecomastia Surgery itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your    consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Will gynecomastia come back after surgery?",
+        "answer": "Once glandular tissue is removed, it does not typically regrow; however, significant weight gain or certain medications could still affect chest appearance, so maintaining a stable weight is recommended."
+      },
+      {
+        "question": "Is gynecomastia surgery covered by insurance?",
+        "answer": "This varies by insurer and the medical necessity of your specific case; our team can guide you on what documentation may help with a claim."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Gynecomastia Surgery in Hyderabad | Male Breast Reduction | Sculpt",
+      "metaDescription": "Advanced gynecomastia surgery in Madhapur, Hyderabad by expert plastic surgeons. Liposuction and gland excision for a flatter, masculine chest. Book a consultation today.",
+      "focusKeywords": "gynecomastia surgery Hyderabad, male breast reduction, chest fat removal, gland excision surgery",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/gynecomastia-surgery"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "clitoral-hood-correction",
-    slug: "clitoral-hood-correction",
-    name: "Clitoral Hood Correction",
-    category: "Intimate",
-    featured: false,
-    image: "/assets/services/Clitoral hood correction.png",
-    shortDescription: "Refinement of excess clitoral prepuce skin for enhanced intimate comfort and aesthetic harmony.",
-    heroHeadline: "Precision Intimate Refinement for Enhanced Comfort",
-    introduction: "Clitoral hood reduction reduces redundant skin folds covering the clitoris to improve hygiene, intimate sensitivity, and aesthetic balance alongside labiaplasty.",
-    whatIsIt: "Surgical trimming of excess prepuce tissue along the side borders while safeguarding central erectile and sensory nerve structures.",
-    benefits: [
-      "Reduces excess tissue bulk in the upper labial area",
-      "Improves intimate hygiene and comfort",
-      "Can enhance intimate responsiveness and sensitivity",
-      "Seamlessly paired with labiaplasty for balanced aesthetics",
-      "Discreet outpatient surgical execution"
+    "id": "rhinoplasty",
+    "slug": "rhinoplasty",
+    "name": "Rhinoplasty (Nose Job)",
+    "category": "FACE",
+    "filterCategories": [
+      "Face",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Women troubled by excess prepuce tissue or irritation",
-      "Patients seeking intimate aesthetic refinement"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/Rhinoplasty.png",
+    "isEmpty": false,
+    "shortDescription": "Rhinoplasty enhances nasal shape and facial harmony while maintaining a natural appearance and normal breathing function. At Sculpt Aesthetics in Madhapur, Hyderabad, Rhinoplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Refined nasal shape, natural facial harmony",
+    "introHeadline": "Refined nasal shape, natural facial harmony",
+    "introParagraphs": [
+      "Rhinoplasty enhances nasal shape and facial harmony while maintaining a natural appearance and normal breathing function. At Sculpt Aesthetics in Madhapur, Hyderabad, Rhinoplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Under local anesthesia, excess prepuce tissue folds are trimmed laterally with micro-precision instruments and closed with fine dissolvable sutures.",
-    recoveryInfo: "Rest for 3 days. Dissolvable stitches melt naturally. Resume intimacy after 4–6 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Rhinoplasty",
+    "understandingParagraphs": [
+      "Rhinoplasty, or nose reshaping surgery, modifies the size, shape, or proportions of the nose to improve facial balance. It can be purely cosmetic or combined with functional correction to improve breathing. Many people considering Rhinoplasty have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Improved nasal shape and profile",
+      "Better facial harmony and balance",
+      "Potential improvement in breathing function",
+      "Natural, refined results"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals unhappy with nasal size, shape, or profile",
+      "Patients with breathing difficulty related to nasal structure",
+      "Those seeking improved facial harmony and balance",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Can clitoral hood correction be combined with labiaplasty?",
-        answer: "Yes, they are frequently performed together in a single brief session for uniform intimate contours."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Rhinoplasty is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Rhinoplasty that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Rhinoplasty is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["labiaplasty", "g-spot-amplification", "hymenoplasty"]
+    "approachParagraphs": [
+      "Each rhinoplasty is planned around the patient's facial proportions and goals, addressing the bridge, tip, or overall nasal structure to create a refined, natural-looking result in harmony with the rest of the face."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Bone Grafts & Implants in Rhinoplasty",
+        "content": "For patients needing significant structural change — such as building up a low bridge or providing support after revision surgery — your surgeon may use a bone or cartilage graft (often taken from the patient's own septum, ear, or rib) or, in select cases, a surgical implant. These techniques add structure and support while maintaining a natural-looking result, and the right choice depends on your nasal anatomy and goals."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most swelling subsides within 2‒3 weeks, with final results becoming more apparent over several months as residual swelling resolves. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Rhinoplasty depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Most rhinoplasty is performed with incisions hidden inside the nose; when external incisions are needed (open technique), they are placed in the small strip of skin between the nostrils and heal to be very discreet.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Does rhinoplasty affect breathing?",
+        "answer": "Functional rhinoplasty can address both appearance and breathing concerns."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Rhinoplasty itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "How long until swelling fully goes down?",
+        "answer": "Most visible swelling resolves within a few weeks, but subtle refinement of the nasal tip can continue for up to a year."
+      },
+      {
+        "question": "Can rhinoplasty fix a deviated septum?",
+        "answer": "Yes, functional rhinoplasty can correct a deviated septum at the same time as reshaping the nose, improving both breathing and appearance."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Rhinoplasty Hyderabad | Nose Reshaping Surgery | Sculpt Aesthetics",
+      "metaDescription": "Rhinoplasty in Madhapur, Hyderabad to enhance nose shape, size, and profile while maintaining natural appearance and breathing function.",
+      "focusKeywords": "rhinoplasty Hyderabad, nose job surgery, nose reshaping surgery, functional rhinoplasty",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/rhinoplasty"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "g-spot-amplification",
-    slug: "g-spot-amplification",
-    name: "G-Spot Amplification",
-    category: "Intimate",
-    featured: false,
-    image: "/assets/services/G-spot amplification.png",
-    shortDescription: "Non-surgical collagen or hyaluronan injection designed to increase sensory intimate responsiveness.",
-    heroHeadline: "Non-Surgical Intimate Wellness & Heightened Sensitivity",
-    introduction: "G-Spot Amplification (G-Shot) is a brief non-surgical treatment designed to temporarily expand and elevate the erogenous tissue zone on the anterior vaginal wall.",
-    whatIsIt: "A specialized injection of biocompatible collagen or hyaluronic acid filler into the submucosal vaginal tissue to increase projection and tactile contact.",
-    benefits: [
-      "Non-surgical 15-minute clinical treatment",
-      "Zero downtime with immediate return to regular activities",
-      "Heightened intimate friction and tactile responsiveness",
-      "Safe biocompatible dermal filler formula"
+    "id": "facelift",
+    "slug": "facelift",
+    "name": "Facelift Surgery",
+    "category": "FACE",
+    "filterCategories": [
+      "Face",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Women seeking non-surgical enhancement of intimate gratification",
-      "Healthy adults without active pelvic infections"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/facelift.png",
+    "isEmpty": false,
+    "shortDescription": "A facelift uses advanced techniques to reduce visible signs of ageing and restore youthful facial contours, addressing sagging skin and loss of volume. At Sculpt Aesthetics in Madhapur, Hyderabad, Facelift is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Restore a naturally youthful facial contour",
+    "introHeadline": "Restore a naturally youthful facial contour",
+    "introParagraphs": [
+      "A facelift uses advanced techniques to reduce visible signs of ageing and restore youthful facial contours, addressing sagging skin and loss of volume. At Sculpt Aesthetics in Madhapur, Hyderabad, Facelift is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "A local anesthetic is applied to the anterior vaginal wall, followed by a targeted injection of filler into the designated submucosal zone.",
-    recoveryInfo: "Zero downtime. Sexual intimacy can typically be resumed 48 hours post-treatment.",
-    faqs: [
+    "understandingHeadline": "Understanding Facelift",
+    "understandingParagraphs": [
+      "A facelift (rhytidectomy) is a surgical procedure that repositions underlying facial tissue and removes excess skin to reduce sagging, wrinkles, and jowling — restoring a smoother, more youthful facial contour. Many people considering Facelift have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Reduced facial sagging and wrinkles",
+      "Restored youthful facial contour",
+      "Natural, refreshed appearance",
+      "Long-lasting rejuvenation"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with moderate to significant facial sagging",
+      "Patients bothered by jowls, deep folds, or loose neck skin",
+      "Those in good general health seeking long-lasting rejuvenation",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "How long do the results of G-spot amplification last?",
-        answer: "Results typically last 4 to 6 months as the biocompatible filler gradually absorbs naturally."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Facelift is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Facelift that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Facelift is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["labiaplasty", "clitoral-hood-correction"]
+    "approachParagraphs": [
+      "The procedure repositions deeper facial tissues and removes excess skin through carefully placed incisions, designed to deliver natural, refreshed results rather than an overly tight or altered appearance."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Initial swelling and bruising typically resolve over 2‒3 weeks, with most patients returning to normal social activities within this period. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Facelift depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Incisions are strategically hidden along the hairline and natural creases around the ear, so they are very difficult to detect once healed, even with hair pulled back.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Facelift itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "How long do facelift results last?",
+        "answer": "Results are long-lasting, often 8-10 years or more, though natural aging continues; many patients feel they look refreshed for a decade or longer."
+      },
+      {
+        "question": "Can a facelift be combined with eyelid surgery or a neck lift?",
+        "answer": "Yes, combining procedures is common for a more harmonious, complete facial rejuvenation, and can often be planned in a single surgical session."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Facelift Surgery Hyderabad | Facial Rejuvenation | Sculpt Aesthetics",
+      "metaDescription": "Advanced facelift surgery in Madhapur, Hyderabad to reduce sagging skin and signs of aging for a naturally youthful appearance.",
+      "focusKeywords": "facelift surgery Hyderabad, facial rejuvenation surgery, anti aging facial surgery",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/facelift"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "split-ear-lobe",
-    slug: "split-ear-lobe",
-    name: "Split Ear Lobe Repair",
-    category: "Minor Surgical",
-    featured: false,
-    image: "/assets/services/A split earlobe.png",
-    shortDescription: "Quick in-clinic repair of torn, stretched, or split earlobe clefts from heavy earrings.",
-    heroHeadline: "Restore Torn or Stretched Earlobes with Flawless Precision",
-    introduction: "Earlobes torn completely or stretched elongated by heavy jewelry can be reconstructed in a quick, painless 30-minute in-office procedure.",
-    whatIsIt: "Minor surgical repair that removes internal scarred skin lining of the tear and re-joins fresh tissue margins with fine sutures.",
-    benefits: [
-      "Painless 30-minute in-office minor procedure under local anesthesia",
-      "Restores smooth, rounded, natural earlobe geometry",
-      "Allows re-piercing of earlobes after 6–8 weeks",
-      "Virtually invisible fine scar post-healing",
-      "Immediate return to work and daily activities"
+    "id": "blepharoplasty",
+    "slug": "blepharoplasty",
+    "name": "Blepharoplasty (Eyelid Surgery)",
+    "category": "FACE",
+    "filterCategories": [
+      "Face",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Individuals with split, torn, or widened earlobe earring holes",
-      "Patients wanting to wear normal earrings again"
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/blepharoplasty.png",
+    "isEmpty": false,
+    "shortDescription": "Blepharoplasty improves tired-looking eyes by addressing excess skin and fat around the eyelids, correcting droopy eyelids and under-eye bags. At Sculpt Aesthetics in Madhapur, Hyderabad, Blepharoplasty (Eyelid Surgery) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Brighter, more refreshed eyes",
+    "introHeadline": "Brighter, more refreshed eyes",
+    "introParagraphs": [
+      "Blepharoplasty improves tired-looking eyes by addressing excess skin and fat around the eyelids, correcting droopy eyelids and under-eye bags. At Sculpt Aesthetics in Madhapur, Hyderabad, Blepharoplasty (Eyelid Surgery) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Local anesthetic numbs the earlobe. The epithelialized tract inside the split is excised and closed with delicate micro-sutures.",
-    recoveryInfo: "Keep earlobe clean and dry for 5 days. Sutures removed in 7 days. Re-piercing can be safely performed after 6–8 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Blepharoplasty (Eyelid",
+    "understandingParagraphs": [
+      "Surgery) Blepharoplasty is a surgical procedure that removes or repositions excess skin, muscle, and fat from the upper and/or lower eyelids, addressing droopiness, puffiness, and a tired appearance. Many people considering Blepharoplasty (Eyelid Surgery) have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Brighter, more youthful eye appearance ✓ Correction of droopy",
+      "eyelids and eye bags ✓ Improved upper peripheral vision in select cases",
+      "Minimal, well-hidden scarring"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound",
+    "candidateItems": [
+      "familiar:",
+      "Individuals with sagging or droopy upper eyelids",
+      "Patients with under-eye bags or puffiness",
+      "Those whose vision is affected by excess upper eyelid skin"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
       {
-        question: "When can I pierce my earlobes again after repair?",
-        answer: "Earlobes can be re-pierced after 6 to 8 weeks, slightly to the side of the healed surgical line."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Blepharoplasty (Eyelid Surgery) is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Blepharoplasty (Eyelid Surgery) that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Blepharoplasty (Eyelid Surgery) is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["lipoma-removal", "dimple-creation"]
+    "approachParagraphs": [
+      "Depending on whether the upper eyelids, lower eyelids, or both are treated, excess skin and fat are carefully removed or repositioned through incisions placed along natural eyelid creases to minimize visible scarring."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Swelling and bruising generally resolve within 1–2 weeks, with most patients returning to normal routines shortly after. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Blepharoplasty (Eyelid Surgery) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Incisions are placed along the natural creases of the upper eyelid or just below the lash line on the lower eyelid, so scars are extremely well concealed and fade further over time.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection- control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Blepharoplasty (Eyelid Surgery) itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Can upper and lower eyelid surgery be done together?",
+        "answer": "Yes, many patients choose to treat both areas in a single session for a more complete refresh, as advised by your surgeon."
+      },
+      {
+        "question": "Will eyelid surgery change how my eyes look permanently?",
+        "answer": "Results are long-lasting, though natural aging will continue; most patients enjoy a refreshed appearance for many years."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Blepharoplasty Hyderabad | Eyelid Surgery | Sculpt",
+      "metaDescription": "Eyelid surgery (blepharoplasty) in Madhapur, Hyderabad to correct droopy eyelids, eye bags, and excess skin for a refreshed look. •",
+      "focusKeywords": "blepharoplasty Hyderabad, eyelid surgery, droopy eyelid correction, eye bag removal •",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/blepharoplasty"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "facelift",
-    slug: "facelift",
-    name: "Face Lift Surgery",
-    category: "Face",
-    featured: false,
-    image: "/assets/services/A facelift.png",
-    shortDescription: "Surgical lifting of SMAS facial muscle layer and skin to eliminate sagging jawlines and neck folds.",
-    heroHeadline: "Revert Facial Aging with Structural SMAS Facelift Architecture",
-    introduction: "A surgical Facelift (Rhytidectomy) provides deep structural elevation of sagging cheek fat, jowels, and loose neck skin for dramatic, natural anti-aging results.",
-    whatIsIt: "Comprehensive plastic surgery that tightens the underlying SMAS muscle layer, repositions mid-face tissues, and removes excess skin along hairline incisions.",
-    benefits: [
-      "Restores sharp jawline definition and youthful cheek elevation",
-      "Eliminates sagging jowels and turkey-neck skin folds",
-      "Tightens deep muscular SMAS foundation for long-lasting results",
-      "Natural un-operated appearance without skin tightness",
-      "Turns back the aesthetic clock by 10 to 15 years"
+    "id": "buccal-fat-pad-removal",
+    "slug": "buccal-fat-pad-removal",
+    "name": "Buccal Fat Pad Removal",
+    "category": "FACE",
+    "filterCategories": [
+      "Face",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Men and women with significant facial sagging, deep jowls, or neck laxity",
-      "Nonsmokers in good systemic health with reasonable skin elasticity"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/buccal-fat-pad-removal.png",
+    "isEmpty": false,
+    "shortDescription": "Buccal fat removal removes excess cheek fat to create a sharper, more sculpted facial contour. At Sculpt Aesthetics in Madhapur, Hyderabad, Buccal Fat Removal is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Sharper, more defined facial contours",
+    "introHeadline": "Sharper, more defined facial contours",
+    "introParagraphs": [
+      "Buccal fat removal removes excess cheek fat to create a sharper, more sculpted facial contour. At Sculpt Aesthetics in Madhapur, Hyderabad, Buccal Fat Removal is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Incisions wrap around the ear cartilage and into the hairline. The SMAS muscle layer is elevated and anchored, excess skin is trimmed, and incisions are closed under zero tension.",
-    recoveryInfo: "Swelling and bruising resolve in 10–14 days. Social activities and work resume comfortably by week 2 to 3.",
-    faqs: [
+    "understandingHeadline": "Understanding Buccal Fat Removal",
+    "understandingParagraphs": [
+      "Buccal fat removal is a procedure that removes the buccal fat pads located in the lower cheek area, reducing fullness and creating more defined cheekbones and a slimmer facial appearance. Many people considering Buccal Fat Removal have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Sharper, more defined facial contour",
+      "More prominent cheekbones",
+      "Minimal, hidden scarring (intraoral incision)"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Patients with fuller, rounder cheeks seeking facial definition",
+      "Individuals with good skin elasticity",
+      "Those seeking a subtle, natural contouring change",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "How many years younger will a facelift make me look?",
-        answer: "A well-performed SMAS facelift typically turns back facial appearance by 10 to 15 years, with results enduring for over a decade."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Buccal Fat Removal is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Buccal Fat Removal that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Buccal Fat Removal is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["facial-rejuvenation", "blepharoplasty", "rhinoplasty"]
+    "approachParagraphs": [
+      "Performed through a small incision inside the mouth, the buccal fat pad is carefully removed to achieve the desired degree of cheek slimming, tailored to complement each patient's facial structure."
+    ],
+    "approachSubSections": [
+      {
+        "title": "How Much Fat Is Removed",
+        "content": "Your surgeon removes a carefully judged amount of buccal fat — not too much — to preserve natural facial harmony and avoid an overly hollowed look, especially important as faces naturally lose volume with age."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Mild swelling is expected for 1‒2 weeks; a soft diet is recommended during initial healing. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Buccal Fat Removal depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "The incision is made inside the mouth, so there is no visible external scarring at all.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Who is suitable for buccal fat removal?",
+        "answer": "Patients with fuller cheeks seeking facial definition may benefit after evaluation."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Buccal Fat Removal itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Is buccal fat removal reversible?",
+        "answer": "No — buccal fat pads do not grow back once removed, so the results are considered permanent, and this should be carefully considered before proceeding."
+      },
+      {
+        "question": "Will my face look hollow when I'm older?",
+        "answer": "This is why your surgeon is conservative with how much fat is removed — the goal is a slimmer, more defined look that still ages gracefully."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Buccal Fat Removal Hyderabad | Cheek Slimming Surgery | Sculpt Aesthetics",
+      "metaDescription": "Buccal fat removal in Madhapur, Hyderabad to slim rounded cheeks and create sharper facial definition.",
+      "focusKeywords": "buccal fat removal Hyderabad, cheek slimming surgery, facial contouring",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/buccal-fat-pad-removal"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "breast-lift",
-    slug: "breast-lift",
-    name: "Breast Lift Surgery (Mastopexy)",
-    category: "Breast",
-    featured: false,
-    image: "/assets/services/Breast lift surgery.png",
-    shortDescription: "Surgical elevation and reshaping of sagging breast tissue and repositioning of drooping nipples.",
-    heroHeadline: "Elevate and Reshape Sagging Breasts for a Perky Profile",
-    introduction: "Breast Lift (Mastopexy) elevates drooping breast tissue, tightens stretched skin envelopes, and repositions lower-pointing nipples to a youthful height.",
-    whatIsIt: "Surgical procedure that removes excess skin, reshapes internal breast tissue, and elevates the nipple-areolar complex without necessarily altering total volume.",
-    benefits: [
-      "Elevates sagging, drooping breasts to a perky, firm position",
-      "Repositions lower-facing nipples to central youthful placement",
-      "Reduces enlarged stretched areolas",
-      "Improves upper breast fullness and cleavage firmness",
-      "Can be combined with implants for extra volume"
+    "id": "dimple-creation",
+    "slug": "dimple-creation",
+    "name": "Dimple Creation",
+    "category": "FACE",
+    "filterCategories": [
+      "Face",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Women with sagging breasts or downward pointing nipples due to weight loss, pregnancy, or aging",
-      "Women seeking perkier breast shape and position"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/dimple-creation.png",
+    "isEmpty": false,
+    "shortDescription": "Dimple creation is a minimally invasive procedure that creates natural-looking cheek dimples, adding a distinctive charm to a patient's smile. At Sculpt Aesthetics in Madhapur, Hyderabad, Dimple Creation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "A natural, charming addition to your smile",
+    "introHeadline": "A natural, charming addition to your smile",
+    "introParagraphs": [
+      "Dimple creation is a minimally invasive procedure that creates natural-looking cheek dimples, adding a distinctive charm to a patient's smile. At Sculpt Aesthetics in Madhapur, Hyderabad, Dimple Creation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Excess lower skin is removed via periareolar or vertical incisions. Breast tissue is elevated, anchored, and skin is redraped around the newly positioned nipple.",
-    recoveryInfo: "Supportive surgical bra worn for 4 weeks. Return to desk work in 5–7 days; avoid heavy physical exercise for 4 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Dimple Creation",
+    "understandingParagraphs": [
+      "Dimple creation surgery forms a small, controlled adhesion between the skin and underlying cheek muscle, creating an indentation that appears as a natural dimple when smiling. Many people considering Dimple Creation have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Natural-looking dimple effect",
+      "Minimally invasive with no external scarring",
+      "Quick outpatient procedure"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals who desire dimples for aesthetic reasons",
+      "Patients in good oral and general health",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Is a breast lift the same as breast augmentation?",
-        answer: "No. A lift repositions and tightens sagging tissue, whereas augmentation adds volume using implants. They can be combined if both volume and lift are desired."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Dimple Creation is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Dimple Creation that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Dimple Creation is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["breast-procedures", "breast-reduction", "mommy-makeover"]
+    "approachParagraphs": [
+      "Performed through a tiny incision inside the mouth, the procedure creates a discreet, controlled connection beneath the skin that produces a natural dimple effect during facial expression, with no visible external scarring."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients experience mild swelling for a few days and return to normal activities quickly. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Dimple Creation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "As the procedure is performed entirely from inside the mouth, there is no visible external scarring.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Dimple Creation itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Can I choose how deep the dimple looks?",
+        "answer": "Yes, the degree of depth can be discussed and customized with your surgeon, though the natural dimple effect only shows when smiling."
+      },
+      {
+        "question": "Is the dimple effect permanent?",
+        "answer": "Results are generally long-lasting, though in some cases the effect can soften slightly over time."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Dimple Creation Surgery Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Minimally invasive dimple creation surgery in Madhapur, Hyderabad for natural-looking cheek dimples.",
+      "focusKeywords": "dimple creation surgery Hyderabad, cheek dimple surgery",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/dimple-creation"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "dimple-creation",
-    slug: "dimple-creation",
-    name: "Dimple Creation (Dimpleplasty)",
-    category: "Face",
-    featured: false,
-    image: "/assets/services/Creating dimples.png",
-    shortDescription: "Quick, minor surgical creation of natural, charming facial cheek dimples.",
-    heroHeadline: "Add Charming Natural Cheek Dimples in a Quick 20-Minute Procedure",
-    introduction: "Dimples add charm and warmth to a smile. Dimpleplasty creates permanent, natural-looking cheek dimples through a quick, painless minor procedure.",
-    whatIsIt: "A minor surgical technique that creates a tiny adhesion between the cheek skin and underlying buccinators muscle inside the mouth.",
-    benefits: [
-      "Quick 20-minute procedure under local anesthesia",
-      "Zero external scars (performed entirely inside the mouth)",
-      "Creates natural dimples that appear dynamically when smiling",
-      "Customizable depth and placement on cheeks",
-      "Fast healing timeline"
+    "id": "labiaplasty",
+    "slug": "labiaplasty",
+    "name": "Labiaplasty",
+    "category": "INTIMATE",
+    "filterCategories": [
+      "Intimate",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Anyone desiring natural facial cheek dimples",
-      "Healthy adults with good oral hygiene"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/labiaplasty.png",
+    "isEmpty": false,
+    "shortDescription": "Labiaplasty corrects enlarged or asymmetrical labia to improve physical comfort and confidence, performed with discretion and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Labiaplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Improved comfort and confidence",
+    "introHeadline": "Improved comfort and confidence",
+    "introParagraphs": [
+      "Labiaplasty corrects enlarged or asymmetrical labia to improve physical comfort and confidence, performed with discretion and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Labiaplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Under local anesthesia, a tiny absorbable suture is passed through the inner cheek muscle to bind the dermal underside, creating a natural indentation upon smiling.",
-    recoveryInfo: "Dimple is present continuously for the first 1–2 weeks, then settles naturally so it appears only when smiling or laughing.",
-    faqs: [
+    "understandingHeadline": "Understanding Labiaplasty",
+    "understandingParagraphs": [
+      "Labiaplasty is a surgical procedure that reshapes and, where needed, reduces the size of the labia minora or labia majora, addressing discomfort, irritation, or aesthetic concerns. Many people considering Labiaplasty have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Improved physical comfort",
+      "Reduced irritation during activity",
+      "Enhanced confidence",
+      "Discreet, personalized care"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Women experiencing physical discomfort from labial size or asymmetry",
+      "Those with irritation during exercise or in certain clothing",
+      "Patients seeking improved comfort and confidence",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Will the dimple show all the time or only when I smile?",
-        answer: "After initial healing (2-3 weeks), the dimple will appear dynamically only when you smile, laugh, or animate your facial muscles."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Labiaplasty is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Labiaplasty that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Labiaplasty is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["buccal-fat-removal", "lip-augmentation", "split-ear-lobe"]
+    "approachParagraphs": [
+      "After a private and thorough consultation, the procedure is tailored to address the specific concern — whether asymmetry, excess tissue, or discomfort — with attention to natural appearance and function."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Techniques Used",
+        "content": "Depending on individual anatomy, your surgeon may use a trim technique (removing excess edge tissue) or a wedge technique (preserving the natural edge while reducing central bulk) — both aim for natural appearance and function."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients require a short recovery period of 1‒2 weeks with activity restrictions as advised. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Labiaplasty depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Incisions are placed along natural tissue edges and typically heal to be very discreet.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Labiaplasty itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Will labiaplasty affect sexual sensation?",
+        "answer": "Techniques are chosen specifically to preserve normal sensation and function; this is discussed thoroughly during your confidential consultation."
+      },
+      {
+        "question": "How long is the recovery period?",
+        "answer": "Most patients need about 1-2 weeks before resuming regular activities, with a longer period advised before strenuous exercise or intercourse."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Labiaplasty Hyderabad | Labia Reduction Surgery | Sculpt Aesthetics",
+      "metaDescription": "Labiaplasty in Madhapur, Hyderabad to correct enlarged or asymmetrical labia, improving comfort and confidence.",
+      "focusKeywords": "labiaplasty Hyderabad, labia reduction surgery, labia surgery",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/labiaplasty"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "circumcision",
-    slug: "circumcision",
-    name: "Circumcision Surgery",
-    category: "Minor Surgical",
-    featured: false,
-    image: "/assets/services/Circumcision.png",
-    shortDescription: "Modern painless ZSR stapler or laser circumcision for adult and pediatric medical comfort.",
-    heroHeadline: "Painless Modern Laser & Stapler Circumcision Surgery",
-    introduction: "Sculpt Aesthetics performs advanced laser and ZSR stapler circumcision for phimosis, paraphimosis, recurrent infections, or personal hygienic preference.",
-    whatIsIt: "Precision removal of redundant penile foreskin using bloodless laser or single-use surgical staplers ensuring smooth, rapid healing.",
-    benefits: [
-      "Painless laser or ZSR stapler technology",
-      "Virtually bloodless procedure with zero stitches required",
-      "30-minute day-care procedure under local/regional block",
-      "Prevents recurrent balanitis and phimosis pain",
-      "Rapid recovery with clean aesthetic outline"
+    "id": "clitoral-hood-correction",
+    "slug": "clitoral-hood-correction",
+    "name": "Clitoral Hood Correction",
+    "category": "INTIMATE",
+    "filterCategories": [
+      "Intimate",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Men experiencing tight foreskin (phimosis), tearing, or recurrent infections",
-      "Individuals seeking circumcision for hygiene or personal reasons"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/clitoral-hood-correction.png",
+    "isEmpty": false,
+    "shortDescription": "Clitoral hood correction improves excess tissue around the clitoral hood for patients with aesthetic or comfort-related concerns. At Sculpt Aesthetics in Madhapur, Hyderabad, Clitoral Hood Correction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Personalized, confidential aesthetic care",
+    "introHeadline": "Personalized, confidential aesthetic care",
+    "introParagraphs": [
+      "Clitoral hood correction improves excess tissue around the clitoral hood for patients with aesthetic or comfort-related concerns. At Sculpt Aesthetics in Madhapur, Hyderabad, Clitoral Hood Correction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Using local anesthesia blocks, the foreskin is measured and removed with a ZSR device or CO2 laser, sealing tissue edges simultaneously.",
-    recoveryInfo: "Stapler ring falls off automatically within 10–14 days. Daily work resumes in 2 days; intimacy can be resumed after 4 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Clitoral Hood Correction",
+    "understandingParagraphs": [
+      "This procedure reshapes or reduces excess tissue of the clitoral hood, often performed alongside labiaplasty, to improve comfort and appearance. Many people considering Clitoral Hood Correction have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Improved comfort and physical appearance",
+      "Often combined with labiaplasty for balanced aesthetic results",
+      "Discreet, individualized clinical care"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Women with excess or asymmetrical clitoral hood tissue",
+      "Patients seeking this alongside labiaplasty for balanced results",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Is laser circumcision painless?",
-        answer: "Yes, local anesthetic blocks ensure total painlessness during surgery, and post-operative discomfort is minimal."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Clitoral Hood Correction is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Clitoral Hood Correction that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Clitoral Hood Correction is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["lipoma-removal", "gynecomastia"]
+    "approachParagraphs": [],
+    "approachSubSections": [
+      {
+        "title": "What the Procedure Involves",
+        "content": "The surgeon carefully contours excess tissue folds surrounding the clitoral hood while preserving all sensitive nerve pathways and natural sensations. The primary goal is achieving comfort during physical activities and intimate moments while maintaining natural anatomical balance."
+      }
+    ],
+    "recoveryParagraphs": [],
+    "pricingText": "The cost of Clitoral Hood Correction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Incisions are placed within natural skin folds and are typically very difficult to notice once healed.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Clitoral Hood Correction itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Will this affect sensitivity?",
+        "answer": "The technique is chosen specifically to preserve nerve function and natural sensitivity; this is discussed in detail during your private consultation."
+      },
+      {
+        "question": "Is this often combined with labiaplasty?",
+        "answer": "Yes, many patients choose to combine clitoral hood correction with labiaplasty for a more balanced, complete result in a single procedure."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Clitoral Hood Correction Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Clitoral hood correction in Madhapur, Hyderabad to improve excess tissue for aesthetic and comfort-related concerns.",
+      "focusKeywords": "clitoral hood correction Hyderabad, clitoral hood reduction",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/clitoral-hood-correction"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "lipoma-removal",
-    slug: "lipoma-removal",
-    name: "Lipoma Removal",
-    category: "Minor Surgical",
-    featured: false,
-    image: "/assets/services/lipoma.png",
-    shortDescription: "Seamless surgical extraction of benign fatty lumps under local anesthesia with minimal scarring.",
-    heroHeadline: "Complete Removal of Benign Lipomas with Minimal Scarring",
-    introduction: "Lipomas are benign fatty growths lying under the skin. Plastic surgical removal ensures complete capsule extraction to prevent recurrence while leaving minimal cosmetic marks.",
-    whatIsIt: "In-clinic minor surgical excision or micro-incision extraction of subcutaneous fatty lipoma tumors.",
-    benefits: [
-      "Complete removal of single or multiple lipomas",
-      "Prevents future enlargement or nerve compression discomfort",
-      "Micro-incisions closed with cosmetic plastic surgery sutures",
-      "In-office 20-minute procedure under local anesthesia",
-      "Histopathology verification provided"
+    "id": "hymenoplasty",
+    "slug": "hymenoplasty",
+    "name": "Hymenoplasty",
+    "category": "INTIMATE",
+    "filterCategories": [
+      "Intimate",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Individuals with palpable, growing, or bothersome subcutaneous lipoma lumps",
-      "Patients seeking neat cosmetic scar removal"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/hymenoplasty.png",
+    "isEmpty": false,
+    "shortDescription": "Hymenoplasty is a reconstructive procedure involving restoration of hymenal tissue, performed with complete confidentiality and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Hymenoplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Confidential, respectful reconstructive care",
+    "introHeadline": "Confidential, respectful reconstructive care",
+    "introParagraphs": [
+      "Hymenoplasty is a reconstructive procedure involving restoration of hymenal tissue, performed with complete confidentiality and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Hymenoplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Local anesthesia numbs the lump. A tiny incision directly over the lipoma allows complete capsule shelling out, followed by fine cosmetic skin closure.",
-    recoveryInfo: "Normal activities immediately. Sutures removed in 7 days.",
-    faqs: [
+    "understandingHeadline": "Understanding Hymenoplasty",
+    "understandingParagraphs": [
+      "Hymenoplasty is a minor surgical procedure that reconstructs the hymenal membrane. It is performed in a private, respectful, and confidential setting, tailored to each patient's individual circumstances. Many people considering Hymenoplasty have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Discreet, confidential treatment",
+      "Minor procedure with short recovery",
+      "Respectful, judgment-free care"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Women seeking hymen reconstruction for personal reasons",
+      "Patients seeking a confidential, respectful consultation",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Can lipomas turn cancerous?",
-        answer: "Lipomas are strictly benign fatty tumors. All excised specimens are sent for routine biopsy confirmation."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Hymenoplasty is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Hymenoplasty that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Hymenoplasty is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["split-ear-lobe", "circumcision"]
+    "approachParagraphs": [
+      "The procedure is performed with strict confidentiality and privacy, following a discreet, judgment-free consultation to understand the patient's needs."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Confidentiality & Consultation",
+        "content": "Every aspect of this procedure — from the initial enquiry to the consultation and surgery day — is handled with strict privacy. Your surgeon will explain the technique used and expected healing time clearly and respectfully."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: This is typically a quick outpatient procedure with a brief recovery period, as advised by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Hymenoplasty itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "How long does recovery take?",
+        "answer": "This is generally a quick procedure with a short recovery period; specifics are discussed privately during consultation."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "The area is numbed before the procedure, so discomfort during the procedure itself is minimal."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Hymenoplasty Hyderabad | Hymen Reconstruction Surgery | Sculpt Aesthetics",
+      "metaDescription": "Confidential hymenoplasty (hymen reconstruction) consultations in Madhapur, Hyderabad with experienced, discreet surgical care.",
+      "focusKeywords": "hymenoplasty Hyderabad, hymen reconstruction surgery, hymenorrhaphy",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/hymenoplasty"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "arm-and-thigh-lift",
-    slug: "arm-and-thigh-lift",
-    name: "Arm & Thigh Lift",
-    category: "Body",
-    featured: false,
-    image: "/assets/services/Arm and thigh lift.png",
-    shortDescription: "Surgical tightening of loose 'bat wing' arm skin and sagging inner thigh skin folds.",
-    heroHeadline: "Firm and Reshape Loose Arm and Thigh Skin Contours",
-    introduction: "Significant weight loss or aging can leave loose, sagging skin hanging from the upper arms (brachioplasty) and inner thighs (thighplasty). This surgery restores firm, smooth limbs.",
-    whatIsIt: "Plastic surgery that excises excess skin folds and fat along the inner arm or inner thigh, anchoring dermal layers for slim, toned limbs.",
-    benefits: [
-      "Removes sagging 'bat wing' arm skin flaps",
-      "Tightens chafing inner thigh skin folds",
-      "Smooths limb contours for comfortably fitting clothing",
-      "Combines with liposuction for maximum limb slimming",
-      "Restores athletic arm and leg proportions"
+    "id": "g-spot-amplification",
+    "slug": "g-spot-amplification",
+    "name": "G-Spot Amplification",
+    "category": "INTIMATE",
+    "filterCategories": [
+      "Intimate",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Individuals with loose hanging arm or thigh skin after major weight loss",
-      "Nonsmokers at a stable body weight"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/g-spot-amplification.png",
+    "isEmpty": false,
+    "shortDescription": "G-spot amplification is a procedure intended to enhance sensitivity in selected patients, discussed in detail during a private, confidential consultation. At Sculpt Aesthetics in Madhapur, Hyderabad, G-Spot Amplification is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "A confidential procedure for selected patients",
+    "introHeadline": "A confidential procedure for selected patients",
+    "introParagraphs": [
+      "G-spot amplification is a procedure intended to enhance sensitivity in selected patients, discussed in detail during a private, confidential consultation. At Sculpt Aesthetics in Madhapur, Hyderabad, G-Spot Amplification is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Incisions are placed along the inner arm or inner thigh inseam. Excess skin is excised, subcutaneous layers tightened, and skin meticulously closed.",
-    recoveryInfo: "Compression sleeves worn for 4 weeks. Normal non-strenuous routines resume in 10–14 days.",
-    faqs: [
+    "understandingHeadline": "Understanding G-Spot Amplification",
+    "understandingParagraphs": [
+      "This procedure involves the injection of a filler material into the anterior vaginal wall in the area of the G-spot, intended to temporarily enhance sensitivity for appropriately selected patients. Many people considering G-Spot Amplification have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Confidential, personalized clinical consultation",
+      "Performed by experienced board-certified aesthetic specialists",
+      "Minimally invasive with rapid return to routine activities"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Patients interested in the procedure following a detailed medical consultation",
+      "Individuals seeking a confidential, judgment-free discussion of options",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
       {
-        question: "Where are arm lift scars located?",
-        answer: "Arm lift scars are positioned along the inner or back surface of the upper arm, hidden when arms are by your side."
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether G-Spot Amplification is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for G-Spot Amplification that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "G-Spot Amplification is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
       }
     ],
-    relatedServiceSlugs: ["tummy-tuck", "body-contouring", "liposuction"]
+    "approachParagraphs": [],
+    "approachSubSections": [
+      {
+        "title": "What to Expect",
+        "content": "During your consultation, your surgeon explains the anatomical approach, realistic outcomes, and aftercare in a private, supportive clinical environment. The targeted treatment is performed under local anesthesia with minimal downtime."
+      }
+    ],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during G-Spot Amplification itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "How long do the effects last?",
+        "answer": "Effects are generally temporary and vary between individuals; your surgeon will explain expected duration during consultation."
+      },
+      {
+        "question": "Is this a painful procedure?",
+        "answer": "The area is typically numbed before the injection, so discomfort is minimal for most patients."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "G-Spot Amplification Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "G-spot amplification consultations in Madhapur, Hyderabad — a confidential procedure intended to enhance sensitivity in selected patients.",
+      "focusKeywords": "G-spot amplification Hyderabad, intimate enhancement procedure",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/g-spot-amplification"
+    },
+    "isPlasticSurgery": true
   },
   {
-    id: "breast-reduction",
-    slug: "breast-reduction",
-    name: "Breast Reduction Surgery",
-    category: "Breast",
-    featured: false,
-    image: "/assets/services/Breast reduction.png",
-    shortDescription: "Surgical reduction of oversized breasts to relieve physical neck/back pain and achieve comfortable proportions.",
-    heroHeadline: "Relieve Physical Discomfort and Achieve Balanced Breast Size",
-    introduction: "Overly large breasts (macromastia) cause chronic neck, back, and shoulder pain, skin rashes, and posture issues. Reduction surgery creates light, comfortable, proportionate breasts.",
-    whatIsIt: "Surgical removal of excess glandular breast tissue, fat, and skin to resize and lift the breasts to an aesthetically balanced proportion.",
-    benefits: [
-      "Relieves chronic neck, shoulder groove, and back pain",
-      "Eliminates painful skin rashes underneath breast folds",
-      "Creates lighter, firmer, and proportionate breasts",
-      "Facilitates sports, exercise, and comfortable clothing fit",
-      "Lifts sagging breasts simultaneously"
+    "id": "split-ear-lobe-repair",
+    "slug": "split-ear-lobe-repair",
+    "name": "Split Ear Lobe Repair",
+    "category": "FACE",
+    "filterCategories": [
+      "Face",
+      "Plastic Surgery"
     ],
-    candidateCriteria: [
-      "Women suffering from physical discomfort due to heavy, oversized breasts",
-      "Women seeking a proportionate chest contour in good general health"
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/split-ear-lobe-repair.png",
+    "isEmpty": false,
+    "shortDescription": "Split earlobe repair restores torn or stretched earlobes, whether from injury, heavy earrings, or gauge stretching, with a quick, minor procedure. At Sculpt Aesthetics in Madhapur, Hyderabad, Split Earlobe Repair is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Restore torn or stretched earlobes",
+    "introHeadline": "Restore torn or stretched earlobes",
+    "introParagraphs": [
+      "Split earlobe repair restores torn or stretched earlobes, whether from injury, heavy earrings, or gauge stretching, with a quick, minor procedure. At Sculpt Aesthetics in Madhapur, Hyderabad, Split Earlobe Repair is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    procedureOverview: "Excess breast tissue and skin are excised via wise-pattern or vertical incisions. The nipple-areola complex is elevated to a central position.",
-    recoveryInfo: "Surgical bra worn for 4 weeks. Return to desk work in 10–14 days; avoid strenuous activities for 6 weeks.",
-    faqs: [
+    "understandingHeadline": "Understanding Split Earlobe Repair",
+    "understandingParagraphs": [
+      "This procedure repairs a torn, split, or stretched earlobe by re-shaping and closing the affected tissue, restoring a natural earlobe contour that can, if desired, be re-pierced later. Many people considering Split Earlobe Repair have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Restored natural earlobe shape ✓ Minimal, well-hidden scarring ✓ Option to re-pierce after healing"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with a torn or split earlobe from injury or heavy earrings",
+      "Those with stretched piercings (gauges) they wish to restore",
+      "history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health",
+    "procedureSteps": [
       {
-        question: "Will breast reduction relieve my back pain?",
-        answer: "Yes! Over 95% of patients report dramatic immediate relief from chronic neck, shoulder, and back pain following reduction."
+        "stepNumber": 1,
+        "title": "Consultation & Diagnosis",
+        "description": "Your surgeon examines the area and confirms whether Split Earlobe Repair is the right treatment for your specific situation."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Preparing for the Procedure",
+        "description": "You'll receive simple pre-procedure instructions, and the treatment area is prepared under sterile conditions."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Split Earlobe Repair is usually completed quickly, often under local anesthesia, in a single outpatient visit."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare",
+        "description": "You'll get straightforward aftercare guidance to support quick, comfortable healing."
       }
     ],
-    relatedServiceSlugs: ["breast-procedures", "breast-lift", "mommy-makeover"]
+    "approachParagraphs": [
+      "Under local anesthesia, the torn edges of the earlobe are trimmed and carefully re-joined to restore a smooth, natural contour with minimal, well-concealed scarring."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: This is a quick outpatient procedure with healing typically complete within a few weeks. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Split Earlobe Repair depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "The repair is designed to blend with the natural earlobe contour, and any resulting scar is typically very faint and easily concealed by hair or earrings.",
+    "safetyText": "This is a minor procedure with a low overall risk profile when performed by an experienced surgeon under sterile conditions. Your surgeon will still walk you through the small risks involved, such as infection or scarring, so you know exactly what to expect.",
+    "faqs": [
+      {
+        "question": "Will I need general anesthesia?",
+        "answer": "Most minor procedures like this are done comfortably under local anesthesia, so you stay awake but feel no pain in the area."
+      },
+      {
+        "question": "Will there be a visible scar?",
+        "answer": "Incisions are small and carefully placed to minimize visible scarring, and they typically fade well over time."
+      },
+      {
+        "question": "How soon can I get my ears re-pierced after repair?",
+        "answer": "Most surgeons recommend waiting about 6- 8 weeks for full healing before considering re-piercing."
+      },
+      {
+        "question": "Can both earlobes be repaired in one visit?",
+        "answer": "Yes, both ears can usually be treated in the same short procedure."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Split Earlobe Repair Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Split earlobe repair surgery in Madhapur, Hyderabad restores torn or stretched earlobes with minimal scarring.",
+      "focusKeywords": "split earlobe repair Hyderabad, torn earlobe surgery, earlobe reconstruction",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/split-ear-lobe-repair"
+    },
+    "isPlasticSurgery": true
+  },
+  {
+    "id": "circumcision",
+    "slug": "circumcision",
+    "name": "Circumcision",
+    "category": "INTIMATE",
+    "filterCategories": [
+      "Intimate",
+      "Plastic Surgery"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/circumcision.png",
+    "isEmpty": false,
+    "shortDescription": "Circumcision is the surgical removal of foreskin, performed for medical or personal reasons with precision and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Circumcision is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Safe, precise surgical care",
+    "introHeadline": "Safe, precise surgical care",
+    "introParagraphs": [
+      "Circumcision is the surgical removal of foreskin, performed for medical or personal reasons with precision and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Circumcision is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
+    ],
+    "understandingHeadline": "Understanding Circumcision",
+    "understandingParagraphs": [
+      "Circumcision involves surgical removal of the foreskin covering the tip of the penis, performed for a variety of medical conditions or personal/cultural preferences. Many people considering Circumcision have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Resolution of related medical symptoms, where applicable",
+      "Straightforward outpatient procedure",
+      "Quick recovery with proper aftercare"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with medical indications such as recurrent infection or phimosis",
+      "Those seeking the procedure for personal reasons",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Diagnosis",
+        "description": "Your surgeon examines the area and confirms whether Circumcision is the right treatment for your specific situation."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Preparing for the Procedure",
+        "description": "You'll receive simple pre-procedure instructions, and the treatment area is prepared under sterile conditions."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Circumcision is usually completed quickly, often under local anesthesia, in a single outpatient visit."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare",
+        "description": "You'll get straightforward aftercare guidance to support quick, comfortable healing."
+      }
+    ],
+    "approachParagraphs": [
+      "Performed under appropriate anesthesia, the procedure follows standard surgical protocols to ensure safety, precision, and optimal healing."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients heal within 2‒3 weeks, with specific aftercare instructions provided by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Circumcision depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "The incision line typically heals into a fine, well-concealed scar around the shaft, which becomes much less noticeable over time.",
+    "safetyText": "This is a minor procedure with a low overall risk profile when performed by an experienced surgeon under sterile conditions. Your surgeon will still walk you through the small risks involved, such as infection or scarring, so you know exactly what to expect.",
+    "faqs": [
+      {
+        "question": "Will I need general anesthesia?",
+        "answer": "Most minor procedures like this are done comfortably under local anesthesia, so you stay awake but feel no pain in the area."
+      },
+      {
+        "question": "Will there be a visible scar?",
+        "answer": "Incisions are small and carefully placed to minimize visible scarring, and they typically fade well over time."
+      },
+      {
+        "question": "Is circumcision performed under general or local anesthesia?",
+        "answer": "This is usually performed under local anesthesia with sedation, or general anesthesia if preferred, depending on patient comfort and surgeon recommendation."
+      },
+      {
+        "question": "How soon can I resume sexual activity after circumcision?",
+        "answer": "Most surgeons recommend waiting around 4-6 weeks for full healing before resuming sexual activity; your surgeon will confirm based on your recovery."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "liposuction",
+      "vaser-liposuction",
+      "tummy-tuck-abdominoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Circumcision Surgery Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Circumcision surgery in Madhapur, Hyderabad performed for medical or personal reasons with precision and care.",
+      "focusKeywords": "circumcision surgery Hyderabad, adult circumcision",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/circumcision"
+    },
+    "isPlasticSurgery": true
+  },
+  {
+    "id": "botox",
+    "slug": "botox",
+    "name": "Botox",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/botox.png",
+    "isEmpty": false,
+    "shortDescription": "Botox reduces dynamic wrinkles and fine lines, offering a quick, non- surgical way to achieve a smoother, more refreshed facial appearance. At Sculpt Aesthetics in Madhapur, Hyderabad, Botox is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Smoother skin, fewer fine lines",
+    "introHeadline": "Smoother skin, fewer fine lines",
+    "introParagraphs": [
+      "Botox reduces dynamic wrinkles and fine lines, offering a quick, non- surgical way to achieve a smoother, more refreshed facial appearance. At Sculpt Aesthetics in Madhapur, Hyderabad, Botox is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
+    ],
+    "understandingHeadline": "Understanding Botox",
+    "understandingParagraphs": [
+      "Botox is a purified injectable that temporarily relaxes targeted facial muscles, softening the fine lines and wrinkles that form with repeated facial expressions, such as around the forehead and eyes. Many people considering Botox have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Visibly smoother skin ✓ Reduced fine lines and wrinkles ✓ Quick",
+      "treatment with no downtime"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound",
+    "candidateItems": [
+      "familiar:",
+      "Individuals with visible dynamic wrinkles (forehead lines, crow's",
+      "feet)",
+      "Patients seeking a quick, non-surgical preventive or corrective",
+      "treatment"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Skin/Health Assessment",
+        "description": "Your provider reviews your goals and checks whether Botox suits your skin, aesthetic goals, or health profile."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Customized Plan",
+        "description": "A treatment plan and, where relevant, a session schedule is created to match your specific needs."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "Botox is performed in a comfortable clinical setting, usually taking well under an hour."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare & Follow-Up",
+        "description": "You'll receive simple aftercare tips, and your provider will track your progress over follow-up visits or sessions."
+      }
+    ],
+    "approachParagraphs": [
+      "Following an assessment of facial muscle movement, targeted micro- injections are placed to relax specific muscles, softening lines while preserving natural facial expression."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: No significant downtime; results typically appear within 3–7 days and last several months. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "How many sessions will I need?",
+        "answer": "This varies by individual and goal — your provider will recommend a session plan during your consultation."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Results vary depending on the treatment and individual factors like skin type and lifestyle; your provider can give you a realistic timeline."
+      },
+      {
+        "question": "Does Botox look unnatural or 'frozen'?",
+        "answer": "When dosed correctly by an experienced injector, Botox softens lines while preserving natural facial movement and expression."
+      },
+      {
+        "question": "Can Botox be combined with fillers?",
+        "answer": "Yes, Botox and dermal fillers are often used together to address both wrinkles and volume loss for a more complete result."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "dermal-fillers",
+      "facial-rejuvenation",
+      "thread-lift"
+    ],
+    "seo": {
+      "metaTitle": "Botox Treatment Hyderabad | Anti-Wrinkle Injections |",
+      "metaDescription": "Botox treatment in Madhapur, Hyderabad to reduce dynamic wrinkles and fine lines for a smoother, refreshed appearance. •",
+      "focusKeywords": "botox Hyderabad, anti wrinkle injections, botox treatment for wrinkles •",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/botox"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "dermal-fillers",
+    "slug": "dermal-fillers",
+    "name": "Dermal Fillers",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/dermal-fillers.png",
+    "isEmpty": false,
+    "shortDescription": "Dermal fillers restore facial volume and enhance contours, offering a non-surgical way to address areas of volume loss or to refine facial features. At Sculpt Aesthetics in Madhapur, Hyderabad, Dermal Fillers is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Restore volume, enhance facial contours",
+    "introHeadline": "Restore volume, enhance facial contours",
+    "introParagraphs": [
+      "Dermal fillers restore facial volume and enhance contours, offering a non-surgical way to address areas of volume loss or to refine facial features. At Sculpt Aesthetics in Madhapur, Hyderabad, Dermal Fillers is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
+    ],
+    "understandingHeadline": "Understanding Dermal Fillers",
+    "understandingParagraphs": [
+      "Dermal fillers are injectable gels, most commonly hyaluronic acid-based, used to add volume, smooth lines, and enhance contours in areas such as the cheeks, lips, and jawline. Many people considering Dermal Fillers have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Restored facial volume",
+      "Enhanced natural contours",
+      "Quick, non-surgical treatment with immediate results"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with volume loss in the cheeks or under-eye area",
+      "Patients seeking lip or jawline enhancement",
+      "Those wanting a non-surgical refresh of facial contours",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Skin/Health Assessment",
+        "description": "Your provider reviews your goals and checks whether Dermal Fillers suits your skin, aesthetic goals, or health profile."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Customized Plan",
+        "description": "A treatment plan and, where relevant, a session schedule is created to match your specific needs."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "Dermal Fillers is performed in a comfortable clinical setting, usually taking well under an hour."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare & Follow-Up",
+        "description": "You'll receive simple aftercare tips, and your provider will track your progress over follow-up visits or sessions."
+      }
+    ],
+    "approachParagraphs": [
+      "After assessing facial structure, your surgeon selects the appropriate filler type and technique to enhance volume and contour in a natural, balanced way."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Beyond the Face: Chin, Body & Nose Fillers",
+        "content": "Dermal fillers aren't just for cheeks and lips. We also use fillers to add chin projection and improve facial balance, non-surgically enhance the nose bridge or tip (a 'liquid rhinoplasty'), and address volume loss or contour concerns on the body, such as hands or other areas — all with the same natural-result philosophy."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Minimal downtime; mild swelling or bruising may occur and typically resolves within a few days. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "How many sessions will I need?",
+        "answer": "This varies by individual and goal — your provider will recommend a session plan during your consultation."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Results vary depending on the treatment and individual factors like skin type and lifestyle; your provider can give you a realistic timeline."
+      },
+      {
+        "question": "How soon will I see results from dermal fillers?",
+        "answer": "Results are typically visible immediately after treatment, with any minor swelling settling within a few days to reveal the final look."
+      },
+      {
+        "question": "Are fillers reversible?",
+        "answer": "Most hyaluronic acid-based fillers can be dissolved if needed, offering an added layer of safety and flexibility."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "botox",
+      "facial-rejuvenation",
+      "thread-lift"
+    ],
+    "seo": {
+      "metaTitle": "Dermal Fillers Hyderabad | Facial Volume Enhancement | Sculpt Aesthetics",
+      "metaDescription": "Dermal filler treatments in Madhapur, Hyderabad to restore facial volume and enhance contours with natural-looking results.",
+      "focusKeywords": "dermal fillers Hyderabad, facial fillers treatment, lip and cheek fillers",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/dermal-fillers"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "facial-rejuvenation",
+    "slug": "facial-rejuvenation",
+    "name": "Facial Rejuvenation",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin",
+      "Face"
+    ],
+    "featured": true,
+    "image": "/assets/UPDATED SERVICES/facial-rejuvenation.png",
+    "isEmpty": true,
+    "shortDescription": "Customized clinical facial rejuvenation treatments restoring radiant youthfulness and natural skin vitality.",
+    "heroHeadline": "Restore Radiant Youthfulness & Natural Skin Vitality",
+    "introHeadline": "Restore Radiant Youthfulness & Natural Skin Vitality",
+    "introParagraphs": [
+      "Customized clinical facial rejuvenation treatments restoring radiant youthfulness and natural skin vitality."
+    ],
+    "understandingHeadline": "Understanding Facial Rejuvenation",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "rhinoplasty",
+      "facelift",
+      "blepharoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Facial Rejuvenation in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Facial Rejuvenation at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "facial rejuvenation, facial rejuvenation hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/facial-rejuvenation"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "thread-lift",
+    "slug": "thread-lift",
+    "name": "Thread Lift",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin",
+      "Face"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/thread-lift.png",
+    "isEmpty": false,
+    "shortDescription": "Thread lift is a minimally invasive lifting procedure for facial rejuvenation, using dissolvable threads to lift and tighten sagging skin. At Sculpt Aesthetics in Madhapur, Hyderabad, Thread Lift is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Minimally invasive facial lifting",
+    "introHeadline": "Minimally invasive facial lifting",
+    "introParagraphs": [
+      "Thread lift is a minimally invasive lifting procedure for facial rejuvenation, using dissolvable threads to lift and tighten sagging skin. At Sculpt Aesthetics in Madhapur, Hyderabad, Thread Lift is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
+    ],
+    "understandingHeadline": "Understanding Thread Lift",
+    "understandingParagraphs": [
+      "A thread lift uses fine, dissolvable medical threads inserted beneath the skin to gently lift and support sagging tissue, while also stimulating natural collagen production over time. Many people considering Thread Lift have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Lifting effect without surgery ✓ Minimal downtime ✓ Stimulates natural collagen production"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with mild to moderate facial sagging",
+      "Patients seeking a lifting effect without surgical downtime",
+      "history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Skin/Health Assessment",
+        "description": "Your provider reviews your goals and checks whether Thread Lift suits your skin, aesthetic goals, or health profile."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Customized Plan",
+        "description": "A treatment plan and, where relevant, a session schedule is created to match your specific needs."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "Thread Lift is performed in a comfortable clinical setting, usually taking well under an hour."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare & Follow-Up",
+        "description": "You'll receive simple aftercare tips, and your provider will track your progress over follow-up visits or sessions."
+      }
+    ],
+    "approachParagraphs": [
+      "Threads are inserted through tiny entry points and positioned to lift targeted areas such as the cheeks, jawline, or brows, providing an immediate lift with continued improvement as collagen builds."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Mild swelling or tenderness may last a few days; most patients resume normal activities immediately. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Thread Lift depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Thread lifts use tiny entry points rather than incisions, so there is no meaningful scarring — any mark from the entry point fades within days.",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "How many sessions will I need?",
+        "answer": "This varies by individual and goal — your provider will recommend a session plan during your consultation."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Results vary depending on the treatment and individual factors like skin type and lifestyle; your provider can give you a realistic timeline."
+      },
+      {
+        "question": "How long do thread lift results last?",
+        "answer": "Results typically last 12-18 months, depending on thread type and individual skin quality, and the procedure can be repeated to maintain the effect."
+      },
+      {
+        "question": "Is a thread lift a replacement for a surgical facelift?",
+        "answer": "A thread lift offers a more subtle, non- surgical lift and is best suited for mild-to-moderate sagging; a surgical facelift addresses more significant laxity."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "rhinoplasty",
+      "facelift",
+      "blepharoplasty"
+    ],
+    "seo": {
+      "metaTitle": "Thread Lift Hyderabad | Non-Surgical Face Lift | Sculpt Aesthetics",
+      "metaDescription": "Thread lift treatment in Madhapur, Hyderabad — a minimally invasive lifting procedure for facial rejuvenation without surgery.",
+      "focusKeywords": "thread lift Hyderabad, non surgical face lift, PDO thread lift",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/thread-lift"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "e-fat-graft",
+    "slug": "e-fat-graft",
+    "name": "E-Fat Graft",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/E-Fat Graft.png",
+    "isEmpty": true,
+    "shortDescription": "Micro-autologous fat transfer grafting for natural volume restoration and skin rejuvenation.",
+    "heroHeadline": "Micro-Autologous Fat Grafting & Volumetric Restoration",
+    "introHeadline": "Micro-Autologous Fat Grafting & Volumetric Restoration",
+    "introParagraphs": [
+      "Micro-autologous fat transfer grafting for natural volume restoration and skin rejuvenation."
+    ],
+    "understandingHeadline": "Understanding E-Fat Graft",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "E-Fat Graft in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional E-Fat Graft at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "e-fat graft, e-fat graft hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/e-fat-graft"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "chemical-peels",
+    "slug": "chemical-peels",
+    "name": "Chemical Peels",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/Chemical Peels.png",
+    "isEmpty": true,
+    "shortDescription": "Dermatological acid peels tailored to gently exfoliate, renew texture, and brighten skin tone.",
+    "heroHeadline": "Advanced Dermatological Chemical Peels",
+    "introHeadline": "Advanced Dermatological Chemical Peels",
+    "introParagraphs": [
+      "Dermatological acid peels tailored to gently exfoliate, renew texture, and brighten skin tone."
+    ],
+    "understandingHeadline": "Understanding Chemical Peels",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "Chemical Peels in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Chemical Peels at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "chemical peels, chemical peels hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/chemical-peels"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "laser-treatments",
+    "slug": "laser-treatments",
+    "name": "Laser Treatments",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/laser-treatments.png",
+    "isEmpty": true,
+    "shortDescription": "State-of-the-art medical laser technology for skin resurfacing, pigmentation, and collagen remodeling.",
+    "heroHeadline": "Precision Medical Laser Skin Therapy",
+    "introHeadline": "Precision Medical Laser Skin Therapy",
+    "introParagraphs": [
+      "State-of-the-art medical laser technology for skin resurfacing, pigmentation, and collagen remodeling."
+    ],
+    "understandingHeadline": "Understanding Laser Treatments",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "Laser Treatments in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Laser Treatments at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "laser treatments, laser treatments hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/laser-treatments"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "acne-scar-treatment",
+    "slug": "acne-scar-treatment",
+    "name": "Acne Scar Treatment",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/Acne Scar Treatment.png",
+    "isEmpty": true,
+    "shortDescription": "Multi-modality dermatological protocols to smooth uneven texture and reduce deep acne scarring.",
+    "heroHeadline": "Advanced Clinical Acne Scar Reduction",
+    "introHeadline": "Advanced Clinical Acne Scar Reduction",
+    "introParagraphs": [
+      "Multi-modality dermatological protocols to smooth uneven texture and reduce deep acne scarring."
+    ],
+    "understandingHeadline": "Understanding Acne Scar Treatment",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "Acne Scar Treatment in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Acne Scar Treatment at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "acne scar treatment, acne scar treatment hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/acne-scar-treatment"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "scar-removal",
+    "slug": "scar-removal",
+    "name": "Scar Removal",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/Scar Removal.png",
+    "isEmpty": false,
+    "shortDescription": "scars Whether from surgery, injury, or acne, scars can be improved using a range of treatments — from non-surgical options like micro-needling and lasers to surgical scar revision for more significant scars. At Sculpt Aesthetics in Madhapur, Hyderabad, Scar Treatment is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Improve the appearance of surgical, acne, or injury",
+    "introHeadline": "Improve the appearance of surgical, acne, or injury",
+    "introParagraphs": [
+      "scars Whether from surgery, injury, or acne, scars can be improved using a range of treatments — from non-surgical options like micro-needling and lasers to surgical scar revision for more significant scars. At Sculpt Aesthetics in Madhapur, Hyderabad, Scar Treatment is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
+    ],
+    "understandingHeadline": "Understanding Scar Treatment",
+    "understandingParagraphs": [
+      "Scar treatment covers a range of approaches designed to make scars flatter, softer, and less noticeable, chosen based on the scar's type (raised, sunken, discolored), age, and location. Many people considering Scar Treatment have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Improved scar texture and appearance",
+      "Reduced redness or discoloration",
+      "Options ranging from non-surgical to surgical",
+      "Personalized to your specific scar type"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with visible surgical, injury, or acne scars",
+      "Those with raised (hypertrophic/keloid) or sunken (atrophic) scars",
+      "Patients seeking to improve scar color, texture, or thickness",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Skin/Health Assessment",
+        "description": "Your provider reviews your goals and checks whether Scar Treatment suits your skin, aesthetic goals, or health profile."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Customized Plan",
+        "description": "A treatment plan and, where relevant, a session schedule is created to match your specific needs."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "Scar Treatment is performed in a comfortable clinical setting, usually taking well under an hour."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare & Follow-Up",
+        "description": "You'll receive simple aftercare tips, and your provider will track your progress over follow-up visits or sessions."
+      }
+    ],
+    "approachParagraphs": [
+      "After assessing your scar type, your provider recommends a suited approach — which may include micro-needling, PRP, laser treatment, silicone-based therapies, or in some cases surgical scar revision — sometimes combining methods over a series of sessions for the best improvement."
+    ],
+    "approachSubSections": [],
+    "recoveryParagraphs": [
+      "Recovery looks a little different for everyone, but here's a general idea of what to expect: Recovery depends on the method used — non-surgical treatments typically involve minimal downtime, while surgical scar revision follows standard surgical healing timelines. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "Can scars be completely removed?",
+        "answer": "Scars can be significantly improved in appearance, but complete removal is generally not possible; your provider will set realistic expectations based on your specific scar."
+      },
+      {
+        "question": "How soon after an injury or surgery should scar treatment begin?",
+        "answer": "This varies by scar type; your provider will advise on the right timing, as some treatments work best once a scar has matured."
+      },
+      {
+        "question": "How many sessions will I need?",
+        "answer": "This varies by individual and goal — your provider will recommend a session plan during your consultation."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Results vary depending on the treatment and individual factors like skin type and lifestyle; your provider can give you a realistic timeline."
+      },
+      {
+        "question": "Are keloid scars treated differently?",
+        "answer": "Yes, keloid scars often need a specific approach, sometimes combining steroid injections, laser, or surgical revision, given their tendency to recur."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "Scar Treatment Hyderabad | Scar Revision & Reduction | Sculpt Aesthetics",
+      "metaDescription": "Scar treatment and revision in Madhapur, Hyderabad to improve the appearance of surgical, acne, burn, or injury scars.",
+      "focusKeywords": "scar treatment Hyderabad, scar revision surgery, acne scar treatment",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/scar-removal"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "wart-removal",
+    "slug": "wart-removal",
+    "name": "Wart Removal / Genital Warts Removal",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/Wart Removal.png",
+    "isEmpty": true,
+    "shortDescription": "Safe, confidential clinical removal of skin and genital warts using radiofrequency or cryotherapy.",
+    "heroHeadline": "Safe, Discreet Clinical Wart Removal",
+    "introHeadline": "Safe, Discreet Clinical Wart Removal",
+    "introParagraphs": [
+      "Safe, confidential clinical removal of skin and genital warts using radiofrequency or cryotherapy."
+    ],
+    "understandingHeadline": "Understanding Wart Removal / Genital Warts Removal",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "Wart Removal / Genital Warts Removal in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Wart Removal / Genital Warts Removal at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "wart removal / genital warts removal, wart removal / genital warts removal hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/wart-removal"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "mole-removal",
+    "slug": "mole-removal",
+    "name": "Mole Removal",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/Mole Removal.png",
+    "isEmpty": true,
+    "shortDescription": "Precision dermatological mole excision and radiofrequency ablation with minimal scarring.",
+    "heroHeadline": "Precision Dermatological Mole Removal",
+    "introHeadline": "Precision Dermatological Mole Removal",
+    "introParagraphs": [
+      "Precision dermatological mole excision and radiofrequency ablation with minimal scarring."
+    ],
+    "understandingHeadline": "Understanding Mole Removal",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "Mole Removal in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Mole Removal at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "mole removal, mole removal hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/mole-removal"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "corn-removal",
+    "slug": "corn-removal",
+    "name": "Corn Removal",
+    "category": "SKIN",
+    "filterCategories": [
+      "Skin"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/corn-removal.png",
+    "isEmpty": true,
+    "shortDescription": "Specialized clinical removal of painful foot corns and hyperkeratotic lesions for immediate relief.",
+    "heroHeadline": "Gentle Clinical Foot Corn & Callus Treatment",
+    "introHeadline": "Gentle Clinical Foot Corn & Callus Treatment",
+    "introParagraphs": [
+      "Specialized clinical removal of painful foot corns and hyperkeratotic lesions for immediate relief."
+    ],
+    "understandingHeadline": "Understanding Corn Removal",
+    "understandingParagraphs": [],
+    "benefits": [],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "",
+    "faqs": [],
+    "relatedServiceSlugs": [
+      "botox",
+      "dermal-fillers",
+      "facial-rejuvenation"
+    ],
+    "seo": {
+      "metaTitle": "Corn Removal in Hyderabad | The Sculpt Aesthetics",
+      "metaDescription": "Discover professional Corn Removal at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
+      "focusKeywords": "corn removal, corn removal hyderabad, the sculpt aesthetics",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/corn-removal"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "weight-loss-programs",
+    "slug": "weight-loss-programs",
+    "name": "Mounjaro / Weight Loss Programs",
+    "category": "WELLNESS",
+    "filterCategories": [
+      "Wellness"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/Mounjaro.png",
+    "isEmpty": false,
+    "shortDescription": "Our medical weight loss programs offer supervised, structured weight management solutions tailored to each patient's health profile and goals. At Sculpt Aesthetics in Madhapur, Hyderabad, Medical Weight Loss Programs is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Supervised, structured weight management",
+    "introHeadline": "Supervised, structured weight management",
+    "introParagraphs": [
+      "Our medical weight loss programs offer supervised, structured weight management solutions tailored to each patient's health profile and goals. At Sculpt Aesthetics in Madhapur, Hyderabad, Medical Weight Loss Programs is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
+    ],
+    "understandingHeadline": "Understanding Medical Weight Loss Programs",
+    "understandingParagraphs": [
+      "Medical weight loss programs combine clinical evaluation, structured planning, and ongoing supervision to support sustainable, healthy weight management, distinct from unsupervised or fad approaches. Many people considering Medical Weight Loss Programs have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Medically supervised and personalized to individual physiology",
+      "Structured, sustainable clinical protocol",
+      "Ongoing metabolic monitoring and expert specialist support"
+    ],
+    "candidateIntro": "",
+    "candidateItems": [],
+    "candidateSummary": "",
+    "procedureSteps": [],
+    "approachParagraphs": [],
+    "approachSubSections": [
+      {
+        "title": "Understanding BMI in Weight Management",
+        "content": "Body Mass Index (BMI) and metabolic evaluation help guide the most effective management approach — lifestyle-based protocols, medical weight management options, or body contouring — tailored to your health profile and goals."
+      }
+    ],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "How many sessions will I need?",
+        "answer": "This varies by individual and goal — your provider will recommend a session plan during your consultation."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Results vary depending on the treatment and individual factors like skin type and lifestyle; your provider can give you a realistic timeline."
+      },
+      {
+        "question": "Is medication a mandatory part of the program?",
+        "answer": "No — medication is only recommended where medically appropriate after evaluation; many    patients follow structured lifestyle-based plans instead."
+      },
+      {
+        "question": "How is progress tracked during the program?",
+        "answer": "Regular follow-ups track weight, measurements, and overall health markers so your plan can be adjusted as needed."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "iv-drip-infusions"
+    ],
+    "seo": {
+      "metaTitle": "Medical Weight Loss Programs Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Supervised medical weight loss programs in Madhapur, Hyderabad, tailored to individual health profiles and goals.",
+      "focusKeywords": "medical weight loss Hyderabad, weight management program, supervised weight loss",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/weight-loss-programs"
+    },
+    "isPlasticSurgery": false
+  },
+  {
+    "id": "iv-drip-infusions",
+    "slug": "iv-drip-infusions",
+    "name": "IV Drip Infusions",
+    "category": "WELLNESS",
+    "filterCategories": [
+      "Wellness"
+    ],
+    "featured": false,
+    "image": "/assets/UPDATED SERVICES/iv-drip-infusions.png",
+    "isEmpty": false,
+    "shortDescription": "IV drips deliver customized wellness infusions based on individual requirements, supporting hydration, energy, and overall wellness. At Sculpt Aesthetics in Madhapur, Hyderabad, IV Drips is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Customized wellness infusions",
+    "introHeadline": "Customized wellness infusions",
+    "introParagraphs": [
+      "IV drips deliver customized wellness infusions based on individual requirements, supporting hydration, energy, and overall wellness. At Sculpt Aesthetics in Madhapur, Hyderabad, IV Drips is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
+    ],
+    "understandingHeadline": "Understanding IV Drips",
+    "understandingParagraphs": [
+      "IV drip therapy delivers a tailored blend of vitamins, minerals, and fluids directly into the bloodstream, designed to support hydration, energy levels, immunity, or skin wellness based on individual needs. Many people considering IV Drips have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Customized micronutrient formulations for individual wellness goals",
+      "Quick, supervised clinical infusion sessions",
+      "Direct cellular hydration, vitality, and systemic support"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals seeking a wellness or energy boost",
+      "Patients wanting supportive hydration and nutrient therapy",
+      "your health history and goals in detail."
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Skin/Health Assessment",
+        "description": "Your provider reviews your goals and checks whether IV Drips suits your skin, aesthetic goals, or health profile."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Customized Plan",
+        "description": "A treatment plan and, where relevant, a session schedule is created to match your specific needs."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "IV Drips is performed in a comfortable clinical setting, usually taking well under an hour."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare & Follow-Up",
+        "description": "You'll receive simple aftercare tips, and your provider will track your progress over follow-up visits or sessions."
+      }
+    ],
+    "approachParagraphs": [],
+    "approachSubSections": [
+      {
+        "title": "Common IV Drip Formulations",
+        "content": "Formulations may focus on cellular hydration, immune defense, antioxidant support, skin radiance, or athletic recovery — recommended by your physician following a health assessment."
+      }
+    ],
+    "recoveryParagraphs": [],
+    "pricingText": "",
+    "scarsText": "",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "How many sessions will I need?",
+        "answer": "This varies by individual and goal — your provider will recommend a session plan during your consultation."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Results vary depending on the treatment and individual factors like skin type and lifestyle; your provider can give you a realistic timeline."
+      },
+      {
+        "question": "How long does an IV drip session take?",
+        "answer": "Most sessions take around 30-45 minutes in a comfortable, supervised setting."
+      },
+      {
+        "question": "Are IV drips safe for everyone?",
+        "answer": "A brief health screening is done before every session to confirm suitability, as certain health conditions may require caution."
+      }
+    ],
+    "relatedServiceSlugs": [
+      "weight-loss-programs"
+    ],
+    "seo": {
+      "metaTitle": "IV Drip Therapy Hyderabad | Wellness Infusions | Sculpt Aesthetics",
+      "metaDescription": "Customized IV drip wellness infusions in Madhapur, Hyderabad tailored to individual health and beauty goals.",
+      "focusKeywords": "IV drip therapy Hyderabad, wellness infusion clinic, vitamin drip treatment",
+      "canonicalUrl": "https://thesculptaesthetics.com/services/iv-drip-infusions"
+    },
+    "isPlasticSurgery": false
   }
 ];
 
 export function getFeaturedServices(): ServiceItem[] {
-  return servicesData.filter((service) => service.featured);
+  return homepageFeaturedSlugs
+    .map((slug) => servicesData.find((s) => s.slug === slug))
+    .filter((s): s is ServiceItem => Boolean(s));
 }
 
 export function getServiceBySlug(slug: string): ServiceItem | undefined {
   return servicesData.find((service) => service.slug === slug);
 }
 
-export function getRelatedServices(slugs: string[]): ServiceItem[] {
+export function getRelatedServices(slugs?: string[]): ServiceItem[] {
+  if (!slugs || slugs.length === 0) return [];
   return servicesData.filter((service) => slugs.includes(service.slug));
+}
+
+export function getAllServiceNames(): string[] {
+  return servicesData.map((service) => service.name);
 }

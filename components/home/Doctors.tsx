@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Award, GraduationCap, Calendar, ArrowRight, UserCheck } from "lucide-react";
+import { Award, GraduationCap, ArrowRight, UserCheck } from "lucide-react";
 
 const doctors = [
   {
@@ -12,7 +12,8 @@ const doctors = [
     role: "Senior Plastic Surgeon",
     qualification: "MBBS, MS, MCh (Plastic Surgery)",
     experience: "15+ Years Experience",
-    image: "/assets/doctors/doctor-1.jpg",
+    image: "/assets/doctors/dr1.JPG",
+    imageClassName: "object-cover object-top group-hover:scale-105",
     specialties: ["Rhinoplasty", "Body Contouring", "Breast Surgery"],
   },
   {
@@ -21,7 +22,8 @@ const doctors = [
     role: "Plastic & Reconstructive Surgeon",
     qualification: "MBBS, MS, MCh (Plastic Surgery)",
     experience: "12+ Years Experience",
-    image: "/assets/doctors/doctor-2.jpg",
+    image: "/assets/doctors/dr2.JPG",
+    imageClassName: "object-cover object-top scale-[1.25] origin-[50%_15%] group-hover:scale-[1.32]",
     specialties: ["Breast Augmentation", "Laser Treatments", "Facial Aesthetics"],
   },
   {
@@ -31,6 +33,7 @@ const doctors = [
     qualification: "MBBS, DDVL",
     experience: "10+ Years Experience",
     image: "/assets/doctors/doctor-3.jpg",
+    imageClassName: "object-cover object-top group-hover:scale-105",
     specialties: ["Laser Rejuvenation", "Anti-Aging", "Chemical Peels"],
   },
 ];
@@ -74,7 +77,8 @@ export default function Doctors({ onViewProfile }: DoctorsProps) {
                     src={doc.image}
                     alt={doc.name}
                     fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className={`${doc.imageClassName || "object-cover object-top group-hover:scale-105"} transition-transform duration-500`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
@@ -139,11 +143,11 @@ export default function Doctors({ onViewProfile }: DoctorsProps) {
         {/* View All Team CTA */}
         <div className="text-center mt-12">
           <Link
-            href="/about#detailed-doctors"
+            href="/about#medical-team"
             className="btn-sculpt-gradient px-8 py-4 rounded-full text-sm font-bold tracking-wider uppercase inline-flex items-center gap-3 shadow-lg hover:shadow-xl transition-all"
           >
             <UserCheck className="w-4 h-4" />
-            <span>VIEW OUR FULL MEDICAL TEAM</span>
+            <span>VIEW OUR MEDICAL TEAM</span>
           </Link>
         </div>
       </div>

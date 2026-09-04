@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
-import { Sparkles, ArrowRight } from "lucide-react";
 
 const easePremium = [0.25, 0.1, 0.25, 1.0] as const;
 
@@ -43,8 +41,8 @@ const resultsData = [
   },
   {
     id: 5,
-    category: "Body",
-    title: "Gynecomastia (Male Chest Reduction)",
+    category: "Breast",
+    title: "Gynecomastia Surgery (Male Chest Reduction)",
     description: "Surgical removal of male glandular breast tissue for a firm, flat, and masculine chest contour.",
     beforeImage: "/assets/results/BEFORE AFTER/RESULTS-5.jpg",
     afterImage: "/assets/results/BEFORE AFTER/RESULTS-5.jpg",
@@ -52,7 +50,7 @@ const resultsData = [
   {
     id: 6,
     category: "Body",
-    title: "Tummy Tuck / Abdominoplasty",
+    title: "Tummy Tuck (Abdominoplasty)",
     description: "Surgical removal of loose abdominal skin and repair of underlying core muscles for a flat waist.",
     beforeImage: "/assets/results/BEFORE AFTER/RESULTS-6.jpg",
     afterImage: "/assets/results/BEFORE AFTER/RESULTS-6.jpg",
@@ -60,8 +58,8 @@ const resultsData = [
   {
     id: 7,
     category: "Face",
-    title: "Lip Augmentation & Sculpting",
-    description: "Precision lip volumizing and cupid's bow definition for plump, symmetrical lips.",
+    title: "Dermal Fillers",
+    description: "Precision dermal volumizing and facial contouring for balanced, youthful facial aesthetics.",
     beforeImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
     afterImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
   },

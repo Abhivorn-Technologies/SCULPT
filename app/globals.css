@@ -14,7 +14,6 @@
   }
 
   html {
-    scroll-behavior: smooth;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-main);
     color: var(--dark);

@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight, Award, Users, ShieldCheck, Cpu, Sparkles, Calendar, ArrowRight } from "lucide-react";
 
 const heroSlides = [
@@ -59,14 +60,31 @@ const stats = [
   { icon: ShieldCheck, value: "Safe & Trusted", label: "Procedures" },
 ];
 
-const SLIDE_DURATION = 3000; // 3 seconds per auto-scroll slide
+const SLIDE_DURATION = 6000; // Exactly 6 seconds per auto-scroll slide
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const isInView = useInView(heroRef, { amount: 0.3 });
+  const pathname = usePathname();
+
+  const wasInViewRef = useRef(false);
+
+  // Reset to first slide whenever returning to Home or re-entering Hero viewport
+  useEffect(() => {
+    if (pathname === "/" && isInView && !wasInViewRef.current) {
+      wasInViewRef.current = true;
+      const timer = setTimeout(() => {
+        setCurrentSlide(0);
+      }, 0);
+      return () => clearTimeout(timer);
+    } else if (!isInView) {
+      wasInViewRef.current = false;
+    }
+  }, [pathname, isInView]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -104,21 +122,23 @@ export default function Hero() {
     }
   };
 
-  // Continuous Auto-Scrolling Timer
+  // Continuous Auto-Scrolling Timer (6-second auto-rotation)
   useEffect(() => {
-    if (!isPaused) {
-      timerRef.current = setInterval(() => {
-        nextSlide();
-      }, SLIDE_DURATION);
-    }
+    // Only run timer when Hero is in view, not paused, and on the home page
+    if (isPaused || !isInView || pathname !== "/") return;
+
+    const intervalId = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, SLIDE_DURATION);
 
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
+      clearInterval(intervalId);
     };
-  }, [isPaused, currentSlide]);
+  }, [isPaused, isInView, pathname, currentSlide]);
 
   return (
     <section
+      ref={heroRef}
       className="relative min-h-screen flex flex-col justify-between bg-[#151515] text-white overflow-hidden pt-24 pb-0 select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -126,15 +146,15 @@ export default function Hero() {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Background Image Carousel with Ken Burns Zoom Effect */}
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
+      {/* Background Image Carousel with Smooth Crossfade */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <AnimatePresence initial={false}>
           <motion.div
             key={heroSlides[currentSlide].id}
-            initial={{ opacity: 0, scale: 1.15 }}
+            initial={{ opacity: 0, scale: 1.08 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.05 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.4, ease: "easeInOut" }}
             className="absolute inset-0"
           >
             {/* Mobile image: Dedicated mobile portrait asset & positioning below md breakpoint */}
@@ -144,6 +164,7 @@ export default function Hero() {
                 alt={heroSlides[currentSlide].headline}
                 fill
                 priority
+                sizes="100vw"
                 className="object-cover"
                 style={{ objectPosition: heroSlides[currentSlide].mobileObjectPosition }}
               />
@@ -155,6 +176,7 @@ export default function Hero() {
                 alt={heroSlides[currentSlide].headline}
                 fill
                 priority
+                sizes="100vw"
                 className="object-cover object-center"
               />
             </div>

@@ -13,7 +13,6 @@ import {
   UserCheck,
   HeartHandshake,
   Cpu,
-  GraduationCap,
   CheckCircle2,
   Stethoscope,
   ChevronRight,
@@ -76,7 +75,7 @@ const doctorsData = [
     id: "madhusudhan",
     name: "Dr. M. Madhusudhan",
     title: "Cosmetic & Plastic Surgeon",
-    bio: "Dr. M. Madhusudhan is a leading Cosmetic and Plastic Surgeon with extensive expertise in aesthetic and reconstructive procedures. With thousands of successful surgeries to his credit, he is known for delivering safe, natural, and long-lasting results. He specializes in a wide range of treatments, including tummy tuck, liposuction, breast augmentation, facelift, rhinoplasty, Botox, dermal fillers, mommy makeover, and Brazilian butt lift. His approach focuses on personalized care, ensuring every treatment is tailored to the individual patient.",
+    bio: "Dr. M. Madhusudhan is a leading Cosmetic and Plastic Surgeon with extensive expertise in aesthetic and reconstructive procedures. With thousands of successful surgeries to his credit, he is known for delivering safe, natural, and long-lasting results. He specializes in a wide range of treatments, including tummy tuck, liposuction, breast augmentation, facelift, rhinoplasty, Botox, dermal fillers, mommy makeover, and body contouring. His approach focuses on personalized care, ensuring every treatment is tailored to the individual patient.",
     image: "/assets/doctors/doctor-3.jpg",
     areas: [
       "Tummy Tuck",
@@ -86,7 +85,7 @@ const doctorsData = [
       "Rhinoplasty",
       "Botox & Dermal Fillers",
       "Mommy Makeover",
-      "Brazilian Butt Lift",
+      "Body Contouring",
     ],
   },
 ];
@@ -128,30 +127,44 @@ export default function AboutPage() {
   const isStatsInView = useInView(statsRef, { once: false, margin: "-100px" });
   const [activeDoctorId, setActiveDoctorId] = useState<string | null>(null);
 
-  const handleSelectDoctor = (id: string) => {
-    setActiveDoctorId(id);
-    setTimeout(() => {
-      const targetEl = document.getElementById(`detailed-${id}`);
-      if (targetEl) {
-        targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 100);
-  };
-
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window === "undefined") return;
+
+    const scrollWithOffset = (element: HTMLElement) => {
+      const navOffset = 90;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navOffset,
+        behavior: "smooth",
+      });
+    };
+
+    const handleScroll = () => {
       const params = new URLSearchParams(window.location.search);
       const docParam = params.get("doctor");
+      const hash = window.location.hash;
+
       if (docParam && ["jagadish", "suma", "madhusudhan"].includes(docParam)) {
         setActiveDoctorId(docParam);
-        setTimeout(() => {
-          const targetEl = document.getElementById(`detailed-${docParam}`);
-          if (targetEl) {
-            targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
-          }
-        }, 400);
+        const targetEl = document.getElementById(`detailed-${docParam}`);
+        if (targetEl) {
+          scrollWithOffset(targetEl);
+        }
+      } else if (hash === "#medical-team" || hash === "#detailed-doctors") {
+        const targetEl = document.getElementById("medical-team") || document.getElementById("detailed-doctors");
+        if (targetEl) {
+          scrollWithOffset(targetEl);
+        }
       }
-    }
+    };
+
+    const timer1 = setTimeout(handleScroll, 50);
+    const timer2 = setTimeout(handleScroll, 250);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, []);
 
   return (
@@ -543,7 +556,7 @@ export default function AboutPage() {
 
               <div className="space-y-6 text-[#555555] text-base sm:text-lg font-light leading-relaxed">
                 <p>
-                  From body contouring and facial procedures to hair restoration and other aesthetic treatments, our approach combines medical expertise with an understanding of each patient&apos;s individual goals.
+                  From body contouring and facial procedures to advanced skin rejuvenation and other aesthetic treatments, our approach combines medical expertise with an understanding of each patient&apos;s individual goals.
                 </p>
                 <p>
                   Safety and patient care remain at the center of everything we do. We follow high medical standards and use modern techniques designed to support quality outcomes and efficient recovery.
@@ -660,7 +673,7 @@ export default function AboutPage() {
       {/* ==================================================
           SECTION 7 — MEET OUR EXPERTS (DETAILED DOCTOR SECTION)
       ================================================== */}
-      <section id="detailed-doctors" className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative bg-[#EFE8E0]/60 border-t border-[#EFE8E0]">
+      <section id="medical-team" className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative bg-[#EFE8E0]/60 border-t border-[#EFE8E0] scroll-mt-28">
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <span className="text-[#E6663A] text-xs font-bold uppercase tracking-[0.25em] bg-[#E6663A]/10 border border-[#E6663A]/20 px-4 py-1.5 rounded-full inline-block">

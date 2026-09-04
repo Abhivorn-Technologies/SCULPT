@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 pt-2">
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/thesculptaesthetics?igsi=YWxyYm12MDVwdDI5"
+                href="https://www.instagram.com/sculptaestheticshospital/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -100,17 +100,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-[#999999]">
               {[
-                "Rhinoplasty (Nose Reshaping)",
-                "Liposuction & Body Sculpting",
-                "Breast Augmentation & Lift",
-                "Gynecomastia (Male Breast Reduction)",
-                "Facial Rejuvenation & Anti-Aging",
-                "Mommy Makeover Surgery",
-                "CoolSculpting & Weight Loss",
-              ].map((service, idx) => (
+                { name: "Rhinoplasty (Nose Job)", href: "/services/rhinoplasty" },
+                { name: "Liposuction", href: "/services/liposuction" },
+                { name: "Breast Augmentation / Breast Implant", href: "/services/breast-augmentation" },
+                { name: "Gynecomastia Surgery (Male Chest Reduction)", href: "/services/gynecomastia-surgery" },
+                { name: "Facial Rejuvenation", href: "/services/facial-rejuvenation" },
+                { name: "Mommy Makeover", href: "/services/mommy-makeover" },
+                { name: "Mounjaro / Weight Loss Programs", href: "/services/weight-loss-programs" },
+              ].map((item, idx) => (
                 <li key={idx}>
-                  <Link href="/services" className="hover:text-[#E6663A] transition-colors">
-                    {service}
+                  <Link href={item.href} className="hover:text-[#E6663A] transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}

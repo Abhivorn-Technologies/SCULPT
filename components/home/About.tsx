@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Heart, Building2, FlaskConical, Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Heart, Building2, FlaskConical, Sparkles, ArrowRight } from "lucide-react";
 
 const pillars = [
   {
