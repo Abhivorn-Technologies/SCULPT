@@ -21,9 +21,18 @@ import {
   DollarSign,
   AlertCircle,
   FileCheck2,
-  ChevronRight
+  ChevronRight,
+  Play,
+  X,
+  BookOpen
 } from "lucide-react";
-import { ServiceItem } from "@/lib/servicesData";
+import {
+  ServiceItem,
+  ServiceVideo,
+  getServiceBeforeAfterResults,
+  getServiceVideos,
+  getServiceRelatedBlogs
+} from "@/lib/servicesData";
 
 interface ServiceDetailClientProps {
   service: ServiceItem;
@@ -35,6 +44,11 @@ export default function ServiceDetailClient({
   relatedServices,
 }: ServiceDetailClientProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [selectedVideo, setSelectedVideo] = useState<ServiceVideo | null>(null);
+
+  const results = getServiceBeforeAfterResults(service.slug);
+  const videos = getServiceVideos(service.slug);
+  const blogs = getServiceRelatedBlogs(service.slug);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -562,6 +576,250 @@ export default function ServiceDetailClient({
             AFTER FAQ — WEBSITE UI ONLY (ZERO PDF CONTENT BELOW)
            ========================================================================= */}
 
+        {/* 1. BEFORE & AFTER RESULTS */}
+        {results && results.length > 0 && (
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6 pt-4"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-[#EFE8E0] pb-4">
+              <div>
+                <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest block mb-1">
+                  CLINICAL TRANSFORMATIONS
+                </span>
+                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#151515]">
+                  Before & After Results
+                </h2>
+              </div>
+              <span className="text-xs text-[#777777] font-medium">
+                {service.name} Transformations
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8">
+              {results.map((res) => (
+                <div
+                  key={res.id}
+                  className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EFE8E0] shadow-sm space-y-5"
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#151515]">
+                      {res.title}
+                    </h3>
+                    <span
+                      className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                        res.isIllustrative
+                          ? "bg-amber-500/10 text-amber-800 border border-amber-500/25"
+                          : "bg-[#E6663A]/10 text-[#E6663A] border border-[#E6663A]/25"
+                      }`}
+                    >
+                      {res.tag || (res.isIllustrative ? "Illustrative Example" : "Real Patient Outcome")}
+                    </span>
+                  </div>
+
+                  {/* Comparison Dual Panels */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Before Panel */}
+                    <div className="space-y-2">
+                      <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-[#F8F6F2] border border-[#EFE8E0] group">
+                        <Image
+                          src={res.beforeImage}
+                          alt={`${res.title} Before`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-[11px] font-bold tracking-wider uppercase">
+                          BEFORE
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* After Panel */}
+                    <div className="space-y-2">
+                      <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-[#F8F6F2] border border-[#EFE8E0] group">
+                        <Image
+                          src={res.afterImage}
+                          alt={`${res.title} After`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-gradient-to-r from-[#E6663A] to-[#F6B73C] text-white text-[11px] font-bold tracking-wider uppercase shadow-md">
+                          AFTER
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {res.description && (
+                    <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light pt-1">
+                      {res.description}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.section>
+        )}
+
+        {/* 2. RELATED VIDEOS (WATCH & LEARN) */}
+        {videos && videos.length > 0 && (
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6 pt-4"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-[#EFE8E0] pb-4">
+              <div>
+                <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest block mb-1">
+                  PROCEDURAL INSIGHTS
+                </span>
+                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#151515]">
+                  Watch & Learn
+                </h2>
+              </div>
+              <span className="text-xs text-[#777777] font-medium">
+                Official Sculpt Video Guides
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videos.map((vid) => (
+                <div
+                  key={vid.id}
+                  onClick={() => setSelectedVideo(vid)}
+                  className="bg-white rounded-3xl overflow-hidden border border-[#EFE8E0] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:-translate-y-1"
+                >
+                  <div>
+                    {/* Video Thumbnail */}
+                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#151515]">
+                      <Image
+                        src={`https://i.ytimg.com/vi/${vid.youtubeId}/hqdefault.jpg`}
+                        alt={vid.title}
+                        fill
+                        unoptimized
+                        className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                      />
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
+
+                      {/* Play Button Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#E6663A] text-white flex items-center justify-center shadow-[0_4px_20px_rgba(230,102,58,0.5)] group-hover:scale-110 group-hover:bg-[#d05328] transition-all duration-300">
+                          <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-white ml-0.5" />
+                        </div>
+                      </div>
+
+                      {/* Duration Badge */}
+                      {vid.duration && (
+                        <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-md text-white text-[10px] font-semibold">
+                          {vid.duration}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="p-5 space-y-2">
+                      <h3 className="font-serif text-base sm:text-lg font-bold text-[#151515] group-hover:text-[#E6663A] transition-colors leading-snug line-clamp-2">
+                        {vid.title}
+                      </h3>
+                      {vid.description && (
+                        <p className="text-xs text-[#666666] line-clamp-2 leading-relaxed font-light">
+                          {vid.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="p-5 pt-0">
+                    <span className="text-xs font-bold text-[#E6663A] uppercase tracking-wider inline-flex items-center gap-1 group-hover:underline">
+                      <span>Watch Video</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+        )}
+
+        {/* 3. RELATED FROM OUR BLOG */}
+        {blogs && blogs.length > 0 && (
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.15 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6 pt-4"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-[#EFE8E0] pb-4">
+              <div>
+                <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest block mb-1">
+                  SURGEON GUIDES & ADVICE
+                </span>
+                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#151515]">
+                  Related From Our Blog
+                </h2>
+              </div>
+              <span className="text-xs text-[#777777] font-medium">
+                Educational Articles
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+              {blogs.map((post) => (
+                <article
+                  key={post.slug}
+                  className="bg-white rounded-3xl overflow-hidden border border-[#EFE8E0] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                >
+                  <div>
+                    <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-[#F8F6F2]">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3 bg-[#E6663A] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+                        {post.category}
+                      </div>
+                    </div>
+
+                    <div className="p-6 space-y-3">
+                      <div className="text-xs text-[#777777] font-medium flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-[#E6663A]" />
+                        <span>{post.readTime}</span>
+                      </div>
+
+                      <Link href={`/blog/${post.slug}`} className="block">
+                        <h3 className="font-serif text-lg sm:text-xl font-bold text-[#151515] group-hover:text-[#E6663A] transition-colors leading-snug">
+                          {post.title}
+                        </h3>
+                      </Link>
+
+                      <p className="text-xs sm:text-sm text-[#555555] line-clamp-2 leading-relaxed font-light">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-6 pt-0 border-t border-[#EFE8E0] mt-2 flex items-center justify-between">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#E6663A] hover:underline"
+                    >
+                      <span>Read Full Article</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </motion.section>
+        )}
+
         {/* CTA: READY TO BEGIN YOUR AESTHETIC JOURNEY? */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -662,6 +920,64 @@ export default function ServiceDetailClient({
           </section>
         )}
       </main>
+
+      {/* EMBEDDED YOUTUBE VIDEO MODAL PLAYER */}
+      <AnimatePresence>
+        {selectedVideo && (
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6">
+            {/* Dark Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={() => setSelectedVideo(null)}
+              className="fixed inset-0 bg-black/85 backdrop-blur-md"
+              aria-hidden="true"
+            />
+
+            {/* Video Modal Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 15 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              role="dialog"
+              aria-modal="true"
+              className="relative w-full max-w-4xl bg-[#151515] rounded-3xl border border-white/20 overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.9)] z-10 my-auto"
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-4 sm:p-5 bg-black/70 border-b border-white/10 text-white">
+                <div className="flex items-center gap-2.5 truncate pr-4">
+                  <Play className="w-4 h-4 text-[#E6663A] shrink-0 fill-[#E6663A]" />
+                  <h3 className="font-serif text-sm sm:text-base font-bold truncate">
+                    {selectedVideo.title}
+                  </h3>
+                </div>
+                <button
+                  onClick={() => setSelectedVideo(null)}
+                  type="button"
+                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shrink-0"
+                  aria-label="Close video player"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* 16:9 Responsive Video Iframe */}
+              <div className="relative w-full pb-[56.25%] bg-black">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId}?autoplay=1&rel=0`}
+                  title={selectedVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

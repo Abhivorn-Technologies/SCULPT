@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/ui/FloatingActions";
 import ScrollToTop from "@/components/layout/ScrollToTop";
+import ConsultationPopup from "@/components/ui/ConsultationPopup";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <FloatingActions />
+        <ConsultationPopup />
       </body>
     </html>
   );

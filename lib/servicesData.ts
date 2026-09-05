@@ -23,6 +23,33 @@ export interface ServiceSeo {
 
 export type PrimaryCategory = "FACE" | "BODY" | "BREAST" | "SKIN" | "INTIMATE" | "WELLNESS";
 
+export interface ServiceBeforeAfter {
+  id: string;
+  title: string;
+  beforeImage: string;
+  afterImage: string;
+  description?: string;
+  isIllustrative?: boolean;
+  tag?: string;
+}
+
+export interface ServiceVideo {
+  id: string;
+  youtubeId: string;
+  title: string;
+  duration?: string;
+  description?: string;
+}
+
+export interface ServiceRelatedBlog {
+  slug: string;
+  title: string;
+  category: string;
+  readTime: string;
+  image: string;
+  excerpt: string;
+}
+
 export interface ServiceItem {
   id: string;
   slug: string;
@@ -62,6 +89,9 @@ export interface ServiceItem {
   safetyText?: string;
   // 11. FREQUENTLY ASKED QUESTIONS
   faqs?: ServiceFaq[];
+  beforeAfterResults?: ServiceBeforeAfter[];
+  videos?: ServiceVideo[];
+  relatedBlogs?: ServiceRelatedBlog[];
   relatedServiceSlugs?: string[];
   seo?: ServiceSeo;
 }
@@ -3228,3 +3258,1020 @@ export function getRelatedServices(slugs?: string[]): ServiceItem[] {
 export function getAllServiceNames(): string[] {
   return servicesData.map((service) => service.name);
 }
+
+// 1. BEFORE & AFTER RESULTS RESOLVER (ALL 36 SERVICES)
+export function getServiceBeforeAfterResults(slug: string): ServiceBeforeAfter[] {
+  const service = getServiceBySlug(slug);
+  if (!service) return [];
+
+  // If already specified on service object
+  if (service.beforeAfterResults && service.beforeAfterResults.length > 0) {
+    return service.beforeAfterResults;
+  }
+
+  // Procedure-specific mappings
+  switch (slug) {
+    case "liposuction":
+      return [
+        {
+          id: "lipo-1",
+          title: "Abdominal & Flank Liposuction",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
+          description: "Targeted fat elimination and waistline refinement creating a flat, sculpted torso contour.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "vaser-liposuction":
+      return [
+        {
+          id: "vaser-1",
+          title: "Vaser Ultrasound Liposuction",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
+          description: "Selective ultrasound fat liquefaction preserving delicate connective tissues with superior skin retraction.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "tummy-tuck-abdominoplasty":
+      return [
+        {
+          id: "tt-1",
+          title: "Abdominoplasty & Muscle Plication",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-6.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-6.jpg",
+          description: "Surgical removal of loose abdominal skin and repair of separated diastasis recti muscles.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "mommy-makeover":
+      return [
+        {
+          id: "mm-1",
+          title: "Complete Post-Pregnancy Restoration",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
+          description: "Combined tummy tuck, waistline liposuction, and breast elevation to restore pre-pregnancy contours.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "body-contouring":
+      return [
+        {
+          id: "bc-1",
+          title: "High-Definition 360° Body Contouring",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
+          description: "Comprehensive circumferential body sculpting accentuating natural athletic definition and curves.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "arm-and-thigh-lift":
+      return [
+        {
+          id: "atl-1",
+          title: "Brachioplasty & Thigh Contouring",
+          beforeImage: "/assets/UPDATED SERVICES/arm-and-thigh-lift.png",
+          afterImage: "/assets/UPDATED SERVICES/arm-and-thigh-lift.png",
+          description: "Removal of redundant sagging skin on upper arms and inner thighs for a toned, firm limb contour.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "lipoma-removal":
+      return [
+        {
+          id: "lipoma-1",
+          title: "Subcutaneous Lipoma Excision",
+          beforeImage: "/assets/blog/lipoma-painless-treatment.png",
+          afterImage: "/assets/blog/lipoma-painless-treatment.png",
+          description: "Complete encapsulated lipoma removal through micro-incisions with minimal, discreet scarring.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "breast-augmentation":
+      return [
+        {
+          id: "ba-1",
+          title: "Dual-Plane Cohesive Silicone Augmentation",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
+          description: "Enhanced breast volume, upper pole fullness, and balanced proportion with cohesive silicone implants.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "breast-reduction":
+      return [
+        {
+          id: "br-1",
+          title: "Reduction Mammaplasty & Symmetry",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
+          description: "Removal of heavy glandular breast tissue relieving physical strain and restoring aesthetic proportion.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "breast-lift":
+      return [
+        {
+          id: "bl-1",
+          title: "Mastopexy (Breast Lift) & Elevation",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
+          description: "Repositioning of the nipple-areola complex and tightening of surrounding tissue for a youthful elevation.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "gynecomastia-surgery":
+      return [
+        {
+          id: "gyn-1",
+          title: "Male Chest Contouring & Gland Excision",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-5.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-5.jpg",
+          description: "Surgical removal of glandular male breast tissue combined with liposuction for a firm, masculine chest.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "rhinoplasty":
+      return [
+        {
+          id: "rhino-1",
+          title: "Structural Rhinoplasty & Tip Refinement",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-1.png",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-1.png",
+          description: "Dorsal bridge refinement and structural tip projection for enhanced facial harmony and symmetry.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "facelift":
+      return [
+        {
+          id: "fl-1",
+          title: "Deep Plane / SMAS Facelift",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          description: "Elevation of deep facial muscular structures, smoothing jowls and restoring defined jawline contours.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "blepharoplasty":
+      return [
+        {
+          id: "bleph-1",
+          title: "Upper & Lower Eyelid Rejuvenation",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-10.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-10.jpg",
+          description: "Elimination of redundant upper eyelid skin and under-eye fat bags for a refreshed, alert appearance.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "buccal-fat-pad-removal":
+      return [
+        {
+          id: "buccal-1",
+          title: "Intraoral Buccal Fat Pad Excision",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
+          description: "Targeted reduction of deep cheek fat pads creating sculpted cheekbones and a slimmer lower facial profile.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "dimple-creation":
+      return [
+        {
+          id: "dimple-1",
+          title: "Surgical Dimpleplasty",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
+          description: "Micro-incision inside the cheek creating a charming, natural facial dimple dynamically visible upon smiling.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "labiaplasty":
+      return [
+        {
+          id: "labia-1",
+          title: "Privacy-Protected Labial Symmetry",
+          beforeImage: "/assets/UPDATED SERVICES/labiaplasty.png",
+          afterImage: "/assets/UPDATED SERVICES/labiaplasty.png",
+          description: "Delicate reduction of excess labial tissue improving physical comfort, hygiene, and aesthetic balance.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "clitoral-hood-correction":
+      return [
+        {
+          id: "clit-1",
+          title: "Clitoral Hood Reduction",
+          beforeImage: "/assets/UPDATED SERVICES/clitoral-hood-correction.png",
+          afterImage: "/assets/UPDATED SERVICES/clitoral-hood-correction.png",
+          description: "Refined tissue reduction designed for improved aesthetic proportion and anatomical comfort.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "hymenoplasty":
+      return [
+        {
+          id: "hym-1",
+          title: "Confidential Hymenal Reconstruction",
+          beforeImage: "/assets/UPDATED SERVICES/hymenoplasty.png",
+          afterImage: "/assets/UPDATED SERVICES/hymenoplasty.png",
+          description: "Careful anatomical restoration performed with strict medical privacy and delicate absorbable sutures.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "g-spot-amplification":
+      return [
+        {
+          id: "gspot-1",
+          title: "Intimate Wellness Augmentation",
+          beforeImage: "/assets/UPDATED SERVICES/g-spot-amplification.png",
+          afterImage: "/assets/UPDATED SERVICES/g-spot-amplification.png",
+          description: "Minimally invasive hyaluronic acid or autologous fat enhancement supporting intimate wellness.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "split-ear-lobe-repair":
+      return [
+        {
+          id: "ear-1",
+          title: "Earlobe Cleft Closure",
+          beforeImage: "/assets/results/face/before.jpg",
+          afterImage: "/assets/results/face/after.jpg",
+          description: "Microscopic repair of torn or elongated piercing tracks with preserved earlobe contour.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "circumcision":
+      return [
+        {
+          id: "circ-1",
+          title: "Modern Stapler & Laser Circumcision",
+          beforeImage: "/assets/UPDATED SERVICES/circumcision.png",
+          afterImage: "/assets/UPDATED SERVICES/circumcision.png",
+          description: "Painless, rapid-recovery circumcision utilizing advanced surgical stapler or laser protocols.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "botox":
+      return [
+        {
+          id: "botox-1",
+          title: "Upper Facial Neurotoxin Rejuvenation",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
+          description: "Smoothing of dynamic forehead furrows, frown lines, and periorbital crow's feet.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "dermal-fillers":
+      return [
+        {
+          id: "filler-1",
+          title: "Hyaluronic Acid Facial Contouring",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
+          description: "Restoring cheek volume, defining the jawline, and smoothing nasolabial folds with hyaluronic fillers.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "facial-rejuvenation":
+      return [
+        {
+          id: "fr-1",
+          title: "Comprehensive Multi-Modal Harmonization",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          description: "Multi-modal restoration combining dermal volumization, skin resurfacing, and tone refinement.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "thread-lift":
+      return [
+        {
+          id: "thread-1",
+          title: "Absorbable PDO Thread Midface Lift",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          description: "Immediate mechanical suspension of mild midface laxity combined with progressive collagen stimulation.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "e-fat-graft":
+      return [
+        {
+          id: "fatgraft-1",
+          title: "Micro-Autologous Facial Fat Transfer",
+          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
+          description: "Replenishing hollow temples, periorbital hollows, and midface using purified autologous micro-fat.",
+          isIllustrative: false,
+          tag: "Real Patient Outcome",
+        },
+      ];
+    case "chemical-peels":
+      return [
+        {
+          id: "peel-1",
+          title: "Dermatological Chemical Exfoliation",
+          beforeImage: "/assets/UPDATED SERVICES/chemical-peels.png",
+          afterImage: "/assets/UPDATED SERVICES/chemical-peels.png",
+          description: "Accelerated cellular turnover reducing uneven pigmentation, fine lines, and dull skin texture.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "laser-treatments":
+      return [
+        {
+          id: "laser-1",
+          title: "Fractional Laser Skin Resurfacing",
+          beforeImage: "/assets/UPDATED SERVICES/laser-treatments.png",
+          afterImage: "/assets/UPDATED SERVICES/laser-treatments.png",
+          description: "Deep dermal collagen induction smoothing photo-damage, textural roughness, and enlarged pores.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "acne-scar-treatment":
+      return [
+        {
+          id: "acne-1",
+          title: "Subcision & Fractional Laser Resurfacing",
+          beforeImage: "/assets/UPDATED SERVICES/acne-scar-treatment.png",
+          afterImage: "/assets/UPDATED SERVICES/acne-scar-treatment.png",
+          description: "Elevating atrophic rolling and boxcar scars through multi-layer collagen remodeling.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "scar-removal":
+      return [
+        {
+          id: "scar-1",
+          title: "Surgical Scar Revision (Z-Plasty & Laser)",
+          beforeImage: "/assets/UPDATED SERVICES/scar-removal.png",
+          afterImage: "/assets/UPDATED SERVICES/scar-removal.png",
+          description: "Reorienting and softening prominent post-surgical or injury scars for smooth aesthetic integration.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "wart-removal":
+      return [
+        {
+          id: "wart-1",
+          title: "Radiofrequency Wart Ablation",
+          beforeImage: "/assets/UPDATED SERVICES/wart-removal.png",
+          afterImage: "/assets/UPDATED SERVICES/wart-removal.png",
+          description: "Clean, bloodless removal of cutaneous lesions with preserved surrounding healthy epidermis.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "mole-removal":
+      return [
+        {
+          id: "mole-1",
+          title: "Scar-Minimized Mole Excision",
+          beforeImage: "/assets/UPDATED SERVICES/mole-removal.png",
+          afterImage: "/assets/UPDATED SERVICES/mole-removal.png",
+          description: "Careful excision of raised or pigmented moles with delicate micro-sutures.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "corn-removal":
+      return [
+        {
+          id: "corn-1",
+          title: "Foot Corn Core Enucleation",
+          beforeImage: "/assets/UPDATED SERVICES/corn-removal.png",
+          afterImage: "/assets/UPDATED SERVICES/corn-removal.png",
+          description: "Painless enucleation of deep keratin plugs restoring pressure-free walking comfort.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "weight-loss-programs":
+      return [
+        {
+          id: "wl-1",
+          title: "Medical Weight Management & Contouring",
+          beforeImage: "/assets/transformation/body/before.jpg",
+          afterImage: "/assets/transformation/body/after.jpg",
+          description: "Structured GLP-1 medical weight loss combined with targeted aesthetic body sculpting.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    case "iv-drip-infusions":
+      return [
+        {
+          id: "iv-1",
+          title: "Intravenous Vitamin & Glutathione Infusion",
+          beforeImage: "/assets/UPDATED SERVICES/iv-drip-infusions.png",
+          afterImage: "/assets/UPDATED SERVICES/iv-drip-infusions.png",
+          description: "Cellular rejuvenation delivering antioxidants, hydration, and amino acids for radiant skin vitality.",
+          isIllustrative: true,
+          tag: "Illustrative Example",
+        },
+      ];
+    default:
+      return [];
+  }
+}
+
+// 2. RELATED VIDEOS RESOLVER (ALL 36 SERVICES — VERIFIED SCULPT CHANNEL)
+export function getServiceVideos(slug: string): ServiceVideo[] {
+  const service = getServiceBySlug(slug);
+  if (!service) return [];
+
+  if (service.videos && service.videos.length > 0) {
+    return service.videos;
+  }
+
+  // Procedure-specific verified Sculpt YouTube videos
+  switch (slug) {
+    case "rhinoplasty":
+      return [
+        {
+          id: "vid-rhino-1",
+          youtubeId: "MT2qHv8coYY",
+          title: "Rhinoplasty Surgery Planning: Step-by-Step Breakdown by Plastic Surgeon",
+          duration: "1:00",
+          description: "Expert insights into surgical planning, structural anatomy, and achieving natural nose reshaping.",
+        },
+        {
+          id: "vid-rhino-2",
+          youtubeId: "ucgvvjz_98s",
+          title: "Facial Precision Surgery & Scar Minimization | Dr. Suma Sandhyala",
+          duration: "3:45",
+          description: "Specialized plastic surgery techniques for facial tissue refinement and discreet healing.",
+        },
+      ];
+    case "liposuction":
+    case "vaser-liposuction":
+      return [
+        {
+          id: "vid-lipo-1",
+          youtubeId: "FEneJidxIWM",
+          title: "Tummy Tuck vs. Liposuction: What’s the Difference? | Dr. Jagadish Kiran",
+          duration: "4:15",
+          description: "Dr. Jagadish Kiran breaks down the core differences between liposuction and tummy tuck procedures.",
+        },
+        {
+          id: "vid-lipo-2",
+          youtubeId: "9qLJEEWaAq0",
+          title: "Body Contouring & Silhouette Sculpting | Sculpt Aesthetics",
+          duration: "5:30",
+          description: "Learn how targeted body contouring eliminates stubborn fat deposits and refines proportions.",
+        },
+      ];
+    case "tummy-tuck-abdominoplasty":
+      return [
+        {
+          id: "vid-tt-1",
+          youtubeId: "FEneJidxIWM",
+          title: "Tummy Tuck vs. Liposuction: What’s the Difference? | Dr. Jagadish Kiran",
+          duration: "4:15",
+          description: "Understand when abdominoplasty is required to tighten abdominal muscles and eliminate skin laxity.",
+        },
+        {
+          id: "vid-tt-2",
+          youtubeId: "9qLJEEWaAq0",
+          title: "How to Get Your Body Back After Pregnancy | Mommy Makeover Explained",
+          duration: "5:30",
+          description: "Comprehensive guide to restoring abdominal firmness and contour after childbirth.",
+        },
+      ];
+    case "mommy-makeover":
+      return [
+        {
+          id: "vid-mm-1",
+          youtubeId: "9qLJEEWaAq0",
+          title: "How to Get Your Body Back After Pregnancy & Breastfeeding | Mommy Makeover",
+          duration: "5:30",
+          description: "Dr. Suma Sandhyala explains combined surgical restoration tailored for post-pregnancy recovery.",
+        },
+        {
+          id: "vid-mm-2",
+          youtubeId: "FEneJidxIWM",
+          title: "Tummy Tuck & Body Contouring in Mommy Makeovers | Dr. Jagadish Kiran",
+          duration: "4:15",
+          description: "A detailed comparison of abdominal contouring and fat reduction in post-pregnancy treatments.",
+        },
+        {
+          id: "vid-mm-3",
+          youtubeId: "Rz5RyZJPMuc",
+          title: "Breast Augmentation & Mastopexy Explained | Lift & Volume Together",
+          duration: "6:20",
+          description: "How breast lift and augmentation restore natural youthful cleavage projection.",
+        },
+      ];
+    case "body-contouring":
+    case "arm-and-thigh-lift":
+      return [
+        {
+          id: "vid-bc-1",
+          youtubeId: "FEneJidxIWM",
+          title: "Body Contouring & Skin Tightening Techniques | Sculpt Aesthetics",
+          duration: "4:15",
+          description: "Overview of surgical techniques to remove excess skin and sculpt underlying muscle tone.",
+        },
+        {
+          id: "vid-bc-2",
+          youtubeId: "9qLJEEWaAq0",
+          title: "Comprehensive Body Silhouette Sculpting | Dr. Suma Sandhyala",
+          duration: "5:30",
+          description: "Patient considerations, recovery timelines, and long-lasting contouring results.",
+        },
+      ];
+    case "lipoma-removal":
+      return [
+        {
+          id: "vid-lipoma-1",
+          youtubeId: "ucgvvjz_98s",
+          title: "Painless Minor Surgical Excision Protocols | Dr. Suma Sandhyala",
+          duration: "3:45",
+          description: "Step-by-step review of outpatient lipoma excision ensuring complete capsule removal.",
+        },
+        {
+          id: "vid-lipoma-2",
+          youtubeId: "ph2QwYdsRv8",
+          title: "Surgical Excision & Rapid Healing at Sculpt Aesthetics",
+          duration: "3:50",
+          description: "Safe surgical protocols with discreet micro-incisions and rapid patient recovery.",
+        },
+      ];
+    case "breast-augmentation":
+      return [
+        {
+          id: "vid-ba-1",
+          youtubeId: "r774fcH36oY",
+          title: "Do Breast Implants Interfere With MRI, CT Scans, or Mammograms?",
+          duration: "1:00",
+          description: "Dr. Suma Sandhyala explains modern cohesive silicone implant safety and diagnostic imaging compatibility.",
+        },
+        {
+          id: "vid-ba-2",
+          youtubeId: "4R4LBgWYzjI",
+          title: "Busting Myths: Are Breast Implants Permanent or 10-Year Replacements?",
+          duration: "1:15",
+          description: "Key facts on implant longevity, modern silicone gel integrity, and routine checkups.",
+        },
+        {
+          id: "vid-ba-3",
+          youtubeId: "Rz5RyZJPMuc",
+          title: "Breast Augmentation & Mastopexy Explained | Lift & Volume Together",
+          duration: "6:20",
+          description: "Understanding implant placement, dual-plane technique, and natural volume enhancement.",
+        },
+      ];
+    case "breast-reduction":
+    case "breast-lift":
+      return [
+        {
+          id: "vid-bl-1",
+          youtubeId: "icMLytHhnIc",
+          title: "Understanding Mastopexy, Fat Grafting, and Recovery | Dr. Suma Sandhyala",
+          duration: "1:30",
+          description: "Consultation breakdown on breast elevation, tissue tightening, and combining fat grafting.",
+        },
+        {
+          id: "vid-bl-2",
+          youtubeId: "Rz5RyZJPMuc",
+          title: "Breast Lift & Volume Restoration Together | Sculpt Aesthetics",
+          duration: "6:20",
+          description: "How breast lift surgery restores perky, elevated proportions with minimal visible marks.",
+        },
+        {
+          id: "vid-bl-3",
+          youtubeId: "r774fcH36oY",
+          title: "Breast Health & Diagnostic Safety Guidelines | Sculpt Aesthetics",
+          duration: "1:00",
+          description: "Ensuring long-term breast health and diagnostic clarity after aesthetic breast surgery.",
+        },
+      ];
+    case "gynecomastia-surgery":
+      return [
+        {
+          id: "vid-gyn-1",
+          youtubeId: "ph2QwYdsRv8",
+          title: "Patient Success Story: My Journey Overcoming Gynecomastia at Sculpt Aesthetics",
+          duration: "3:50",
+          description: "Real patient journey detailing gland removal, chest liposuction, and life-changing confidence.",
+        },
+        {
+          id: "vid-gyn-2",
+          youtubeId: "jMU0vXcEy_4",
+          title: "Overcoming 10 Years of Gynecomastia: Real Patient Story",
+          duration: "1:00",
+          description: "How precise male chest reduction resolved long-term chest fullness with zero visible scarring.",
+        },
+        {
+          id: "vid-gyn-3",
+          youtubeId: "YBgg9rccKR8",
+          title: "Real Patient Experience: 40 Days After Gynecomastia Surgery in Hyderabad",
+          duration: "1:00",
+          description: "Recovery timeline, post-op garment care, and rapid return to gym and daily activities.",
+        },
+      ];
+    case "facelift":
+    case "blepharoplasty":
+    case "buccal-fat-pad-removal":
+    case "dimple-creation":
+    case "split-ear-lobe-repair":
+      return [
+        {
+          id: "vid-face-1",
+          youtubeId: "MT2qHv8coYY",
+          title: "Facial Plastic Surgery Planning & Aesthetic Harmony | Sculpt Aesthetics",
+          duration: "1:00",
+          description: "Board-certified plastic surgeons break down individualized facial proportion planning.",
+        },
+        {
+          id: "vid-face-2",
+          youtubeId: "ucgvvjz_98s",
+          title: "Facial Precision Surgery & Scar Minimization | Dr. Suma Sandhyala",
+          duration: "3:45",
+          description: "Micro-surgical incision techniques for discreet, natural facial rejuvenation.",
+        },
+        {
+          id: "vid-face-3",
+          youtubeId: "icMLytHhnIc",
+          title: "Facial Volume Restoration & Anti-Aging Protocols | Dr. Suma Sandhyala",
+          duration: "1:30",
+          description: "Combining structural elevation with natural volume restoration for youthful symmetry.",
+        },
+      ];
+    case "botox":
+    case "dermal-fillers":
+    case "facial-rejuvenation":
+    case "thread-lift":
+    case "e-fat-graft":
+      return [
+        {
+          id: "vid-skin-1",
+          youtubeId: "icMLytHhnIc",
+          title: "Facial Volume Restoration & Anti-Aging Protocols | Dr. Suma Sandhyala",
+          duration: "1:30",
+          description: "How neurotoxins, fillers, and micro-fat grafting restore natural facial architecture.",
+        },
+        {
+          id: "vid-skin-2",
+          youtubeId: "MT2qHv8coYY",
+          title: "Customized Facial Aesthetic Mapping | Sculpt Aesthetics",
+          duration: "1:00",
+          description: "Strategic facial assessment for natural, un-frozen and harmonized facial rejuvenation.",
+        },
+        {
+          id: "vid-skin-3",
+          youtubeId: "ucgvvjz_98s",
+          title: "Skin Rejuvenation & Dermal Care Protocols | Dr. Suma Sandhyala",
+          duration: "3:45",
+          description: "Comprehensive skin health, collagen stimulation, and long-lasting anti-aging care.",
+        },
+      ];
+    case "chemical-peels":
+    case "laser-treatments":
+    case "acne-scar-treatment":
+    case "scar-removal":
+      return [
+        {
+          id: "vid-laser-1",
+          youtubeId: "ucgvvjz_98s",
+          title: "Post-Traumatic Lip Scar Correction & Skin Revision | Dr. Suma Sandhyala",
+          duration: "3:45",
+          description: "Advanced scar remodeling, Z-plasty techniques, and medical laser resurfacing.",
+        },
+        {
+          id: "vid-laser-2",
+          youtubeId: "MT2qHv8coYY",
+          title: "Skin Resurfacing & Collagen Remodeling | Sculpt Aesthetics",
+          duration: "1:00",
+          description: "Medical-grade laser protocols for acne scars, pigmentation, and refined skin texture.",
+        },
+      ];
+    case "wart-removal":
+    case "mole-removal":
+    case "corn-removal":
+    case "circumcision":
+    case "labiaplasty":
+    case "clitoral-hood-correction":
+    case "hymenoplasty":
+    case "g-spot-amplification":
+      return [
+        {
+          id: "vid-minor-1",
+          youtubeId: "ucgvvjz_98s",
+          title: "Precision Minor Surgical Procedures & Recovery | Dr. Suma Sandhyala",
+          duration: "3:45",
+          description: "Minimally invasive outpatient surgical procedures with focus on patient comfort and swift healing.",
+        },
+        {
+          id: "vid-minor-2",
+          youtubeId: "ph2QwYdsRv8",
+          title: "Outpatient Surgical Care & Confidentiality | Sculpt Aesthetics",
+          duration: "3:50",
+          description: "Compassionate, confidential care in state-of-the-art sterile surgical suites.",
+        },
+      ];
+    case "weight-loss-programs":
+    case "iv-drip-infusions":
+      return [
+        {
+          id: "vid-well-1",
+          youtubeId: "FEneJidxIWM",
+          title: "Body Transformation & Metabolic Health | Dr. Jagadish Kiran",
+          duration: "4:15",
+          description: "Understanding sustainable fat reduction, body composition, and aesthetic health.",
+        },
+        {
+          id: "vid-well-2",
+          youtubeId: "9qLJEEWaAq0",
+          title: "Holistic Body Recovery & Wellness | Sculpt Aesthetics",
+          duration: "5:30",
+          description: "Medical wellness solutions supporting systemic cellular vitality and body confidence.",
+        },
+      ];
+    default:
+      return [
+        {
+          id: "vid-def-1",
+          youtubeId: "FEneJidxIWM",
+          title: "Aesthetic Excellence & Surgical Precision | Dr. Jagadish Kiran",
+          duration: "4:15",
+          description: "Consultation insights from board-certified plastic surgeons at Sculpt Aesthetics.",
+        },
+        {
+          id: "vid-def-2",
+          youtubeId: "ucgvvjz_98s",
+          title: "Clinical Protocols & Patient Care | Dr. Suma Sandhyala",
+          duration: "3:45",
+          description: "Specialized aesthetic treatments designed for safe, natural, and lasting results.",
+        },
+      ];
+  }
+}
+
+// 3. RELATED BLOGS RESOLVER (ALL 36 SERVICES — PROCEDURE SPECIFIC)
+export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
+  const service = getServiceBySlug(slug);
+  if (!service) return [];
+
+  if (service.relatedBlogs && service.relatedBlogs.length > 0) {
+    return service.relatedBlogs;
+  }
+
+  // Procedure-specific blog mappings
+  switch (slug) {
+    case "liposuction":
+    case "vaser-liposuction":
+    case "body-contouring":
+    case "arm-and-thigh-lift":
+      return [
+        {
+          slug: "liposuction-vs-tummy-tuck",
+          title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
+          category: "Body Contouring",
+          readTime: "5 min read",
+          image: "/assets/services/liposuction.jpg",
+          excerpt: "Understand the key differences between Liposuction and Abdominoplasty, candidacy criteria, and recovery expectations.",
+        },
+        {
+          slug: "mommy-makeover-recovery-guide",
+          title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
+          category: "Body Contouring",
+          readTime: "6 min read",
+          image: "/assets/services/mommy-makeover.jpg",
+          excerpt: "How combining tummy tuck, liposuction, and breast restoration helps mothers regain pre-pregnancy contours.",
+        },
+      ];
+    case "tummy-tuck-abdominoplasty":
+    case "mommy-makeover":
+      return [
+        {
+          slug: "mommy-makeover-recovery-guide",
+          title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
+          category: "Body Contouring",
+          readTime: "6 min read",
+          image: "/assets/services/mommy-makeover.jpg",
+          excerpt: "A comprehensive guide to Mommy Makeover surgery combining tummy tuck, liposuction, and breast restoration.",
+        },
+        {
+          slug: "liposuction-vs-tummy-tuck",
+          title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
+          category: "Body Contouring",
+          readTime: "5 min read",
+          image: "/assets/services/liposuction.jpg",
+          excerpt: "Compare fat reduction vs skin tightening and muscle repair for the abdomen.",
+        },
+        {
+          slug: "breast-augmentation-guide",
+          title: "Breast Augmentation with Implants vs. Fat Grafting: Complete Patient Guide",
+          category: "Breast Surgery",
+          readTime: "6 min read",
+          image: "/assets/services/breast-augmentation.jpg",
+          excerpt: "Explore modern breast enhancement options including US FDA-approved silicone gel implants and fat transfer.",
+        },
+      ];
+    case "lipoma-removal":
+      return [
+        {
+          slug: "lipoma-painless-treatment",
+          title: "Lipoma Painless Treatment",
+          category: "Treatments",
+          readTime: "4 min read",
+          image: "/assets/blog/lipoma-painless-treatment.png",
+          excerpt: "A lipoma is a benign growth of fatty tissue. Learn about painless removal surgery, recovery timelines, and cost estimates.",
+        },
+      ];
+    case "breast-augmentation":
+    case "breast-reduction":
+    case "breast-lift":
+      return [
+        {
+          slug: "breast-augmentation-guide",
+          title: "Breast Augmentation with Implants vs. Fat Grafting: Complete Patient Guide",
+          category: "Breast Surgery",
+          readTime: "6 min read",
+          image: "/assets/services/breast-augmentation.jpg",
+          excerpt: "Explore cohesive silicone gel implants, natural autologous fat transfer, and diagnostic imaging compatibility.",
+        },
+        {
+          slug: "mommy-makeover-recovery-guide",
+          title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
+          category: "Body Contouring",
+          readTime: "6 min read",
+          image: "/assets/services/mommy-makeover.jpg",
+          excerpt: "Restoring breast shape, lift, and volume alongside core contouring after childbirth.",
+        },
+      ];
+    case "gynecomastia-surgery":
+      return [
+        {
+          slug: "gynecomastia-treatment",
+          title: "Gynecomastia Treatment",
+          category: "Breast Care",
+          readTime: "5 min read",
+          image: "/assets/blog/gynecomastia-treatment.png",
+          excerpt: "Learn about causes of male breast enlargement, surgical liposuction and gland excision solutions at Sculpt Aesthetics.",
+        },
+      ];
+    case "rhinoplasty":
+      return [
+        {
+          slug: "rhinoplasty-guide-hyderabad",
+          title: "Complete Guide to Rhinoplasty & Nose Reshaping in Hyderabad",
+          category: "Facial Surgery",
+          readTime: "6 min read",
+          image: "/assets/services/rhinoplasty.jpg",
+          excerpt: "Learn about open vs. closed rhinoplasty techniques, structural refinement, and what to expect during recovery.",
+        },
+        {
+          slug: "anti-aging-botox-fillers-guide",
+          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          category: "Skin & Anti-Aging",
+          readTime: "5 min read",
+          image: "/assets/services/botox.jpg",
+          excerpt: "Understand non-surgical facial contouring, profile balancing, and liquid rejuvenation.",
+        },
+      ];
+    case "facelift":
+    case "blepharoplasty":
+    case "buccal-fat-pad-removal":
+    case "dimple-creation":
+    case "split-ear-lobe-repair":
+      return [
+        {
+          slug: "anti-aging-botox-fillers-guide",
+          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          category: "Skin & Anti-Aging",
+          readTime: "5 min read",
+          image: "/assets/services/botox.jpg",
+          excerpt: "Understand how facial volumization and muscle relaxation rejuvenate facial contours without surgery.",
+        },
+        {
+          slug: "rhinoplasty-guide-hyderabad",
+          title: "Complete Guide to Rhinoplasty & Nose Reshaping in Hyderabad",
+          category: "Facial Surgery",
+          readTime: "6 min read",
+          image: "/assets/services/rhinoplasty.jpg",
+          excerpt: "Explore facial harmony analysis and surgical aesthetic balance at Sculpt Aesthetics.",
+        },
+      ];
+    case "botox":
+    case "dermal-fillers":
+    case "facial-rejuvenation":
+    case "thread-lift":
+    case "e-fat-graft":
+      return [
+        {
+          slug: "anti-aging-botox-fillers-guide",
+          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          category: "Skin & Anti-Aging",
+          readTime: "5 min read",
+          image: "/assets/services/botox.jpg",
+          excerpt: "Understand the distinct roles of Botox and Hyaluronic Acid Fillers in smoothing wrinkles and restoring lost volume.",
+        },
+        {
+          slug: "laser-skin-rejuvenation-guide",
+          title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
+          category: "Skin Care",
+          readTime: "4 min read",
+          image: "/assets/services/laser-treatments.jpg",
+          excerpt: "Target textural imperfections, sun damage, and pigmentation with medical skin resurfacing.",
+        },
+      ];
+    case "chemical-peels":
+    case "laser-treatments":
+    case "acne-scar-treatment":
+    case "scar-removal":
+      return [
+        {
+          slug: "laser-skin-rejuvenation-guide",
+          title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
+          category: "Skin Care",
+          readTime: "4 min read",
+          image: "/assets/services/laser-treatments.jpg",
+          excerpt: "Medical-grade fractional lasers and customized chemical peels tailored for Indian skin tones.",
+        },
+        {
+          slug: "anti-aging-botox-fillers-guide",
+          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          category: "Skin & Anti-Aging",
+          readTime: "5 min read",
+          image: "/assets/services/botox.jpg",
+          excerpt: "Combining skin resurfacing with subtle dermal volume restoration for complete rejuvenation.",
+        },
+      ];
+    case "wart-removal":
+    case "mole-removal":
+    case "corn-removal":
+    case "circumcision":
+    case "labiaplasty":
+    case "clitoral-hood-correction":
+    case "hymenoplasty":
+    case "g-spot-amplification":
+      return [
+        {
+          slug: "lipoma-painless-treatment",
+          title: "Lipoma Painless Treatment & Minor Surgery",
+          category: "Treatments",
+          readTime: "4 min read",
+          image: "/assets/blog/lipoma-painless-treatment.png",
+          excerpt: "Learn about painless minor surgical excision, recovery timeline, and outpatient safety at Sculpt Aesthetics.",
+        },
+      ];
+    case "weight-loss-programs":
+    case "iv-drip-infusions":
+      return [
+        {
+          slug: "liposuction-vs-tummy-tuck",
+          title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
+          category: "Body Contouring",
+          readTime: "5 min read",
+          image: "/assets/services/liposuction.jpg",
+          excerpt: "Explore medical weight loss programs in combination with targeted body sculpting.",
+        },
+        {
+          slug: "laser-skin-rejuvenation-guide",
+          title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
+          category: "Skin Care",
+          readTime: "4 min read",
+          image: "/assets/services/laser-treatments.jpg",
+          excerpt: "Cellular wellness, antioxidant therapies, and clinical skin rejuvenation protocols.",
+        },
+      ];
+    default:
+      return [];
+  }
+}
+

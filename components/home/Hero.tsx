@@ -13,6 +13,7 @@ const heroSlides = [
     image: "/assets/hero/hero-1.jpg",
     mobileImage: "/assets/hero/mobile/hero-1.jpg",
     mobileObjectPosition: "center 20%",
+    desktopObjectPosition: "center",
     tagline: "PREMIUM COSMETIC SURGERY CLINIC",
     headline: "Enhancing Confidence.\nTransforming Lives.",
     description:
@@ -24,9 +25,25 @@ const heroSlides = [
   },
   {
     id: 2,
+    image: "/assets/hero/heromen.png",
+    mobileImage: "/assets/hero/heromen.png",
+    mobileObjectPosition: "72% 20%",
+    desktopObjectPosition: "center right",
+    tagline: "PREMIUM AESTHETIC TREATMENTS FOR MEN",
+    headline: "Refine Your Look.\nRedefine Your Confidence.",
+    description:
+      "Advanced aesthetic treatments for men, designed to enhance natural features and create confident, balanced results.",
+    primaryCta: "BOOK A CONSULTATION",
+    primaryHref: "#contact",
+    secondaryCta: "EXPLORE SERVICES",
+    secondaryHref: "/services",
+  },
+  {
+    id: 3,
     image: "/assets/hero/hero-2.jpg",
     mobileImage: "/assets/hero/mobile/hero-2.jpg",
     mobileObjectPosition: "center 25%",
+    desktopObjectPosition: "center",
     tagline: "PREMIUM WEIGHT LOSS & BODY CONTOURING",
     headline: "Redefine Your Shape.\n& Reclaim Your Confidence.",
     description:
@@ -37,10 +54,26 @@ const heroSlides = [
     secondaryHref: "#doctors",
   },
   {
-    id: 3,
+    id: 4,
+    image: "/assets/hero/heromen2.png",
+    mobileImage: "/assets/hero/heromen2.png",
+    mobileObjectPosition: "68% 15%",
+    desktopObjectPosition: "center right",
+    tagline: "ADVANCED BODY CONTOURING",
+    headline: "Sculpt Your Body.\nBoost Your Confidence.",
+    description:
+      "Advanced body contouring solutions designed to refine your shape and help you achieve a more confident silhouette.",
+    primaryCta: "BOOK A CONSULTATION",
+    primaryHref: "#contact",
+    secondaryCta: "EXPLORE SERVICES",
+    secondaryHref: "/services",
+  },
+  {
+    id: 5,
     image: "/assets/hero/hero-3.jpg",
     mobileImage: "/assets/hero/mobile/hero-3.jpg",
     mobileObjectPosition: "center 20%",
+    desktopObjectPosition: "center",
     tagline: "PREMIUM BREAST AUGMENTATION",
     headline: "Enhance Your Shape.\n& Embrace Your Confidence.",
     description:
@@ -177,7 +210,8 @@ export default function Hero() {
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover object-center"
+                className="object-cover"
+                style={{ objectPosition: heroSlides[currentSlide].desktopObjectPosition || "center" }}
               />
             </div>
             {/* Multi-stage dark gradient overlays for text legibility */}

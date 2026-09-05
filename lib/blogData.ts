@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
     sections: [
       {
         paragraphs: [
-          "Gynecomastia, the enlargement of male breast tissue, is a common condition that affects many men worldwide. This condition can lead to emotional discomfort and may even cause men to avoid certain physical activities to hide their condition. Fortunately, treatment options are available, and Sculpt plastic cosmetic surgery and hair transplant center in Hyderabad is at the forefront of providing effective solutions.",
+          "Gynecomastia, the enlargement of male breast tissue, is a common condition that affects many men worldwide. This condition can lead to emotional discomfort and may even cause men to avoid certain physical activities to hide their condition. Fortunately, treatment options are available, and Sculpt plastic cosmetic surgery center in Hyderabad is at the forefront of providing effective solutions.",
         ],
       },
       {
@@ -202,6 +202,218 @@ export const blogPosts: BlogPost[] = [
         "Gynecomastia liposuction excision",
         "Best doctor for gynecomastia Hyderabad",
       ],
+    },
+  },
+  {
+    id: "rhinoplasty-guide-hyderabad",
+    slug: "rhinoplasty-guide-hyderabad",
+    title: "Complete Guide to Rhinoplasty & Nose Reshaping in Hyderabad",
+    category: "Facial Surgery",
+    date: "July 12, 2024",
+    author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
+    readTime: "6 min read",
+    image: "/assets/services/rhinoplasty.jpg",
+    excerpt:
+      "Rhinoplasty (nose reshaping) is one of the most transformative facial plastic surgeries. Learn about open vs. closed techniques, structural refinement, functional breathing correction, and what to expect during recovery.",
+    sections: [
+      {
+        paragraphs: [
+          "The nose occupies the central anchor of facial aesthetics. Even subtle adjustments to the nasal bridge, tip, or nostril proportions can significantly enhance overall facial harmony.",
+          "At The Sculpt Aesthetics in Madhapur, Hyderabad, our board-certified plastic surgeons combine advanced surgical precision with artistic aesthetic analysis to create balanced, natural-looking nasal contours that complement your ethnic facial features.",
+        ],
+      },
+      {
+        heading: "Open vs. Closed Rhinoplasty",
+        paragraphs: [
+          "Closed Rhinoplasty: All incisions are made strictly inside the nostrils. Ideal for minor bridge adjustments and hump reduction with zero external scarring.",
+          "Open Rhinoplasty: A tiny, hidden incision is made across the columella, providing full visualization of the nasal cartilage architecture. Ideal for complex tip reshaping, structural grafting, and revision rhinoplasty.",
+        ],
+      },
+      {
+        heading: "Recovery & Healing Timeline",
+        paragraphs: [
+          "Most patients wear a lightweight external splint for 7 days. Initial swelling and bruising subside within 10 to 14 days, allowing a confident return to work and social activities.",
+        ],
+      },
+    ],
+    seo: {
+      metaTitle: "Rhinoplasty Surgery in Hyderabad — Nose Job Guide | Sculpt",
+      metaDescription: "Comprehensive guide to Rhinoplasty surgery in Hyderabad at The Sculpt Aesthetics. Explore techniques, recovery timelines, and consultation details.",
+      canonicalUrl: "https://thesculpt.co.in/blog/rhinoplasty-guide-hyderabad",
+      ogImage: "/assets/services/rhinoplasty.jpg",
+      keywords: ["Rhinoplasty Hyderabad", "Nose Job surgery", "Open Rhinoplasty", "Nose reshaping cost"],
+    },
+  },
+  {
+    id: "liposuction-vs-tummy-tuck",
+    slug: "liposuction-vs-tummy-tuck",
+    title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
+    category: "Body Contouring",
+    date: "July 28, 2024",
+    author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
+    readTime: "5 min read",
+    image: "/assets/services/liposuction.jpg",
+    excerpt:
+      "Confused between Liposuction and Abdominoplasty (Tummy Tuck)? Understand the key differences, ideal candidacy criteria, muscle tightening benefits, and recovery expectations.",
+    sections: [
+      {
+        paragraphs: [
+          "While both Liposuction and Tummy Tuck procedures sculpt the midsection, they address fundamentally different anatomical concerns.",
+          "Liposuction targets localized, diet-resistant fat deposits in patients with good skin elasticity. Abdominoplasty (Tummy Tuck) is designed to remove redundant, lax skin and surgically repair separated core abdominal muscles (diastasis recti).",
+        ],
+      },
+      {
+        heading: "When Is Liposuction Best?",
+        paragraphs: [
+          "If you have good skin tone and your primary concern is stubborn fat bulges on the abdomen, flanks (love handles), thighs, or arms, Vaser or High-Definition Liposuction provides exceptional contouring with minimal downtime.",
+        ],
+      },
+      {
+        heading: "When Is a Tummy Tuck Necessary?",
+        paragraphs: [
+          "Post-pregnancy or following significant weight loss, skin often loses its retractile elasticity, and the abdominal wall may stretch. A tummy tuck removes the overhang and creates a firm, flat contour that liposuction alone cannot achieve.",
+        ],
+      },
+    ],
+    seo: {
+      metaTitle: "Liposuction vs. Tummy Tuck in Hyderabad — Comparison Guide | Sculpt",
+      metaDescription: "Learn whether Liposuction or Tummy Tuck surgery is best for your body goals with expert advice from board-certified plastic surgeons at Sculpt Aesthetics.",
+      canonicalUrl: "https://thesculpt.co.in/blog/liposuction-vs-tummy-tuck",
+      ogImage: "/assets/services/liposuction.jpg",
+      keywords: ["Liposuction vs Tummy Tuck", "Abdominoplasty Hyderabad", "Body contouring surgery", "Vaser Liposuction"],
+    },
+  },
+  {
+    id: "breast-augmentation-guide",
+    slug: "breast-augmentation-guide",
+    title: "Breast Augmentation with Implants vs. Fat Grafting: Complete Patient Guide",
+    category: "Breast Surgery",
+    date: "August 10, 2024",
+    author: "Dr. Suma Sandhyala",
+    readTime: "6 min read",
+    image: "/assets/services/breast-augmentation.jpg",
+    excerpt:
+      "Explore modern breast enhancement options including US FDA-approved cohesive silicone gel implants, natural autologous fat grafting, safety profiles, and long-term diagnostic compatibility.",
+    sections: [
+      {
+        paragraphs: [
+          "Breast augmentation remains one of the most frequently requested cosmetic procedures globally, empowering women to enhance proportion, restore post-pregnancy volume, and correct asymmetry.",
+          "Modern cohesive silicone gel implants (Gummy Bear implants) offer an extraordinarily natural feel, enhanced safety profiles, and MRI compatibility with zero interference in routine breast health screenings.",
+        ],
+      },
+      {
+        heading: "Implants vs. Autologous Fat Transfer",
+        paragraphs: [
+          "Silicone Implants provide predictable, significant volume increase (1 to 2+ cup sizes) with defined upper-pole fullness.",
+          "Fat Grafting uses your own purified body fat (harvested via gentle liposuction) for subtle, 100% natural enhancements (typically 0.5 to 1 cup size) with zero foreign material.",
+        ],
+      },
+    ],
+    seo: {
+      metaTitle: "Breast Augmentation Guide in Hyderabad — Implants & Fat Transfer | Sculpt",
+      metaDescription: "Comprehensive guide to breast augmentation surgery, implant types, fat grafting, and recovery in Hyderabad at Sculpt Aesthetics.",
+      canonicalUrl: "https://thesculpt.co.in/blog/breast-augmentation-guide",
+      ogImage: "/assets/services/breast-augmentation.jpg",
+      keywords: ["Breast Augmentation Hyderabad", "Silicone breast implants", "Breast lift mastopexy", "Dr Suma Sandhyala"],
+    },
+  },
+  {
+    id: "anti-aging-botox-fillers-guide",
+    slug: "anti-aging-botox-fillers-guide",
+    title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+    category: "Skin & Anti-Aging",
+    date: "August 22, 2024",
+    author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
+    readTime: "5 min read",
+    image: "/assets/services/botox.jpg",
+    excerpt:
+      "Understand the distinct roles of neurotoxins (Botox) and hyaluronic acid dermal fillers in smoothing dynamic wrinkles, restoring lost volume, and sculpting natural facial contours.",
+    sections: [
+      {
+        paragraphs: [
+          "Non-surgical facial aesthetics have revolutionized modern anti-aging. However, many patients wonder whether Botox or Dermal Fillers are the right choice for their specific facial concerns.",
+          "The fundamental rule: Botox relaxes dynamic muscle motion that creates expression lines (crow’s feet, forehead furrows, frown lines), while Dermal Fillers replenish lost structural volume and sculpt features (cheeks, lips, jawline, nasolabial folds).",
+        ],
+      },
+      {
+        heading: "Combining Treatments for Full Facial Harmonization",
+        paragraphs: [
+          "Often termed a 'Liquid Facelift', combining targeted Botox with strategic micro-droplet dermal fillers provides a balanced, refreshed, and completely natural appearance without surgery or downtime.",
+        ],
+      },
+    ],
+    seo: {
+      metaTitle: "Botox vs Dermal Fillers Guide — Anti-Aging Treatments | Sculpt Aesthetics",
+      metaDescription: "Discover how Botox and Dermal Fillers work together to rejuvenate facial appearance, smooth wrinkles, and restore youthful volume in Hyderabad.",
+      canonicalUrl: "https://thesculpt.co.in/blog/anti-aging-botox-fillers-guide",
+      ogImage: "/assets/services/botox.jpg",
+      keywords: ["Botox Hyderabad", "Dermal Fillers", "Anti-aging clinic Hyderabad", "Liquid facelift"],
+    },
+  },
+  {
+    id: "laser-skin-rejuvenation-guide",
+    slug: "laser-skin-rejuvenation-guide",
+    title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
+    category: "Skin Care",
+    date: "September 02, 2024",
+    author: "Dr. Suma Sandhyala",
+    readTime: "4 min read",
+    image: "/assets/services/laser-treatments.jpg",
+    excerpt:
+      "Target acne scars, uneven pigmentation, enlarged pores, and sun damage with medical-grade fractional lasers and customized dermatological chemical peels.",
+    sections: [
+      {
+        paragraphs: [
+          "Healthy, radiant skin is achievable through precision dermatological protocols. Medical-grade lasers and chemical peels work synergistically to stimulate cellular turnover, boost deep dermal collagen, and erase stubborn textural imperfections.",
+          "At Sculpt Aesthetics, our customized skin rejuvenation protocols are tailored specifically for Indian skin types (Fitzpatrick types III-V) to ensure optimal efficacy without risk of post-inflammatory hyperpigmentation.",
+        ],
+      },
+      {
+        heading: "Fractional Laser Resurfacing for Acne Scars",
+        paragraphs: [
+          "Fractional CO2 and Erbium lasers create microscopic thermal treatment zones in the skin, triggering rapid collagen remodeling that lifts depressed acne scars and refines skin texture.",
+        ],
+      },
+    ],
+    seo: {
+      metaTitle: "Laser Skin Rejuvenation & Chemical Peels in Hyderabad | Sculpt",
+      metaDescription: "Explore medical laser treatments and chemical peels for acne scars, pigmentation, and glowing skin at The Sculpt Aesthetics, Hyderabad.",
+      canonicalUrl: "https://thesculpt.co.in/blog/laser-skin-rejuvenation-guide",
+      ogImage: "/assets/services/laser-treatments.jpg",
+      keywords: ["Laser skin treatment Hyderabad", "Acne scar laser", "Chemical peels Hyderabad", "Skin rejuvenation"],
+    },
+  },
+  {
+    id: "mommy-makeover-recovery-guide",
+    slug: "mommy-makeover-recovery-guide",
+    title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
+    category: "Body Contouring",
+    date: "September 04, 2024",
+    author: "Dr. Suma Sandhyala & Dr. Jagadish Kiran",
+    readTime: "6 min read",
+    image: "/assets/services/mommy-makeover.jpg",
+    excerpt:
+      "A comprehensive guide to Mommy Makeover surgery combining tummy tuck, liposuction, and breast restoration to help mothers regain their pre-pregnancy silhouette and confidence.",
+    sections: [
+      {
+        paragraphs: [
+          "Pregnancy and breastfeeding bring immense joy, but they also induce profound, permanent anatomical changes to a woman's body that exercise and diet alone often cannot reverse.",
+          "A Mommy Makeover is a personalized combination of surgical procedures—typically involving an abdominoplasty, liposuction, and breast lift or augmentation—performed in a single, coordinated surgical session.",
+        ],
+      },
+      {
+        heading: "Customizing Your Mommy Makeover",
+        paragraphs: [
+          "Every mother's body is unique. Your surgical plan is customized based on whether you require skin removal, muscle repair, breast volume restoration, or targeted waistline sculpting.",
+        ],
+      },
+    ],
+    seo: {
+      metaTitle: "Mommy Makeover Surgery in Hyderabad — Comprehensive Guide | Sculpt",
+      metaDescription: "Learn everything about Mommy Makeover surgery in Hyderabad. Restore your abdominal contour, breast shape, and body confidence at Sculpt Aesthetics.",
+      canonicalUrl: "https://thesculpt.co.in/blog/mommy-makeover-recovery-guide",
+      ogImage: "/assets/services/mommy-makeover.jpg",
+      keywords: ["Mommy Makeover Hyderabad", "Post pregnancy surgery", "Tummy tuck breast lift", "Dr Suma Sandhyala"],
     },
   },
 ];
