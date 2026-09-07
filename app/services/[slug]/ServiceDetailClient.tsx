@@ -23,15 +23,13 @@ import {
   FileCheck2,
   ChevronRight,
   Play,
-  X,
-  BookOpen
+  X
 } from "lucide-react";
 import {
   ServiceItem,
   ServiceVideo,
   getServiceBeforeAfterResults,
-  getServiceVideos,
-  getServiceRelatedBlogs
+  getServiceVideos
 } from "@/lib/servicesData";
 
 interface ServiceDetailClientProps {
@@ -48,7 +46,6 @@ export default function ServiceDetailClient({
 
   const results = getServiceBeforeAfterResults(service.slug);
   const videos = getServiceVideos(service.slug);
-  const blogs = getServiceRelatedBlogs(service.slug);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -176,7 +173,7 @@ export default function ServiceDetailClient({
       </section>
 
       {/* MAIN BODY FLOW */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {service.isEmpty ? (
           /* CLEAN PLACEHOLDER FOR SERVICES WITHOUT DEDICATED PDF CONTENT */
           <motion.section
@@ -229,595 +226,514 @@ export default function ServiceDetailClient({
             </div>
           </motion.section>
         ) : (
-          /* COMPLETE 11-SECTION PDF CONTENT FLOW IN EXACT SPECIFIED ORDER */
-          <>
-            {/* 2. UNDERSTANDING THE SERVICE */}
-            {service.understandingParagraphs && service.understandingParagraphs.length > 0 && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="p-8 sm:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
-              >
-                <div className="flex items-center gap-2.5">
-                  <Info className="w-5 h-5 text-[#E6663A]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    {service.understandingHeadline || `Understanding ${service.name}`}
-                  </h2>
-                </div>
-                <div className="space-y-4 text-sm sm:text-base text-[#555555] leading-relaxed font-light">
-                  {service.understandingParagraphs.map((para, idx) => (
-                    <p key={idx}>{para}</p>
-                  ))}
-                </div>
-              </motion.section>
-            )}
-
-            {/* 3. KEY BENEFITS / CLINICAL ADVANTAGES */}
-            {service.benefits && service.benefits.length > 0 && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-6"
-              >
-                <div className="space-y-1">
-                  <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest">
-                    PROVEN CLINICAL OUTCOMES
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Key Benefits & Clinical Advantages
-                  </h2>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {service.benefits.map((benefit, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-start gap-3.5 p-5 rounded-2xl bg-white border border-[#EFE8E0] shadow-xs hover:border-[#E6663A]/40 transition-colors"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-[#E6663A] shrink-0 mt-0.5" />
-                      <span className="text-xs sm:text-sm text-[#333333] font-medium leading-relaxed">
-                        {benefit}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </motion.section>
-            )}
-
-            {/* 4. IDEAL CANDIDATE */}
-            {(service.candidateItems?.length || service.candidateIntro) && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#151515] to-[#252525] text-white shadow-xl space-y-5"
-              >
-                <div className="flex items-center gap-2.5">
-                  <Activity className="w-5 h-5 text-[#F6B73C]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-                    Signs You May Be an Ideal Candidate
-                  </h2>
-                </div>
-
-                {service.candidateIntro && (
-                  <p className="text-white/80 text-sm sm:text-base font-light">
-                    {service.candidateIntro}
-                  </p>
-                )}
-
-                {service.candidateItems && service.candidateItems.length > 0 && (
-                  <ul className="space-y-3 pt-2">
-                    {service.candidateItems.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3.5 text-xs sm:text-sm text-white/95">
-                        <span className="w-2 h-2 rounded-full bg-[#E6663A] mt-1.5 shrink-0" />
-                        <span className="leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {service.candidateSummary && (
-                  <div className="pt-4 border-t border-white/10 text-xs sm:text-sm text-[#F6B73C] font-medium">
-                    {service.candidateSummary}
+          /* 2-COLUMN PREMIUM LAYOUT (LEFT: PDF CONTENT & FAQ, RIGHT: RESULTS & VIDEOS) */
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* LEFT COLUMN: All Existing Service Content + Steps + FAQs (col-span-7) */}
+            <div className="lg:col-span-7 xl:col-span-7 space-y-10 sm:space-y-12">
+              {/* 2. UNDERSTANDING THE SERVICE */}
+              {service.understandingParagraphs && service.understandingParagraphs.length > 0 && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 sm:p-8 md:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Info className="w-5 h-5 text-[#E6663A]" />
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
+                      {service.understandingHeadline || `Understanding ${service.name}`}
+                    </h2>
                   </div>
-                )}
-              </motion.section>
-            )}
-
-            {/* 5. PROCEDURE OVERVIEW (STEPS 1, 2, 3, 4, ...) */}
-            {service.procedureSteps && service.procedureSteps.length > 0 && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-6"
-              >
-                <div className="space-y-1">
-                  <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest">
-                    STEP-BY-STEP PROCESS
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Procedure Overview: How It Works
-                  </h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  {service.procedureSteps.map((step) => (
-                    <div
-                      key={step.stepNumber}
-                      className="p-6 sm:p-7 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-3 flex flex-col justify-start hover:border-[#E6663A]/40 transition-colors"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-[#E6663A] to-[#F6B73C] text-white flex items-center justify-center font-bold text-sm shadow-md shrink-0">
-                          {step.stepNumber}
-                        </div>
-                        <h3 className="font-serif text-base sm:text-lg font-bold text-[#151515]">
-                          Step {step.stepNumber}: {step.title}
-                        </h3>
-                      </div>
-                      <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light pt-1">
-                        {step.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.section>
-            )}
-
-            {/* 6. OUR APPROACH / TECHNIQUES */}
-            {(service.approachParagraphs?.length || service.approachSubSections?.length) && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="p-8 sm:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-6"
-              >
-                <div className="flex items-center gap-2.5">
-                  <Stethoscope className="w-5 h-5 text-[#E6663A]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Our Approach & Advanced Techniques
-                  </h2>
-                </div>
-
-                {service.approachParagraphs && service.approachParagraphs.length > 0 && (
                   <div className="space-y-4 text-sm sm:text-base text-[#555555] leading-relaxed font-light">
-                    {service.approachParagraphs.map((para, idx) => (
+                    {service.understandingParagraphs.map((para, idx) => (
                       <p key={idx}>{para}</p>
                     ))}
                   </div>
-                )}
+                </motion.section>
+              )}
 
-                {service.approachSubSections && service.approachSubSections.length > 0 && (
-                  <div className="space-y-4 pt-4 border-t border-[#EFE8E0]">
-                    {service.approachSubSections.map((sub, idx) => (
-                      <div key={idx} className="p-5 rounded-2xl bg-[#F8F6F2] border border-[#EFE8E0] space-y-2">
-                        <h3 className="font-serif text-base font-bold text-[#151515] flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-[#E6663A]" />
-                          <span>{sub.title}</span>
-                        </h3>
-                        <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
-                          {sub.content}
+              {/* 3. KEY BENEFITS / CLINICAL ADVANTAGES */}
+              {service.benefits && service.benefits.length > 0 && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="space-y-6"
+                >
+                  <div className="space-y-1">
+                    <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest">
+                      PROVEN CLINICAL OUTCOMES
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
+                      Key Benefits & Clinical Advantages
+                    </h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {service.benefits.map((benefit, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-start gap-3.5 p-5 rounded-2xl bg-white border border-[#EFE8E0] shadow-xs hover:border-[#E6663A]/40 transition-colors"
+                      >
+                        <CheckCircle2 className="w-5 h-5 text-[#E6663A] shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm text-[#333333] font-medium leading-relaxed">
+                          {benefit}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </motion.section>
+              )}
+
+              {/* 4. IDEAL CANDIDATE */}
+              {(service.candidateItems?.length || service.candidateIntro) && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 sm:p-8 md:p-10 rounded-3xl bg-gradient-to-br from-[#151515] to-[#252525] text-white shadow-xl space-y-5"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Activity className="w-5 h-5 text-[#F6B73C]" />
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+                      Signs You May Be an Ideal Candidate
+                    </h2>
+                  </div>
+
+                  {service.candidateIntro && (
+                    <p className="text-white/80 text-sm sm:text-base font-light">
+                      {service.candidateIntro}
+                    </p>
+                  )}
+
+                  {service.candidateItems && service.candidateItems.length > 0 && (
+                    <ul className="space-y-3 pt-2">
+                      {service.candidateItems.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3.5 text-xs sm:text-sm text-white/95">
+                          <span className="w-2 h-2 rounded-full bg-[#E6663A] mt-1.5 shrink-0" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {service.candidateSummary && (
+                    <div className="pt-4 border-t border-white/10 text-xs sm:text-sm text-[#F6B73C] font-medium">
+                      {service.candidateSummary}
+                    </div>
+                  )}
+                </motion.section>
+              )}
+
+              {/* 5. PROCEDURE OVERVIEW (STEPS 1, 2, 3, 4, ...) */}
+              {service.procedureSteps && service.procedureSteps.length > 0 && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="space-y-6"
+                >
+                  <div className="space-y-1">
+                    <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest">
+                      STEP-BY-STEP PROCESS
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
+                      Procedure Overview: How It Works
+                    </h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                    {service.procedureSteps.map((step) => (
+                      <div
+                        key={step.stepNumber}
+                        className="p-5 sm:p-6 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-3 flex flex-col justify-start hover:border-[#E6663A]/40 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-2xl bg-gradient-to-br from-[#E6663A] to-[#F6B73C] text-white flex items-center justify-center font-bold text-xs sm:text-sm shadow-md shrink-0">
+                            {step.stepNumber}
+                          </div>
+                          <h3 className="font-serif text-sm sm:text-base font-bold text-[#151515]">
+                            Step {step.stepNumber}: {step.title}
+                          </h3>
+                        </div>
+                        <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light pt-1">
+                          {step.description}
                         </p>
                       </div>
                     ))}
                   </div>
-                )}
-              </motion.section>
-            )}
+                </motion.section>
+              )}
 
-            {/* 7. RECOVERY & AFTERCARE */}
-            {service.recoveryParagraphs && service.recoveryParagraphs.length > 0 && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="p-8 sm:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
-              >
-                <div className="flex items-center gap-2.5">
-                  <Clock className="w-5 h-5 text-[#F6B73C]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Recovery & Aftercare Timeline
-                  </h2>
-                </div>
-                <div className="space-y-4 text-sm sm:text-base text-[#555555] leading-relaxed font-light">
-                  {service.recoveryParagraphs.map((para, idx) => (
-                    <p key={idx}>{para}</p>
-                  ))}
-                </div>
-              </motion.section>
-            )}
+              {/* 5. OUR APPROACH / TECHNIQUES */}
+              {(service.approachParagraphs?.length || service.approachSubSections?.length) && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 sm:p-8 md:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-6"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Stethoscope className="w-5 h-5 text-[#E6663A]" />
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
+                      Our Approach & Advanced Techniques
+                    </h2>
+                  </div>
 
-            {/* 8. PRICING */}
-            {service.pricingText && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="p-8 sm:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
-              >
-                <div className="flex items-center gap-2.5">
-                  <DollarSign className="w-5 h-5 text-[#E6663A]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Pricing & Consultation Estimates
-                  </h2>
-                </div>
-                <p className="text-sm sm:text-base text-[#555555] leading-relaxed font-light">
-                  {service.pricingText}
-                </p>
-                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-semibold text-[#151515]">
-                  <span className="flex items-center gap-2 bg-[#F8F6F2] px-4 py-2 rounded-full border border-[#EFE8E0]">
-                    <PhoneCall className="w-3.5 h-3.5 text-[#E6663A]" /> Direct Pricing Helpline: 9639635454 / 9133733733
-                  </span>
-                  <Link
-                    href="/contact"
-                    className="text-[#E6663A] hover:underline flex items-center gap-1 font-bold"
-                  >
-                    <span>Request Custom Quote</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </motion.section>
-            )}
+                  {service.approachParagraphs && service.approachParagraphs.length > 0 && (
+                    <div className="space-y-4 text-sm sm:text-base text-[#555555] leading-relaxed font-light">
+                      {service.approachParagraphs.map((para, idx) => (
+                        <p key={idx}>{para}</p>
+                      ))}
+                    </div>
+                  )}
 
-            {/* 9. SCARS & MARKS */}
-            {service.scarsText && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="p-8 sm:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
-              >
-                <div className="flex items-center gap-2.5">
-                  <Sparkles className="w-5 h-5 text-[#E6663A]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Scars & Marks
-                  </h2>
-                </div>
-                <p className="text-sm sm:text-base text-[#555555] leading-relaxed font-light">
-                  {service.scarsText}
-                </p>
-              </motion.section>
-            )}
+                  {service.approachSubSections && service.approachSubSections.length > 0 && (
+                    <div className="space-y-4 pt-4 border-t border-[#EFE8E0]">
+                      {service.approachSubSections.map((sub, idx) => (
+                        <div key={idx} className="p-5 rounded-2xl bg-[#F8F6F2] border border-[#EFE8E0] space-y-2">
+                          <h3 className="font-serif text-base font-bold text-[#151515] flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#E6663A]" />
+                            <span>{sub.title}</span>
+                          </h3>
+                          <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+                            {sub.content}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </motion.section>
+              )}
 
-            {/* 10. SAFETY & THINGS TO CONSIDER */}
-            {service.safetyText && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="p-8 sm:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
-              >
-                <div className="flex items-center gap-2.5">
-                  <AlertCircle className="w-5 h-5 text-[#E6663A]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Safety & Things to Consider
-                  </h2>
-                </div>
-                <p className="text-sm sm:text-base text-[#555555] leading-relaxed font-light">
-                  {service.safetyText}
-                </p>
-              </motion.section>
-            )}
+              {/* 6. RECOVERY & AFTERCARE TIMELINE */}
+              {service.recoveryParagraphs && service.recoveryParagraphs.length > 0 && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 sm:p-8 md:p-10 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Clock className="w-5 h-5 text-[#F6B73C]" />
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
+                      Recovery & Aftercare Timeline
+                    </h2>
+                  </div>
+                  <div className="space-y-4 text-sm sm:text-base text-[#555555] leading-relaxed font-light">
+                    {service.recoveryParagraphs.map((para, idx) => (
+                      <p key={idx}>{para}</p>
+                    ))}
+                  </div>
+                </motion.section>
+              )}
 
-            {/* 11. FREQUENTLY ASKED QUESTIONS (FINAL SECTION OF PDF CONTENT) */}
-            {service.faqs && service.faqs.length > 0 && (
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.15 }}
-                transition={{ duration: 0.5 }}
-                className="space-y-6 pt-4"
-              >
-                <div className="flex items-center gap-2.5">
-                  <HelpCircle className="w-5 h-5 text-[#E6663A]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
-                    Frequently Asked Questions
-                  </h2>
-                </div>
+              {/* 7. FREQUENTLY ASKED QUESTIONS */}
+              {service.faqs && service.faqs.length > 0 && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="space-y-6 pt-2"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <HelpCircle className="w-5 h-5 text-[#E6663A]" />
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515]">
+                      Frequently Asked Questions
+                    </h2>
+                  </div>
 
-                <div className="space-y-3">
-                  {service.faqs.map((faq, idx) => {
-                    const isOpen = openFaqIndex === idx;
-                    return (
-                      <div
-                        key={idx}
-                        className="bg-white rounded-2xl border border-[#EFE8E0] overflow-hidden transition-all duration-200"
-                      >
-                        <button
-                          onClick={() => toggleFaq(idx)}
-                          className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#151515] hover:text-[#E6663A] transition-colors"
+                  <div className="space-y-3">
+                    {service.faqs.map((faq, idx) => {
+                      const isOpen = openFaqIndex === idx;
+                      return (
+                        <div
+                          key={idx}
+                          className="bg-white rounded-2xl border border-[#EFE8E0] overflow-hidden transition-all duration-200"
                         >
-                          <span>{faq.question}</span>
-                          <div className="w-7 h-7 rounded-full bg-[#F8F6F2] flex items-center justify-center shrink-0">
-                            {isOpen ? (
-                              <Minus className="w-4 h-4 text-[#E6663A]" />
-                            ) : (
-                              <Plus className="w-4 h-4 text-[#151515]" />
+                          <button
+                            onClick={() => toggleFaq(idx)}
+                            className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-bold text-sm sm:text-base text-[#151515] hover:text-[#E6663A] transition-colors"
+                          >
+                            <span>{faq.question}</span>
+                            <div className="w-7 h-7 rounded-full bg-[#F8F6F2] flex items-center justify-center shrink-0">
+                              {isOpen ? (
+                                <Minus className="w-4 h-4 text-[#E6663A]" />
+                              ) : (
+                                <Plus className="w-4 h-4 text-[#151515]" />
+                              )}
+                            </div>
+                          </button>
+
+                          <AnimatePresence>
+                            {isOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#555555] leading-relaxed border-t border-[#F8F6F2]">
+                                  {faq.answer}
+                                </div>
+                              </motion.div>
                             )}
-                          </div>
-                        </button>
-
-                        <AnimatePresence>
-                          {isOpen && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.25 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-[#555555] leading-relaxed border-t border-[#F8F6F2]">
-                                {faq.answer}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    );
-                  })}
-                </div>
-              </motion.section>
-            )}
-          </>
-        )}
-
-        {/* =========================================================================
-            AFTER FAQ — WEBSITE UI ONLY (ZERO PDF CONTENT BELOW)
-           ========================================================================= */}
-
-        {/* 1. BEFORE & AFTER RESULTS */}
-        {results && results.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.15 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6 pt-4"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-[#EFE8E0] pb-4">
-              <div>
-                <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest block mb-1">
-                  CLINICAL TRANSFORMATIONS
-                </span>
-                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#151515]">
-                  Before & After Results
-                </h2>
-              </div>
-              <span className="text-xs text-[#777777] font-medium">
-                {service.name} Transformations
-              </span>
+                          </AnimatePresence>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </motion.section>
+              )}
             </div>
 
-            <div className="grid grid-cols-1 gap-8">
-              {results.map((res) => (
-                <div
-                  key={res.id}
-                  className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EFE8E0] shadow-sm space-y-5"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-3">
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#151515]">
-                      {res.title}
-                    </h3>
-                    <span
-                      className={`text-xs font-semibold px-3 py-1 rounded-full ${
-                        res.isIllustrative
-                          ? "bg-amber-500/10 text-amber-800 border border-amber-500/25"
-                          : "bg-[#E6663A]/10 text-[#E6663A] border border-[#E6663A]/25"
-                      }`}
-                    >
-                      {res.tag || (res.isIllustrative ? "Illustrative Example" : "Real Patient Outcome")}
+            {/* RIGHT COLUMN: Results + Videos + Pricing + Scars + Safety (col-span-5) */}
+            <aside className="lg:col-span-5 xl:col-span-5 space-y-8">
+              {/* 1. BEFORE & AFTER RESULTS */}
+              {results && results.length > 0 && (
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between border-b border-[#EFE8E0] pb-3">
+                    <div>
+                      <span className="text-[#E6663A] text-[11px] font-bold uppercase tracking-widest block">
+                        CLINICAL TRANSFORMATIONS
+                      </span>
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#151515]">
+                        Before & After Results
+                      </h3>
+                    </div>
+                    <span className="text-[11px] text-[#777777] font-medium">
+                      Real Outcome
                     </span>
                   </div>
 
-                  {/* Comparison Dual Panels */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Before Panel */}
-                    <div className="space-y-2">
-                      <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-[#F8F6F2] border border-[#EFE8E0] group">
-                        <Image
-                          src={res.beforeImage}
-                          alt={`${res.title} Before`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-white text-[11px] font-bold tracking-wider uppercase">
-                          BEFORE
-                        </div>
+                  {results.map((res) => (
+                    <div
+                      key={res.id}
+                      className="bg-white rounded-3xl p-4 sm:p-6 border border-[#EFE8E0] shadow-sm space-y-4"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <h4 className="font-serif text-base sm:text-lg font-bold text-[#151515]">
+                          {res.title}
+                        </h4>
+                        <span
+                          className={`text-[10px] font-semibold px-2.5 py-0.5 rounded-full ${
+                            res.isIllustrative
+                              ? "bg-amber-500/10 text-amber-800 border border-amber-500/25"
+                              : "bg-[#E6663A]/10 text-[#E6663A] border border-[#E6663A]/25"
+                          }`}
+                        >
+                          {res.tag || (res.isIllustrative ? "Illustrative Example" : "Real Patient Outcome")}
+                        </span>
                       </div>
-                    </div>
 
-                    {/* After Panel */}
-                    <div className="space-y-2">
-                      <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden bg-[#F8F6F2] border border-[#EFE8E0] group">
-                        <Image
-                          src={res.afterImage}
-                          alt={`${res.title} After`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                        <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-gradient-to-r from-[#E6663A] to-[#F6B73C] text-white text-[11px] font-bold tracking-wider uppercase shadow-md">
-                          AFTER
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                      {/* Unified Single Image Result Card */}
+                      <div className="group relative rounded-2xl overflow-hidden bg-[#181818] border border-[#EFE8E0]/70 shadow-md">
+                        {/* Glowing Accent Border / Under-glow at Bottom */}
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 bg-gradient-to-r from-[#E6663A]/30 via-[#fa4c00]/30 to-[#F6B73C]/30 rounded-full blur-xl pointer-events-none" />
 
-                  {res.description && (
-                    <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light pt-1">
-                      {res.description}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </motion.section>
-        )}
+                        {/* Single 4:3 Image Container */}
+                        <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#151515]">
+                          <Image
+                            src={res.beforeImage}
+                            alt={`${res.title} - Before and After Results`}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 480px"
+                            className="object-contain sm:object-cover w-full h-full group-hover:scale-[1.01] transition-transform duration-500"
+                          />
 
-        {/* 2. RELATED VIDEOS (WATCH & LEARN) */}
-        {videos && videos.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.15 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6 pt-4"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-[#EFE8E0] pb-4">
-              <div>
-                <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest block mb-1">
-                  PROCEDURAL INSIGHTS
-                </span>
-                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#151515]">
-                  Watch & Learn
-                </h2>
-              </div>
-              <span className="text-xs text-[#777777] font-medium">
-                Official Sculpt Video Guides
-              </span>
-            </div>
+                          {/* Subtle Bottom Overlay for Readability */}
+                          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 via-black/25 to-transparent pointer-events-none" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {videos.map((vid) => (
-                <div
-                  key={vid.id}
-                  onClick={() => setSelectedVideo(vid)}
-                  className="bg-white rounded-3xl overflow-hidden border border-[#EFE8E0] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:-translate-y-1"
-                >
-                  <div>
-                    {/* Video Thumbnail */}
-                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#151515]">
-                      <Image
-                        src={`https://i.ytimg.com/vi/${vid.youtubeId}/hqdefault.jpg`}
-                        alt={vid.title}
-                        fill
-                        unoptimized
-                        className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
-                      />
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
+                          {/* Bottom Subtle Overlay Badges: Left for BEFORE, Right for AFTER */}
+                          <div className="absolute bottom-3 inset-x-3 sm:inset-x-4 flex items-center justify-between pointer-events-none z-10">
+                            {/* BEFORE Badge on Left */}
+                            <div className="relative flex items-center">
+                              <div className="absolute -inset-1 bg-[#E6663A]/35 rounded-full blur-xs opacity-80" />
+                              <div className="relative px-3 py-1 rounded-full bg-[#151515]/85 backdrop-blur-md border border-[#E6663A]/40 text-white shadow-sm flex items-center gap-1.5">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#E6663A]" />
+                                <span className="text-[10px] font-bold tracking-widest uppercase text-white/95 font-sans">
+                                  BEFORE
+                                </span>
+                              </div>
+                            </div>
 
-                      {/* Play Button Overlay */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#E6663A] text-white flex items-center justify-center shadow-[0_4px_20px_rgba(230,102,58,0.5)] group-hover:scale-110 group-hover:bg-[#d05328] transition-all duration-300">
-                          <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-white ml-0.5" />
+                            {/* AFTER Badge on Right */}
+                            <div className="relative flex items-center">
+                              <div className="absolute -inset-1 bg-gradient-to-r from-[#E6663A]/60 via-[#fa4c00]/60 to-[#F6B73C]/60 rounded-full blur-xs opacity-90" />
+                              <div className="relative px-3 py-1 rounded-full bg-gradient-to-r from-[#E6663A] to-[#F6B73C] text-white shadow-md flex items-center gap-1 border border-white/20">
+                                <Sparkles className="w-2.5 h-2.5 text-white" />
+                                <span className="text-[10px] font-bold tracking-widest uppercase text-white font-sans">
+                                  AFTER
+                                </span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
 
-                      {/* Duration Badge */}
-                      {vid.duration && (
-                        <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-md text-white text-[10px] font-semibold">
-                          {vid.duration}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="p-5 space-y-2">
-                      <h3 className="font-serif text-base sm:text-lg font-bold text-[#151515] group-hover:text-[#E6663A] transition-colors leading-snug line-clamp-2">
-                        {vid.title}
-                      </h3>
-                      {vid.description && (
-                        <p className="text-xs text-[#666666] line-clamp-2 leading-relaxed font-light">
-                          {vid.description}
+                      {res.description && (
+                        <p className="text-xs text-[#555555] leading-relaxed font-light">
+                          {res.description}
                         </p>
                       )}
                     </div>
-                  </div>
+                  ))}
+                </div>
+              )}
 
-                  <div className="p-5 pt-0">
-                    <span className="text-xs font-bold text-[#E6663A] uppercase tracking-wider inline-flex items-center gap-1 group-hover:underline">
-                      <span>Watch Video</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              {/* 2. RELATED VIDEOS (WATCH & LEARN) */}
+              {videos && videos.length > 0 && (
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-center justify-between border-b border-[#EFE8E0] pb-3">
+                    <div>
+                      <span className="text-[#E6663A] text-[11px] font-bold uppercase tracking-widest block">
+                        PROCEDURAL INSIGHTS
+                      </span>
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#151515]">
+                        Watch & Learn
+                      </h3>
+                    </div>
+                    <span className="text-[11px] text-[#777777] font-medium">
+                      Official Sculpt Videos
                     </span>
                   </div>
-                </div>
-              ))}
-            </div>
-          </motion.section>
-        )}
 
-        {/* 3. RELATED FROM OUR BLOG */}
-        {blogs && blogs.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.15 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6 pt-4"
-          >
-            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-[#EFE8E0] pb-4">
-              <div>
-                <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest block mb-1">
-                  SURGEON GUIDES & ADVICE
-                </span>
-                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#151515]">
-                  Related From Our Blog
-                </h2>
-              </div>
-              <span className="text-xs text-[#777777] font-medium">
-                Educational Articles
-              </span>
-            </div>
+                  <div className="space-y-4">
+                    {videos.map((vid) => (
+                      <div
+                        key={vid.id}
+                        onClick={() => setSelectedVideo(vid)}
+                        className="bg-white rounded-2xl overflow-hidden border border-[#EFE8E0] shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group cursor-pointer hover:-translate-y-0.5"
+                      >
+                        <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-[#151515]">
+                          <Image
+                            src={`https://i.ytimg.com/vi/${vid.youtubeId}/hqdefault.jpg`}
+                            alt={vid.title}
+                            fill
+                            unoptimized
+                            className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                          />
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {blogs.map((post) => (
-                <article
-                  key={post.slug}
-                  className="bg-white rounded-3xl overflow-hidden border border-[#EFE8E0] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
-                >
-                  <div>
-                    <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-[#F8F6F2]">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute top-3 left-3 bg-[#E6663A] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-                        {post.category}
+                          {/* Play Button Overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-11 h-11 rounded-full bg-[#E6663A] text-white flex items-center justify-center shadow-[0_4px_16px_rgba(230,102,58,0.5)] group-hover:scale-110 group-hover:bg-[#d05328] transition-all duration-300">
+                              <Play className="w-4 h-4 fill-white ml-0.5" />
+                            </div>
+                          </div>
+
+                          {/* Duration Badge */}
+                          {vid.duration && (
+                            <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-md text-white text-[10px] font-semibold">
+                              {vid.duration}
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="p-4 space-y-1.5">
+                          <h4 className="font-serif text-sm sm:text-base font-bold text-[#151515] group-hover:text-[#E6663A] transition-colors leading-snug line-clamp-2">
+                            {vid.title}
+                          </h4>
+                          {vid.description && (
+                            <p className="text-xs text-[#666666] line-clamp-2 leading-relaxed font-light">
+                              {vid.description}
+                            </p>
+                          )}
+                          <div className="pt-2 flex items-center text-xs font-bold text-[#E6663A] uppercase tracking-wider gap-1 group-hover:underline">
+                            <span>Watch Video</span>
+                            <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-
-                    <div className="p-6 space-y-3">
-                      <div className="text-xs text-[#777777] font-medium flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-[#E6663A]" />
-                        <span>{post.readTime}</span>
-                      </div>
-
-                      <Link href={`/blog/${post.slug}`} className="block">
-                        <h3 className="font-serif text-lg sm:text-xl font-bold text-[#151515] group-hover:text-[#E6663A] transition-colors leading-snug">
-                          {post.title}
-                        </h3>
-                      </Link>
-
-                      <p className="text-xs sm:text-sm text-[#555555] line-clamp-2 leading-relaxed font-light">
-                        {post.excerpt}
-                      </p>
-                    </div>
+                    ))}
                   </div>
+                </div>
+              )}
 
-                  <div className="p-6 pt-0 border-t border-[#EFE8E0] mt-2 flex items-center justify-between">
+              {/* 3. PRICING & CONSULTATION ESTIMATES */}
+              {service.pricingText && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 sm:p-8 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <DollarSign className="w-5 h-5 text-[#E6663A]" />
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#151515]">
+                      Pricing & Consultation Estimates
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+                    {service.pricingText}
+                  </p>
+                  <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-semibold text-[#151515]">
+                    <span className="flex items-center gap-2 bg-[#F8F6F2] px-3.5 py-2 rounded-full border border-[#EFE8E0]">
+                      <PhoneCall className="w-3.5 h-3.5 text-[#E6663A]" /> 9639635454 / 9133733733
+                    </span>
                     <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#E6663A] hover:underline"
+                      href="/contact"
+                      className="text-[#E6663A] hover:underline flex items-center gap-1 font-bold"
                     >
-                      <span>Read Full Article</span>
+                      <span>Request Custom Quote</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
-                </article>
-              ))}
-            </div>
-          </motion.section>
+                </motion.section>
+              )}
+
+              {/* 4. SCARS & MARKS */}
+              {service.scarsText && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 sm:p-8 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Sparkles className="w-5 h-5 text-[#E6663A]" />
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#151515]">
+                      Scars & Marks
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+                    {service.scarsText}
+                  </p>
+                </motion.section>
+              )}
+
+              {/* 5. SAFETY & THINGS TO CONSIDER */}
+              {service.safetyText && (
+                <motion.section
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.15 }}
+                  transition={{ duration: 0.5 }}
+                  className="p-6 sm:p-8 rounded-3xl bg-white border border-[#EFE8E0] shadow-sm space-y-4"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <AlertCircle className="w-5 h-5 text-[#E6663A]" />
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#151515]">
+                      Safety & Things to Consider
+                    </h3>
+                  </div>
+                  <p className="text-xs sm:text-sm text-[#555555] leading-relaxed font-light">
+                    {service.safetyText}
+                  </p>
+                </motion.section>
+              )}
+            </aside>
+          </div>
         )}
 
         {/* CTA: READY TO BEGIN YOUR AESTHETIC JOURNEY? */}

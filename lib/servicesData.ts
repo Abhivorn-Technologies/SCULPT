@@ -255,36 +255,103 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/Vaser Liposuction.png",
-    "isEmpty": true,
-    "shortDescription": "Advanced ultrasound-assisted body contouring for precision fat emulsification and sculpted definition.",
-    "heroHeadline": "Advanced Ultrasound-Assisted Vaser Body Contouring",
-    "introHeadline": "Advanced Ultrasound-Assisted Vaser Body Contouring",
+    "isEmpty": false,
+    "shortDescription": "HD Liposuction goes beyond standard fat removal to reveal the natural contours of underlying muscle, creating a more athletic, sculpted appearance for suitable candidates. At Sculpt Aesthetics in Madhapur, Hyderabad, HD Liposuction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Sculpted muscle definition, not just fat removal",
+    "introHeadline": "Sculpted muscle definition, not just fat removal",
     "introParagraphs": [
-      "Advanced ultrasound-assisted body contouring for precision fat emulsification and sculpted definition."
+      "HD Liposuction goes beyond standard fat removal to reveal the natural contours of underlying muscle, creating a more athletic, sculpted appearance for suitable candidates. At Sculpt Aesthetics in Madhapur, Hyderabad, HD Liposuction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    "understandingHeadline": "Understanding Vaser Liposuction",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
-    "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
-    "faqs": [],
+    "understandingHeadline": "Understanding HD & Vaser Liposuction",
+    "understandingParagraphs": [
+      "High-Definition Liposuction is an advanced liposuction technique that selectively removes fat both superficially and around muscle groups, etching in natural muscle lines (such as abdominal definition) to create a toned, athletic silhouette. Many people considering HD Liposuction have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Athletic, sculpted body contour",
+      "Reveals natural muscle definition",
+      "Popular for the abdomen, arms, and back"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals close to their ideal weight with good muscle tone",
+      "Those who exercise regularly but struggle to reveal definition due to a stubborn fat layer",
+      "Patients with good skin elasticity seeking a more sculpted look"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether HD Liposuction is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for HD Liposuction that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "HD Liposuction is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
+      }
+    ],
+    "approachParagraphs": [
+      "Using advanced liposuction technology, fat is removed in layers — both to reduce overall volume and to accentuate natural muscle grooves — requiring a highly skilled, artistic approach to avoid an unnatural look."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Ultrasound-Assisted Fat Emulsification",
+        "content": "Focused ultrasound energy gently liquefies fat before removal, allowing smoother extraction and skin tightening, especially in fibrous areas."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery is similar to standard liposuction, with most patients resuming light activity within a few days and full exercise over 4-6 weeks.",
+      "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of HD Liposuction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Entry points are small and carefully placed, healing to be barely noticeable.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Do I need to already have visible muscle tone for HD lipo to work?",
+        "answer": "Some underlying muscle tone significantly improves results, so your surgeon will assess your fitness level and skin quality during consultation."
+      },
+      {
+        "question": "Is HD liposuction more expensive than standard liposuction?",
+        "answer": "It typically requires more surgical skill and time, so pricing may differ; this is discussed during your consultation."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during HD Liposuction itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "How is HD liposuction different from regular liposuction?",
+        "answer": "Regular liposuction focuses on overall fat reduction, while HD liposuction adds an artistic layer of contouring to reveal muscle definition."
+      }
+    ],
     "relatedServiceSlugs": [
       "liposuction",
+      "male-body-contouring",
       "tummy-tuck-abdominoplasty",
       "mommy-makeover"
     ],
     "seo": {
-      "metaTitle": "Vaser Liposuction in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional Vaser Liposuction at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "vaser liposuction, vaser liposuction hyderabad, the sculpt aesthetics",
+      "metaTitle": "HD Liposuction Hyderabad | High Definition Body Sculpting | Sculpt Aesthetics",
+      "metaDescription": "High-Definition (HD) Liposuction in Madhapur, Hyderabad to reveal natural muscle contours for an athletic, sculpted look.",
+      "focusKeywords": "HD liposuction Hyderabad, high definition liposuction, six pack liposuction",
       "canonicalUrl": "https://thesculptaesthetics.com/services/vaser-liposuction"
     },
     "isPlasticSurgery": true
@@ -519,36 +586,113 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": true,
     "image": "/assets/UPDATED SERVICES/body-contouring.png",
-    "isEmpty": true,
-    "shortDescription": "Tailored surgical and clinical body sculpting to restore athletic tone and harmonious proportions.",
-    "heroHeadline": "Comprehensive Surgical & Clinical Body Contouring",
-    "introHeadline": "Comprehensive Surgical & Clinical Body Contouring",
+    "isEmpty": false,
+    "shortDescription": "Diet and exercise don't always resolve stubborn, localized fat deposits. Body contouring at Sculpt Aesthetics uses advanced liposuction techniques to sculpt a leaner, more defined physique. At Sculpt Aesthetics in Madhapur, Hyderabad, Body Contouring is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Sculpted, defined results for a balanced physique",
+    "introHeadline": "Sculpted, defined results for a balanced physique",
     "introParagraphs": [
-      "Tailored surgical and clinical body sculpting to restore athletic tone and harmonious proportions."
+      "Diet and exercise don't always resolve stubborn, localized fat deposits. Body contouring at Sculpt Aesthetics uses advanced liposuction techniques to sculpt a leaner, more defined physique. At Sculpt Aesthetics in Madhapur, Hyderabad, Body Contouring is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
     "understandingHeadline": "Understanding Body Contouring",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
-    "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
-    "faqs": [],
+    "understandingParagraphs": [
+      "Body contouring is a customized set of procedures — primarily liposuction — designed to reshape areas of the body that carry stubborn fat resistant to lifestyle changes, including the abdomen, love handles, flanks, chest, arms, and thighs. Many people considering Body Contouring have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Defined, athletic body contour",
+      "Targeted removal of stubborn fat",
+      "Minimal downtime with modern techniques",
+      "Improved clothing fit and confidence"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals close to their ideal body weight with localized fat pockets",
+      "Individuals seeking improved definition rather than significant weight loss",
+      "Patients with good skin elasticity",
+      "Those in good general health with realistic expectations"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether Body Contouring is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for Body Contouring that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "Body Contouring is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
+      }
+    ],
+    "approachParagraphs": [
+      "Treatment areas commonly include the abdomen, love handles, flanks, chest, arms, and thighs. Using advanced liposuction technology, excess fat is removed with precision to create a more defined, proportionate body shape, tailored to each patient's frame and goals."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Is It Right for Your BMI?",
+        "content": "Body contouring liposuction is most effective for individuals close to their ideal weight who have specific stubborn fat pockets rather than overall excess weight. Your surgeon will review your BMI and health profile to confirm you're a good candidate and to set realistic expectations."
+      },
+      {
+        "title": "Ultrasound-Assisted & Power-Assisted Liposuction",
+        "content": "For a more defined, athletic result, we offer Ultrasound-Assisted Liposuction (which liquefies fat for smoother removal) and Power-Assisted Liposuction (which uses gentle mechanical vibration for efficient fat removal with less physical strain) as advanced options alongside traditional liposuction."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Patients typically resume desk-based work within a few days, with full physical activity resuming over 2‒4 weeks depending on the areas treated.",
+      "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Body Contouring depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Entry points are small, strategically placed, and fade significantly within a few months.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Can liposuction replace weight loss?",
+        "answer": "No. Liposuction is a body contouring procedure designed for shaping, not weight reduction."
+      },
+      {
+        "question": "How many areas can be treated in one session?",
+        "answer": "This depends on individual evaluation; multiple areas can often be addressed together, as advised by your surgeon."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during Body Contouring itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months."
+      },
+      {
+        "question": "Can this help achieve visible abs or a six-pack look?",
+        "answer": "High-definition liposuction techniques can help reveal underlying muscle definition in suitable candidates with good muscle tone and skin quality — your surgeon will confirm if this is achievable for you."
+      },
+      {
+        "question": "How many sessions are needed for multiple areas?",
+        "answer": "This depends on total fat volume and safety limits per session; your surgeon will map out a plan during consultation."
+      }
+    ],
     "relatedServiceSlugs": [
       "liposuction",
       "vaser-liposuction",
-      "tummy-tuck-abdominoplasty"
+      "tummy-tuck-abdominoplasty",
+      "gynecomastia-surgery"
     ],
     "seo": {
-      "metaTitle": "Body Contouring in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional Body Contouring at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "body contouring, body contouring hyderabad, the sculpt aesthetics",
+      "metaTitle": "Body Contouring & Liposuction Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Customized body contouring and liposuction in Madhapur, Hyderabad. Target stubborn fat on the abdomen, flanks, chest and arms with advanced techniques.",
+      "focusKeywords": "body contouring, liposuction Hyderabad, fat removal, six pack liposuction",
       "canonicalUrl": "https://thesculptaesthetics.com/services/body-contouring"
     },
     "isPlasticSurgery": true
@@ -2534,36 +2678,89 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": true,
     "image": "/assets/UPDATED SERVICES/facial-rejuvenation.png",
-    "isEmpty": true,
-    "shortDescription": "Customized clinical facial rejuvenation treatments restoring radiant youthfulness and natural skin vitality.",
-    "heroHeadline": "Restore Radiant Youthfulness & Natural Skin Vitality",
-    "introHeadline": "Restore Radiant Youthfulness & Natural Skin Vitality",
+    "isEmpty": false,
+    "shortDescription": "Skin boosters and facial rejuvenation treatments improve hydration, texture, and skin quality through targeted micro-injections, giving skin a naturally healthy, dewy glow. At Sculpt Aesthetics in Madhapur, Hyderabad, Facial Rejuvenation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Deep hydration, improved skin texture, and youthful vitality",
+    "introHeadline": "Deep hydration, improved skin texture, and youthful vitality",
     "introParagraphs": [
-      "Customized clinical facial rejuvenation treatments restoring radiant youthfulness and natural skin vitality."
+      "Skin boosters and facial rejuvenation treatments improve hydration, texture, and skin quality through targeted micro-injections, giving skin a naturally healthy, dewy glow. At Sculpt Aesthetics in Madhapur, Hyderabad, Facial Rejuvenation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    "understandingHeadline": "Understanding Facial Rejuvenation",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
-    "procedureSteps": [],
-    "approachParagraphs": [],
+    "understandingHeadline": "Understanding Facial Rejuvenation & Skin Boosters",
+    "understandingParagraphs": [
+      "Facial rejuvenation treatments — including hyaluronic acid-based skin boosters — are administered in fine micro-droplets across the skin to improve hydration, elasticity, and overall texture from within. Many people considering Facial Rejuvenation have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Improved skin hydration and glow",
+      "Refined texture and smoothness over time",
+      "Minimal downtime with natural results"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with dull, dehydrated, or uneven-textured skin",
+      "Patients seeking a subtle, natural glow without volume change"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Skin Assessment",
+        "description": "Your provider reviews your goals and checks whether facial rejuvenation suits your skin and health profile."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Customized Plan",
+        "description": "A treatment plan and session schedule is created to match your specific aesthetic needs."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "Facial rejuvenation is performed in a comfortable clinical setting, usually taking well under an hour."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare & Follow-Up",
+        "description": "You'll receive simple aftercare tips, and your provider will track your progress over follow-up visits or sessions."
+      }
+    ],
+    "approachParagraphs": [
+      "A series of fine micro-injections deliver hydrating solutions evenly across the treatment area, improving skin quality gradually over a course of sessions."
+    ],
     "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
-    "faqs": [],
+    "recoveryParagraphs": [
+      "Mild redness or small bumps may appear briefly at injection sites and typically resolve within a day.",
+      "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Facial Rejuvenation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "No surgical incisions are made. Micro-injection points fade completely within hours to a day.",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "How many sessions will I need?",
+        "answer": "This varies by individual and goal — your provider will recommend a session plan during your consultation."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Results vary depending on the treatment and individual factors like skin type and lifestyle; your provider can give you a realistic timeline."
+      },
+      {
+        "question": "How many sessions are recommended?",
+        "answer": "An initial course typically involves a few sessions spaced several weeks apart, followed by periodic top-ups to maintain results."
+      },
+      {
+        "question": "Can skin boosters be combined with other facial treatments?",
+        "answer": "Yes, they're often paired with fillers, Botox, or micro-needling for a more complete rejuvenation plan."
+      }
+    ],
     "relatedServiceSlugs": [
-      "rhinoplasty",
-      "facelift",
-      "blepharoplasty"
+      "dermal-fillers",
+      "botox",
+      "micro-needling-hyderabad",
+      "thread-lift"
     ],
     "seo": {
-      "metaTitle": "Facial Rejuvenation in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional Facial Rejuvenation at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "facial rejuvenation, facial rejuvenation hyderabad, the sculpt aesthetics",
+      "metaTitle": "Skin Boosters & Facial Rejuvenation Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Skin booster and facial rejuvenation micro-injections in Madhapur, Hyderabad to improve hydration, texture, and overall skin quality.",
+      "focusKeywords": "facial rejuvenation Hyderabad, skin boosters Hyderabad, hyaluronic acid skin treatment",
       "canonicalUrl": "https://thesculptaesthetics.com/services/facial-rejuvenation"
     },
     "isPlasticSurgery": false
@@ -2673,36 +2870,98 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/E-Fat Graft.png",
-    "isEmpty": true,
-    "shortDescription": "Micro-autologous fat transfer grafting for natural volume restoration and skin rejuvenation.",
-    "heroHeadline": "Micro-Autologous Fat Grafting & Volumetric Restoration",
-    "introHeadline": "Micro-Autologous Fat Grafting & Volumetric Restoration",
+    "isEmpty": false,
+    "shortDescription": "Fat grafting uses the patient's own fat, collected through liposuction, and transfers it to target areas for natural volume enhancement, contouring, and skin rejuvenation. At Sculpt Aesthetics in Madhapur, Hyderabad, E-Fat Graft is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Enhance your shape using your own body's fat",
+    "introHeadline": "Enhance your shape using your own body's fat",
     "introParagraphs": [
-      "Micro-autologous fat transfer grafting for natural volume restoration and skin rejuvenation."
+      "Fat grafting uses the patient's own fat, collected through liposuction, and transfers it to target areas for natural volume enhancement, contouring, and skin rejuvenation. At Sculpt Aesthetics in Madhapur, Hyderabad, E-Fat Graft is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    "understandingHeadline": "Understanding E-Fat Graft",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
-    "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
-    "faqs": [],
+    "understandingHeadline": "Understanding E-Fat Graft & Natural Fat Transfer",
+    "understandingParagraphs": [
+      "Fat grafting is a two-step procedure: fat is first removed from an area with excess deposits via liposuction, purified, and then carefully injected into target areas to add natural volume and improve shape and skin vitality. Many people considering E-Fat Graft have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Natural enhancement using the body's own tissue",
+      "Dual benefit — contours donor area while enhancing target volume",
+      "Soft, natural look and feel"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals seeking modest, natural-looking volume enhancement",
+      "Patients with sufficient donor fat available elsewhere on the body",
+      "Those who prefer natural autologous tissue over artificial implants or synthetic fillers"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Evaluation",
+        "description": "You'll meet with your surgeon to discuss your goals, medical history, and concerns. This is the time to ask questions and understand whether E-Fat Graft is right for you."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Planning",
+        "description": "Your surgeon examines your body structure and designs a plan for E-Fat Graft that fits your anatomy, so results look natural and balanced."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Procedure",
+        "description": "E-Fat Graft is performed in a modern, sterile operation theatre under appropriate anesthesia, following strict safety protocols throughout."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Recovery & Follow-Up",
+        "description": "You're monitored closely after the procedure, with clear aftercare instructions and scheduled follow-up visits to track healing and results."
+      }
+    ],
+    "approachParagraphs": [
+      "Fat is harvested from donor areas such as the abdomen or thighs, processed for purity, and then meticulously injected in layers into the recipient tissue to achieve smooth, natural results while also contouring the donor site."
+    ],
+    "approachSubSections": [
+      {
+        "title": "The Role of Liposuction in Fat Grafting",
+        "content": "Because fat grafting begins with liposuction to harvest donor fat, the same liposuction principles apply — the donor area (commonly the abdomen, flanks, or thighs) is contoured at the same time, giving you a dual benefit: a slimmer donor area and enhanced target volume."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery involves care at both the donor site and the treated area; most patients resume normal activities within 1–2 weeks.",
+      "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of E-Fat Graft depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Scarring is limited to tiny liposuction entry points at the donor site and small injection points at the treatment area, both of which fade to be barely visible.",
+    "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
+    "faqs": [
+      {
+        "question": "Is fat transfer permanent?",
+        "answer": "Transferred fat can provide long-lasting results, though some natural absorption may occur during initial healing."
+      },
+      {
+        "question": "Is the procedure painful?",
+        "answer": "Most patients feel minimal discomfort during E-Fat Graft itself, since it is performed under anesthesia. Some soreness in the days after is normal and manageable with prescribed medication."
+      },
+      {
+        "question": "How long does the surgery take?",
+        "answer": "This depends on the extent of the procedure and will be explained clearly during your consultation, once your specific plan is finalized."
+      },
+      {
+        "question": "When will I see the final results?",
+        "answer": "You'll notice initial changes as swelling reduces over the first few weeks, with final results becoming clearer over the following months as the transferred fat settles."
+      },
+      {
+        "question": "Does fat grafting feel different from synthetic implants?",
+        "answer": "Since it uses your own natural tissue, results look and feel completely natural."
+      }
+    ],
     "relatedServiceSlugs": [
-      "botox",
-      "dermal-fillers",
-      "facial-rejuvenation"
+      "liposuction",
+      "facial-rejuvenation",
+      "dermal-fillers"
     ],
     "seo": {
-      "metaTitle": "E-Fat Graft in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional E-Fat Graft at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "e-fat graft, e-fat graft hyderabad, the sculpt aesthetics",
+      "metaTitle": "E-Fat Graft Hyderabad | Natural Fat Transfer | Sculpt Aesthetics",
+      "metaDescription": "Natural fat transfer enhancement in Madhapur, Hyderabad. Uses the patient's own fat for subtle, natural-looking volume and contour.",
+      "focusKeywords": "e-fat graft Hyderabad, fat transfer, natural fat grafting",
       "canonicalUrl": "https://thesculptaesthetics.com/services/e-fat-graft"
     },
     "isPlasticSurgery": false
@@ -2717,26 +2976,51 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/Chemical Peels.png",
-    "isEmpty": true,
-    "shortDescription": "Dermatological acid peels tailored to gently exfoliate, renew texture, and brighten skin tone.",
-    "heroHeadline": "Advanced Dermatological Chemical Peels",
-    "introHeadline": "Advanced Dermatological Chemical Peels",
+    "isEmpty": false,
+    "shortDescription": "Dermatological chemical peeling treatments designed to gently exfoliate damaged outer skin layers, stimulate cellular renewal, and reveal smoother, clearer, and more youthful skin.",
+    "heroHeadline": "Chemical Peels in Hyderabad",
+    "introHeadline": "Chemical Peels in Hyderabad",
     "introParagraphs": [
-      "Dermatological acid peels tailored to gently exfoliate, renew texture, and brighten skin tone."
+      "At Sculpt Aesthetics in Madhapur, Hyderabad, Chemical Peels are customized dermatological treatments designed to gently exfoliate outer skin layers, accelerate cellular turnover, and restore natural skin luminosity.",
+      "Our board-certified plastic surgeons and aesthetic specialists tailor each chemical peel to your individual skin type, addressing tone irregularities, active acne, sun damage, and textural imperfections with clinical precision."
     ],
     "understandingHeadline": "Understanding Chemical Peels",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
+    "understandingParagraphs": [
+      "A chemical peel involves the application of a clinically formulated, skin-safe acid solution (such as glycolic acid, salicylic acid, lactic acid, or TCA) to the skin's surface. This controlled exfoliation removes dull, dead skin cells and stimulates the production of fresh collagen and elastin underneath.",
+      "Whether targeting mild superficial dullness or addressing deeper hyperpigmentation and acne marks, our dermatological peel protocols provide noticeable skin rejuvenation with minimal to no downtime."
+    ],
+    "benefits": [
+      "Improves skin texture and overall smoothness",
+      "Reduces hyperpigmentation, sun damage, and dark spots",
+      "Helps unclog pores and manage acne breakouts",
+      "Diminishes fine lines and early signs of aging",
+      "Enhances overall skin radiance and even skin tone"
+    ],
+    "candidateIntro": "Chemical Peels are ideal for individuals looking to address:",
+    "candidateItems": [
+      "Uneven skin tone, sun spots, or stubborn hyperpigmentation",
+      "Rough, dull, or sun-damaged facial skin texture",
+      "Acne-prone skin, congested pores, and post-inflammatory erythema",
+      "Fine lines and early signs of environmental skin aging",
+      "Anyone seeking a refreshed, luminous glow before major events"
+    ],
+    "candidateSummary": "Schedule a personalized consultation at Sculpt Aesthetics to determine the ideal peel type and concentration for your skin type.",
     "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
+    "approachParagraphs": [
+      "At Sculpt Aesthetics, we conduct a comprehensive skin analysis to assess your melanin index, skin sensitivity, and specific concerns before selecting a customized peel formulation. Treatments are performed in our sterile clinical setting with pre-peel priming and soothing post-peel hydration to ensure maximum comfort and safety."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Why Choose Sculpt for Chemical Peels",
+        "content": "Our plastic surgery and dermatology board adheres to strict clinical protocols, choosing medical-grade peeling agents proven safe and effective for Indian skin types, ensuring radiant results without unwanted hyperpigmentation."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Most superficial peels require zero social downtime, with mild redness subsiding within a few hours. Medium peels may cause light flaking for 3 to 5 days, revealing fresh, glowing skin beneath. Daily broad-spectrum sunscreen and gentle hydration are recommended post-treatment."
+    ],
+    "pricingText": "Chemical peel pricing depends on the peel type, depth (superficial, medium, or deep), and number of recommended sessions. Contact us at 9639635454 / 9133733733 for personalized pricing details.",
+    "scarsText": "Chemical peels are non-invasive and do not produce scars; instead, they actively help smooth pre-existing textural irregularities and shallow acne marks.",
+    "safetyText": "Chemical peels performed at Sculpt Aesthetics utilize US FDA-approved, medical-grade solutions administered under strict dermatological oversight for optimal safety and predictable outcomes.",
     "faqs": [],
     "relatedServiceSlugs": [
       "botox",
@@ -2761,36 +3045,111 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/laser-treatments.png",
-    "isEmpty": true,
-    "shortDescription": "State-of-the-art medical laser technology for skin resurfacing, pigmentation, and collagen remodeling.",
-    "heroHeadline": "Precision Medical Laser Skin Therapy",
-    "introHeadline": "Precision Medical Laser Skin Therapy",
+    "isEmpty": false,
+    "shortDescription": "Behind every result at Sculpt Aesthetics is advanced, well-maintained laser and energy technology, chosen to improve precision, safety, and comfort across our surgical and non-surgical treatments. At Sculpt Aesthetics in Madhapur, Hyderabad, Laser Treatments & Advanced Technology is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "The equipment behind our precision, safety, and results",
+    "introHeadline": "The equipment behind our precision, safety, and results",
     "introParagraphs": [
-      "State-of-the-art medical laser technology for skin resurfacing, pigmentation, and collagen remodeling."
+      "Behind every result at Sculpt Aesthetics is advanced, well-maintained laser and energy technology, chosen to improve precision, safety, and comfort across our surgical and non-surgical treatments. At Sculpt Aesthetics in Madhapur, Hyderabad, Laser Treatments & Advanced Technology is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
-    "understandingHeadline": "Understanding Laser Treatments",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
-    "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
-    "faqs": [],
+    "understandingHeadline": "Understanding Laser Treatments & Advanced Technology",
+    "understandingParagraphs": [
+      "This introduces the core advanced technologies and medical laser systems used across our procedures — from precision energy-based skin resurfacing to radiofrequency and ultrasound devices — so you understand what's actually being used during your treatment. Many people considering Laser Treatments have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Greater precision with advanced energy delivery",
+      "Reduced tissue trauma and often faster recovery",
+      "Non-surgical options for skin tightening and resurfacing",
+      "Consistent, internationally recognized safety standards"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Patients curious about specific advanced laser and energy technologies used in their planned procedure",
+      "Those seeking skin resurfacing, texture refinement, or non-surgical tightening",
+      "Individuals comparing clinics based on equipment quality and precision"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Assessment",
+        "description": "Your doctor reviews your health history, skin goals, and suitability for Laser Treatments."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Personalized Plan",
+        "description": "A plan and session schedule is created to match your specific needs and safety profile."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "Laser Treatment is carried out under professional supervision in a comfortable clinical setting."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Ongoing Monitoring",
+        "description": "Your progress is tracked over follow-ups, with your plan adjusted as needed."
+      }
+    ],
+    "approachParagraphs": [
+      "Our clinic utilizes state-of-the-art medical energy devices tailored to specific skin and body concerns."
+    ],
+    "approachSubSections": [
+      {
+        "title": "InMode RF & Embrace RF",
+        "content": "Radiofrequency-based technologies used for non-surgical skin tightening and body contouring, stimulating collagen production to improve skin laxity and texture."
+      },
+      {
+        "title": "Lipo Vase (Ultrasound-Assisted)",
+        "content": "Uses focused ultrasound energy to gently liquefy fat before removal, allowing smoother extraction and skin contraction."
+      },
+      {
+        "title": "Vibra Sculpt (Power-Assisted)",
+        "content": "Uses rapid mechanical vibration on the cannula to loosen fat more efficiently, reducing physical strain on tissue."
+      },
+      {
+        "title": "EMS Sculpt",
+        "content": "A non-invasive electromagnetic muscle stimulation technology used to tone and strengthen target muscle areas without surgery."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery expectations depend on which laser or energy technology is used as part of your specific treatment; your surgeon will explain this during your consultation.",
+      "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Laser Treatments depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Non-invasive laser and RF procedures leave no surgical incisions. Minor redness or mild flaking resolves in a few days.",
+    "safetyText": "All technology and equipment at Sculpt Aesthetics is maintained and operated according to international safety standards by trained professionals. Your surgeon will always explain which specific technology is being used in your procedure and why.",
+    "faqs": [
+      {
+        "question": "Will my surgeon tell me which technology is used in my procedure?",
+        "answer": "Yes, your surgeon will explain the specific technique and technology recommended for your case and why it's the best fit."
+      },
+      {
+        "question": "Are these technologies safe?",
+        "answer": "All equipment used at Sculpt Aesthetics is maintained to international safety standards and operated by trained professionals."
+      },
+      {
+        "question": "Is this treatment right for everyone?",
+        "answer": "Suitability depends on individual health and goals; a proper consultation and assessment is needed before starting."
+      },
+      {
+        "question": "How long before I see results?",
+        "answer": "This depends on the treatment and individual factors; your provider will give you a realistic timeline during consultation."
+      },
+      {
+        "question": "Does using advanced technology cost more?",
+        "answer": "Some advanced techniques may affect overall pricing depending on the procedure; this will be discussed transparently during your consultation."
+      }
+    ],
     "relatedServiceSlugs": [
-      "botox",
-      "dermal-fillers",
+      "chemical-peels",
+      "acne-scar-treatment",
       "facial-rejuvenation"
     ],
     "seo": {
-      "metaTitle": "Laser Treatments in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional Laser Treatments at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "laser treatments, laser treatments hyderabad, the sculpt aesthetics",
+      "metaTitle": "Advanced Aesthetic Laser Technology Hyderabad | Sculpt Aesthetics",
+      "metaDescription": "Explore the advanced laser and energy technology used at Sculpt Aesthetics, Madhapur, Hyderabad — including InMode RF, Lipo Vase, Vibra Sculpt, and more.",
+      "focusKeywords": "laser treatments Hyderabad, InMode RF Hyderabad, aesthetic technology clinic",
       "canonicalUrl": "https://thesculptaesthetics.com/services/laser-treatments"
     },
     "isPlasticSurgery": false
@@ -2805,36 +3164,99 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/Acne Scar Treatment.png",
-    "isEmpty": true,
-    "shortDescription": "Multi-modality dermatological protocols to smooth uneven texture and reduce deep acne scarring.",
-    "heroHeadline": "Advanced Clinical Acne Scar Reduction",
-    "introHeadline": "Advanced Clinical Acne Scar Reduction",
+    "isEmpty": false,
+    "shortDescription": "Whether from acne, surgery, or injury, scars can be improved using a range of treatments — from non-surgical options like micro-needling and lasers to surgical scar revision for more significant scars. At Sculpt Aesthetics in Madhapur, Hyderabad, Acne Scar Treatment is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
+    "heroHeadline": "Improve the appearance of acne, surgical, and textural scars",
+    "introHeadline": "Improve the appearance of acne, surgical, and textural scars",
     "introParagraphs": [
-      "Multi-modality dermatological protocols to smooth uneven texture and reduce deep acne scarring."
+      "Whether from acne, surgery, or injury, scars can be improved using a range of treatments — from non-surgical options like micro-needling and lasers to surgical scar revision for more significant scars. At Sculpt Aesthetics in Madhapur, Hyderabad, Acne Scar Treatment is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step."
     ],
     "understandingHeadline": "Understanding Acne Scar Treatment",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
-    "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
-    "faqs": [],
+    "understandingParagraphs": [
+      "Acne scar treatment covers a range of approaches designed to make scars flatter, softer, and less noticeable, chosen based on the scar's type (raised, sunken/atrophic, discolored), age, and location. Many people considering Acne Scar Treatment have questions or feel a little unsure about where to start — that's completely normal. Our team takes time during your first visit to explain things in plain language, so you can make a confident, informed decision at your own pace."
+    ],
+    "benefits": [
+      "Improved scar texture and smoother skin appearance",
+      "Reduced redness, discoloration, and depth of scars",
+      "Options ranging from micro-needling to advanced laser therapy",
+      "Personalized to your specific scar type"
+    ],
+    "candidateIntro": "You might be a good fit for this treatment if any of the following sound familiar:",
+    "candidateItems": [
+      "Individuals with visible acne scars, enlarged pores, or uneven texture",
+      "Those with sunken (atrophic) or raised scars",
+      "Patients seeking to improve scar color, texture, or thickness"
+    ],
+    "candidateSummary": "The best way to know for sure is a one-on-one consultation, where your surgeon reviews your health history and goals in detail.",
+    "procedureSteps": [
+      {
+        "stepNumber": 1,
+        "title": "Consultation & Skin Assessment",
+        "description": "Your provider reviews your goals and checks whether Acne Scar Treatment suits your skin and health profile."
+      },
+      {
+        "stepNumber": 2,
+        "title": "Customized Plan",
+        "description": "A treatment plan and session schedule is created to match your specific scar patterns."
+      },
+      {
+        "stepNumber": 3,
+        "title": "The Treatment",
+        "description": "Treatment is performed in a comfortable clinical setting, usually taking well under an hour."
+      },
+      {
+        "stepNumber": 4,
+        "title": "Aftercare & Follow-Up",
+        "description": "You'll receive simple aftercare tips, and your provider will track your progress over follow-up visits or sessions."
+      }
+    ],
+    "approachParagraphs": [
+      "After assessing your scar type, your provider recommends a suited approach — which may include micro-needling, subcision, laser treatment, or combination protocols over a series of sessions for the best improvement."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Micro Needling (Collagen Induction)",
+        "content": "Uses fine, controlled micro-channels to stimulate natural collagen and elastin production, softening scar tissue and smoothing depressions."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery depends on the method used — non-surgical treatments typically involve minimal downtime (1–2 days of mild redness similar to a sunburn), resuming normal activities immediately.",
+      "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
+    ],
+    "pricingText": "The cost of Acne Scar Treatment depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "scarsText": "Procedures are designed to remodel and minimize existing acne scars. Non-surgical modalities leave no surgical incisions.",
+    "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any energy-based or micro-needling treatment, mild, temporary redness or swelling is normal and will be discussed during your consultation.",
+    "faqs": [
+      {
+        "question": "Can acne scars be completely removed?",
+        "answer": "Scars can be significantly improved in appearance and depth, but complete removal is generally not possible; your provider will set realistic expectations based on your specific scar type."
+      },
+      {
+        "question": "How many sessions will I need?",
+        "answer": "A typical course involves 3-6 sessions spaced about 4 weeks apart, depending on scar depth and your skin goals."
+      },
+      {
+        "question": "How soon after breakouts should acne scar treatment begin?",
+        "answer": "Active acne should generally be calmed before beginning intensive scar remodeling; your provider will guide you on the ideal timing."
+      },
+      {
+        "question": "How long do the results last?",
+        "answer": "Collagen remodeling results are long-lasting, though good skincare and sun protection help maintain smooth skin over time."
+      },
+      {
+        "question": "Can acne scar treatment be combined with other procedures?",
+        "answer": "Yes, combining micro-needling with PRP, growth factors, or targeted lasers often produces optimal restorative outcomes."
+      }
+    ],
     "relatedServiceSlugs": [
-      "botox",
-      "dermal-fillers",
-      "facial-rejuvenation"
+      "chemical-peels",
+      "laser-treatments",
+      "scar-removal"
     ],
     "seo": {
-      "metaTitle": "Acne Scar Treatment in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional Acne Scar Treatment at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "acne scar treatment, acne scar treatment hyderabad, the sculpt aesthetics",
+      "metaTitle": "Acne Scar Treatment Hyderabad | Scar Reduction | Sculpt Aesthetics",
+      "metaDescription": "Acne scar treatment and reduction in Madhapur, Hyderabad to improve skin texture, depth, and tone through advanced dermatological protocols.",
+      "focusKeywords": "acne scar treatment Hyderabad, acne scar reduction, micro needling acne scars",
       "canonicalUrl": "https://thesculptaesthetics.com/services/acne-scar-treatment"
     },
     "isPlasticSurgery": false
@@ -2951,26 +3373,51 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/Wart Removal.png",
-    "isEmpty": true,
-    "shortDescription": "Safe, confidential clinical removal of skin and genital warts using radiofrequency or cryotherapy.",
-    "heroHeadline": "Safe, Discreet Clinical Wart Removal",
-    "introHeadline": "Safe, Discreet Clinical Wart Removal",
+    "isEmpty": false,
+    "shortDescription": "Safe, confidential clinical removal of common and genital warts using advanced radiofrequency ablation and cryotherapy.",
+    "heroHeadline": "Wart Removal & Genital Wart Removal in Hyderabad",
+    "introHeadline": "Wart Removal & Genital Wart Removal in Hyderabad",
     "introParagraphs": [
-      "Safe, confidential clinical removal of skin and genital warts using radiofrequency or cryotherapy."
+      "Warts are benign skin growths caused by the Human Papillomavirus (HPV) that can appear on the hands, feet, face, and genital regions. At Sculpt Aesthetics in Madhapur, Hyderabad, we provide expert clinical wart removal and specialized, confidential genital wart treatments.",
+      "Our board-certified specialists use advanced radiofrequency ablation and precision cryotherapy to eliminate lesions cleanly with minimal discomfort, swift healing, and maximum discretion."
     ],
-    "understandingHeadline": "Understanding Wart Removal / Genital Warts Removal",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
+    "understandingHeadline": "Understanding Wart Removal & Genital Wart Treatment",
+    "understandingParagraphs": [
+      "Wart Removal: Cutaneous warts develop when HPV infects the outer layer of the skin, causing rapid cellular growth. Standard over-the-counter remedies often fail because they do not eliminate the root of the lesion. Our clinical radiofrequency ablation precisely vaporizes the wart tissue at its base while sparing healthy surrounding epidermis.",
+      "Genital Wart Removal: Genital warts require specialized, compassionate, and strictly confidential medical care. We prioritize patient privacy, strict infection control, and individualized treatment plans to safely remove sensitive lesions in a supportive, judgment-free clinical environment.",
+      "Professional Evaluation Recommendation: Because genital and cutaneous lesions require accurate diagnosis to differentiate from other dermatological conditions, a professional clinical evaluation by our medical team is essential before initiating treatment."
+    ],
+    "benefits": [
+      "Safe, precision removal of common and genital warts",
+      "Advanced radiofrequency ablation and cryotherapy technology",
+      "Strictly confidential, private, and judgment-free clinical setting",
+      "Minimal discomfort with gentle local anesthesia",
+      "Rapid healing and minimal risk of recurrence or scarring"
+    ],
+    "candidateIntro": "You may benefit from clinical wart removal if:",
+    "candidateItems": [
+      "You have persistent or recurring skin warts on the hands, feet, face, or body",
+      "You have developed genital warts or suspicious sensitive lesions requiring diagnosis",
+      "Over-the-counter topical treatments have failed to eliminate the lesion",
+      "You seek private, confidential, and medically supervised removal by specialists"
+    ],
+    "candidateSummary": "Schedule a confidential, private consultation with our medical team for personalized evaluation and same-day treatment options.",
     "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
+    "approachParagraphs": [
+      "Our clinic utilizes high-frequency radiofrequency ablation, which seals micro-blood vessels as it removes the wart, ensuring a clean, bloodless field and promoting rapid epithelization. For delicate or widespread areas, targeted cryotherapy or specialized medical solutions are selected based on lesion location and size."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Why Choose Sculpt for Wart & Genital Wart Removal",
+        "content": "We offer complete medical confidentiality, sterile surgical suites, board-certified specialists, and individualized care plans designed for patient comfort and comprehensive viral clearance."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Treated areas form a small protective crust that naturally falls off within 5 to 7 days, leaving healthy, regenerated skin. You will receive simple antiseptic aftercare instructions and guidance on maintaining personal hygiene to prevent re-infection."
+    ],
+    "pricingText": "Wart removal pricing depends on the number, size, and anatomical location of the lesions. Contact our confidential helpline at 9639635454 / 9133733733 for treatment cost guidance.",
+    "scarsText": "Precision radiofrequency ablation minimizes thermal damage to surrounding tissue, allowing the treated area to heal cleanly with minimal to no visible marking.",
+    "safetyText": "All wart removal procedures are conducted under strict sterile precautions using single-use instruments and local numbing to guarantee patient comfort and safety.",
     "faqs": [],
     "relatedServiceSlugs": [
       "botox",
@@ -2979,8 +3426,8 @@ export const servicesData: ServiceItem[] = [
     ],
     "seo": {
       "metaTitle": "Wart Removal / Genital Warts Removal in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional Wart Removal / Genital Warts Removal at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "wart removal / genital warts removal, wart removal / genital warts removal hyderabad, the sculpt aesthetics",
+      "metaDescription": "Discover professional Wart Removal & Genital Warts Removal at The Sculpt Aesthetics in Madhapur, Hyderabad. Confidential, specialist-led treatment.",
+      "focusKeywords": "wart removal hyderabad, genital wart removal hyderabad, the sculpt aesthetics",
       "canonicalUrl": "https://thesculptaesthetics.com/services/wart-removal"
     },
     "isPlasticSurgery": false
@@ -2995,26 +3442,50 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/Mole Removal.png",
-    "isEmpty": true,
-    "shortDescription": "Precision dermatological mole excision and radiofrequency ablation with minimal scarring.",
-    "heroHeadline": "Precision Dermatological Mole Removal",
-    "introHeadline": "Precision Dermatological Mole Removal",
+    "isEmpty": false,
+    "shortDescription": "Precision dermatological mole excision and radiofrequency ablation with delicate plastic surgery closure for minimal scarring.",
+    "heroHeadline": "Mole Removal in Hyderabad",
+    "introHeadline": "Mole Removal in Hyderabad",
     "introParagraphs": [
-      "Precision dermatological mole excision and radiofrequency ablation with minimal scarring."
+      "Moles (nevi) are common pigmented skin lesions that can appear on the face, neck, and body. While most moles are completely benign, many individuals choose to remove them for aesthetic refinement, facial harmony, or because they cause discomfort from clothing and shaving.",
+      "At Sculpt Aesthetics in Madhapur, Hyderabad, mole removal is performed by experienced plastic surgeons and dermatologists using radiofrequency ablation and micro-surgical excision to achieve clean clearance with minimal visible marks."
     ],
     "understandingHeadline": "Understanding Mole Removal",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
+    "understandingParagraphs": [
+      "Mole removal at Sculpt Aesthetics combines dermatological safety with plastic surgery precision. Each mole is clinically examined to evaluate its size, depth, pigmentation, and borders before selecting the most aesthetic removal technique.",
+      "Surface and raised moles are often removed using radiofrequency ablation with no stitches required, while deeper or atypical moles are excised using plastic surgery micro-sutures designed for virtually invisible healing."
+    ],
+    "benefits": [
+      "Precision removal with plastic surgery closure for minimal scarring",
+      "Quick, comfortable in-clinic outpatient procedure",
+      "Histopathological evaluation available when medically indicated",
+      "Safe and effective removal from facial and delicate body areas",
+      "Permanent clearance of raised, dark, or bothersome moles"
+    ],
+    "candidateIntro": "Mole removal is suitable for individuals who have:",
+    "candidateItems": [
+      "Raised or pigmented facial moles affecting aesthetic appearance",
+      "Moles irritated by clothing, jewelry, or shaving",
+      "Moles that have changed in size, shape, or color requiring evaluation",
+      "A desire for clean, scar-conscious removal by plastic surgery specialists"
+    ],
+    "candidateSummary": "Book a consultation with our plastic surgeons for a personalized assessment and scar-minimizing mole removal plan.",
     "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
+    "approachParagraphs": [
+      "Depending on the depth of the nevus, your surgeon will utilize either fine-wire radiofrequency shave excision (which flushes the lesion level with surrounding skin without incisions) or delicate surgical excision along natural skin tension lines (Langer's lines) to ensure the finest possible scar integration."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Why Choose Sculpt for Mole Removal",
+        "content": "Our plastic surgeons specialize in facial aesthetics and scar minimization, ensuring that your mole is removed safely, cleanly, and with meticulous attention to cosmetic outcome."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Recovery is swift. Shave and radiofrequency sites heal with a small crust over 5 to 7 days, while micro-suture sites are typically removed or absorb within 5 to 7 days. Sun protection and scar gel application ensure optimal skin blending."
+    ],
+    "pricingText": "Mole removal cost depends on the number of moles, their depth, and whether surgical or radiofrequency techniques are used. Contact us at 9639635454 / 9133733733 for an estimate.",
+    "scarsText": "Our plastic surgeons use micro-instruments and follow natural facial tension lines to ensure post-removal marks fade into minimal, barely perceptible lines.",
+    "safetyText": "Performed under gentle local anesthesia in our accredited clinic, mole removal is a safe, walk-in walk-out procedure with comprehensive follow-up.",
     "faqs": [],
     "relatedServiceSlugs": [
       "botox",
@@ -3023,8 +3494,8 @@ export const servicesData: ServiceItem[] = [
     ],
     "seo": {
       "metaTitle": "Mole Removal in Hyderabad | The Sculpt Aesthetics",
-      "metaDescription": "Discover professional Mole Removal at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading aesthetic specialists today.",
-      "focusKeywords": "mole removal, mole removal hyderabad, the sculpt aesthetics",
+      "metaDescription": "Discover professional Mole Removal at The Sculpt Aesthetics in Madhapur, Hyderabad. Consult with our leading plastic surgeons today.",
+      "focusKeywords": "mole removal hyderabad, radiofrequency mole removal, the sculpt aesthetics",
       "canonicalUrl": "https://thesculptaesthetics.com/services/mole-removal"
     },
     "isPlasticSurgery": false
@@ -3039,26 +3510,50 @@ export const servicesData: ServiceItem[] = [
     ],
     "featured": false,
     "image": "/assets/UPDATED SERVICES/corn-removal.png",
-    "isEmpty": true,
-    "shortDescription": "Specialized clinical removal of painful foot corns and hyperkeratotic lesions for immediate relief.",
-    "heroHeadline": "Gentle Clinical Foot Corn & Callus Treatment",
-    "introHeadline": "Gentle Clinical Foot Corn & Callus Treatment",
+    "isEmpty": false,
+    "shortDescription": "Specialized clinical removal of painful foot corns and deep core enucleation for immediate pressure relief and restored mobility.",
+    "heroHeadline": "Corn Removal in Hyderabad",
+    "introHeadline": "Corn Removal in Hyderabad",
     "introParagraphs": [
-      "Specialized clinical removal of painful foot corns and hyperkeratotic lesions for immediate relief."
+      "Foot corns and calluses are localized areas of thick, hardened skin that form in response to repeated friction and pressure from walking, standing, or ill-fitting footwear.",
+      "Unlike surface calluses, corns develop a hard, cone-shaped keratin core that points inward and presses against sensitive nerves in the foot. At Sculpt Aesthetics in Madhapur, Hyderabad, we provide gentle, clinical corn removal and core enucleation to deliver immediate pain relief and restore comfortable walking."
     ],
-    "understandingHeadline": "Understanding Corn Removal",
-    "understandingParagraphs": [],
-    "benefits": [],
-    "candidateIntro": "",
-    "candidateItems": [],
-    "candidateSummary": "",
+    "understandingHeadline": "Understanding Foot Corns & Clinical Removal",
+    "understandingParagraphs": [
+      "Corns most commonly occur on the tops of toes, between toes (soft corns), or on the balls and heels of the feet (hard corns). Over-the-counter corn caps and pads contain harsh acids that often burn healthy surrounding skin without extracting the deep central core.",
+      "At Sculpt Aesthetics, our clinical enucleation technique gently extracts the complete central keratin plug under local numbing, providing instant decompression of the underlying nerve endings without damaging healthy tissue."
+    ],
+    "benefits": [
+      "Immediate relief from sharp foot pain and walking discomfort",
+      "Complete clinical enucleation of the deep keratin core",
+      "Quick, painless in-clinic procedure with local numbing",
+      "Eliminates the risks and skin burns associated with chemical corn caps",
+      "Guidance on pressure redistribution and recurrence prevention"
+    ],
+    "candidateIntro": "You should seek clinical corn removal if you experience:",
+    "candidateItems": [
+      "Sharp, pinpoint pain when walking, standing, or wearing closed shoes",
+      "Hard, raised bumps with a distinct central core on your toes or soles",
+      "Recurrent corns that return after home treatments or salon pedicures",
+      "Painful soft corns between the toes that cause irritation and maceration"
+    ],
+    "candidateSummary": "Schedule an evaluation at our Madhapur, Hyderabad clinic for same-day clinical removal and lasting foot comfort.",
     "procedureSteps": [],
-    "approachParagraphs": [],
-    "approachSubSections": [],
-    "recoveryParagraphs": [],
-    "pricingText": "",
-    "scarsText": "",
-    "safetyText": "",
+    "approachParagraphs": [
+      "Our specialists perform sterile enucleation and radiofrequency debridement, precisely lifting the hardened nucleus from the dermis. We also assess your foot mechanics to provide practical recommendations on pressure relief, toe spacers, and footwear modifications to prevent future corn formation."
+    ],
+    "approachSubSections": [
+      {
+        "title": "Why Choose Sculpt for Corn Removal",
+        "content": "We offer sterile clinical procedures performed by medical professionals, ensuring complete core removal, zero infection risk, and immediate relief from foot pain."
+      }
+    ],
+    "recoveryParagraphs": [
+      "Patients experience immediate relief upon standing. The small treated area is dressed with an antiseptic protective pad, and normal walking and daily activities can be resumed immediately. Full skin healing occurs within 3 to 5 days."
+    ],
+    "pricingText": "Corn removal pricing depends on the number and severity of the corns. Contact our clinic at 9639635454 / 9133733733 for transparent procedure pricing.",
+    "scarsText": "Enucleation is performed precisely within the hyperkeratotic lesion boundary, allowing normal skin texture to regenerate with zero noticeable scarring.",
+    "safetyText": "Clinical corn removal is performed under local numbing in sterile conditions, eliminating the infection and ulceration risks common with home cutting or acid plasters.",
     "faqs": [],
     "relatedServiceSlugs": [
       "botox",
@@ -3260,6 +3755,189 @@ export function getAllServiceNames(): string[] {
 }
 
 // 1. BEFORE & AFTER RESULTS RESOLVER (ALL 36 SERVICES)
+const serviceResultsMap: Record<string, { title: string; image: string; description: string }> = {
+  "liposuction": {
+    title: "Liposuction Result",
+    image: "/assets/services results/Liposuction.png",
+    description: "Targeted fat elimination and waistline refinement creating a flat, sculpted torso contour.",
+  },
+  "vaser-liposuction": {
+    title: "Vaser Ultrasound Liposuction",
+    image: "/assets/services results/Vaser Liposuction.png",
+    description: "Selective ultrasound fat liquefaction preserving delicate connective tissues with superior skin retraction.",
+  },
+  "tummy-tuck-abdominoplasty": {
+    title: "Abdominoplasty & Muscle Plication",
+    image: "/assets/services results/Tummy Tuck.png",
+    description: "Surgical removal of loose abdominal skin and repair of separated diastasis recti muscles.",
+  },
+  "mommy-makeover": {
+    title: "Mommy Makeover Restoration",
+    image: "/assets/services results/Mommy Makeover.png",
+    description: "Combined surgical body contouring and breast elevation to restore pre-pregnancy contours.",
+  },
+  "body-contouring": {
+    title: "High-Definition 360° Body Contouring",
+    image: "/assets/services results/Body Contouring.png",
+    description: "Comprehensive circumferential body sculpting accentuating natural athletic definition and curves.",
+  },
+  "arm-and-thigh-lift": {
+    title: "Brachioplasty & Thigh Contouring",
+    image: "/assets/services results/Arm & Thigh Lift.png",
+    description: "Removal of redundant sagging skin on upper arms and inner thighs for a toned, firm limb contour.",
+  },
+  "lipoma-removal": {
+    title: "Subcutaneous Lipoma Excision",
+    image: "/assets/services results/Lipoma Removal.png",
+    description: "Complete encapsulated lipoma removal through micro-incisions with minimal, discreet scarring.",
+  },
+  "breast-augmentation": {
+    title: "Dual-Plane Silicone Breast Augmentation",
+    image: "/assets/services results/Breast Augmentation _ Breast Implant.png",
+    description: "Enhanced breast volume, upper pole fullness, and balanced proportion with cohesive silicone implants.",
+  },
+  "breast-reduction": {
+    title: "Reduction Mammaplasty & Symmetry",
+    image: "/assets/services results/Breast Reduction.png",
+    description: "Removal of heavy glandular breast tissue relieving physical strain and restoring aesthetic proportion.",
+  },
+  "breast-lift": {
+    title: "Mastopexy (Breast Lift) & Elevation",
+    image: "/assets/services results/Breast Lift Surgery.png",
+    description: "Repositioning of the nipple-areola complex and tightening of surrounding tissue for a youthful elevation.",
+  },
+  "gynecomastia-surgery": {
+    title: "Male Chest Contouring & Gland Excision",
+    image: "/assets/services results/Gynecomastia Surgery.png",
+    description: "Surgical removal of glandular male breast tissue combined with liposuction for a firm, masculine chest.",
+  },
+  "rhinoplasty": {
+    title: "Structural Rhinoplasty & Tip Refinement",
+    image: "/assets/services results/Rhinoplasty.png",
+    description: "Dorsal bridge refinement and structural tip projection for enhanced facial harmony and symmetry.",
+  },
+  "facelift": {
+    title: "Deep Plane / SMAS Facelift",
+    image: "/assets/services results/Facelift Surgery.png",
+    description: "Elevation of deep facial muscular structures, smoothing jowls and restoring defined jawline contours.",
+  },
+  "blepharoplasty": {
+    title: "Upper & Lower Eyelid Rejuvenation",
+    image: "/assets/services results/Blepharoplasty.png",
+    description: "Elimination of redundant upper eyelid skin and under-eye fat bags for a refreshed, alert appearance.",
+  },
+  "buccal-fat-pad-removal": {
+    title: "Intraoral Buccal Fat Pad Excision",
+    image: "/assets/services results/Buccal Fat Pad Removal.png",
+    description: "Targeted reduction of deep cheek fat pads creating sculpted cheekbones and a slimmer lower facial profile.",
+  },
+  "dimple-creation": {
+    title: "Surgical Dimpleplasty",
+    image: "/assets/services results/Dimple Creation.png",
+    description: "Micro-incision inside the cheek creating a charming, natural facial dimple dynamically visible upon smiling.",
+  },
+  "labiaplasty": {
+    title: "Labial Symmetry & Contouring",
+    image: "/assets/services results/Labiaplasty.png",
+    description: "Delicate reduction of excess labial tissue improving physical comfort, hygiene, and aesthetic balance.",
+  },
+  "clitoral-hood-correction": {
+    title: "Clitoral Hood Reduction",
+    image: "/assets/services results/Clitoral Hood Correction.png",
+    description: "Refined tissue reduction designed for improved aesthetic proportion and anatomical comfort.",
+  },
+  "hymenoplasty": {
+    title: "Confidential Hymenal Reconstruction",
+    image: "/assets/services results/Hymenoplasty.png",
+    description: "Careful anatomical restoration performed with strict medical privacy and delicate absorbable sutures.",
+  },
+  "g-spot-amplification": {
+    title: "Intimate Wellness Augmentation",
+    image: "/assets/services results/G-Spot Amplification.png",
+    description: "Minimally invasive hyaluronic acid or autologous fat enhancement supporting intimate wellness.",
+  },
+  "split-ear-lobe-repair": {
+    title: "Earlobe Cleft Closure",
+    image: "/assets/services results/Split Ear Lobe Repair.png",
+    description: "Microscopic repair of torn or elongated piercing tracks with preserved earlobe contour.",
+  },
+  "circumcision": {
+    title: "Modern Stapler & Laser Circumcision",
+    image: "/assets/services results/Circumcision.png",
+    description: "Painless, rapid-recovery circumcision utilizing advanced surgical stapler or laser protocols.",
+  },
+  "botox": {
+    title: "Upper Facial Neurotoxin Rejuvenation",
+    image: "/assets/services results/Botox.png",
+    description: "Smoothing of dynamic forehead furrows, frown lines, and periorbital crow's feet.",
+  },
+  "dermal-fillers": {
+    title: "Hyaluronic Acid Facial Contouring",
+    image: "/assets/services results/Dermal Fillers.png",
+    description: "Restoring cheek volume, defining the jawline, and smoothing nasolabial folds with hyaluronic fillers.",
+  },
+  "facial-rejuvenation": {
+    title: "Comprehensive Multi-Modal Harmonization",
+    image: "/assets/services results/Facial Rejuvenation.png",
+    description: "Multi-modal restoration combining dermal volumization, skin resurfacing, and tone refinement.",
+  },
+  "thread-lift": {
+    title: "Absorbable PDO Thread Midface Lift",
+    image: "/assets/services results/Thread Lift.png",
+    description: "Immediate mechanical suspension of mild midface laxity combined with progressive collagen stimulation.",
+  },
+  "e-fat-graft": {
+    title: "Micro-Autologous Facial Fat Transfer",
+    image: "/assets/services results/E-Fat Graft.png",
+    description: "Replenishing hollow temples, periorbital hollows, and midface using purified autologous micro-fat.",
+  },
+  "chemical-peels": {
+    title: "Dermatological Chemical Exfoliation",
+    image: "/assets/services results/Chemical Peels.png",
+    description: "Accelerated cellular turnover reducing uneven pigmentation, fine lines, and dull skin texture.",
+  },
+  "laser-treatments": {
+    title: "Fractional Laser Skin Resurfacing",
+    image: "/assets/services results/Laser Treatments.png",
+    description: "Deep dermal collagen induction smoothing photo-damage, textural roughness, and enlarged pores.",
+  },
+  "acne-scar-treatment": {
+    title: "Subcision & Fractional Laser Resurfacing",
+    image: "/assets/services results/Acne Scar Treatment.png",
+    description: "Elevating atrophic rolling and boxcar scars through multi-layer collagen remodeling.",
+  },
+  "scar-removal": {
+    title: "Surgical Scar Revision (Z-Plasty & Laser)",
+    image: "/assets/services results/Scar Removal.png",
+    description: "Reorienting and softening prominent post-surgical or injury scars for smooth aesthetic integration.",
+  },
+  "wart-removal": {
+    title: "Radiofrequency Wart Ablation",
+    image: "/assets/services results/Wart Removal.png",
+    description: "Clean, bloodless removal of cutaneous lesions with preserved surrounding healthy epidermis.",
+  },
+  "mole-removal": {
+    title: "Scar-Minimized Mole Excision",
+    image: "/assets/services results/Mole Removal.png",
+    description: "Careful excision of raised or pigmented moles with delicate micro-sutures.",
+  },
+  "corn-removal": {
+    title: "Foot Corn Core Enucleation",
+    image: "/assets/services results/Corn Removal.png",
+    description: "Painless enucleation of deep keratin plugs restoring pressure-free walking comfort.",
+  },
+  "weight-loss-programs": {
+    title: "Medical Weight Management & Contouring",
+    image: "/assets/services results/Mounjaro _ Weight Loss Program.png",
+    description: "Structured medical weight management combined with targeted aesthetic body sculpting.",
+  },
+  "iv-drip-infusions": {
+    title: "Intravenous Vitamin & Glutathione Infusion",
+    image: "/assets/services results/IV Drip Infusions.png",
+    description: "Cellular rejuvenation delivering antioxidants, hydration, and amino acids for radiant skin vitality.",
+  },
+};
+
 export function getServiceBeforeAfterResults(slug: string): ServiceBeforeAfter[] {
   const service = getServiceBySlug(slug);
   if (!service) return [];
@@ -3269,443 +3947,22 @@ export function getServiceBeforeAfterResults(slug: string): ServiceBeforeAfter[]
     return service.beforeAfterResults;
   }
 
-  // Procedure-specific mappings
-  switch (slug) {
-    case "liposuction":
-      return [
-        {
-          id: "lipo-1",
-          title: "Abdominal & Flank Liposuction",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
-          description: "Targeted fat elimination and waistline refinement creating a flat, sculpted torso contour.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "vaser-liposuction":
-      return [
-        {
-          id: "vaser-1",
-          title: "Vaser Ultrasound Liposuction",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-2.png",
-          description: "Selective ultrasound fat liquefaction preserving delicate connective tissues with superior skin retraction.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "tummy-tuck-abdominoplasty":
-      return [
-        {
-          id: "tt-1",
-          title: "Abdominoplasty & Muscle Plication",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-6.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-6.jpg",
-          description: "Surgical removal of loose abdominal skin and repair of separated diastasis recti muscles.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "mommy-makeover":
-      return [
-        {
-          id: "mm-1",
-          title: "Complete Post-Pregnancy Restoration",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
-          description: "Combined tummy tuck, waistline liposuction, and breast elevation to restore pre-pregnancy contours.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "body-contouring":
-      return [
-        {
-          id: "bc-1",
-          title: "High-Definition 360° Body Contouring",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-4.png",
-          description: "Comprehensive circumferential body sculpting accentuating natural athletic definition and curves.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "arm-and-thigh-lift":
-      return [
-        {
-          id: "atl-1",
-          title: "Brachioplasty & Thigh Contouring",
-          beforeImage: "/assets/UPDATED SERVICES/arm-and-thigh-lift.png",
-          afterImage: "/assets/UPDATED SERVICES/arm-and-thigh-lift.png",
-          description: "Removal of redundant sagging skin on upper arms and inner thighs for a toned, firm limb contour.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "lipoma-removal":
-      return [
-        {
-          id: "lipoma-1",
-          title: "Subcutaneous Lipoma Excision",
-          beforeImage: "/assets/blog/lipoma-painless-treatment.png",
-          afterImage: "/assets/blog/lipoma-painless-treatment.png",
-          description: "Complete encapsulated lipoma removal through micro-incisions with minimal, discreet scarring.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "breast-augmentation":
-      return [
-        {
-          id: "ba-1",
-          title: "Dual-Plane Cohesive Silicone Augmentation",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
-          description: "Enhanced breast volume, upper pole fullness, and balanced proportion with cohesive silicone implants.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "breast-reduction":
-      return [
-        {
-          id: "br-1",
-          title: "Reduction Mammaplasty & Symmetry",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
-          description: "Removal of heavy glandular breast tissue relieving physical strain and restoring aesthetic proportion.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "breast-lift":
-      return [
-        {
-          id: "bl-1",
-          title: "Mastopexy (Breast Lift) & Elevation",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-3.png",
-          description: "Repositioning of the nipple-areola complex and tightening of surrounding tissue for a youthful elevation.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "gynecomastia-surgery":
-      return [
-        {
-          id: "gyn-1",
-          title: "Male Chest Contouring & Gland Excision",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-5.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-5.jpg",
-          description: "Surgical removal of glandular male breast tissue combined with liposuction for a firm, masculine chest.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "rhinoplasty":
-      return [
-        {
-          id: "rhino-1",
-          title: "Structural Rhinoplasty & Tip Refinement",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-1.png",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-1.png",
-          description: "Dorsal bridge refinement and structural tip projection for enhanced facial harmony and symmetry.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "facelift":
-      return [
-        {
-          id: "fl-1",
-          title: "Deep Plane / SMAS Facelift",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          description: "Elevation of deep facial muscular structures, smoothing jowls and restoring defined jawline contours.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "blepharoplasty":
-      return [
-        {
-          id: "bleph-1",
-          title: "Upper & Lower Eyelid Rejuvenation",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-10.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-10.jpg",
-          description: "Elimination of redundant upper eyelid skin and under-eye fat bags for a refreshed, alert appearance.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "buccal-fat-pad-removal":
-      return [
-        {
-          id: "buccal-1",
-          title: "Intraoral Buccal Fat Pad Excision",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
-          description: "Targeted reduction of deep cheek fat pads creating sculpted cheekbones and a slimmer lower facial profile.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "dimple-creation":
-      return [
-        {
-          id: "dimple-1",
-          title: "Surgical Dimpleplasty",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-9.jpg",
-          description: "Micro-incision inside the cheek creating a charming, natural facial dimple dynamically visible upon smiling.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "labiaplasty":
-      return [
-        {
-          id: "labia-1",
-          title: "Privacy-Protected Labial Symmetry",
-          beforeImage: "/assets/UPDATED SERVICES/labiaplasty.png",
-          afterImage: "/assets/UPDATED SERVICES/labiaplasty.png",
-          description: "Delicate reduction of excess labial tissue improving physical comfort, hygiene, and aesthetic balance.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "clitoral-hood-correction":
-      return [
-        {
-          id: "clit-1",
-          title: "Clitoral Hood Reduction",
-          beforeImage: "/assets/UPDATED SERVICES/clitoral-hood-correction.png",
-          afterImage: "/assets/UPDATED SERVICES/clitoral-hood-correction.png",
-          description: "Refined tissue reduction designed for improved aesthetic proportion and anatomical comfort.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "hymenoplasty":
-      return [
-        {
-          id: "hym-1",
-          title: "Confidential Hymenal Reconstruction",
-          beforeImage: "/assets/UPDATED SERVICES/hymenoplasty.png",
-          afterImage: "/assets/UPDATED SERVICES/hymenoplasty.png",
-          description: "Careful anatomical restoration performed with strict medical privacy and delicate absorbable sutures.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "g-spot-amplification":
-      return [
-        {
-          id: "gspot-1",
-          title: "Intimate Wellness Augmentation",
-          beforeImage: "/assets/UPDATED SERVICES/g-spot-amplification.png",
-          afterImage: "/assets/UPDATED SERVICES/g-spot-amplification.png",
-          description: "Minimally invasive hyaluronic acid or autologous fat enhancement supporting intimate wellness.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "split-ear-lobe-repair":
-      return [
-        {
-          id: "ear-1",
-          title: "Earlobe Cleft Closure",
-          beforeImage: "/assets/results/face/before.jpg",
-          afterImage: "/assets/results/face/after.jpg",
-          description: "Microscopic repair of torn or elongated piercing tracks with preserved earlobe contour.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "circumcision":
-      return [
-        {
-          id: "circ-1",
-          title: "Modern Stapler & Laser Circumcision",
-          beforeImage: "/assets/UPDATED SERVICES/circumcision.png",
-          afterImage: "/assets/UPDATED SERVICES/circumcision.png",
-          description: "Painless, rapid-recovery circumcision utilizing advanced surgical stapler or laser protocols.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "botox":
-      return [
-        {
-          id: "botox-1",
-          title: "Upper Facial Neurotoxin Rejuvenation",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
-          description: "Smoothing of dynamic forehead furrows, frown lines, and periorbital crow's feet.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "dermal-fillers":
-      return [
-        {
-          id: "filler-1",
-          title: "Hyaluronic Acid Facial Contouring",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-7.jpg",
-          description: "Restoring cheek volume, defining the jawline, and smoothing nasolabial folds with hyaluronic fillers.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "facial-rejuvenation":
-      return [
-        {
-          id: "fr-1",
-          title: "Comprehensive Multi-Modal Harmonization",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          description: "Multi-modal restoration combining dermal volumization, skin resurfacing, and tone refinement.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "thread-lift":
-      return [
-        {
-          id: "thread-1",
-          title: "Absorbable PDO Thread Midface Lift",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          description: "Immediate mechanical suspension of mild midface laxity combined with progressive collagen stimulation.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "e-fat-graft":
-      return [
-        {
-          id: "fatgraft-1",
-          title: "Micro-Autologous Facial Fat Transfer",
-          beforeImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          afterImage: "/assets/results/BEFORE AFTER/RESULTS-8.jpg",
-          description: "Replenishing hollow temples, periorbital hollows, and midface using purified autologous micro-fat.",
-          isIllustrative: false,
-          tag: "Real Patient Outcome",
-        },
-      ];
-    case "chemical-peels":
-      return [
-        {
-          id: "peel-1",
-          title: "Dermatological Chemical Exfoliation",
-          beforeImage: "/assets/UPDATED SERVICES/chemical-peels.png",
-          afterImage: "/assets/UPDATED SERVICES/chemical-peels.png",
-          description: "Accelerated cellular turnover reducing uneven pigmentation, fine lines, and dull skin texture.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "laser-treatments":
-      return [
-        {
-          id: "laser-1",
-          title: "Fractional Laser Skin Resurfacing",
-          beforeImage: "/assets/UPDATED SERVICES/laser-treatments.png",
-          afterImage: "/assets/UPDATED SERVICES/laser-treatments.png",
-          description: "Deep dermal collagen induction smoothing photo-damage, textural roughness, and enlarged pores.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "acne-scar-treatment":
-      return [
-        {
-          id: "acne-1",
-          title: "Subcision & Fractional Laser Resurfacing",
-          beforeImage: "/assets/UPDATED SERVICES/acne-scar-treatment.png",
-          afterImage: "/assets/UPDATED SERVICES/acne-scar-treatment.png",
-          description: "Elevating atrophic rolling and boxcar scars through multi-layer collagen remodeling.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "scar-removal":
-      return [
-        {
-          id: "scar-1",
-          title: "Surgical Scar Revision (Z-Plasty & Laser)",
-          beforeImage: "/assets/UPDATED SERVICES/scar-removal.png",
-          afterImage: "/assets/UPDATED SERVICES/scar-removal.png",
-          description: "Reorienting and softening prominent post-surgical or injury scars for smooth aesthetic integration.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "wart-removal":
-      return [
-        {
-          id: "wart-1",
-          title: "Radiofrequency Wart Ablation",
-          beforeImage: "/assets/UPDATED SERVICES/wart-removal.png",
-          afterImage: "/assets/UPDATED SERVICES/wart-removal.png",
-          description: "Clean, bloodless removal of cutaneous lesions with preserved surrounding healthy epidermis.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "mole-removal":
-      return [
-        {
-          id: "mole-1",
-          title: "Scar-Minimized Mole Excision",
-          beforeImage: "/assets/UPDATED SERVICES/mole-removal.png",
-          afterImage: "/assets/UPDATED SERVICES/mole-removal.png",
-          description: "Careful excision of raised or pigmented moles with delicate micro-sutures.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "corn-removal":
-      return [
-        {
-          id: "corn-1",
-          title: "Foot Corn Core Enucleation",
-          beforeImage: "/assets/UPDATED SERVICES/corn-removal.png",
-          afterImage: "/assets/UPDATED SERVICES/corn-removal.png",
-          description: "Painless enucleation of deep keratin plugs restoring pressure-free walking comfort.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "weight-loss-programs":
-      return [
-        {
-          id: "wl-1",
-          title: "Medical Weight Management & Contouring",
-          beforeImage: "/assets/transformation/body/before.jpg",
-          afterImage: "/assets/transformation/body/after.jpg",
-          description: "Structured GLP-1 medical weight loss combined with targeted aesthetic body sculpting.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    case "iv-drip-infusions":
-      return [
-        {
-          id: "iv-1",
-          title: "Intravenous Vitamin & Glutathione Infusion",
-          beforeImage: "/assets/UPDATED SERVICES/iv-drip-infusions.png",
-          afterImage: "/assets/UPDATED SERVICES/iv-drip-infusions.png",
-          description: "Cellular rejuvenation delivering antioxidants, hydration, and amino acids for radiant skin vitality.",
-          isIllustrative: true,
-          tag: "Illustrative Example",
-        },
-      ];
-    default:
-      return [];
+  const resultItem = serviceResultsMap[slug];
+  if (resultItem) {
+    return [
+      {
+        id: `${slug}-result-1`,
+        title: resultItem.title,
+        beforeImage: resultItem.image,
+        afterImage: resultItem.image,
+        description: resultItem.description,
+        isIllustrative: false,
+        tag: "Real Patient Outcome",
+      },
+    ];
   }
+
+  return [];
 }
 
 // 2. RELATED VIDEOS RESOLVER (ALL 36 SERVICES — VERIFIED SCULPT CHANNEL)
