@@ -13,7 +13,6 @@ const concernOptions = [
   "Gynecomastia (Male Chest Reduction)",
   "Men's Aesthetic Treatments",
   "Weight Loss & Slimming Solutions",
-  "Hair Restoration & Transplant",
   "Anti-Aging (Botox, Fillers & Threads)",
   "Skin Rejuvenation & Laser Treatments",
   "Scar Revision & Pigmentation",
@@ -33,7 +32,7 @@ export default function ConsultationPopup() {
   const [errorMessage, setErrorMessage] = useState("");
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Helper to start or restart the 40-second timer
+  // Helper to start or restart the 30-second timer
   const startTimer = () => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
@@ -67,7 +66,7 @@ export default function ConsultationPopup() {
     };
   }, [isOpen]);
 
-  // Handle Close & restart 40-second timer
+  // Handle Close & restart 30-second timer
   const handleClose = () => {
     setIsOpen(false);
     startTimer();
@@ -101,13 +100,7 @@ export default function ConsultationPopup() {
       return;
     }
 
-    if (!formData.phone.trim()) {
-      setErrorMessage("Please enter your Phone / WhatsApp number.");
-      setStatus("error");
-      return;
-    }
-
-    if (formData.phone.replace(/[^0-9]/g, "").length < 8) {
+    if (!formData.phone.trim() || formData.phone.replace(/\D/g, "").length < 8) {
       setErrorMessage("Please enter a valid Phone / WhatsApp number.");
       setStatus("error");
       return;
@@ -127,21 +120,38 @@ export default function ConsultationPopup() {
 
     setStatus("submitting");
 
-    // Simulate submission
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({
-        fullName: "",
-        phone: "",
-        email: "",
-        concern: "",
-      });
+    const whatsappMsg = `Hello Sculpt Aesthetics,
 
-      // Auto close after 2.5 seconds on success and restart cycle
-      setTimeout(() => {
-        handleClose();
-      }, 2500);
-    }, 1000);
+I would like to book a free consultation.
+
+Name: ${formData.fullName.trim()}
+Phone: ${formData.phone.trim()}
+Email: ${formData.email.trim() || "Not provided"}
+Service: ${formData.concern}
+Message: Regarding ${formData.concern}
+
+Please contact me regarding my consultation.`;
+
+    const whatsappUrl = `https://wa.me/919639635454?text=${encodeURIComponent(whatsappMsg)}`;
+
+    try {
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    } catch {
+      window.location.href = whatsappUrl;
+    }
+
+    setStatus("success");
+    setFormData({
+      fullName: "",
+      phone: "",
+      email: "",
+      concern: "",
+    });
+
+    // Auto close after 2.5 seconds on success and restart cycle
+    setTimeout(() => {
+      handleClose();
+    }, 2500);
   };
 
   return (

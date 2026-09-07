@@ -4379,7 +4379,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Breast Augmentation with Implants vs. Fat Grafting: Complete Patient Guide",
           category: "Breast Surgery",
           readTime: "6 min read",
-          image: "/assets/services/breast-augmentation.jpg",
+          image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
           excerpt: "Explore cohesive silicone gel implants, natural autologous fat transfer, and diagnostic imaging compatibility.",
         },
         {
@@ -4387,7 +4387,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
           category: "Body Contouring",
           readTime: "6 min read",
-          image: "/assets/services/mommy-makeover.jpg",
+          image: "/assets/BLOGS/Mommy Makeover Surgery.png",
           excerpt: "Restoring breast shape, lift, and volume alongside core contouring after childbirth.",
         },
       ];
@@ -4409,15 +4409,15 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Complete Guide to Rhinoplasty & Nose Reshaping in Hyderabad",
           category: "Facial Surgery",
           readTime: "6 min read",
-          image: "/assets/services/rhinoplasty.jpg",
+          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
           excerpt: "Learn about open vs. closed rhinoplasty techniques, structural refinement, and what to expect during recovery.",
         },
         {
           slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
           category: "Skin & Anti-Aging",
           readTime: "5 min read",
-          image: "/assets/services/botox.jpg",
+          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
           excerpt: "Understand non-surgical facial contouring, profile balancing, and liquid rejuvenation.",
         },
       ];
@@ -4429,10 +4429,10 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
       return [
         {
           slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
           category: "Skin & Anti-Aging",
           readTime: "5 min read",
-          image: "/assets/services/botox.jpg",
+          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
           excerpt: "Understand how facial volumization and muscle relaxation rejuvenate facial contours without surgery.",
         },
         {
@@ -4440,7 +4440,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Complete Guide to Rhinoplasty & Nose Reshaping in Hyderabad",
           category: "Facial Surgery",
           readTime: "6 min read",
-          image: "/assets/services/rhinoplasty.jpg",
+          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
           excerpt: "Explore facial harmony analysis and surgical aesthetic balance at Sculpt Aesthetics.",
         },
       ];
@@ -4452,10 +4452,10 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
       return [
         {
           slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
           category: "Skin & Anti-Aging",
           readTime: "5 min read",
-          image: "/assets/services/botox.jpg",
+          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
           excerpt: "Understand the distinct roles of Botox and Hyaluronic Acid Fillers in smoothing wrinkles and restoring lost volume.",
         },
         {
@@ -4463,7 +4463,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
           category: "Skin Care",
           readTime: "4 min read",
-          image: "/assets/services/laser-treatments.jpg",
+          image: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
           excerpt: "Target textural imperfections, sun damage, and pigmentation with medical skin resurfacing.",
         },
       ];
@@ -4477,15 +4477,15 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
           category: "Skin Care",
           readTime: "4 min read",
-          image: "/assets/services/laser-treatments.jpg",
+          image: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
           excerpt: "Medical-grade fractional lasers and customized chemical peels tailored for Indian skin tones.",
         },
         {
           slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
           category: "Skin & Anti-Aging",
           readTime: "5 min read",
-          image: "/assets/services/botox.jpg",
+          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
           excerpt: "Combining skin resurfacing with subtle dermal volume restoration for complete rejuvenation.",
         },
       ];
@@ -4515,7 +4515,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
           category: "Body Contouring",
           readTime: "5 min read",
-          image: "/assets/services/liposuction.jpg",
+          image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
           excerpt: "Explore medical weight loss programs in combination with targeted body sculpting.",
         },
         {
@@ -4523,12 +4523,30 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
           category: "Skin Care",
           readTime: "4 min read",
-          image: "/assets/services/laser-treatments.jpg",
-          excerpt: "Cellular wellness, antioxidant therapies, and clinical skin rejuvenation protocols.",
+          image: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
+          excerpt: "Medical laser treatments to refine skin texture during aesthetic transformation.",
         },
       ];
     default:
-      return [];
+      return [
+        {
+          slug: "lipoma-painless-treatment",
+          title: "Lipoma Painless Treatment",
+          category: "Treatments",
+          readTime: "4 min read",
+          image: "/assets/blog/lipoma-painless-treatment.png",
+          excerpt: "A lipoma is a benign growth of fatty tissue. Learn about painless removal surgery, recovery timelines, and cost estimates.",
+        },
+        {
+          slug: "gynecomastia-treatment",
+          title: "Gynecomastia Treatment",
+          category: "Breast Care",
+          readTime: "5 min read",
+          image: "/assets/blog/gynecomastia-treatment.png",
+          excerpt: "Learn about causes of male breast enlargement, surgical solutions, and recovery at Sculpt Aesthetics.",
+        },
+      ];
   }
 }
+
 

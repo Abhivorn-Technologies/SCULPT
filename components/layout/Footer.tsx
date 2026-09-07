@@ -74,7 +74,7 @@ export default function Footer() {
               {[
                 { name: "About The Sculpt", href: "/about" },
                 { name: "Our Services & Procedures", href: "/services" },
-                { name: "Before & After Results", href: "/results" },
+                { name: "Before & After Results", href: "/gallery" },
                 { name: "Expert Doctors & Surgeons", href: "/#doctors" },
                 { name: "Patient Transformations", href: "/#transformation" },
                 { name: "Blog & Patient Guide", href: "/blog" },
@@ -136,15 +136,15 @@ export default function Footer() {
             <div className="flex items-center gap-3 text-sm text-[#999999]">
               <Phone className="w-4 h-4 text-[#E6663A] shrink-0" />
               <div className="flex flex-col">
-                <a href="tel:+919949519191" className="hover:text-white transition-colors">+91 99495 19191</a>
-                <a href="tel:+919849012345" className="hover:text-white transition-colors">+91 98490 12345</a>
+                <a href="tel:+919639635454" className="hover:text-white transition-colors">+91 96396 35454</a>
+                <a href="tel:+919133733733" className="hover:text-white transition-colors">+91 91337 33733</a>
               </div>
             </div>
 
             <div className="flex items-center gap-3 text-sm text-[#999999]">
               <Mail className="w-4 h-4 text-[#E6663A] shrink-0" />
-              <a href="mailto:info@thesculpt.co.in" className="hover:text-white transition-colors">
-                info@thesculpt.co.in
+              <a href="mailto:contact@thesculpt.co.in" className="hover:text-white transition-colors">
+                contact@thesculpt.co.in
               </a>
             </div>
 
@@ -175,10 +175,10 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex items-center space-x-6">
-            <Link href="/about" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/about" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="/about" className="hover:text-white transition-colors">Medical Disclaimer</Link>
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/medical-disclaimer" className="hover:text-white transition-colors">Medical Disclaimer</Link>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import Contact from "@/components/home/Contact";
 
 export const metadata = {
   title: "Contact Us & Book Appointment — The Sculpt Aesthetics",
-  description: "Schedule a confidential cosmetic consultation at The Sculpt Aesthetics clinic located in Madhapur, Hyderabad. Phone: +91 99495 19191.",
+  description: "Schedule a confidential cosmetic consultation at The Sculpt Aesthetics clinic located in Madhapur, Hyderabad. Phone: +91 96396 35454 / +91 91337 33733.",
 };
 
 export default function ContactPage() {

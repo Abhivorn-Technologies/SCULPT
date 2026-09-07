@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "How do I book a consultation?",
     answer:
-      "You can book a consultation by calling our clinic at +91 99495 19191, filling out the appointment form on our website, or visiting our clinic in Jubilee Hills, Hyderabad. Our care coordinators will help schedule a convenient time for you.",
+      "You can book a consultation by calling our clinic at +91 96396 35454, filling out the appointment form on our website, or visiting our clinic in Madhapur, Hyderabad. Our care coordinators will help schedule a convenient time for you.",
   },
   {
     question: "How do I know which treatment is right for me?",

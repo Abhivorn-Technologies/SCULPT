@@ -20,19 +20,78 @@ export default function Contact() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (errorMessage) {
+      setErrorMessage("");
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.firstName || !formData.phone || !formData.service) {
+    if (!formData.firstName.trim() || !formData.phone.trim() || !formData.service) {
       setErrorMessage("Please fill in your Name, Phone Number, and Service of Interest.");
       setStatus("error");
       return;
     }
 
+    if (formData.phone.replace(/\D/g, "").length < 8) {
+      setErrorMessage("Please enter a valid Phone number.");
+      setStatus("error");
+      return;
+    }
+
+    if (formData.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setErrorMessage("Please enter a valid Email Address or leave it empty.");
+      setStatus("error");
+      return;
+    }
+
     setStatus("submitting");
-    // Simulate API form submission
-    setTimeout(() => {
+    setErrorMessage("");
+
+    const fullName = `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim();
+
+    try {
+      // 1. Send Email to contact@thesculpt.co.in via server API
+      const res = await fetch("/api/appointment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.firstName.trim(),
+          lastName: formData.lastName.trim(),
+          name: fullName,
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          service: formData.service,
+          message: formData.message.trim(),
+        }),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error || "Failed to process appointment request");
+      }
+
+      // 2. Format WhatsApp Message
+      const whatsappMsg = `Hello Sculpt Aesthetics,
+
+I would like to book an appointment.
+
+Name: ${fullName}
+Phone: ${formData.phone.trim()}
+Email: ${formData.email.trim() || "Not provided"}
+Service: ${formData.service}
+Message: ${formData.message.trim() || "No additional message"}
+
+Please contact me regarding my appointment request.`;
+
+      const whatsappUrl = `https://wa.me/919639635454?text=${encodeURIComponent(whatsappMsg)}`;
+
+      try {
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      } catch {
+        window.location.href = whatsappUrl;
+      }
+
       setStatus("success");
       setFormData({
         firstName: "",
@@ -42,7 +101,12 @@ export default function Contact() {
         service: "",
         message: "",
       });
-    }, 1200);
+    } catch (err: unknown) {
+      console.error("Submission error:", err);
+      const msg = err instanceof Error ? err.message : "Something went wrong. Please try again or call us directly.";
+      setErrorMessage(msg);
+      setStatus("error");
+    }
   };
 
   return (
@@ -71,8 +135,8 @@ export default function Contact() {
                   <Phone className="w-5 h-5" />
                 </div>
                 <h3 className="font-serif font-bold text-base text-[#151515]">Phone</h3>
-                <p className="text-xs text-[#555555]">+91 99495 19191</p>
-                <p className="text-xs text-[#555555]">+91 98490 12345</p>
+                <p className="text-xs text-[#555555]">+91 96396 35454</p>
+                <p className="text-xs text-[#555555]">+91 91337 33733</p>
               </div>
 
               {/* Email */}
@@ -81,7 +145,6 @@ export default function Contact() {
                   <Mail className="w-5 h-5" />
                 </div>
                 <h3 className="font-serif font-bold text-base text-[#151515]">Email</h3>
-                <p className="text-xs text-[#555555]">info@thesculpt.co.in</p>
                 <p className="text-xs text-[#555555]">contact@thesculpt.co.in</p>
               </div>
 

@@ -212,7 +212,7 @@ export const blogPosts: BlogPost[] = [
     date: "July 12, 2024",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "6 min read",
-    image: "/assets/services/rhinoplasty.jpg",
+    image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
     excerpt:
       "Rhinoplasty (nose reshaping) is one of the most transformative facial plastic surgeries. Learn about open vs. closed techniques, structural refinement, functional breathing correction, and what to expect during recovery.",
     sections: [
@@ -240,7 +240,7 @@ export const blogPosts: BlogPost[] = [
       metaTitle: "Rhinoplasty Surgery in Hyderabad — Nose Job Guide | Sculpt",
       metaDescription: "Comprehensive guide to Rhinoplasty surgery in Hyderabad at The Sculpt Aesthetics. Explore techniques, recovery timelines, and consultation details.",
       canonicalUrl: "https://thesculpt.co.in/blog/rhinoplasty-guide-hyderabad",
-      ogImage: "/assets/services/rhinoplasty.jpg",
+      ogImage: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
       keywords: ["Rhinoplasty Hyderabad", "Nose Job surgery", "Open Rhinoplasty", "Nose reshaping cost"],
     },
   },
@@ -252,7 +252,7 @@ export const blogPosts: BlogPost[] = [
     date: "July 28, 2024",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "5 min read",
-    image: "/assets/services/liposuction.jpg",
+    image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
     excerpt:
       "Confused between Liposuction and Abdominoplasty (Tummy Tuck)? Understand the key differences, ideal candidacy criteria, muscle tightening benefits, and recovery expectations.",
     sections: [
@@ -279,7 +279,7 @@ export const blogPosts: BlogPost[] = [
       metaTitle: "Liposuction vs. Tummy Tuck in Hyderabad — Comparison Guide | Sculpt",
       metaDescription: "Learn whether Liposuction or Tummy Tuck surgery is best for your body goals with expert advice from board-certified plastic surgeons at Sculpt Aesthetics.",
       canonicalUrl: "https://thesculpt.co.in/blog/liposuction-vs-tummy-tuck",
-      ogImage: "/assets/services/liposuction.jpg",
+      ogImage: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
       keywords: ["Liposuction vs Tummy Tuck", "Abdominoplasty Hyderabad", "Body contouring surgery", "Vaser Liposuction"],
     },
   },
@@ -291,7 +291,7 @@ export const blogPosts: BlogPost[] = [
     date: "August 10, 2024",
     author: "Dr. Suma Sandhyala",
     readTime: "6 min read",
-    image: "/assets/services/breast-augmentation.jpg",
+    image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
     excerpt:
       "Explore modern breast enhancement options including US FDA-approved cohesive silicone gel implants, natural autologous fat grafting, safety profiles, and long-term diagnostic compatibility.",
     sections: [
@@ -313,19 +313,19 @@ export const blogPosts: BlogPost[] = [
       metaTitle: "Breast Augmentation Guide in Hyderabad — Implants & Fat Transfer | Sculpt",
       metaDescription: "Comprehensive guide to breast augmentation surgery, implant types, fat grafting, and recovery in Hyderabad at Sculpt Aesthetics.",
       canonicalUrl: "https://thesculpt.co.in/blog/breast-augmentation-guide",
-      ogImage: "/assets/services/breast-augmentation.jpg",
+      ogImage: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
       keywords: ["Breast Augmentation Hyderabad", "Silicone breast implants", "Breast lift mastopexy", "Dr Suma Sandhyala"],
     },
   },
   {
     id: "anti-aging-botox-fillers-guide",
     slug: "anti-aging-botox-fillers-guide",
-    title: "Botox vs. Dermal Fillers: Restoring Youthful Facial Architecture",
+    title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
     category: "Skin & Anti-Aging",
     date: "August 22, 2024",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "5 min read",
-    image: "/assets/services/botox.jpg",
+    image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
     excerpt:
       "Understand the distinct roles of neurotoxins (Botox) and hyaluronic acid dermal fillers in smoothing dynamic wrinkles, restoring lost volume, and sculpting natural facial contours.",
     sections: [
@@ -346,7 +346,7 @@ export const blogPosts: BlogPost[] = [
       metaTitle: "Botox vs Dermal Fillers Guide — Anti-Aging Treatments | Sculpt Aesthetics",
       metaDescription: "Discover how Botox and Dermal Fillers work together to rejuvenate facial appearance, smooth wrinkles, and restore youthful volume in Hyderabad.",
       canonicalUrl: "https://thesculpt.co.in/blog/anti-aging-botox-fillers-guide",
-      ogImage: "/assets/services/botox.jpg",
+      ogImage: "/assets/BLOGS/Botox vs Dermal Fillers.png",
       keywords: ["Botox Hyderabad", "Dermal Fillers", "Anti-aging clinic Hyderabad", "Liquid facelift"],
     },
   },
@@ -358,7 +358,7 @@ export const blogPosts: BlogPost[] = [
     date: "September 02, 2024",
     author: "Dr. Suma Sandhyala",
     readTime: "4 min read",
-    image: "/assets/services/laser-treatments.jpg",
+    image: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
     excerpt:
       "Target acne scars, uneven pigmentation, enlarged pores, and sun damage with medical-grade fractional lasers and customized dermatological chemical peels.",
     sections: [
@@ -379,7 +379,7 @@ export const blogPosts: BlogPost[] = [
       metaTitle: "Laser Skin Rejuvenation & Chemical Peels in Hyderabad | Sculpt",
       metaDescription: "Explore medical laser treatments and chemical peels for acne scars, pigmentation, and glowing skin at The Sculpt Aesthetics, Hyderabad.",
       canonicalUrl: "https://thesculpt.co.in/blog/laser-skin-rejuvenation-guide",
-      ogImage: "/assets/services/laser-treatments.jpg",
+      ogImage: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
       keywords: ["Laser skin treatment Hyderabad", "Acne scar laser", "Chemical peels Hyderabad", "Skin rejuvenation"],
     },
   },
@@ -391,7 +391,7 @@ export const blogPosts: BlogPost[] = [
     date: "September 04, 2024",
     author: "Dr. Suma Sandhyala & Dr. Jagadish Kiran",
     readTime: "6 min read",
-    image: "/assets/services/mommy-makeover.jpg",
+    image: "/assets/BLOGS/Mommy Makeover Surgery.png",
     excerpt:
       "A comprehensive guide to Mommy Makeover surgery combining tummy tuck, liposuction, and breast restoration to help mothers regain their pre-pregnancy silhouette and confidence.",
     sections: [
@@ -412,10 +412,11 @@ export const blogPosts: BlogPost[] = [
       metaTitle: "Mommy Makeover Surgery in Hyderabad — Comprehensive Guide | Sculpt",
       metaDescription: "Learn everything about Mommy Makeover surgery in Hyderabad. Restore your abdominal contour, breast shape, and body confidence at Sculpt Aesthetics.",
       canonicalUrl: "https://thesculpt.co.in/blog/mommy-makeover-recovery-guide",
-      ogImage: "/assets/services/mommy-makeover.jpg",
+      ogImage: "/assets/BLOGS/Mommy Makeover Surgery.png",
       keywords: ["Mommy Makeover Hyderabad", "Post pregnancy surgery", "Tummy tuck breast lift", "Dr Suma Sandhyala"],
     },
   },
+
 ];
 
 export function getAllBlogPosts(): BlogPost[] {

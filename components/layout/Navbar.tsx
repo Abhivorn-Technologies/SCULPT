@@ -11,7 +11,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Our Services", href: "/our-services" },
-  { name: "Results", href: "/results" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -76,7 +76,8 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isActive =
                 pathname === link.href ||
-                (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/")));
+                (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/"))) ||
+                (link.href === "/gallery" && (pathname === "/gallery" || pathname === "/results"));
               return (
                 <Link
                   key={link.name}
@@ -96,13 +97,13 @@ export default function Navbar() {
           {/* Right Action Items: Phone & CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="tel:+919949519191"
+              href="tel:+919639635454"
               className="flex items-center gap-2 text-sm font-medium text-white hover:text-[#F6B73C] transition-colors"
             >
               <div className="w-8 h-8 rounded-full bg-[#E6663A]/15 flex items-center justify-center text-[#E6663A]">
                 <Phone className="w-4 h-4" />
               </div>
-              <span className="hidden xl:inline">+91 99495 19191</span>
+              <span className="hidden xl:inline">+91 96396 35454</span>
             </a>
 
             <Link
@@ -118,7 +119,7 @@ export default function Navbar() {
           {/* Mobile Hamburger Button */}
           <div className="flex md:hidden items-center gap-2">
             <a
-              href="tel:+919949519191"
+              href="tel:+919639635454"
               aria-label="Call clinic"
               className="p-2 rounded-full text-white bg-white/10 hover:bg-white/20 transition-colors"
             >
@@ -150,7 +151,8 @@ export default function Navbar() {
               {navLinks.map((link) => {
                 const isActive =
                   pathname === link.href ||
-                  (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/")));
+                  (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/"))) ||
+                  (link.href === "/gallery" && (pathname === "/gallery" || pathname === "/results"));
                 return (
                   <Link
                     key={link.name}
@@ -170,11 +172,11 @@ export default function Navbar() {
 
               <div className="pt-4 border-t border-white/10 flex flex-col space-y-3">
                 <a
-                  href="tel:+919949519191"
+                  href="tel:+919639635454"
                   className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/10 text-white font-semibold text-sm"
                 >
                   <Phone className="w-4 h-4 text-[#E6663A]" />
-                  <span>Call: +91 99495 19191</span>
+                  <span>Call: +91 96396 35454</span>
                 </a>
 
                 <Link
