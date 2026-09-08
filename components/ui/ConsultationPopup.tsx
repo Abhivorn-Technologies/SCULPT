@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, CheckCircle2, AlertCircle, Sparkles } from "lucide-react";
+import { X, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 const POPUP_INTERVAL_MS = 30000; // 30 seconds
 
@@ -33,7 +33,7 @@ export default function ConsultationPopup() {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Helper to start or restart the 30-second timer
-  const startTimer = () => {
+  const startTimer = useCallback(() => {
     if (timerRef.current) {
       clearTimeout(timerRef.current);
     }
@@ -42,7 +42,7 @@ export default function ConsultationPopup() {
       setStatus("idle");
       setErrorMessage("");
     }, POPUP_INTERVAL_MS);
-  };
+  }, []);
 
   // Start initial timer on mount
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function ConsultationPopup() {
         clearTimeout(timerRef.current);
       }
     };
-  }, []);
+  }, [startTimer]);
 
   // Lock background body scroll when popup is open
   useEffect(() => {
@@ -67,10 +67,10 @@ export default function ConsultationPopup() {
   }, [isOpen]);
 
   // Handle Close & restart 30-second timer
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setIsOpen(false);
     startTimer();
-  };
+  }, [startTimer]);
 
   // Handle ESC key press
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function ConsultationPopup() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
+  }, [isOpen, handleClose]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));

@@ -4309,241 +4309,193 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
 
   // Procedure-specific blog mappings
   switch (slug) {
+    case "gynecomastia-surgery":
+      return [
+        {
+          slug: "gynecomastia-surgery-cost-hyderabad",
+          title: "Gynecomastia Surgery Cost in Hyderabad: Complete Guide to Treatment, Procedure and Recovery",
+          category: "Male Aesthetics",
+          readTime: "6 min read",
+          image: "/assets/BLOGS/GYNECOMASTIA SURGERY.png",
+          excerpt:
+            "If you are searching for gynecomastia surgery cost in Hyderabad, you will find many different prices online. Learn what determines the cost, treatment types, procedure, and recovery.",
+        },
+      ];
+
+    case "breast-reduction":
+      return [
+        {
+          slug: "breast-reduction-cost-hyderabad",
+          title: "Breast Reduction Cost in Hyderabad: What Affects the Price?",
+          category: "Breast Aesthetics",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/BREAST REDUCTION.png",
+          excerpt:
+            "Breast reduction surgery removes excess breast fat, glandular tissue and skin to reduce breast size and create a more comfortable and proportionate shape. Explore the cost factors and recovery in Hyderabad.",
+        },
+        {
+          slug: "breast-implant-surgery-hyderabad",
+          title: "Breast Implant Surgery in Hyderabad: Procedure, Cost, Recovery & Results",
+          category: "Breast Aesthetics",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
+          excerpt:
+            "Breast implant surgery, also known as breast augmentation, is a cosmetic procedure that can enhance breast size and improve breast shape and symmetry.",
+        },
+      ];
+
+    case "breast-augmentation":
+    case "breast-lift":
+      return [
+        {
+          slug: "breast-implant-surgery-hyderabad",
+          title: "Breast Implant Surgery in Hyderabad: Procedure, Cost, Recovery & Results",
+          category: "Breast Aesthetics",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
+          excerpt:
+            "Breast implant surgery, also known as breast augmentation, is a cosmetic procedure that can enhance breast size and improve breast shape and symmetry. Learn about options, recovery, and results in Hyderabad.",
+        },
+        {
+          slug: "breast-reduction-cost-hyderabad",
+          title: "Breast Reduction Cost in Hyderabad: What Affects the Price?",
+          category: "Breast Aesthetics",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/BREAST REDUCTION.png",
+          excerpt:
+            "Breast reduction surgery removes excess breast fat, glandular tissue and skin to reduce breast size and create a more comfortable and proportionate shape.",
+        },
+      ];
+
+    case "iv-drip-infusions":
+    case "weight-loss-programs":
+      return [
+        {
+          slug: "iv-drip-therapy-cost-hyderabad",
+          title: "IV Drip Therapy Cost in Hyderabad: Benefits, Treatment & Recovery",
+          category: "Wellness & Aesthetics",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/IV DRIP THERAPY.png",
+          excerpt:
+            "IV drip therapy delivers fluids and selected vitamins, minerals, electrolytes directly into a vein. Learn about IV drip therapy cost, benefits, safety, and recovery in Hyderabad.",
+        },
+      ];
+
+    case "blepharoplasty":
+      return [
+        {
+          slug: "blepharoplasty-safe-hyderabad",
+          title: "Is Blepharoplasty Safe in Hyderabad? Procedure, Risks, Recovery & Results",
+          category: "Facial Aesthetics",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/BLEPHAROPLASTY.png",
+          excerpt:
+            "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids. Learn about procedure safety, recovery, and results in Hyderabad.",
+        },
+        {
+          slug: "rhinoplasty-surgery-cost-hyderabad",
+          title: "Rhinoplasty Surgery Cost in Hyderabad: Procedure, Recovery and What Affects the Price",
+          category: "Facial Aesthetics",
+          readTime: "6 min read",
+          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+          excerpt:
+            "The nose plays an important role in both facial appearance and breathing. Explore rhinoplasty surgery cost in Hyderabad, procedures, recovery timelines, and pricing factors.",
+        },
+      ];
+
+    case "rhinoplasty":
+    case "facelift":
+    case "buccal-fat-pad-removal":
+    case "dimple-creation":
+    case "split-ear-lobe-repair":
+      return [
+        {
+          slug: "rhinoplasty-surgery-cost-hyderabad",
+          title: "Rhinoplasty Surgery Cost in Hyderabad: Procedure, Recovery and What Affects the Price",
+          category: "Facial Aesthetics",
+          readTime: "6 min read",
+          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+          excerpt:
+            "The nose plays an important role in both facial appearance and breathing. Explore rhinoplasty surgery cost in Hyderabad, procedures, recovery timelines, and pricing factors.",
+        },
+        {
+          slug: "blepharoplasty-safe-hyderabad",
+          title: "Is Blepharoplasty Safe in Hyderabad? Procedure, Risks, Recovery & Results",
+          category: "Facial Aesthetics",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/BLEPHAROPLASTY.png",
+          excerpt:
+            "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids.",
+        },
+      ];
+
     case "liposuction":
     case "vaser-liposuction":
     case "body-contouring":
     case "arm-and-thigh-lift":
       return [
         {
-          slug: "liposuction-vs-tummy-tuck",
-          title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
+          slug: "liposuction-cost-hyderabad",
+          title: "How Much Does Liposuction Cost in Hyderabad?",
           category: "Body Contouring",
-          readTime: "5 min read",
-          image: "/assets/services/liposuction.jpg",
-          excerpt: "Understand the key differences between Liposuction and Abdominoplasty, candidacy criteria, and recovery expectations.",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+          excerpt:
+            "Liposuction is a popular cosmetic procedure used to remove stubborn pockets of fat from specific areas of the body. Understand what affects the cost, treated areas, and recovery in Hyderabad.",
         },
         {
-          slug: "mommy-makeover-recovery-guide",
-          title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
+          slug: "tummy-tuck-surgery-hyderabad",
+          title: "Tummy Tuck Surgery in Hyderabad: Cost, Procedure, Recovery & Results ?",
           category: "Body Contouring",
-          readTime: "6 min read",
-          image: "/assets/services/mommy-makeover.jpg",
-          excerpt: "How combining tummy tuck, liposuction, and breast restoration helps mothers regain pre-pregnancy contours.",
+          readTime: "7 min read",
+          image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+          excerpt:
+            "A tummy tuck, medically known as abdominoplasty, is a surgical procedure designed to improve the appearance and contour of the abdomen by removing excess skin and fat.",
         },
       ];
+
     case "tummy-tuck-abdominoplasty":
     case "mommy-makeover":
       return [
         {
-          slug: "mommy-makeover-recovery-guide",
-          title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
+          slug: "mommy-makeover-cost-hyderabad",
+          title: "How Much Does a Mommy Makeover Cost in Hyderabad?",
           category: "Body Contouring",
-          readTime: "6 min read",
-          image: "/assets/services/mommy-makeover.jpg",
-          excerpt: "A comprehensive guide to Mommy Makeover surgery combining tummy tuck, liposuction, and breast restoration.",
-        },
-        {
-          slug: "liposuction-vs-tummy-tuck",
-          title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
-          category: "Body Contouring",
-          readTime: "5 min read",
-          image: "/assets/services/liposuction.jpg",
-          excerpt: "Compare fat reduction vs skin tightening and muscle repair for the abdomen.",
-        },
-        {
-          slug: "breast-augmentation-guide",
-          title: "Breast Augmentation with Implants vs. Fat Grafting: Complete Patient Guide",
-          category: "Breast Surgery",
-          readTime: "6 min read",
-          image: "/assets/services/breast-augmentation.jpg",
-          excerpt: "Explore modern breast enhancement options including US FDA-approved silicone gel implants and fat transfer.",
-        },
-      ];
-    case "lipoma-removal":
-      return [
-        {
-          slug: "lipoma-painless-treatment",
-          title: "Lipoma Painless Treatment",
-          category: "Treatments",
-          readTime: "4 min read",
-          image: "/assets/blog/lipoma-painless-treatment.png",
-          excerpt: "A lipoma is a benign growth of fatty tissue. Learn about painless removal surgery, recovery timelines, and cost estimates.",
-        },
-      ];
-    case "breast-augmentation":
-    case "breast-reduction":
-    case "breast-lift":
-      return [
-        {
-          slug: "breast-augmentation-guide",
-          title: "Breast Augmentation with Implants vs. Fat Grafting: Complete Patient Guide",
-          category: "Breast Surgery",
-          readTime: "6 min read",
-          image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
-          excerpt: "Explore cohesive silicone gel implants, natural autologous fat transfer, and diagnostic imaging compatibility.",
-        },
-        {
-          slug: "mommy-makeover-recovery-guide",
-          title: "Mommy Makeover Surgery: Reclaiming Your Body After Pregnancy",
-          category: "Body Contouring",
-          readTime: "6 min read",
+          readTime: "7 min read",
           image: "/assets/BLOGS/Mommy Makeover Surgery.png",
-          excerpt: "Restoring breast shape, lift, and volume alongside core contouring after childbirth.",
-        },
-      ];
-    case "gynecomastia-surgery":
-      return [
-        {
-          slug: "gynecomastia-treatment",
-          title: "Gynecomastia Treatment",
-          category: "Breast Care",
-          readTime: "5 min read",
-          image: "/assets/blog/gynecomastia-treatment.png",
-          excerpt: "Learn about causes of male breast enlargement, surgical liposuction and gland excision solutions at Sculpt Aesthetics.",
-        },
-      ];
-    case "rhinoplasty":
-      return [
-        {
-          slug: "rhinoplasty-guide-hyderabad",
-          title: "Complete Guide to Rhinoplasty & Nose Reshaping in Hyderabad",
-          category: "Facial Surgery",
-          readTime: "6 min read",
-          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
-          excerpt: "Learn about open vs. closed rhinoplasty techniques, structural refinement, and what to expect during recovery.",
+          excerpt:
+            "A mommy makeover is a combination of cosmetic procedures designed to address areas of the body affected by pregnancy, childbirth, or significant weight changes. Explore cost, options, and recovery in Hyderabad.",
         },
         {
-          slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
-          category: "Skin & Anti-Aging",
-          readTime: "5 min read",
-          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
-          excerpt: "Understand non-surgical facial contouring, profile balancing, and liquid rejuvenation.",
-        },
-      ];
-    case "facelift":
-    case "blepharoplasty":
-    case "buccal-fat-pad-removal":
-    case "dimple-creation":
-    case "split-ear-lobe-repair":
-      return [
-        {
-          slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
-          category: "Skin & Anti-Aging",
-          readTime: "5 min read",
-          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
-          excerpt: "Understand how facial volumization and muscle relaxation rejuvenate facial contours without surgery.",
-        },
-        {
-          slug: "rhinoplasty-guide-hyderabad",
-          title: "Complete Guide to Rhinoplasty & Nose Reshaping in Hyderabad",
-          category: "Facial Surgery",
-          readTime: "6 min read",
-          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
-          excerpt: "Explore facial harmony analysis and surgical aesthetic balance at Sculpt Aesthetics.",
-        },
-      ];
-    case "botox":
-    case "dermal-fillers":
-    case "facial-rejuvenation":
-    case "thread-lift":
-    case "e-fat-graft":
-      return [
-        {
-          slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
-          category: "Skin & Anti-Aging",
-          readTime: "5 min read",
-          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
-          excerpt: "Understand the distinct roles of Botox and Hyaluronic Acid Fillers in smoothing wrinkles and restoring lost volume.",
-        },
-        {
-          slug: "laser-skin-rejuvenation-guide",
-          title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
-          category: "Skin Care",
-          readTime: "4 min read",
-          image: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
-          excerpt: "Target textural imperfections, sun damage, and pigmentation with medical skin resurfacing.",
-        },
-      ];
-    case "chemical-peels":
-    case "laser-treatments":
-    case "acne-scar-treatment":
-    case "scar-removal":
-      return [
-        {
-          slug: "laser-skin-rejuvenation-guide",
-          title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
-          category: "Skin Care",
-          readTime: "4 min read",
-          image: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
-          excerpt: "Medical-grade fractional lasers and customized chemical peels tailored for Indian skin tones.",
-        },
-        {
-          slug: "anti-aging-botox-fillers-guide",
-          title: "Botox vs. Dermal Fillers: Understanding Your Facial Aesthetic Architecture",
-          category: "Skin & Anti-Aging",
-          readTime: "5 min read",
-          image: "/assets/BLOGS/Botox vs Dermal Fillers.png",
-          excerpt: "Combining skin resurfacing with subtle dermal volume restoration for complete rejuvenation.",
-        },
-      ];
-    case "wart-removal":
-    case "mole-removal":
-    case "corn-removal":
-    case "circumcision":
-    case "labiaplasty":
-    case "clitoral-hood-correction":
-    case "hymenoplasty":
-    case "g-spot-amplification":
-      return [
-        {
-          slug: "lipoma-painless-treatment",
-          title: "Lipoma Painless Treatment & Minor Surgery",
-          category: "Treatments",
-          readTime: "4 min read",
-          image: "/assets/blog/lipoma-painless-treatment.png",
-          excerpt: "Learn about painless minor surgical excision, recovery timeline, and outpatient safety at Sculpt Aesthetics.",
-        },
-      ];
-    case "weight-loss-programs":
-    case "iv-drip-infusions":
-      return [
-        {
-          slug: "liposuction-vs-tummy-tuck",
-          title: "Liposuction vs. Tummy Tuck: Which Body Contouring Procedure Is Right for You?",
+          slug: "tummy-tuck-surgery-hyderabad",
+          title: "Tummy Tuck Surgery in Hyderabad: Cost, Procedure, Recovery & Results ?",
           category: "Body Contouring",
-          readTime: "5 min read",
+          readTime: "7 min read",
           image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
-          excerpt: "Explore medical weight loss programs in combination with targeted body sculpting.",
-        },
-        {
-          slug: "laser-skin-rejuvenation-guide",
-          title: "Advanced Laser Treatments & Chemical Peels for Flawless Skin",
-          category: "Skin Care",
-          readTime: "4 min read",
-          image: "/assets/BLOGS/Advanced Laser Treatments & Chemical Peels.png",
-          excerpt: "Medical laser treatments to refine skin texture during aesthetic transformation.",
+          excerpt:
+            "A tummy tuck, medically known as abdominoplasty, is a surgical procedure designed to improve the appearance and contour of the abdomen by removing excess skin and fat.",
         },
       ];
+
     default:
       return [
         {
-          slug: "lipoma-painless-treatment",
-          title: "Lipoma Painless Treatment",
-          category: "Treatments",
-          readTime: "4 min read",
-          image: "/assets/blog/lipoma-painless-treatment.png",
-          excerpt: "A lipoma is a benign growth of fatty tissue. Learn about painless removal surgery, recovery timelines, and cost estimates.",
+          slug: "gynecomastia-surgery-cost-hyderabad",
+          title: "Gynecomastia Surgery Cost in Hyderabad: Complete Guide to Treatment, Procedure and Recovery",
+          category: "Male Aesthetics",
+          readTime: "6 min read",
+          image: "/assets/BLOGS/GYNECOMASTIA SURGERY.png",
+          excerpt:
+            "If you are searching for gynecomastia surgery cost in Hyderabad, you will find many different prices online. Learn what determines the cost, treatment types, procedure, and recovery.",
         },
         {
-          slug: "gynecomastia-treatment",
-          title: "Gynecomastia Treatment",
-          category: "Breast Care",
-          readTime: "5 min read",
-          image: "/assets/blog/gynecomastia-treatment.png",
-          excerpt: "Learn about causes of male breast enlargement, surgical solutions, and recovery at Sculpt Aesthetics.",
+          slug: "rhinoplasty-surgery-cost-hyderabad",
+          title: "Rhinoplasty Surgery Cost in Hyderabad: Procedure, Recovery and What Affects the Price",
+          category: "Facial Aesthetics",
+          readTime: "6 min read",
+          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+          excerpt:
+            "The nose plays an important role in both facial appearance and breathing. Explore rhinoplasty surgery cost in Hyderabad, procedures, recovery timelines, and pricing factors.",
         },
       ];
   }

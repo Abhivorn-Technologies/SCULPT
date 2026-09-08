@@ -51,7 +51,7 @@ export default function Contact() {
     const fullName = `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim();
 
     try {
-      // 1. Send Email to contact@thesculpt.co.in via server API
+      // 1. Send Email to thesculptaesthetics@gmail.com via server API
       const res = await fetch("/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -145,7 +145,7 @@ Please contact me regarding my appointment request.`;
                   <Mail className="w-5 h-5" />
                 </div>
                 <h3 className="font-serif font-bold text-base text-[#151515]">Email</h3>
-                <p className="text-xs text-[#555555]">contact@thesculpt.co.in</p>
+                <p className="text-xs text-[#555555]">thesculptaesthetics@gmail.com</p>
               </div>
 
               {/* Address Card */}

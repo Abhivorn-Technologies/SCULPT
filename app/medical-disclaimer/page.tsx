@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { AlertTriangle, Calendar, Phone, Mail, MapPin, MessageCircle, Stethoscope, HeartPulse, HelpCircle, CheckCircle2 } from "lucide-react";
+import { AlertTriangle, Calendar, Phone, Mail, MapPin, MessageCircle, Stethoscope, HeartPulse, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Medical Disclaimer — The Sculpt Aesthetics Hyderabad",
@@ -219,8 +218,8 @@ export default function MedicalDisclaimerPage() {
 
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-[#E6663A] shrink-0" />
-                  <a href="mailto:contact@thesculpt.co.in" className="hover:text-[#E6663A] font-medium transition-colors">
-                    contact@thesculpt.co.in
+                  <a href="mailto:thesculptaesthetics@gmail.com" className="hover:text-[#E6663A] font-medium transition-colors">
+                    thesculptaesthetics@gmail.com
                   </a>
                 </div>
               </div>

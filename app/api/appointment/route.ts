@@ -55,7 +55,7 @@ Sculpt Aesthetics Website`;
 
       await transporter.sendMail({
         from: process.env.SMTP_FROM || `"Sculpt Aesthetics Website" <${process.env.SMTP_USER}>`,
-        to: "contact@thesculpt.co.in",
+        to: process.env.APPOINTMENT_EMAIL_TO || "thesculptaesthetics@gmail.com",
         replyTo: email || undefined,
         subject: emailSubject,
         text: emailText,
@@ -63,7 +63,7 @@ Sculpt Aesthetics Website`;
     } else {
       // Server-side logged appointment lead
       console.log("=== NEW APPOINTMENT REQUEST ===");
-      console.log(`To: contact@thesculpt.co.in`);
+      console.log(`To: thesculptaesthetics@gmail.com`);
       console.log(`Subject: ${emailSubject}`);
       console.log(emailText);
       console.log("================================");

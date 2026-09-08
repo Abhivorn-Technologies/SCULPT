@@ -29,7 +29,8 @@ import {
   ServiceItem,
   ServiceVideo,
   getServiceBeforeAfterResults,
-  getServiceVideos
+  getServiceVideos,
+  getServiceRelatedBlogs,
 } from "@/lib/servicesData";
 
 interface ServiceDetailClientProps {
@@ -46,6 +47,7 @@ export default function ServiceDetailClient({
 
   const results = getServiceBeforeAfterResults(service.slug);
   const videos = getServiceVideos(service.slug);
+  const relatedBlogs = getServiceRelatedBlogs(service.slug);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -734,6 +736,91 @@ export default function ServiceDetailClient({
               )}
             </aside>
           </div>
+        )}
+
+        {/* RELATED BLOGS */}
+        {relatedBlogs && relatedBlogs.length > 0 && (
+          <section className="space-y-8 pt-4">
+            <div className="text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-[#E6663A] text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#F6B73C]" />
+                CLINICAL INSIGHTS & PATIENT GUIDES
+              </span>
+              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#151515]">
+                RELATED BLOGS
+              </h2>
+              <p className="text-xs sm:text-sm text-[#666666]">
+                Read comprehensive surgical guides, recovery timelines, and cost breakdowns from our specialist surgeons.
+              </p>
+            </div>
+
+            <div
+              className={`grid grid-cols-1 ${
+                relatedBlogs.length === 1
+                  ? "max-w-md mx-auto"
+                  : relatedBlogs.length === 2
+                  ? "md:grid-cols-2 max-w-4xl mx-auto"
+                  : "sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto"
+              } gap-6`}
+            >
+              {relatedBlogs.map((blog) => (
+                <motion.article
+                  key={blog.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.45 }}
+                  className="bg-white rounded-3xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 border border-[#EFE8E0] flex flex-col justify-between group hover:-translate-y-1 h-full"
+                >
+                  {/* Blog Image */}
+                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#151515] shrink-0">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute top-3 left-3 bg-[#E6663A] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-md">
+                      {blog.category}
+                    </div>
+                  </div>
+
+                  {/* Blog Meta & Excerpt */}
+                  <div className="p-5 sm:p-6 space-y-2.5 flex-1 flex flex-col justify-between">
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3 text-xs text-[#777777]">
+                        <span className="flex items-center gap-1 font-medium">
+                          <Clock className="w-3.5 h-3.5 text-[#E6663A]" />
+                          {blog.readTime}
+                        </span>
+                      </div>
+
+                      <Link href={`/blog/${blog.slug}`} className="block group/title">
+                        <h3 className="font-serif text-base sm:text-lg font-bold text-[#151515] group-hover/title:text-[#E6663A] transition-colors leading-snug">
+                          {blog.title}
+                        </h3>
+                      </Link>
+
+                      <p className="text-xs text-[#555555] leading-relaxed font-light line-clamp-2">
+                        {blog.excerpt}
+                      </p>
+                    </div>
+
+                    <div className="pt-3 border-t border-[#EFE8E0] flex items-center justify-between mt-auto">
+                      <Link
+                        href={`/blog/${blog.slug}`}
+                        className="w-full py-2.5 px-4 rounded-full border border-[#151515] text-[#151515] hover:border-transparent hover:bg-[#E6663A] hover:text-white transition-all duration-200 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-xs hover:shadow"
+                      >
+                        <span>READ MORE</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* CTA: READY TO BEGIN YOUR AESTHETIC JOURNEY? */}

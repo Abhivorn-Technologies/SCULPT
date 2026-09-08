@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ShieldCheck, Calendar, Phone, Mail, MapPin, MessageCircle, Lock, Eye, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -286,8 +285,8 @@ export default function PrivacyPolicyPage() {
 
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-[#E6663A] shrink-0" />
-                  <a href="mailto:contact@thesculpt.co.in" className="hover:text-[#E6663A] font-medium transition-colors">
-                    contact@thesculpt.co.in
+                  <a href="mailto:thesculptaesthetics@gmail.com" className="hover:text-[#E6663A] font-medium transition-colors">
+                    thesculptaesthetics@gmail.com
                   </a>
                 </div>
               </div>
