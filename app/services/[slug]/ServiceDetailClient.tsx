@@ -45,8 +45,16 @@ export default function ServiceDetailClient({
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [selectedVideo, setSelectedVideo] = useState<ServiceVideo | null>(null);
 
-  const results = getServiceBeforeAfterResults(service.slug);
-  const videos = getServiceVideos(service.slug);
+  const results =
+    service.beforeAfterResults && service.beforeAfterResults.length > 0
+      ? service.beforeAfterResults
+      : getServiceBeforeAfterResults(service.slug);
+
+  const videos =
+    service.videos && service.videos.length > 0
+      ? service.videos
+      : getServiceVideos(service.slug);
+
   const relatedBlogs = getServiceRelatedBlogs(service.slug);
 
   useEffect(() => {

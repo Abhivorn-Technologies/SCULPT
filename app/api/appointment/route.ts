@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import connectToDatabase from "@/lib/mongodb";
+import Appointment from "@/lib/models/Appointment";
 
 export async function POST(req: Request) {
   try {
@@ -27,6 +29,25 @@ export async function POST(req: Request) {
         { error: "Service of interest is required" },
         { status: 400 }
       );
+    }
+
+    // Save appointment lead to MongoDB if MONGODB_URI is provided
+    if (process.env.MONGODB_URI) {
+      try {
+        await connectToDatabase();
+        await Appointment.create({
+          fullName,
+          phone,
+          email: email || undefined,
+          service,
+          message: message || "",
+          status: "New",
+        });
+        console.log("Appointment saved to MongoDB successfully");
+      } catch (dbError) {
+        console.error("Error saving appointment to MongoDB:", dbError);
+        // Continue to send email even if DB log fails
+      }
     }
 
     const emailSubject = "New Appointment Request — Sculpt Aesthetics";
