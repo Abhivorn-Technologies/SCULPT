@@ -134,7 +134,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/liposuction.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990796/sculpt_aesthetics/assets/UPDATED_SERVICES/liposuction.png",
     "isEmpty": false,
     "shortDescription": "Liposuction removes localized fat deposits from areas resistant to diet and exercise, creating a more sculpted, proportionate body profile. At Sculpt Aesthetics in Madhapur, Hyderabad, Liposuction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Sculpt stubborn areas resistant to diet and exercise",
@@ -254,7 +254,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/Vaser Liposuction.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990802/sculpt_aesthetics/assets/UPDATED_SERVICES/Vaser_Liposuction.png",
     "isEmpty": false,
     "shortDescription": "HD Liposuction goes beyond standard fat removal to reveal the natural contours of underlying muscle, creating a more athletic, sculpted appearance for suitable candidates. At Sculpt Aesthetics in Madhapur, Hyderabad, HD Liposuction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Sculpted muscle definition, not just fat removal",
@@ -366,7 +366,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/tummy-tuck-abdominoplasty.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990800/sculpt_aesthetics/assets/UPDATED_SERVICES/tummy-tuck-abdominoplasty.png",
     "isEmpty": false,
     "shortDescription": "A tummy tuck tightens abdominal muscles and removes excess skin to create a firmer, flatter abdominal profile, especially after pregnancy or significant weight loss. At Sculpt Aesthetics in Madhapur, Hyderabad, Tummy Tuck is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "A firmer, flatter abdominal profile",
@@ -476,7 +476,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/mommy-makeover.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990797/sculpt_aesthetics/assets/UPDATED_SERVICES/mommy-makeover.png",
     "isEmpty": false,
     "shortDescription": "your pre-pregnancy confidence A mommy makeover combines customized procedures designed to restore body confidence after pregnancy and childbirth, addressing changes to the breasts and abdomen in a single, coordinated plan. At Sculpt Aesthetics in Madhapur, Hyderabad, Mommy Makeover is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "A customized combination of procedures to restore",
@@ -585,7 +585,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/body-contouring.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990790/sculpt_aesthetics/assets/UPDATED_SERVICES/body-contouring.png",
     "isEmpty": false,
     "shortDescription": "Diet and exercise don't always resolve stubborn, localized fat deposits. Body contouring at Sculpt Aesthetics uses advanced liposuction techniques to sculpt a leaner, more defined physique. At Sculpt Aesthetics in Madhapur, Hyderabad, Body Contouring is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Sculpted, defined results for a balanced physique",
@@ -707,7 +707,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/arm-and-thigh-lift.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990788/sculpt_aesthetics/assets/UPDATED_SERVICES/arm-and-thigh-lift.png",
     "isEmpty": false,
     "shortDescription": "Brachioplasty (arm lift) removes excess skin and fat from the upper arms, addressing sagging that commonly develops after significant weight loss or with age. At Sculpt Aesthetics in Madhapur, Hyderabad, Brachioplasty (Arm Lift) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Firmer, more toned upper arms",
@@ -786,7 +786,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/lipoma-removal.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990796/sculpt_aesthetics/assets/UPDATED_SERVICES/lipoma-removal.png",
     "isEmpty": false,
     "shortDescription": "Lipoma removal addresses benign fatty lumps under the skin, offering both cosmetic improvement and relief from any associated discomfort. At Sculpt Aesthetics in Madhapur, Hyderabad, Lipoma Removal is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Safe removal of benign fatty lumps",
@@ -888,7 +888,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/Breast Augmentation Breast Implant.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990789/sculpt_aesthetics/assets/UPDATED_SERVICES/Breast_Augmentation_Breast_Implant.png",
     "isEmpty": false,
     "shortDescription": "natural-looking results Breast augmentation enhances breast volume, shape, and symmetry using implants or fat transfer techniques, helping restore balanced body proportions and confidence. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Augmentation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Enhance volume, shape, and symmetry with",
@@ -980,7 +980,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/breast-reduction.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990790/sculpt_aesthetics/assets/UPDATED_SERVICES/breast-reduction.png",
     "isEmpty": false,
     "shortDescription": "Breast reduction removes excess breast tissue, fat, and skin to achieve a lighter, more proportionate breast size — relieving physical discomfort and improving daily comfort. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Reduction Surgery is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Lighter, proportionate, and more comfortable",
@@ -1101,7 +1101,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/breast-lift.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990790/sculpt_aesthetics/assets/UPDATED_SERVICES/breast-lift.png",
     "isEmpty": false,
     "shortDescription": "A breast lift (mastopexy) raises and reshapes breasts that have begun to sag due to pregnancy, breastfeeding, weight changes, or natural aging — restoring a firmer, more youthful position without necessarily changing breast size. At Sculpt Aesthetics in Madhapur, Hyderabad, Breast Lift (Mastopexy) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Restore a firmer, more youthful breast position",
@@ -1210,7 +1210,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/gynecomastia-surgery.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990794/sculpt_aesthetics/assets/UPDATED_SERVICES/gynecomastia-surgery.png",
     "isEmpty": false,
     "shortDescription": "Gynecomastia is the enlargement of male breast tissue caused by glandular growth, excess fat, hormonal changes, genetics, weight fluctuation, or certain medications. It can affect confidence, body image, and quality of life — and it's more common than most men realize. At Sculpt Aesthetics in Madhapur, Hyderabad, Gynecomastia Surgery is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Restore a firmer, more masculine chest contour",
@@ -1451,7 +1451,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/facelift.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990794/sculpt_aesthetics/assets/UPDATED_SERVICES/facelift.png",
     "isEmpty": false,
     "shortDescription": "A facelift uses advanced techniques to reduce visible signs of ageing and restore youthful facial contours, addressing sagging skin and loss of volume. At Sculpt Aesthetics in Madhapur, Hyderabad, Facelift is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Restore a naturally youthful facial contour",
@@ -1554,7 +1554,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/blepharoplasty.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990789/sculpt_aesthetics/assets/UPDATED_SERVICES/blepharoplasty.png",
     "isEmpty": false,
     "shortDescription": "Blepharoplasty improves tired-looking eyes by addressing excess skin and fat around the eyelids, correcting droopy eyelids and under-eye bags. At Sculpt Aesthetics in Madhapur, Hyderabad, Blepharoplasty (Eyelid Surgery) is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Brighter, more refreshed eyes",
@@ -1656,7 +1656,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/buccal-fat-pad-removal.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990791/sculpt_aesthetics/assets/UPDATED_SERVICES/buccal-fat-pad-removal.png",
     "isEmpty": false,
     "shortDescription": "Buccal fat removal removes excess cheek fat to create a sharper, more sculpted facial contour. At Sculpt Aesthetics in Madhapur, Hyderabad, Buccal Fat Removal is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Sharper, more defined facial contours",
@@ -1767,7 +1767,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/dimple-creation.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990792/sculpt_aesthetics/assets/UPDATED_SERVICES/dimple-creation.png",
     "isEmpty": false,
     "shortDescription": "Dimple creation is a minimally invasive procedure that creates natural-looking cheek dimples, adding a distinctive charm to a patient's smile. At Sculpt Aesthetics in Madhapur, Hyderabad, Dimple Creation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "A natural, charming addition to your smile",
@@ -1868,7 +1868,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/labiaplasty.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990795/sculpt_aesthetics/assets/UPDATED_SERVICES/labiaplasty.png",
     "isEmpty": false,
     "shortDescription": "Labiaplasty corrects enlarged or asymmetrical labia to improve physical comfort and confidence, performed with discretion and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Labiaplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Improved comfort and confidence",
@@ -1976,7 +1976,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/clitoral-hood-correction.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990792/sculpt_aesthetics/assets/UPDATED_SERVICES/clitoral-hood-correction.png",
     "isEmpty": false,
     "shortDescription": "Clitoral hood correction improves excess tissue around the clitoral hood for patients with aesthetic or comfort-related concerns. At Sculpt Aesthetics in Madhapur, Hyderabad, Clitoral Hood Correction is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Personalized, confidential aesthetic care",
@@ -2078,7 +2078,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/hymenoplasty.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990795/sculpt_aesthetics/assets/UPDATED_SERVICES/hymenoplasty.png",
     "isEmpty": false,
     "shortDescription": "Hymenoplasty is a reconstructive procedure involving restoration of hymenal tissue, performed with complete confidentiality and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Hymenoplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Confidential, respectful reconstructive care",
@@ -2184,7 +2184,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/g-spot-amplification.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990794/sculpt_aesthetics/assets/UPDATED_SERVICES/g-spot-amplification.png",
     "isEmpty": false,
     "shortDescription": "G-spot amplification is a procedure intended to enhance sensitivity in selected patients, discussed in detail during a private, confidential consultation. At Sculpt Aesthetics in Madhapur, Hyderabad, G-Spot Amplification is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "A confidential procedure for selected patients",
@@ -2286,7 +2286,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/split-ear-lobe-repair.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990800/sculpt_aesthetics/assets/UPDATED_SERVICES/split-ear-lobe-repair.png",
     "isEmpty": false,
     "shortDescription": "Split earlobe repair restores torn or stretched earlobes, whether from injury, heavy earrings, or gauge stretching, with a quick, minor procedure. At Sculpt Aesthetics in Madhapur, Hyderabad, Split Earlobe Repair is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Restore torn or stretched earlobes",
@@ -2381,7 +2381,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/circumcision.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990792/sculpt_aesthetics/assets/UPDATED_SERVICES/circumcision.png",
     "isEmpty": false,
     "shortDescription": "Circumcision is the surgical removal of foreskin, performed for medical or personal reasons with precision and care. At Sculpt Aesthetics in Madhapur, Hyderabad, Circumcision is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Safe, precise surgical care",
@@ -2477,7 +2477,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/botox.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990789/sculpt_aesthetics/assets/UPDATED_SERVICES/botox.png",
     "isEmpty": false,
     "shortDescription": "Botox reduces dynamic wrinkles and fine lines, offering a quick, non- surgical way to achieve a smoother, more refreshed facial appearance. At Sculpt Aesthetics in Madhapur, Hyderabad, Botox is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Smoother skin, fewer fine lines",
@@ -2574,7 +2574,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/dermal-fillers.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990793/sculpt_aesthetics/assets/UPDATED_SERVICES/dermal-fillers.png",
     "isEmpty": false,
     "shortDescription": "Dermal fillers restore facial volume and enhance contours, offering a non-surgical way to address areas of volume loss or to refine facial features. At Sculpt Aesthetics in Madhapur, Hyderabad, Dermal Fillers is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Restore volume, enhance facial contours",
@@ -2677,7 +2677,7 @@ export const servicesData: ServiceItem[] = [
       "Face"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/facial-rejuvenation.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990794/sculpt_aesthetics/assets/UPDATED_SERVICES/facial-rejuvenation.png",
     "isEmpty": false,
     "shortDescription": "Skin boosters and facial rejuvenation treatments improve hydration, texture, and skin quality through targeted micro-injections, giving skin a naturally healthy, dewy glow. At Sculpt Aesthetics in Madhapur, Hyderabad, Facial Rejuvenation is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Deep hydration, improved skin texture, and youthful vitality",
@@ -2775,7 +2775,7 @@ export const servicesData: ServiceItem[] = [
       "Face"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/thread-lift.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990800/sculpt_aesthetics/assets/UPDATED_SERVICES/thread-lift.png",
     "isEmpty": false,
     "shortDescription": "Thread lift is a minimally invasive lifting procedure for facial rejuvenation, using dissolvable threads to lift and tighten sagging skin. At Sculpt Aesthetics in Madhapur, Hyderabad, Thread Lift is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Minimally invasive facial lifting",
@@ -2869,7 +2869,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/E-Fat Graft.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990793/sculpt_aesthetics/assets/UPDATED_SERVICES/E-Fat_Graft.png",
     "isEmpty": false,
     "shortDescription": "Fat grafting uses the patient's own fat, collected through liposuction, and transfers it to target areas for natural volume enhancement, contouring, and skin rejuvenation. At Sculpt Aesthetics in Madhapur, Hyderabad, E-Fat Graft is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Enhance your shape using your own body's fat",
@@ -2975,7 +2975,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/Chemical Peels.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990791/sculpt_aesthetics/assets/UPDATED_SERVICES/Chemical_Peels.png",
     "isEmpty": false,
     "shortDescription": "Dermatological chemical peeling treatments designed to gently exfoliate damaged outer skin layers, stimulate cellular renewal, and reveal smoother, clearer, and more youthful skin.",
     "heroHeadline": "Chemical Peels in Hyderabad",
@@ -3044,7 +3044,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/laser-treatments.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990796/sculpt_aesthetics/assets/UPDATED_SERVICES/laser-treatments.png",
     "isEmpty": false,
     "shortDescription": "Behind every result at Sculpt Aesthetics is advanced, well-maintained laser and energy technology, chosen to improve precision, safety, and comfort across our surgical and non-surgical treatments. At Sculpt Aesthetics in Madhapur, Hyderabad, Laser Treatments & Advanced Technology is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "The equipment behind our precision, safety, and results",
@@ -3163,7 +3163,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/Acne Scar Treatment.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990788/sculpt_aesthetics/assets/UPDATED_SERVICES/Acne_Scar_Treatment.png",
     "isEmpty": false,
     "shortDescription": "Whether from acne, surgery, or injury, scars can be improved using a range of treatments — from non-surgical options like micro-needling and lasers to surgical scar revision for more significant scars. At Sculpt Aesthetics in Madhapur, Hyderabad, Acne Scar Treatment is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Improve the appearance of acne, surgical, and textural scars",
@@ -3270,7 +3270,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/Scar Removal.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990798/sculpt_aesthetics/assets/UPDATED_SERVICES/Scar_Removal.png",
     "isEmpty": false,
     "shortDescription": "scars Whether from surgery, injury, or acne, scars can be improved using a range of treatments — from non-surgical options like micro-needling and lasers to surgical scar revision for more significant scars. At Sculpt Aesthetics in Madhapur, Hyderabad, Scar Treatment is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Improve the appearance of surgical, acne, or injury",
@@ -3372,7 +3372,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/Wart Removal.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990802/sculpt_aesthetics/assets/UPDATED_SERVICES/Wart_Removal.png",
     "isEmpty": false,
     "shortDescription": "Safe, confidential clinical removal of common and genital warts using advanced radiofrequency ablation and cryotherapy.",
     "heroHeadline": "Wart Removal & Genital Wart Removal in Hyderabad",
@@ -3441,7 +3441,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/Mole Removal.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990797/sculpt_aesthetics/assets/UPDATED_SERVICES/Mole_Removal.png",
     "isEmpty": false,
     "shortDescription": "Precision dermatological mole excision and radiofrequency ablation with delicate plastic surgery closure for minimal scarring.",
     "heroHeadline": "Mole Removal in Hyderabad",
@@ -3509,7 +3509,7 @@ export const servicesData: ServiceItem[] = [
       "Skin"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/corn-removal.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990793/sculpt_aesthetics/assets/UPDATED_SERVICES/corn-removal.png",
     "isEmpty": false,
     "shortDescription": "Specialized clinical removal of painful foot corns and deep core enucleation for immediate pressure relief and restored mobility.",
     "heroHeadline": "Corn Removal in Hyderabad",
@@ -3577,7 +3577,7 @@ export const servicesData: ServiceItem[] = [
       "Wellness"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/Mounjaro.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990797/sculpt_aesthetics/assets/UPDATED_SERVICES/Mounjaro.png",
     "isEmpty": false,
     "shortDescription": "Our medical weight loss programs offer supervised, structured weight management solutions tailored to each patient's health profile and goals. At Sculpt Aesthetics in Madhapur, Hyderabad, Medical Weight Loss Programs is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Supervised, structured weight management",
@@ -3647,7 +3647,7 @@ export const servicesData: ServiceItem[] = [
       "Wellness"
     ],
     "featured": false,
-    "image": "/assets/UPDATED SERVICES/iv-drip-infusions.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990795/sculpt_aesthetics/assets/UPDATED_SERVICES/iv-drip-infusions.png",
     "isEmpty": false,
     "shortDescription": "IV drips deliver customized wellness infusions based on individual requirements, supporting hydration, energy, and overall wellness. At Sculpt Aesthetics in Madhapur, Hyderabad, IV Drips is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Customized wellness infusions",
@@ -3758,182 +3758,182 @@ export function getAllServiceNames(): string[] {
 const serviceResultsMap: Record<string, { title: string; image: string; description: string }> = {
   "liposuction": {
     title: "Liposuction Result",
-    image: "/assets/services results/Liposuction.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990784/sculpt_aesthetics/assets/services_results/Liposuction.png",
     description: "Targeted fat elimination and waistline refinement creating a flat, sculpted torso contour.",
   },
   "vaser-liposuction": {
     title: "Vaser Ultrasound Liposuction",
-    image: "/assets/services results/Vaser Liposuction.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990786/sculpt_aesthetics/assets/services_results/Vaser_Liposuction.png",
     description: "Selective ultrasound fat liquefaction preserving delicate connective tissues with superior skin retraction.",
   },
   "tummy-tuck-abdominoplasty": {
     title: "Abdominoplasty & Muscle Plication",
-    image: "/assets/services results/Tummy Tuck.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990786/sculpt_aesthetics/assets/services_results/Tummy_Tuck.png",
     description: "Surgical removal of loose abdominal skin and repair of separated diastasis recti muscles.",
   },
   "mommy-makeover": {
     title: "Mommy Makeover Restoration",
-    image: "/assets/services results/Mommy Makeover.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990784/sculpt_aesthetics/assets/services_results/Mommy_Makeover.png",
     description: "Combined surgical body contouring and breast elevation to restore pre-pregnancy contours.",
   },
   "body-contouring": {
     title: "High-Definition 360° Body Contouring",
-    image: "/assets/services results/Body Contouring.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990779/sculpt_aesthetics/assets/services_results/Body_Contouring.png",
     description: "Comprehensive circumferential body sculpting accentuating natural athletic definition and curves.",
   },
   "arm-and-thigh-lift": {
     title: "Brachioplasty & Thigh Contouring",
-    image: "/assets/services results/Arm & Thigh Lift.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990779/sculpt_aesthetics/assets/services_results/Arm___Thigh_Lift.png",
     description: "Removal of redundant sagging skin on upper arms and inner thighs for a toned, firm limb contour.",
   },
   "lipoma-removal": {
     title: "Subcutaneous Lipoma Excision",
-    image: "/assets/services results/Lipoma Removal.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990784/sculpt_aesthetics/assets/services_results/Lipoma_Removal.png",
     description: "Complete encapsulated lipoma removal through micro-incisions with minimal, discreet scarring.",
   },
   "breast-augmentation": {
     title: "Dual-Plane Silicone Breast Augmentation",
-    image: "/assets/services results/Breast Augmentation _ Breast Implant.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990780/sculpt_aesthetics/assets/services_results/Breast_Augmentation___Breast_Implant.png",
     description: "Enhanced breast volume, upper pole fullness, and balanced proportion with cohesive silicone implants.",
   },
   "breast-reduction": {
     title: "Reduction Mammaplasty & Symmetry",
-    image: "/assets/services results/Breast Reduction.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990780/sculpt_aesthetics/assets/services_results/Breast_Reduction.png",
     description: "Removal of heavy glandular breast tissue relieving physical strain and restoring aesthetic proportion.",
   },
   "breast-lift": {
     title: "Mastopexy (Breast Lift) & Elevation",
-    image: "/assets/services results/Breast Lift Surgery.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990780/sculpt_aesthetics/assets/services_results/Breast_Lift_Surgery.png",
     description: "Repositioning of the nipple-areola complex and tightening of surrounding tissue for a youthful elevation.",
   },
   "gynecomastia-surgery": {
     title: "Male Chest Contouring & Gland Excision",
-    image: "/assets/services results/Gynecomastia Surgery.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990783/sculpt_aesthetics/assets/services_results/Gynecomastia_Surgery.png",
     description: "Surgical removal of glandular male breast tissue combined with liposuction for a firm, masculine chest.",
   },
   "rhinoplasty": {
     title: "Structural Rhinoplasty & Tip Refinement",
-    image: "/assets/services results/Rhinoplasty.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990785/sculpt_aesthetics/assets/services_results/Rhinoplasty.png",
     description: "Dorsal bridge refinement and structural tip projection for enhanced facial harmony and symmetry.",
   },
   "facelift": {
     title: "Deep Plane / SMAS Facelift",
-    image: "/assets/services results/Facelift Surgery.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990782/sculpt_aesthetics/assets/services_results/Facelift_Surgery.png",
     description: "Elevation of deep facial muscular structures, smoothing jowls and restoring defined jawline contours.",
   },
   "blepharoplasty": {
     title: "Upper & Lower Eyelid Rejuvenation",
-    image: "/assets/services results/Blepharoplasty.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990779/sculpt_aesthetics/assets/services_results/Blepharoplasty.png",
     description: "Elimination of redundant upper eyelid skin and under-eye fat bags for a refreshed, alert appearance.",
   },
   "buccal-fat-pad-removal": {
     title: "Intraoral Buccal Fat Pad Excision",
-    image: "/assets/services results/Buccal Fat Pad Removal.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990780/sculpt_aesthetics/assets/services_results/Buccal_Fat_Pad_Removal.png",
     description: "Targeted reduction of deep cheek fat pads creating sculpted cheekbones and a slimmer lower facial profile.",
   },
   "dimple-creation": {
     title: "Surgical Dimpleplasty",
-    image: "/assets/services results/Dimple Creation.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990782/sculpt_aesthetics/assets/services_results/Dimple_Creation.png",
     description: "Micro-incision inside the cheek creating a charming, natural facial dimple dynamically visible upon smiling.",
   },
   "labiaplasty": {
     title: "Labial Symmetry & Contouring",
-    image: "/assets/services results/Labiaplasty.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990783/sculpt_aesthetics/assets/services_results/Labiaplasty.png",
     description: "Delicate reduction of excess labial tissue improving physical comfort, hygiene, and aesthetic balance.",
   },
   "clitoral-hood-correction": {
     title: "Clitoral Hood Reduction",
-    image: "/assets/services results/Clitoral Hood Correction.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990781/sculpt_aesthetics/assets/services_results/Clitoral_Hood_Correction.png",
     description: "Refined tissue reduction designed for improved aesthetic proportion and anatomical comfort.",
   },
   "hymenoplasty": {
     title: "Confidential Hymenal Reconstruction",
-    image: "/assets/services results/Hymenoplasty.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990783/sculpt_aesthetics/assets/services_results/Hymenoplasty.png",
     description: "Careful anatomical restoration performed with strict medical privacy and delicate absorbable sutures.",
   },
   "g-spot-amplification": {
     title: "Intimate Wellness Augmentation",
-    image: "/assets/services results/G-Spot Amplification.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990783/sculpt_aesthetics/assets/services_results/G-Spot_Amplification.png",
     description: "Minimally invasive hyaluronic acid or autologous fat enhancement supporting intimate wellness.",
   },
   "split-ear-lobe-repair": {
     title: "Earlobe Cleft Closure",
-    image: "/assets/services results/Split Ear Lobe Repair.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990785/sculpt_aesthetics/assets/services_results/Split_Ear_Lobe_Repair.png",
     description: "Microscopic repair of torn or elongated piercing tracks with preserved earlobe contour.",
   },
   "circumcision": {
     title: "Modern Stapler & Laser Circumcision",
-    image: "/assets/services results/Circumcision.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990781/sculpt_aesthetics/assets/services_results/Circumcision.png",
     description: "Painless, rapid-recovery circumcision utilizing advanced surgical stapler or laser protocols.",
   },
   "botox": {
     title: "Upper Facial Neurotoxin Rejuvenation",
-    image: "/assets/services results/Botox.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990780/sculpt_aesthetics/assets/services_results/Botox.png",
     description: "Smoothing of dynamic forehead furrows, frown lines, and periorbital crow's feet.",
   },
   "dermal-fillers": {
     title: "Hyaluronic Acid Facial Contouring",
-    image: "/assets/services results/Dermal Fillers.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990781/sculpt_aesthetics/assets/services_results/Dermal_Fillers.png",
     description: "Restoring cheek volume, defining the jawline, and smoothing nasolabial folds with hyaluronic fillers.",
   },
   "facial-rejuvenation": {
     title: "Comprehensive Multi-Modal Harmonization",
-    image: "/assets/services results/Facial Rejuvenation.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990782/sculpt_aesthetics/assets/services_results/Facial_Rejuvenation.png",
     description: "Multi-modal restoration combining dermal volumization, skin resurfacing, and tone refinement.",
   },
   "thread-lift": {
     title: "Absorbable PDO Thread Midface Lift",
-    image: "/assets/services results/Thread Lift.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990785/sculpt_aesthetics/assets/services_results/Thread_Lift.png",
     description: "Immediate mechanical suspension of mild midface laxity combined with progressive collagen stimulation.",
   },
   "e-fat-graft": {
     title: "Micro-Autologous Facial Fat Transfer",
-    image: "/assets/services results/E-Fat Graft.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990782/sculpt_aesthetics/assets/services_results/E-Fat_Graft.png",
     description: "Replenishing hollow temples, periorbital hollows, and midface using purified autologous micro-fat.",
   },
   "chemical-peels": {
     title: "Dermatological Chemical Exfoliation",
-    image: "/assets/services results/Chemical Peels.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990781/sculpt_aesthetics/assets/services_results/Chemical_Peels.png",
     description: "Accelerated cellular turnover reducing uneven pigmentation, fine lines, and dull skin texture.",
   },
   "laser-treatments": {
     title: "Fractional Laser Skin Resurfacing",
-    image: "/assets/services results/Laser Treatments.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990784/sculpt_aesthetics/assets/services_results/Laser_Treatments.png",
     description: "Deep dermal collagen induction smoothing photo-damage, textural roughness, and enlarged pores.",
   },
   "acne-scar-treatment": {
     title: "Subcision & Fractional Laser Resurfacing",
-    image: "/assets/services results/Acne Scar Treatment.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990779/sculpt_aesthetics/assets/services_results/Acne_Scar_Treatment.png",
     description: "Elevating atrophic rolling and boxcar scars through multi-layer collagen remodeling.",
   },
   "scar-removal": {
     title: "Surgical Scar Revision (Z-Plasty & Laser)",
-    image: "/assets/services results/Scar Removal.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990785/sculpt_aesthetics/assets/services_results/Scar_Removal.png",
     description: "Reorienting and softening prominent post-surgical or injury scars for smooth aesthetic integration.",
   },
   "wart-removal": {
     title: "Radiofrequency Wart Ablation",
-    image: "/assets/services results/Wart Removal.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990786/sculpt_aesthetics/assets/services_results/Wart_Removal.png",
     description: "Clean, bloodless removal of cutaneous lesions with preserved surrounding healthy epidermis.",
   },
   "mole-removal": {
     title: "Scar-Minimized Mole Excision",
-    image: "/assets/services results/Mole Removal.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990784/sculpt_aesthetics/assets/services_results/Mole_Removal.png",
     description: "Careful excision of raised or pigmented moles with delicate micro-sutures.",
   },
   "corn-removal": {
     title: "Foot Corn Core Enucleation",
-    image: "/assets/services results/Corn Removal.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990781/sculpt_aesthetics/assets/services_results/Corn_Removal.png",
     description: "Painless enucleation of deep keratin plugs restoring pressure-free walking comfort.",
   },
   "weight-loss-programs": {
     title: "Medical Weight Management & Contouring",
-    image: "/assets/services results/Mounjaro _ Weight Loss Program.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990785/sculpt_aesthetics/assets/services_results/Mounjaro___Weight_Loss_Program.png",
     description: "Structured medical weight management combined with targeted aesthetic body sculpting.",
   },
   "iv-drip-infusions": {
     title: "Intravenous Vitamin & Glutathione Infusion",
-    image: "/assets/services results/IV Drip Infusions.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990783/sculpt_aesthetics/assets/services_results/IV_Drip_Infusions.png",
     description: "Cellular rejuvenation delivering antioxidants, hydration, and amino acids for radiant skin vitality.",
   },
 };
@@ -4316,7 +4316,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Gynecomastia Surgery Cost in Hyderabad: Complete Guide to Treatment, Procedure and Recovery",
           category: "Male Aesthetics",
           readTime: "6 min read",
-          image: "/assets/BLOGS/GYNECOMASTIA SURGERY.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990741/sculpt_aesthetics/assets/BLOGS/GYNECOMASTIA_SURGERY.png",
           excerpt:
             "If you are searching for gynecomastia surgery cost in Hyderabad, you will find many different prices online. Learn what determines the cost, treatment types, procedure, and recovery.",
         },
@@ -4329,7 +4329,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Breast Reduction Cost in Hyderabad: What Affects the Price?",
           category: "Breast Aesthetics",
           readTime: "7 min read",
-          image: "/assets/BLOGS/BREAST REDUCTION.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BREAST_REDUCTION.png",
           excerpt:
             "Breast reduction surgery removes excess breast fat, glandular tissue and skin to reduce breast size and create a more comfortable and proportionate shape. Explore the cost factors and recovery in Hyderabad.",
         },
@@ -4338,7 +4338,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Breast Implant Surgery in Hyderabad: Procedure, Cost, Recovery & Results",
           category: "Breast Aesthetics",
           readTime: "7 min read",
-          image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990758/sculpt_aesthetics/assets/BLOGS/Breast_Augmentation___Implants_vs_Fat_Grafting.png",
           excerpt:
             "Breast implant surgery, also known as breast augmentation, is a cosmetic procedure that can enhance breast size and improve breast shape and symmetry.",
         },
@@ -4352,7 +4352,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Breast Implant Surgery in Hyderabad: Procedure, Cost, Recovery & Results",
           category: "Breast Aesthetics",
           readTime: "7 min read",
-          image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990758/sculpt_aesthetics/assets/BLOGS/Breast_Augmentation___Implants_vs_Fat_Grafting.png",
           excerpt:
             "Breast implant surgery, also known as breast augmentation, is a cosmetic procedure that can enhance breast size and improve breast shape and symmetry. Learn about options, recovery, and results in Hyderabad.",
         },
@@ -4361,7 +4361,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Breast Reduction Cost in Hyderabad: What Affects the Price?",
           category: "Breast Aesthetics",
           readTime: "7 min read",
-          image: "/assets/BLOGS/BREAST REDUCTION.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BREAST_REDUCTION.png",
           excerpt:
             "Breast reduction surgery removes excess breast fat, glandular tissue and skin to reduce breast size and create a more comfortable and proportionate shape.",
         },
@@ -4375,7 +4375,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "IV Drip Therapy Cost in Hyderabad: Benefits, Treatment & Recovery",
           category: "Wellness & Aesthetics",
           readTime: "7 min read",
-          image: "/assets/BLOGS/IV DRIP THERAPY.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990743/sculpt_aesthetics/assets/BLOGS/IV_DRIP_THERAPY.png",
           excerpt:
             "IV drip therapy delivers fluids and selected vitamins, minerals, electrolytes directly into a vein. Learn about IV drip therapy cost, benefits, safety, and recovery in Hyderabad.",
         },
@@ -4388,7 +4388,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Is Blepharoplasty Safe in Hyderabad? Procedure, Risks, Recovery & Results",
           category: "Facial Aesthetics",
           readTime: "7 min read",
-          image: "/assets/BLOGS/BLEPHAROPLASTY.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
           excerpt:
             "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids. Learn about procedure safety, recovery, and results in Hyderabad.",
         },
@@ -4397,7 +4397,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Rhinoplasty Surgery Cost in Hyderabad: Procedure, Recovery and What Affects the Price",
           category: "Facial Aesthetics",
           readTime: "6 min read",
-          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990744/sculpt_aesthetics/assets/BLOGS/Rhinoplasty___Nose_Reshaping.png",
           excerpt:
             "The nose plays an important role in both facial appearance and breathing. Explore rhinoplasty surgery cost in Hyderabad, procedures, recovery timelines, and pricing factors.",
         },
@@ -4414,7 +4414,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Rhinoplasty Surgery Cost in Hyderabad: Procedure, Recovery and What Affects the Price",
           category: "Facial Aesthetics",
           readTime: "6 min read",
-          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990744/sculpt_aesthetics/assets/BLOGS/Rhinoplasty___Nose_Reshaping.png",
           excerpt:
             "The nose plays an important role in both facial appearance and breathing. Explore rhinoplasty surgery cost in Hyderabad, procedures, recovery timelines, and pricing factors.",
         },
@@ -4423,7 +4423,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Is Blepharoplasty Safe in Hyderabad? Procedure, Risks, Recovery & Results",
           category: "Facial Aesthetics",
           readTime: "7 min read",
-          image: "/assets/BLOGS/BLEPHAROPLASTY.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
           excerpt:
             "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids.",
         },
@@ -4439,7 +4439,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "How Much Does Liposuction Cost in Hyderabad?",
           category: "Body Contouring",
           readTime: "7 min read",
-          image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990742/sculpt_aesthetics/assets/BLOGS/Liposuction_vs_Tummy_Tuck.png",
           excerpt:
             "Liposuction is a popular cosmetic procedure used to remove stubborn pockets of fat from specific areas of the body. Understand what affects the cost, treated areas, and recovery in Hyderabad.",
         },
@@ -4448,7 +4448,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Tummy Tuck Surgery in Hyderabad: Cost, Procedure, Recovery & Results ?",
           category: "Body Contouring",
           readTime: "7 min read",
-          image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990742/sculpt_aesthetics/assets/BLOGS/Liposuction_vs_Tummy_Tuck.png",
           excerpt:
             "A tummy tuck, medically known as abdominoplasty, is a surgical procedure designed to improve the appearance and contour of the abdomen by removing excess skin and fat.",
         },
@@ -4462,7 +4462,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "How Much Does a Mommy Makeover Cost in Hyderabad?",
           category: "Body Contouring",
           readTime: "7 min read",
-          image: "/assets/BLOGS/Mommy Makeover Surgery.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990743/sculpt_aesthetics/assets/BLOGS/Mommy_Makeover_Surgery.png",
           excerpt:
             "A mommy makeover is a combination of cosmetic procedures designed to address areas of the body affected by pregnancy, childbirth, or significant weight changes. Explore cost, options, and recovery in Hyderabad.",
         },
@@ -4471,7 +4471,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Tummy Tuck Surgery in Hyderabad: Cost, Procedure, Recovery & Results ?",
           category: "Body Contouring",
           readTime: "7 min read",
-          image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990742/sculpt_aesthetics/assets/BLOGS/Liposuction_vs_Tummy_Tuck.png",
           excerpt:
             "A tummy tuck, medically known as abdominoplasty, is a surgical procedure designed to improve the appearance and contour of the abdomen by removing excess skin and fat.",
         },
@@ -4484,7 +4484,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Gynecomastia Surgery Cost in Hyderabad: Complete Guide to Treatment, Procedure and Recovery",
           category: "Male Aesthetics",
           readTime: "6 min read",
-          image: "/assets/BLOGS/GYNECOMASTIA SURGERY.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990741/sculpt_aesthetics/assets/BLOGS/GYNECOMASTIA_SURGERY.png",
           excerpt:
             "If you are searching for gynecomastia surgery cost in Hyderabad, you will find many different prices online. Learn what determines the cost, treatment types, procedure, and recovery.",
         },
@@ -4493,7 +4493,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Rhinoplasty Surgery Cost in Hyderabad: Procedure, Recovery and What Affects the Price",
           category: "Facial Aesthetics",
           readTime: "6 min read",
-          image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990744/sculpt_aesthetics/assets/BLOGS/Rhinoplasty___Nose_Reshaping.png",
           excerpt:
             "The nose plays an important role in both facial appearance and breathing. Explore rhinoplasty surgery cost in Hyderabad, procedures, recovery timelines, and pricing factors.",
         },

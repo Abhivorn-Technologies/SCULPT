@@ -10,6 +10,7 @@ interface BeforeAfterSliderProps {
   beforeAlt?: string;
   afterAlt?: string;
   title?: string;
+  treatmentName?: string;
   description?: string;
 }
 
@@ -19,6 +20,7 @@ export default function BeforeAfterSlider({
   beforeAlt = "Before procedure",
   afterAlt = "After procedure",
   title,
+  treatmentName,
   description,
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -78,6 +80,13 @@ export default function BeforeAfterSlider({
           />
         </div>
 
+        {/* Treatment / Service Name Badge (e.g. Corn Removal, Rhinoplasty) */}
+        {treatmentName && (
+          <div className="absolute top-2.5 left-3 z-10 pointer-events-none bg-white/90 backdrop-blur-xs text-[#151515] px-2.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase shadow-xs">
+            {treatmentName}
+          </div>
+        )}
+
         {!isCompositeImage && (
           <>
             {/* Top Layer: BEFORE Image (clipped at sliderPosition%) */}
@@ -98,12 +107,12 @@ export default function BeforeAfterSlider({
             </div>
 
             {/* BEFORE Label */}
-            <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none bg-black/65 backdrop-blur-md text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20 shadow-sm">
+            <div className={`absolute ${treatmentName ? "top-8" : "top-3"} left-3 z-10 pointer-events-none bg-black/75 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/20 shadow-sm`}>
               BEFORE
             </div>
 
             {/* AFTER Label */}
-            <div className="absolute top-3.5 right-3.5 z-10 pointer-events-none bg-black/65 backdrop-blur-md text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20 shadow-sm">
+            <div className={`absolute ${treatmentName ? "top-8" : "top-3"} right-3 z-10 pointer-events-none bg-black/75 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/20 shadow-sm`}>
               AFTER
             </div>
 
@@ -120,13 +129,13 @@ export default function BeforeAfterSlider({
         )}
 
         {isCompositeImage && (
-          <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none bg-black/65 backdrop-blur-md text-white px-3 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase border border-white/20 shadow-sm flex items-center gap-1.5">
+          <div className={`absolute ${treatmentName ? "top-8" : "top-3"} left-3 z-10 pointer-events-none bg-black/75 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase border border-white/20 shadow-sm flex items-center gap-1.5`}>
             <span className="text-[#F6B73C]">BEFORE & AFTER</span>
           </div>
         )}
       </div>
 
-      {/* Card Content ONLY: Treatment Name & Short Description */}
+      {/* Card Content: Title & Short Description */}
       {title && (
         <div className="p-5 sm:p-6 space-y-1.5 bg-white flex-1 flex flex-col justify-start">
           <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#151515] group-hover:text-[#E6663A] transition-colors leading-tight line-clamp-2">

@@ -147,69 +147,80 @@ export default function BlogDetailClient({ post, relatedPosts }: Props) {
           transition={{ duration: 0.4 }}
           className="bg-white rounded-3xl p-6 sm:p-12 border border-[#EFE8E0] shadow-sm space-y-8"
         >
-          {/* Introductory Paragraphs */}
-          {post.introParagraphs && post.introParagraphs.length > 0 && (
-            <div className="space-y-4 pb-4 border-b border-[#EFE8E0]">
-              {post.introParagraphs.map((intro, iIdx) => (
-                <p
-                  key={iIdx}
-                  className="text-[#333333] text-base sm:text-lg leading-relaxed font-normal"
-                >
-                  {intro}
-                </p>
-              ))}
-            </div>
-          )}
-
-          {/* Sections */}
-          {post.sections.map((sec, idx) => (
-            <div key={idx} className="space-y-4 pt-2">
-              {sec.heading && (
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515] pt-4 border-b border-[#EFE8E0] pb-2">
-                  {sec.heading}
-                </h2>
-              )}
-
-              {sec.subheading && (
-                <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#E6663A] pt-2">
-                  {sec.subheading}
-                </h3>
-              )}
-
-              {sec.paragraphs &&
-                sec.paragraphs.map((para, pIdx) => (
-                  <p
-                    key={pIdx}
-                    className="text-[#444444] text-base sm:text-lg leading-relaxed font-normal"
-                  >
-                    {para}
-                  </p>
-                ))}
-
-              {sec.list && (
-                <div className="my-4 pl-2 sm:pl-4">
-                  {sec.listType === "ordered" ? (
-                    <ol className="list-decimal list-inside space-y-3 text-[#444444] text-base sm:text-lg leading-relaxed">
-                      {sec.list.map((item, lIdx) => (
-                        <li key={lIdx} className="pl-1">
-                          {item}
-                        </li>
-                      ))}
-                    </ol>
-                  ) : (
-                    <ul className="space-y-3 text-[#444444] text-base sm:text-lg leading-relaxed">
-                      {sec.list.map((item, lIdx) => (
-                        <li key={lIdx} className="flex items-start gap-2.5">
-                          <span className="w-2 h-2 rounded-full bg-[#E6663A] mt-2.5 shrink-0" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+          {/* HTML Rich Content from DB Editor */}
+          {post.htmlContent ? (
+            <div
+              className="prose prose-lg max-w-none text-[#444444] text-base sm:text-lg leading-relaxed font-normal space-y-6 [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-bold [&_h2]:text-[#151515] [&_h2]:pt-4 [&_h2]:pb-2 [&_h2]:border-b [&_h2]:border-[#EFE8E0] [&_h2]:mb-4 [&_h3]:font-serif [&_h3]:text-xl [&_h3]:sm:text-2xl [&_h3]:font-semibold [&_h3]:text-[#E6663A] [&_h3]:pt-3 [&_h3]:mb-2 [&_strong]:text-[#151515] [&_strong]:font-bold [&_ul]:space-y-3 [&_ul]:my-4 [&_ul]:pl-4 [&_ul]:list-disc [&_ol]:space-y-3 [&_ol]:my-4 [&_ol]:pl-4 [&_ol]:list-decimal [&_blockquote]:my-6 [&_blockquote]:p-6 [&_blockquote]:rounded-2xl [&_blockquote]:bg-[#FFF8F3] [&_blockquote]:border-l-4 [&_blockquote]:border-[#E6663A] [&_blockquote]:text-[#774433] [&_blockquote]:italic"
+              dangerouslySetInnerHTML={{ __html: post.htmlContent }}
+            />
+          ) : (
+            <>
+              {/* Introductory Paragraphs */}
+              {post.introParagraphs && post.introParagraphs.length > 0 && (
+                <div className="space-y-4 pb-4 border-b border-[#EFE8E0]">
+                  {post.introParagraphs.map((intro, iIdx) => (
+                    <p
+                      key={iIdx}
+                      className="text-[#333333] text-base sm:text-lg leading-relaxed font-normal"
+                    >
+                      {intro}
+                    </p>
+                  ))}
                 </div>
               )}
-            </div>
-          ))}
+
+              {/* Sections */}
+              {post.sections &&
+                post.sections.map((sec, idx) => (
+                  <div key={idx} className="space-y-4 pt-2">
+                    {sec.heading && (
+                      <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515] pt-4 border-b border-[#EFE8E0] pb-2">
+                        {sec.heading}
+                      </h2>
+                    )}
+
+                    {sec.subheading && (
+                      <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#E6663A] pt-2">
+                        {sec.subheading}
+                      </h3>
+                    )}
+
+                    {sec.paragraphs &&
+                      sec.paragraphs.map((para, pIdx) => (
+                        <p
+                          key={pIdx}
+                          className="text-[#444444] text-base sm:text-lg leading-relaxed font-normal"
+                        >
+                          {para}
+                        </p>
+                      ))}
+
+                    {sec.list && (
+                      <div className="my-4 pl-2 sm:pl-4">
+                        {sec.listType === "ordered" ? (
+                          <ol className="list-decimal list-inside space-y-3 text-[#444444] text-base sm:text-lg leading-relaxed">
+                            {sec.list.map((item, lIdx) => (
+                              <li key={lIdx} className="pl-1">
+                                {item}
+                              </li>
+                            ))}
+                          </ol>
+                        ) : (
+                          <ul className="space-y-3 text-[#444444] text-base sm:text-lg leading-relaxed">
+                            {sec.list.map((item, lIdx) => (
+                              <li key={lIdx} className="flex items-start gap-2.5">
+                                <span className="w-2 h-2 rounded-full bg-[#E6663A] mt-2.5 shrink-0" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+            </>
+          )}
 
           {/* 4. FAQ Section where provided */}
           {post.faqs && post.faqs.length > 0 && (
@@ -277,38 +288,45 @@ export default function BlogDetailClient({ post, relatedPosts }: Props) {
         </motion.article>
 
         {/* 6. Consultation CTA */}
-        <section className="bg-gradient-to-br from-[#151515] to-[#252525] text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-[#E6663A]/30 space-y-6 text-center sm:text-left sm:flex sm:items-center sm:justify-between sm:space-y-0">
-          <div className="space-y-3 max-w-lg">
-            <span className="text-[#F6B73C] text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5" />
-              Direct Surgeon Consultation
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
-              {post.cta?.heading || "Book a Consultation in Hyderabad"}
-            </h2>
-            <p className="text-white/70 text-sm leading-relaxed">
-              {post.cta?.description ||
-                "Schedule a private, one-on-one consultation with Dr. Jagadish Kiran or Dr. Suma Sandhyala to evaluate your treatment options."}
-            </p>
+        <section className="bg-gradient-to-br from-[#151515] to-[#252525] text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-[#E6663A]/30 space-y-6">
+          {/* Top Row: Badge, Title & CTA Action Buttons */}
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-white/10">
+            <div className="space-y-2 max-w-2xl">
+              <span className="text-[#F6B73C] text-xs font-bold uppercase tracking-widest inline-flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                Direct Surgeon Consultation
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+                {post.cta?.heading || "Book a Consultation in Hyderabad"}
+              </h2>
+            </div>
+
+            {/* CTA Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+              <a
+                href="tel:+919639635454"
+                className="inline-flex items-center justify-center gap-2 bg-[#E6663A] hover:bg-[#d05328] text-white px-6 py-3.5 rounded-2xl font-bold text-sm tracking-wide transition-all shadow-md hover:scale-105 cursor-pointer"
+              >
+                <Phone className="w-4 h-4" />
+                Call 96396 35454
+              </a>
+              <a
+                href="https://wa.me/919639635454?text=Hi%2C%20I%20would%20like%20to%20consult%20regarding%20treatment%20at%20Sculpt."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white px-6 py-3.5 rounded-2xl font-bold text-sm tracking-wide transition-all shadow-md hover:scale-105 cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp Us
+              </a>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-            <a
-              href="tel:+919639635454"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#E6663A] hover:bg-[#d05328] text-white px-6 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all shadow-md hover:scale-105"
-            >
-              <Phone className="w-4 h-4" />
-              Call 96396 35454
-            </a>
-            <a
-              href="https://wa.me/919639635454?text=Hi%2C%20I%20would%20like%20to%20consult%20regarding%20treatment%20at%20Sculpt."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white px-6 py-3.5 rounded-full font-bold text-sm tracking-wide transition-all shadow-md hover:scale-105"
-            >
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp Us
-            </a>
-          </div>
+
+          {/* Full Width Paragraph Content */}
+          <p className="text-white/80 text-sm sm:text-base leading-relaxed font-normal w-full max-w-none">
+            {post.cta?.description ||
+              "Schedule a private, one-on-one consultation with Dr. Jagadish Kiran or Dr. Suma Sandhyala to evaluate your treatment options."}
+          </p>
         </section>
 
         {/* 7. Related Articles */}

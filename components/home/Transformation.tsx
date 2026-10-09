@@ -9,8 +9,8 @@ import { Sparkles, ArrowRight, CheckCircle } from "lucide-react";
 const transformations = [
   {
     category: "Face",
-    beforeImage: "/assets/results/face/before.jpg",
-    afterImage: "/assets/results/face/after.jpg",
+    beforeImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990767/sculpt_aesthetics/assets/results/face/before.png",
+    afterImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990766/sculpt_aesthetics/assets/results/face/after.png",
     label: "FACIAL TRANSFORMATION",
     title: "Facial Harmonization & Contour Refinement",
     description:
@@ -21,8 +21,8 @@ const transformations = [
   },
   {
     category: "Body",
-    beforeImage: "/assets/transformation/body/before.jpg",
-    afterImage: "/assets/transformation/body/after.jpg",
+    beforeImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990787/sculpt_aesthetics/assets/transformation/body/before.png",
+    afterImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990786/sculpt_aesthetics/assets/transformation/body/after.png",
     label: "BODY TRANSFORMATION",
     title: "A More Defined You.",
     description:

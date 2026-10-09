@@ -21,8 +21,9 @@ export interface BlogPost {
   readTime: string;
   image?: string;
   excerpt: string;
-  introParagraphs: string[];
-  sections: BlogSection[];
+  htmlContent?: string;
+  introParagraphs?: string[];
+  sections?: BlogSection[];
   faqs?: FAQItem[];
   cta?: {
     heading: string;
@@ -47,7 +48,7 @@ export const blogPosts: BlogPost[] = [
     category: "Male Aesthetics",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "6 min read",
-    image: "/assets/BLOGS/GYNECOMASTIA SURGERY.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990741/sculpt_aesthetics/assets/BLOGS/GYNECOMASTIA_SURGERY.png",
     excerpt:
       "If you are searching for gynecomastia surgery cost in Hyderabad, you will find many different prices online. Learn what determines the cost, treatment types, procedure, and recovery.",
     introParagraphs: [
@@ -248,7 +249,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Complete guide to gynecomastia surgery cost in Hyderabad, treatment types, gland excision, liposuction, recovery and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/gynecomastia-surgery-cost-hyderabad",
-      ogImage: "/assets/BLOGS/GYNECOMASTIA SURGERY.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990741/sculpt_aesthetics/assets/BLOGS/GYNECOMASTIA_SURGERY.png",
       keywords: [
         "Gynecomastia surgery cost in Hyderabad",
         "Male breast reduction Hyderabad",
@@ -265,7 +266,7 @@ export const blogPosts: BlogPost[] = [
     category: "Breast Aesthetics",
     author: "Dr. Suma Sandhyala & Dr. Jagadish Kiran",
     readTime: "7 min read",
-    image: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990758/sculpt_aesthetics/assets/BLOGS/Breast_Augmentation___Implants_vs_Fat_Grafting.png",
     excerpt:
       "Breast implant surgery, also known as breast augmentation, is a cosmetic procedure that can enhance breast size and improve breast shape and symmetry. Learn about options, recovery, and results in Hyderabad.",
     introParagraphs: [
@@ -547,7 +548,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Comprehensive guide to breast implant surgery in Hyderabad. Learn about silicone & saline implants, surgical technique, recovery, cost, and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/breast-implant-surgery-hyderabad",
-      ogImage: "/assets/BLOGS/Breast Augmentation — Implants vs Fat Grafting.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990758/sculpt_aesthetics/assets/BLOGS/Breast_Augmentation___Implants_vs_Fat_Grafting.png",
       keywords: [
         "Breast implant surgery Hyderabad",
         "Breast augmentation cost Hyderabad",
@@ -564,7 +565,7 @@ export const blogPosts: BlogPost[] = [
     category: "Breast Aesthetics",
     author: "Dr. Suma Sandhyala & Dr. Jagadish Kiran",
     readTime: "7 min read",
-    image: "/assets/BLOGS/BREAST REDUCTION.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BREAST_REDUCTION.png",
     excerpt:
       "Breast reduction surgery removes excess breast fat, glandular tissue and skin to reduce breast size and create a more comfortable and proportionate shape. Explore the cost factors and recovery in Hyderabad.",
     introParagraphs: [
@@ -837,7 +838,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Learn about breast reduction cost in Hyderabad, reduction mammoplasty procedure, candidate suitability, recovery timeline, and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/breast-reduction-cost-hyderabad",
-      ogImage: "/assets/BLOGS/BREAST REDUCTION.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BREAST_REDUCTION.png",
       keywords: [
         "Breast reduction cost in Hyderabad",
         "Reduction mammoplasty Hyderabad",
@@ -854,7 +855,7 @@ export const blogPosts: BlogPost[] = [
     category: "Body Contouring",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "7 min read",
-    image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990742/sculpt_aesthetics/assets/BLOGS/Liposuction_vs_Tummy_Tuck.png",
     excerpt:
       "Liposuction is a popular cosmetic procedure used to remove stubborn pockets of fat from specific areas of the body. Understand what affects the cost, treated areas, and recovery in Hyderabad.",
     introParagraphs: [
@@ -1148,7 +1149,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Find out how much liposuction costs in Hyderabad. Learn about target areas, surgical techniques, recovery timeline, and pricing factors at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/liposuction-cost-hyderabad",
-      ogImage: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990742/sculpt_aesthetics/assets/BLOGS/Liposuction_vs_Tummy_Tuck.png",
       keywords: [
         "Liposuction cost in Hyderabad",
         "Body contouring surgery Hyderabad",
@@ -1165,7 +1166,7 @@ export const blogPosts: BlogPost[] = [
     category: "Body Contouring",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "7 min read",
-    image: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990742/sculpt_aesthetics/assets/BLOGS/Liposuction_vs_Tummy_Tuck.png",
     excerpt:
       "A tummy tuck, medically known as abdominoplasty, is a surgical procedure designed to improve the appearance and contour of the abdomen by removing excess skin and fat. Learn about procedure details, cost and recovery in Hyderabad.",
     introParagraphs: [
@@ -1436,7 +1437,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Detailed guide to abdominoplasty (tummy tuck) surgery in Hyderabad. Learn about muscle tightening, skin removal, cost factors, recovery, and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/tummy-tuck-surgery-hyderabad",
-      ogImage: "/assets/BLOGS/Liposuction vs Tummy Tuck.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990742/sculpt_aesthetics/assets/BLOGS/Liposuction_vs_Tummy_Tuck.png",
       keywords: [
         "Tummy tuck surgery in Hyderabad",
         "Abdominoplasty cost Hyderabad",
@@ -1453,7 +1454,7 @@ export const blogPosts: BlogPost[] = [
     category: "Facial Aesthetics",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "6 min read",
-    image: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990744/sculpt_aesthetics/assets/BLOGS/Rhinoplasty___Nose_Reshaping.png",
     excerpt:
       "The nose plays an important role in both facial appearance and breathing. Explore rhinoplasty surgery cost in Hyderabad, procedures, recovery timelines, and pricing factors.",
     introParagraphs: [
@@ -1689,7 +1690,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Learn about rhinoplasty surgery cost in Hyderabad, cosmetic vs functional nose reshaping, open/closed techniques, and recovery at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/rhinoplasty-surgery-cost-hyderabad",
-      ogImage: "/assets/BLOGS/Rhinoplasty & Nose Reshaping.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990744/sculpt_aesthetics/assets/BLOGS/Rhinoplasty___Nose_Reshaping.png",
       keywords: [
         "Rhinoplasty surgery cost in Hyderabad",
         "Nose job surgery Hyderabad",
@@ -1706,7 +1707,7 @@ export const blogPosts: BlogPost[] = [
     category: "Body Contouring",
     author: "Dr. Suma Sandhyala & Dr. Jagadish Kiran",
     readTime: "7 min read",
-    image: "/assets/BLOGS/Mommy Makeover Surgery.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990743/sculpt_aesthetics/assets/BLOGS/Mommy_Makeover_Surgery.png",
     excerpt:
       "A mommy makeover is a combination of cosmetic procedures designed to address areas of the body affected by pregnancy, childbirth, or significant weight changes. Explore cost, options, and recovery in Hyderabad.",
     introParagraphs: [
@@ -1995,7 +1996,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Understand mommy makeover cost in Hyderabad, combined tummy tuck, liposuction, and breast surgery procedures, recovery, and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/mommy-makeover-cost-hyderabad",
-      ogImage: "/assets/BLOGS/Mommy Makeover Surgery.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990743/sculpt_aesthetics/assets/BLOGS/Mommy_Makeover_Surgery.png",
       keywords: [
         "Mommy makeover cost in Hyderabad",
         "Mommy makeover surgery Hyderabad",
@@ -2012,7 +2013,7 @@ export const blogPosts: BlogPost[] = [
     category: "Breast Aesthetics",
     author: "Dr. Suma Sandhyala & Dr. Jagadish Kiran",
     readTime: "7 min read",
-    image: "/assets/BLOGS/AXILLARY BREAST REMOVAL.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990739/sculpt_aesthetics/assets/BLOGS/AXILLARY_BREAST_REMOVAL.png",
     excerpt:
       "Axillary breast tissue refers to additional breast tissue that develops outside the normal breast area near the armpit. Learn about removal procedures, cost, and recovery in Hyderabad.",
     introParagraphs: [
@@ -2277,7 +2278,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Learn about accessory/axillary breast tissue removal in Hyderabad, excision and liposuction techniques, costs, recovery and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/axillary-breast-removal-cost-hyderabad",
-      ogImage: "/assets/BLOGS/AXILLARY BREAST REMOVAL.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990739/sculpt_aesthetics/assets/BLOGS/AXILLARY_BREAST_REMOVAL.png",
       keywords: [
         "Axillary breast removal cost in Hyderabad",
         "Accessory breast tissue surgery Hyderabad",
@@ -2294,7 +2295,7 @@ export const blogPosts: BlogPost[] = [
     category: "Wellness & Aesthetics",
     author: "The Sculpt Medical Team",
     readTime: "7 min read",
-    image: "/assets/BLOGS/IV DRIP THERAPY.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990743/sculpt_aesthetics/assets/BLOGS/IV_DRIP_THERAPY.png",
     excerpt:
       "IV drip therapy delivers fluids and selected vitamins, minerals, electrolytes directly into a vein. Learn about IV drip therapy cost, benefits, safety, and recovery in Hyderabad.",
     introParagraphs: [
@@ -2591,7 +2592,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Find out about IV drip therapy cost in Hyderabad, hydration drips, vitamin infusions, benefits, medical supervision, and safety at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/iv-drip-therapy-cost-hyderabad",
-      ogImage: "/assets/BLOGS/IV DRIP THERAPY.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990743/sculpt_aesthetics/assets/BLOGS/IV_DRIP_THERAPY.png",
       keywords: [
         "IV drip therapy cost in Hyderabad",
         "IV vitamin drip Hyderabad",
@@ -2608,7 +2609,7 @@ export const blogPosts: BlogPost[] = [
     category: "Body Contouring",
     author: "The Sculpt Clinical Team",
     readTime: "7 min read",
-    image: "/assets/BLOGS/EMS TREATMENT.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/EMS_TREATMENT.png",
     excerpt:
       "EMS stands for Electrical Muscle Stimulation. The treatment uses controlled electrical impulses to stimulate muscles, causing them to contract for muscle conditioning and body contouring in Hyderabad.",
     introParagraphs: [
@@ -2902,7 +2903,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Learn about EMS (Electrical Muscle Stimulation) treatment cost in Hyderabad, body sculpting and muscle toning benefits, procedure and safety at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/ems-treatment-cost-hyderabad",
-      ogImage: "/assets/BLOGS/EMS TREATMENT.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/EMS_TREATMENT.png",
       keywords: [
         "EMS treatment cost in Hyderabad",
         "Electrical muscle stimulation Hyderabad",
@@ -2919,7 +2920,7 @@ export const blogPosts: BlogPost[] = [
     category: "Facial Aesthetics",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "7 min read",
-    image: "/assets/BLOGS/BLEPHAROPLASTY.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
     excerpt:
       "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids. Learn about procedure safety, recovery, and results in Hyderabad.",
     introParagraphs: [
@@ -3156,7 +3157,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Is blepharoplasty safe in Hyderabad? Learn about upper and lower eyelid surgery, safety considerations, costs, recovery timeline, and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/blepharoplasty-safe-hyderabad",
-      ogImage: "/assets/BLOGS/BLEPHAROPLASTY.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
       keywords: [
         "Blepharoplasty safe in Hyderabad",
         "Eyelid surgery cost Hyderabad",

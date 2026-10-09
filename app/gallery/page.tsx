@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "The Sculpt Aesthetics",
     images: [
       {
-        url: "/assets/services results/Rhinoplasty.png",
+        url: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990785/sculpt_aesthetics/assets/services_results/Rhinoplasty.png",
         width: 1200,
         height: 630,
         alt: "The Sculpt Aesthetics Before & After Results Gallery",

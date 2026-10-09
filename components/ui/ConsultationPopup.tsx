@@ -90,7 +90,7 @@ export default function ConsultationPopup() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validation
@@ -120,6 +120,24 @@ export default function ConsultationPopup() {
 
     setStatus("submitting");
 
+    // 1. Save lead to MongoDB Database
+    try {
+      await fetch("/api/appointment", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.fullName.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          service: formData.concern,
+          message: `Free Consultation Request: ${formData.concern}`,
+        }),
+      });
+    } catch (dbErr) {
+      console.error("Error saving lead to DB:", dbErr);
+    }
+
+    // 2. Open Business WhatsApp with pre-filled lead message
     const whatsappMsg = `Hello Sculpt Aesthetics,
 
 I would like to book a free consultation.

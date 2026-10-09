@@ -40,5 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# uploads & asset migrations
+/public/uploads/
+asset-mapping.json
+
 # test artifacts (not for production git)
 testsprite_tests/
+
