@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { servicesData } from "@/lib/servicesData";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -51,7 +52,29 @@ export default function Contact() {
     const fullName = `${formData.firstName.trim()} ${formData.lastName.trim()}`.trim();
 
     try {
-      // 1. Send Email to thesculptaesthetics@gmail.com via server API
+      // 1. Send Email via EmailJS
+      try {
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_9p3dep9";
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_g9ugvvc";
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "O2-rOxFBowt_Uttvh";
+
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            name: fullName,
+            phone: formData.phone.trim(),
+            email: formData.email.trim() || "Not provided",
+            service: formData.service,
+            message: formData.message.trim() || "No additional message",
+          },
+          publicKey
+        );
+      } catch (emailJsErr) {
+        console.error("EmailJS dispatch error:", emailJsErr);
+      }
+
+      // 2. Save appointment to MongoDB Database & Admin panel
       const res = await fetch("/api/appointment", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const POPUP_INTERVAL_MS = 30000; // 30 seconds
 
@@ -120,7 +121,29 @@ export default function ConsultationPopup() {
 
     setStatus("submitting");
 
-    // 1. Save lead to MongoDB Database
+    // 1. Send Email via EmailJS
+    try {
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_9p3dep9";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_g9ugvvc";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "O2-rOxFBowt_Uttvh";
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name: formData.fullName.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim() || "Not provided",
+          service: formData.concern,
+          message: `Free Consultation Request: ${formData.concern}`,
+        },
+        publicKey
+      );
+    } catch (emailJsErr) {
+      console.error("EmailJS dispatch error:", emailJsErr);
+    }
+
+    // 2. Save lead to MongoDB Database
     try {
       await fetch("/api/appointment", {
         method: "POST",
