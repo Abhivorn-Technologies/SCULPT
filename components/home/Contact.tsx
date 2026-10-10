@@ -54,9 +54,9 @@ export default function Contact() {
     try {
       // 1. Send Email via EmailJS
       try {
-        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_9p3dep9";
-        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_g9ugvvc";
-        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "O2-rOxFBowt_Uttvh";
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_cb3yi8i";
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_4hytol7";
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "z9VhBkfhS8i3eoiGC";
 
         await emailjs.send(
           serviceId,
