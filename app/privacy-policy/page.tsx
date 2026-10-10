@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
               <span className="text-[#E6663A] text-lg font-mono">05.</span> WhatsApp & Electronic Communication
             </h2>
             <p>
-              If you initiate contact with us through our official clinic WhatsApp numbers (<strong>+91 96396 35454</strong> / <strong>+91 91337 33733</strong>) or email:
+              If you initiate contact with us through our official clinic WhatsApp number (<strong>+91 96396 35454</strong>) or email:
             </p>
             <ul className="list-disc list-inside space-y-2 pl-2">
               <li>Your communication is encrypted end-to-end according to WhatsApp/Meta platform protocols.</li>
@@ -264,10 +264,6 @@ export default function PrivacyPolicyPage() {
                   <Phone className="w-4 h-4 text-[#E6663A] shrink-0" />
                   <a href="tel:+919639635454" className="hover:text-[#E6663A] font-medium transition-colors">
                     +91 96396 35454
-                  </a>
-                  <span className="text-xs text-[#999999]">/</span>
-                  <a href="tel:+919133733733" className="hover:text-[#E6663A] font-medium transition-colors">
-                    +91 91337 33733
                   </a>
                 </div>
 

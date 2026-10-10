@@ -136,7 +136,6 @@ Please contact me regarding my appointment request.`;
                 </div>
                 <h3 className="font-serif font-bold text-base text-[#151515]">Phone</h3>
                 <p className="text-xs text-[#555555]">+91 96396 35454</p>
-                <p className="text-xs text-[#555555]">+91 91337 33733</p>
               </div>
 
               {/* Email */}

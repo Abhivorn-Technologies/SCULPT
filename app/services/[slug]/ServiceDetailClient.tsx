@@ -231,7 +231,7 @@ export default function ServiceDetailClient({
                 className="py-3.5 px-6 rounded-full border border-[#151515] text-[#151515] hover:bg-[#151515] hover:text-white font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-all"
               >
                 <PhoneCall className="w-4 h-4 text-[#E6663A]" />
-                <span>CALL 9639635454 / 9133733733</span>
+                <span>CALL +91 96396 35454</span>
               </a>
             </div>
           </motion.section>
@@ -688,7 +688,7 @@ export default function ServiceDetailClient({
                   </p>
                   <div className="pt-2 flex flex-wrap items-center gap-3 text-xs font-semibold text-[#151515]">
                     <span className="flex items-center gap-2 bg-[#F8F6F2] px-3.5 py-2 rounded-full border border-[#EFE8E0]">
-                      <PhoneCall className="w-3.5 h-3.5 text-[#E6663A]" /> 9639635454 / 9133733733
+                      <PhoneCall className="w-3.5 h-3.5 text-[#E6663A]" /> +91 96396 35454
                     </span>
                     <Link
                       href="/contact"

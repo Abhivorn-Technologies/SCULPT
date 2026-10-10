@@ -218,10 +218,6 @@ export default function TermsOfServicePage() {
                   <a href="tel:+919639635454" className="hover:text-[#E6663A] font-medium transition-colors">
                     +91 96396 35454
                   </a>
-                  <span className="text-xs text-[#999999]">/</span>
-                  <a href="tel:+919133733733" className="hover:text-[#E6663A] font-medium transition-colors">
-                    +91 91337 33733
-                  </a>
                 </div>
 
                 <div className="flex items-center gap-2">

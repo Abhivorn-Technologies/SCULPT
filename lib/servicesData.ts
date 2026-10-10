@@ -202,7 +202,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients return to light activity within a few days, with a compression garment worn for a few weeks to support healing and contour. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Liposuction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Liposuction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Liposuction is performed through tiny entry points, just a few millimeters long, which typically fade to be barely noticeable within several months.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -313,7 +313,7 @@ export const servicesData: ServiceItem[] = [
       "Recovery is similar to standard liposuction, with most patients resuming light activity within a few days and full exercise over 4-6 weeks.",
       "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of HD Liposuction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of HD Liposuction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Entry points are small and carefully placed, healing to be barely noticeable.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -424,7 +424,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Recovery generally spans 2–4 weeks for daily activities, with strenuous exercise resumed gradually over 6 weeks as advised by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Tummy Tuck depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Tummy Tuck depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "The main incision is placed low on the abdomen, typically within or just below the natural bikini line, so it can be concealed by most underwear and swimwear once healed and faded.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -650,7 +650,7 @@ export const servicesData: ServiceItem[] = [
       "Patients typically resume desk-based work within a few days, with full physical activity resuming over 2‒4 weeks depending on the areas treated.",
       "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Body Contouring depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Body Contouring depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Entry points are small, strategically placed, and fade significantly within a few months.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -734,7 +734,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume light activities within a week or two, with arm- intensive exercise restricted for around 4-6 weeks. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Brachioplasty (Arm Lift) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Brachioplasty (Arm Lift) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "The incision generally runs along the inner or back portion of the upper arm from the armpit toward the elbow; while it does fade over time, this is discussed openly during consultation since it's a visible trade-off for skin removal.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection- control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -844,7 +844,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume normal activity within a few days, with minimal downtime. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Lipoma Removal depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Lipoma Removal depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "The incision is kept as small as possible and placed to blend with natural skin lines, healing into a fine, faint scar over time.",
     "safetyText": "This is a minor procedure with a low overall risk profile when performed by an experienced surgeon under sterile conditions. Your surgeon will still walk you through the small risks involved, such as infection or scarring, so you know exactly what to expect.",
     "faqs": [
@@ -924,7 +924,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume light activities within a few days, with strenuous exercise typically avoided for 4–6 weeks. Follow-up visits monitor healing and implant positioning. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Breast Augmentation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Breast Augmentation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Incisions are typically placed in well-hidden locations, such as the fold beneath the breast or around the areola, so resulting scars are discreet and fade significantly over 6-12 months.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection- control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1045,7 +1045,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume normal daily activities within 1‒2 weeks, with full recovery and return to strenuous activity over several weeks, guided by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Breast Reduction Surgery depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Breast Reduction Surgery depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Scar pattern depends on the amount of reduction needed — commonly an anchor- or lollipop-shaped incision is used, which fades considerably over the first year while still delivering meaningfully lighter, better-shaped breasts.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1157,7 +1157,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients resume light activities within a week, with full recovery and return to exercise over 4-6 weeks as guided by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Breast Lift (Mastopexy) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Breast Lift (Mastopexy) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Scar extent depends on the technique used, ranging from a scar around the areola only for mild lifts to an anchor-shaped incision for more significant sagging; all incisions are planned to fade and be as inconspicuous as possible.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1279,7 +1279,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients return to light daily activities within a few days and resume normal routines, including exercise, within a few weeks, depending on the extent of the procedure. A compression garment is typically recommended during initial recovery. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Gynecomastia Surgery depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Gynecomastia Surgery depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "When only liposuction is used, scarring is minimal — limited to a few small entry points. When gland excision or skin removal is needed, an incision is placed around the areola edge where it blends naturally with the surrounding skin tone.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1399,7 +1399,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most swelling subsides within 2‒3 weeks, with final results becoming more apparent over several months as residual swelling resolves. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Rhinoplasty depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Rhinoplasty depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Most rhinoplasty is performed with incisions hidden inside the nose; when external incisions are needed (open technique), they are placed in the small strip of skin between the nostrils and heal to be very discreet.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1506,7 +1506,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Initial swelling and bruising typically resolve over 2‒3 weeks, with most patients returning to normal social activities within this period. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Facelift depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Facelift depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Incisions are strategically hidden along the hairline and natural creases around the ear, so they are very difficult to detect once healed, even with hair pulled back.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1608,7 +1608,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Swelling and bruising generally resolve within 1–2 weeks, with most patients returning to normal routines shortly after. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Blepharoplasty (Eyelid Surgery) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Blepharoplasty (Eyelid Surgery) depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Incisions are placed along the natural creases of the upper eyelid or just below the lash line on the lower eyelid, so scars are extremely well concealed and fade further over time.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection- control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1715,7 +1715,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Mild swelling is expected for 1‒2 weeks; a soft diet is recommended during initial healing. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Buccal Fat Removal depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Buccal Fat Removal depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "The incision is made inside the mouth, so there is no visible external scarring at all.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1820,7 +1820,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients experience mild swelling for a few days and return to normal activities quickly. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Dimple Creation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Dimple Creation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "As the procedure is performed entirely from inside the mouth, there is no visible external scarring.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -1928,7 +1928,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients require a short recovery period of 1‒2 weeks with activity restrictions as advised. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Labiaplasty depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Labiaplasty depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Incisions are placed along natural tissue edges and typically heal to be very discreet.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -2030,7 +2030,7 @@ export const servicesData: ServiceItem[] = [
       }
     ],
     "recoveryParagraphs": [],
-    "pricingText": "The cost of Clitoral Hood Correction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Clitoral Hood Correction depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Incisions are placed within natural skin folds and are typically very difficult to notice once healed.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -2337,7 +2337,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: This is a quick outpatient procedure with healing typically complete within a few weeks. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Split Earlobe Repair depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Split Earlobe Repair depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "The repair is designed to blend with the natural earlobe contour, and any resulting scar is typically very faint and easily concealed by hair or earrings.",
     "safetyText": "This is a minor procedure with a low overall risk profile when performed by an experienced surgeon under sterile conditions. Your surgeon will still walk you through the small risks involved, such as infection or scarring, so you know exactly what to expect.",
     "faqs": [
@@ -2434,7 +2434,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Most patients heal within 2‒3 weeks, with specific aftercare instructions provided by your surgeon. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Circumcision depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Circumcision depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "The incision line typically heals into a fine, well-concealed scar around the shaft, which becomes much less noticeable over time.",
     "safetyText": "This is a minor procedure with a low overall risk profile when performed by an experienced surgeon under sterile conditions. Your surgeon will still walk you through the small risks involved, such as infection or scarring, so you know exactly what to expect.",
     "faqs": [
@@ -2730,7 +2730,7 @@ export const servicesData: ServiceItem[] = [
       "Mild redness or small bumps may appear briefly at injection sites and typically resolve within a day.",
       "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Facial Rejuvenation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Facial Rejuvenation depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "No surgical incisions are made. Micro-injection points fade completely within hours to a day.",
     "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
     "faqs": [
@@ -2826,7 +2826,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery looks a little different for everyone, but here's a general idea of what to expect: Mild swelling or tenderness may last a few days; most patients resume normal activities immediately. Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Thread Lift depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Thread Lift depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Thread lifts use tiny entry points rather than incisions, so there is no meaningful scarring — any mark from the entry point fades within days.",
     "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any injectable or energy-based treatment, mild, temporary side effects such as redness or swelling are possible and will be discussed during your consultation.",
     "faqs": [
@@ -2928,7 +2928,7 @@ export const servicesData: ServiceItem[] = [
       "Recovery involves care at both the donor site and the treated area; most patients resume normal activities within 1–2 weeks.",
       "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of E-Fat Graft depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of E-Fat Graft depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Scarring is limited to tiny liposuction entry points at the donor site and small injection points at the treatment area, both of which fade to be barely visible.",
     "safetyText": "Like any surgical procedure, this treatment carries general surgical risks, which your surgeon will explain in detail during consultation. At Sculpt Aesthetics, we follow international safety standards, strict infection-control protocols, and modern operation theatre facilities to keep every procedure as safe as possible. A thorough medical evaluation before surgery helps make sure the procedure is right for you.",
     "faqs": [
@@ -3018,7 +3018,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Most superficial peels require zero social downtime, with mild redness subsiding within a few hours. Medium peels may cause light flaking for 3 to 5 days, revealing fresh, glowing skin beneath. Daily broad-spectrum sunscreen and gentle hydration are recommended post-treatment."
     ],
-    "pricingText": "Chemical peel pricing depends on the peel type, depth (superficial, medium, or deep), and number of recommended sessions. Contact us at 9639635454 / 9133733733 for personalized pricing details.",
+    "pricingText": "Chemical peel pricing depends on the peel type, depth (superficial, medium, or deep), and number of recommended sessions. Contact us at 9639635454 for personalized pricing details.",
     "scarsText": "Chemical peels are non-invasive and do not produce scars; instead, they actively help smooth pre-existing textural irregularities and shallow acne marks.",
     "safetyText": "Chemical peels performed at Sculpt Aesthetics utilize US FDA-approved, medical-grade solutions administered under strict dermatological oversight for optimal safety and predictable outcomes.",
     "faqs": [],
@@ -3116,7 +3116,7 @@ export const servicesData: ServiceItem[] = [
       "Recovery expectations depend on which laser or energy technology is used as part of your specific treatment; your surgeon will explain this during your consultation.",
       "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Laser Treatments depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Laser Treatments depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Non-invasive laser and RF procedures leave no surgical incisions. Minor redness or mild flaking resolves in a few days.",
     "safetyText": "All technology and equipment at Sculpt Aesthetics is maintained and operated according to international safety standards by trained professionals. Your surgeon will always explain which specific technology is being used in your procedure and why.",
     "faqs": [
@@ -3223,7 +3223,7 @@ export const servicesData: ServiceItem[] = [
       "Recovery depends on the method used — non-surgical treatments typically involve minimal downtime (1–2 days of mild redness similar to a sunburn), resuming normal activities immediately.",
       "Your surgeon will give you a personalized recovery plan, along with clear guidance on activity levels, medication, and follow-up visits, so healing stays on track."
     ],
-    "pricingText": "The cost of Acne Scar Treatment depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 / 9133733733 for personalized, tentative pricing after a consultation.",
+    "pricingText": "The cost of Acne Scar Treatment depends on factors like the technique used, extent of treatment, and your individual assessment — so we don't quote a fixed price online. Contact us at 9639635454 for personalized, tentative pricing after a consultation.",
     "scarsText": "Procedures are designed to remodel and minimize existing acne scars. Non-surgical modalities leave no surgical incisions.",
     "safetyText": "This is a non-surgical treatment with minimal downtime and a good safety profile when performed by trained professionals using approved products. As with any energy-based or micro-needling treatment, mild, temporary redness or swelling is normal and will be discussed during your consultation.",
     "faqs": [
@@ -3415,7 +3415,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Treated areas form a small protective crust that naturally falls off within 5 to 7 days, leaving healthy, regenerated skin. You will receive simple antiseptic aftercare instructions and guidance on maintaining personal hygiene to prevent re-infection."
     ],
-    "pricingText": "Wart removal pricing depends on the number, size, and anatomical location of the lesions. Contact our confidential helpline at 9639635454 / 9133733733 for treatment cost guidance.",
+    "pricingText": "Wart removal pricing depends on the number, size, and anatomical location of the lesions. Contact our confidential helpline at 9639635454 for treatment cost guidance.",
     "scarsText": "Precision radiofrequency ablation minimizes thermal damage to surrounding tissue, allowing the treated area to heal cleanly with minimal to no visible marking.",
     "safetyText": "All wart removal procedures are conducted under strict sterile precautions using single-use instruments and local numbing to guarantee patient comfort and safety.",
     "faqs": [],
@@ -3483,7 +3483,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Recovery is swift. Shave and radiofrequency sites heal with a small crust over 5 to 7 days, while micro-suture sites are typically removed or absorb within 5 to 7 days. Sun protection and scar gel application ensure optimal skin blending."
     ],
-    "pricingText": "Mole removal cost depends on the number of moles, their depth, and whether surgical or radiofrequency techniques are used. Contact us at 9639635454 / 9133733733 for an estimate.",
+    "pricingText": "Mole removal cost depends on the number of moles, their depth, and whether surgical or radiofrequency techniques are used. Contact us at 9639635454 for an estimate.",
     "scarsText": "Our plastic surgeons use micro-instruments and follow natural facial tension lines to ensure post-removal marks fade into minimal, barely perceptible lines.",
     "safetyText": "Performed under gentle local anesthesia in our accredited clinic, mole removal is a safe, walk-in walk-out procedure with comprehensive follow-up.",
     "faqs": [],
@@ -3551,7 +3551,7 @@ export const servicesData: ServiceItem[] = [
     "recoveryParagraphs": [
       "Patients experience immediate relief upon standing. The small treated area is dressed with an antiseptic protective pad, and normal walking and daily activities can be resumed immediately. Full skin healing occurs within 3 to 5 days."
     ],
-    "pricingText": "Corn removal pricing depends on the number and severity of the corns. Contact our clinic at 9639635454 / 9133733733 for transparent procedure pricing.",
+    "pricingText": "Corn removal pricing depends on the number and severity of the corns. Contact our clinic at 9639635454 for transparent procedure pricing.",
     "scarsText": "Enucleation is performed precisely within the hyperkeratotic lesion boundary, allowing normal skin texture to regenerate with zero noticeable scarring.",
     "safetyText": "Clinical corn removal is performed under local numbing in sterile conditions, eliminating the infection and ulceration risks common with home cutting or acid plasters.",
     "faqs": [],
