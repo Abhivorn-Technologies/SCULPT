@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/ui/FloatingActions";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import ConsultationPopup from "@/components/ui/ConsultationPopup";
+import CookieConsent from "@/components/ui/CookieConsent";
 
 export default function PublicLayoutWrapper({
   children,
@@ -27,6 +28,7 @@ export default function PublicLayoutWrapper({
       <Footer />
       <FloatingActions />
       <ConsultationPopup />
+      <CookieConsent />
     </>
   );
 }

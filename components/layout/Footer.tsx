@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react";
+import CookiePreferencesButton from "@/components/ui/CookiePreferencesButton";
 
 export default function Footer() {
   return (
@@ -174,8 +175,10 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href="/medical-disclaimer" className="hover:text-white transition-colors">Medical Disclaimer</Link>
+            <CookiePreferencesButton />
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 export default function TermsOfServicePage() {
-  const lastUpdated = "September 2024";
+  const lastUpdated = "October 2026";
 
   return (
     <div className="pt-24 pb-20 bg-[#FDFBF7] min-h-screen">
@@ -30,7 +30,7 @@ export default function TermsOfServicePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
           <span className="text-[#F6B73C] text-xs font-bold uppercase tracking-[0.25em] bg-[#E6663A]/20 border border-[#E6663A]/40 px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 shadow-sm">
             <Scale className="w-3.5 h-3.5 text-[#F6B73C]" />
-            Legal Agreement
+            Legal Agreement & Compliance
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
             Terms of <span className="text-[#E6663A]">Service</span>
@@ -58,7 +58,7 @@ export default function TermsOfServicePage() {
               These Terms of Service (&ldquo;Terms&rdquo;) constitute a legally binding agreement between you (&ldquo;User,&rdquo; &ldquo;you,&rdquo; or &ldquo;your&rdquo;) and <strong>The Sculpt Aesthetics</strong> (&ldquo;Sculpt,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;), governing your access to and use of our website located at <strong>https://thesculptaesthetics.com</strong> (the &ldquo;Website&rdquo;).
             </p>
             <p>
-              By accessing, browsing, submitting inquiries, or booking consultations through this Website, you acknowledge that you have read, understood, and agreed to be bound by these Terms and our <Link href="/privacy-policy" className="text-[#E6663A] font-semibold hover:underline">Privacy Policy</Link>. If you do not agree to these Terms, please discontinue use of the Website immediately.
+              By accessing, browsing, submitting inquiries, or booking consultations through this Website, you acknowledge that you have read, understood, and agreed to be bound by these Terms, our <Link href="/privacy-policy" className="text-[#E6663A] font-semibold hover:underline">Privacy Policy</Link>, and our <Link href="/cookie-policy" className="text-[#E6663A] font-semibold hover:underline">Cookie Policy</Link>. If you do not agree to these Terms, please discontinue use of the Website immediately.
             </p>
           </section>
 
@@ -86,10 +86,12 @@ export default function TermsOfServicePage() {
               <span className="text-[#E6663A] text-lg font-mono">03.</span> Permitted Website Use & User Conduct
             </h2>
             <p>
-              You agree to use this Website solely for lawful, personal, and non-commercial purposes. Specifically, you agree that you will not:
+              You agree to use this Website solely for lawful, personal, and non-commercial purposes. Specifically, in accordance with applicable cyber regulations and Section 15 of the Digital Personal Data Protection (DPDP) Act, 2023, you agree and undertake that you will not:
             </p>
             <ul className="list-disc list-inside space-y-2 pl-2">
-              <li>Submit false, misleading, impersonated, or fraudulent information in consultation or appointment forms.</li>
+              <li>Submit false, misleading, impersonated, or fictitious identity or contact information in consultation or appointment booking forms.</li>
+              <li>Impersonate any other individual while providing personal data or requesting medical services.</li>
+              <li>Register false or frivolous privacy grievances or misuse grievance redressal mechanisms.</li>
               <li>Attempt to compromise, disrupt, probe, or breach the security of the Website or associated server infrastructure.</li>
               <li>Use automated scrapers, bots, or data-extraction tools to scrape website images, text, or patient outcome assets without written consent.</li>
               <li>Introduce malicious software, viruses, trojans, or corrupt data to the Website.</li>
@@ -194,18 +196,19 @@ export default function TermsOfServicePage() {
             </p>
           </section>
 
-          {/* 13. Contact Information */}
+          {/* 13. Contact & Grievance Redressal */}
           <section className="space-y-4 pt-6 border-t border-[#EFE8E0] bg-[#FAF8F5] p-6 sm:p-8 rounded-2xl">
             <h2 className="font-serif text-2xl font-bold text-[#151515] flex items-center gap-2">
-              <ShieldAlert className="w-5 h-5 text-[#E6663A]" /> Inquiries Regarding Terms of Service
+              <ShieldAlert className="w-5 h-5 text-[#E6663A]" /> Terms Inquiries & Grievance Redressal
             </h2>
             <p className="text-sm text-[#555555]">
-              If you have any questions or require clarification regarding these Terms of Service, please contact our administrative office:
+              If you have any questions or require clarification regarding these Terms of Service or wish to file a grievance under applicable data and cyber regulations, please contact our administrative and compliance team:
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm pt-2">
               <div className="space-y-2">
                 <p className="font-bold text-[#151515]">The Sculpt Aesthetics</p>
+                <p className="text-xs text-[#777777]">Administrative & Grievance Redressal Desk</p>
                 <div className="flex items-start gap-2 pt-1 text-xs text-[#555555]">
                   <MapPin className="w-4 h-4 text-[#E6663A] shrink-0 mt-0.5" />
                   <span>4th Floor, H.No.279, Boppana&apos;s Annapurna Arcade, Near Metro Pillar No 1729 Phase-2, Madhapur Main Road, Kavuri Hills, Hyderabad, Telangana 500081</span>
@@ -226,9 +229,23 @@ export default function TermsOfServicePage() {
                     thesculptaesthetics@gmail.com
                   </a>
                 </div>
+
+                <p className="text-xs text-[#777777] pt-1">
+                  <strong>Response Commitment:</strong> Statutory grievances are acknowledged within 48 hours and resolved within 30 days.
+                </p>
               </div>
             </div>
           </section>
+
+          {/* Related Links */}
+          <div className="pt-4 flex flex-wrap items-center justify-between text-xs text-[#777777] gap-3 border-t border-[#EFE8E0]">
+            <span>Related Documents:</span>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy-policy" className="text-[#E6663A] hover:underline font-medium">Privacy Policy</Link>
+              <Link href="/cookie-policy" className="text-[#E6663A] hover:underline font-medium">Cookie Policy</Link>
+              <Link href="/medical-disclaimer" className="text-[#E6663A] hover:underline font-medium">Medical Disclaimer</Link>
+            </div>
+          </div>
 
         </div>
       </div>

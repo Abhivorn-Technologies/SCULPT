@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2, AlertCircle, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 import { servicesData } from "@/lib/servicesData";
 import emailjs from "@emailjs/browser";
 
@@ -367,8 +368,17 @@ Please contact me regarding my appointment request.`;
                   <span>{status === "submitting" ? "SUBMITTING..." : "SUBMIT REQUEST"}</span>
                 </button>
 
-                <p className="text-[11px] text-[#777777] text-center pt-2">
-                  By submitting, you agree to our privacy policy and confidential medical consultation terms.
+                <p className="text-[11px] text-[#777777] text-center pt-2 leading-relaxed">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#E6663A] inline mr-1 -mt-0.5" />
+                  By submitting, you agree to our{" "}
+                  <Link href="/terms-of-service" className="text-[#E6663A] font-semibold hover:underline">
+                    Terms of Service
+                  </Link>{" "}
+                  and consent to clinical consultation communication under our{" "}
+                  <Link href="/privacy-policy" className="text-[#E6663A] font-semibold hover:underline">
+                    Privacy Policy
+                  </Link>
+                  .
                 </p>
               </form>
             )}

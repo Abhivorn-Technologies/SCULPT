@@ -10,37 +10,46 @@ export async function POST(req: Request) {
 
     const fullName = (name || `${firstName || ""} ${lastName || ""}`).trim();
 
-    if (!fullName) {
+    if (!fullName || fullName.length < 2) {
       return NextResponse.json(
         { error: "Full Name is required" },
         { status: 400 }
       );
     }
 
-    if (!phone || String(phone).replace(/\D/g, "").length < 8) {
+    const cleanPhone = String(phone || "").trim();
+    const digitsOnly = cleanPhone.replace(/\D/g, "");
+    if (!cleanPhone || digitsOnly.length < 8 || digitsOnly.length > 15) {
       return NextResponse.json(
         { error: "A valid Phone number is required" },
         { status: 400 }
       );
     }
 
-    if (!service) {
+    if (!service || typeof service !== "string") {
       return NextResponse.json(
         { error: "Service of interest is required" },
         { status: 400 }
       );
     }
 
+    // Input sanitization & field length safeguards (DPDP Act Data Minimization & Security)
+    const sanitizedFullName = fullName.slice(0, 100);
+    const sanitizedPhone = cleanPhone.slice(0, 20);
+    const sanitizedService = service.trim().slice(0, 100);
+    const sanitizedMessage = typeof message === "string" ? message.trim().slice(0, 1000) : "";
+    const sanitizedEmail = typeof email === "string" && email.includes("@") ? email.trim().slice(0, 100) : undefined;
+
     // Save appointment lead to MongoDB if MONGODB_URI is provided
     if (process.env.MONGODB_URI) {
       try {
         await connectToDatabase();
         await Appointment.create({
-          fullName,
-          phone,
-          email: email || undefined,
-          service,
-          message: message || "",
+          fullName: sanitizedFullName,
+          phone: sanitizedPhone,
+          email: sanitizedEmail,
+          service: sanitizedService,
+          message: sanitizedMessage,
           status: "New",
         });
         console.log("Appointment saved to MongoDB successfully");
@@ -53,11 +62,11 @@ export async function POST(req: Request) {
     const emailSubject = "New Appointment Request — Sculpt Aesthetics";
     const emailText = `New appointment request received.
 
-Name: ${fullName}
-Phone: ${phone}
-Email: ${email || "Not provided"}
-Service: ${service}
-Message: ${message || "No additional message"}
+Name: ${sanitizedFullName}
+Phone: ${sanitizedPhone}
+Email: ${sanitizedEmail || "Not provided"}
+Service: ${sanitizedService}
+Message: ${sanitizedMessage || "No additional message"}
 
 Source:
 Sculpt Aesthetics Website`;

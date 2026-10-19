@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { X, Send, CheckCircle2, AlertCircle, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 import emailjs from "@emailjs/browser";
 
 const POPUP_INTERVAL_MS = 30000; // 30 seconds
@@ -384,6 +385,20 @@ Please contact me regarding my consultation.`;
                     )}
                   </button>
                 </div>
+
+                {/* DPDP Act 2023 Consent Notice */}
+                <p className="text-[11px] text-white/50 text-center leading-relaxed pt-1">
+                  <ShieldCheck className="w-3 h-3 text-[#F6B73C] inline mr-1 -mt-0.5" />
+                  By submitting, you agree to our{" "}
+                  <Link href="/terms-of-service" onClick={handleClose} className="text-[#F6B73C] hover:underline">
+                    Terms
+                  </Link>{" "}
+                  and consent to clinical communication under our{" "}
+                  <Link href="/privacy-policy" onClick={handleClose} className="text-[#F6B73C] hover:underline">
+                    Privacy Policy
+                  </Link>
+                  .
+                </p>
               </form>
             )}
           </motion.div>
