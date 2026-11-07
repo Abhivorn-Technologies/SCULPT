@@ -211,7 +211,7 @@ export default function TermsOfServicePage() {
                 <p className="text-xs text-[#777777]">Administrative & Grievance Redressal Desk</p>
                 <div className="flex items-start gap-2 pt-1 text-xs text-[#555555]">
                   <MapPin className="w-4 h-4 text-[#E6663A] shrink-0 mt-0.5" />
-                  <span>4th Floor, H.No.279, Boppana&apos;s Annapurna Arcade, Near Metro Pillar No 1729 Phase-2, Madhapur Main Road, Kavuri Hills, Hyderabad, Telangana 500081</span>
+                  <span>4th Floor, Boppana&apos;s Annapurna Arcade, near Metro Pillar no c1729, Phase 2, Kavuri Hills, Madhapur, Hyderabad, Telangana 500081</span>
                 </div>
               </div>
 

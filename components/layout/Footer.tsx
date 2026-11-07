@@ -131,7 +131,7 @@ export default function Footer() {
               className="flex items-start gap-3 text-sm text-[#999999] hover:text-[#E6663A] transition-colors group"
             >
               <MapPin className="w-5 h-5 text-[#E6663A] shrink-0 mt-0.5" />
-              <span>Sculpt, Madhapur, Hyderabad, Telangana 500081</span>
+              <span>4th Floor, Boppana&apos;s Annapurna Arcade, near Metro Pillar no c1729, Phase 2, Kavuri Hills, Madhapur, Hyderabad, Telangana 500081</span>
             </a>
 
             <div className="flex items-center gap-3 text-sm text-[#999999]">

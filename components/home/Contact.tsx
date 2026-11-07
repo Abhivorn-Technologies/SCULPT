@@ -182,8 +182,8 @@ Please contact me regarding my appointment request.`;
                   <MapPin className="w-5 h-5" />
                 </div>
                 <h3 className="font-serif font-bold text-base text-[#151515]">Clinic Location</h3>
-                <p className="text-xs text-[#555555] group-hover:text-[#E6663A] transition-colors">
-                  Sculpt, Madhapur, Hyderabad, Telangana 500081
+                <p className="text-xs text-[#555555] group-hover:text-[#E6663A] transition-colors leading-relaxed">
+                  4th Floor, Boppana&apos;s Annapurna Arcade, near Metro Pillar no c1729, Phase 2, Kavuri Hills, Madhapur, Hyderabad, Telangana 500081
                 </p>
                 <span className="text-[11px] text-[#E6663A] font-semibold flex items-center gap-1 pt-1">
                   Open in Google Maps &rarr;
