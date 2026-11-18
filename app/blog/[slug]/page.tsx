@@ -38,7 +38,7 @@ async function getPost(slug: string): Promise<BlogPost | null> {
             metaTitle: dbDoc.metaTitle || dbDoc.title,
             metaDescription: dbDoc.metaDescription || dbDoc.shortDescription || dbDoc.title,
             canonicalUrl: `https://thesculpt.co.in/blog/${dbDoc.slug}`,
-            ogImage: dbDoc.featuredImage || "https://thesculpt.co.inhttps://res.cloudinary.com/grm13j3k/image/upload/v1789990763/sculpt_aesthetics/assets/logo/logo.png",
+            ogImage: dbDoc.featuredImage || "https://res.cloudinary.com/grm13j3k/image/upload/v1789990763/sculpt_aesthetics/assets/logo/logo.png",
             keywords: [dbDoc.category, dbDoc.title],
           },
         };

@@ -24,7 +24,7 @@ export const galleryItems: GalleryItem[] = servicesData.map((service) => {
   const baResults = getServiceBeforeAfterResults(service.slug);
   const primaryResult = baResults[0];
 
-  const defaultImg = `/assets/services results/${service.name}.png`;
+  const defaultImg = service.image || "/assets/logo/logo.png";
 
   return {
     id: service.id,

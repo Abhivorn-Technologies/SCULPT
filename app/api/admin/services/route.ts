@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import connectToDatabase from "@/lib/mongodb";
 import Service from "@/lib/models/Service";
 import { servicesData } from "@/lib/servicesData";
@@ -112,6 +112,14 @@ export async function GET(req: Request) {
             },
           }
         );
+
+        // Ensure any invalid, empty, or local placeholder image is synced to the verified CDN URL
+        if (s.image && s.image.startsWith("http")) {
+          await Service.updateOne(
+            { slug: s.slug, $or: [{ image: { $regex: "^/assets/" } }, { image: "" }, { image: { $exists: false } }] },
+            { $set: { image: s.image } }
+          );
+        }
       }
     }
 

@@ -2920,7 +2920,7 @@ export const blogPosts: BlogPost[] = [
     category: "Facial Aesthetics",
     author: "Dr. Jagadish Kiran & Dr. Suma Sandhyala",
     readTime: "7 min read",
-    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
+    image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
     excerpt:
       "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids. Learn about procedure safety, recovery, and results in Hyderabad.",
     introParagraphs: [
@@ -3157,7 +3157,7 @@ export const blogPosts: BlogPost[] = [
       metaDescription:
         "Is blepharoplasty safe in Hyderabad? Learn about upper and lower eyelid surgery, safety considerations, costs, recovery timeline, and results at The Sculpt.",
       canonicalUrl: "https://thesculptaesthetics.com/blog/blepharoplasty-safe-hyderabad",
-      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
+      ogImage: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
       keywords: [
         "Blepharoplasty safe in Hyderabad",
         "Eyelid surgery cost Hyderabad",

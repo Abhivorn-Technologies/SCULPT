@@ -15,9 +15,14 @@ export default function PublicLayoutWrapper({
 }) {
   const pathname = usePathname();
   const isAdminRoute = pathname?.startsWith("/admin");
+  const isReceiptRoute = pathname?.startsWith("/receipt");
 
   if (isAdminRoute) {
     return <div className="min-h-screen bg-slate-950 text-slate-100">{children}</div>;
+  }
+
+  if (isReceiptRoute) {
+    return <div className="min-h-screen bg-[#F8F6F2]">{children}</div>;
   }
 
   return (

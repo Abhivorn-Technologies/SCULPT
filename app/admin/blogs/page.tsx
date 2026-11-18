@@ -16,6 +16,7 @@ import {
   XCircle,
   AlertTriangle,
 } from "lucide-react";
+import AdminPagination from "@/components/admin/AdminPagination";
 
 interface IBlog {
   _id: string;
@@ -36,6 +37,8 @@ export default function AdminBlogsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [statusFilter, setStatusFilter] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   // Confirmation modal state for deletion
   const [deleteTarget, setDeleteTarget] = useState<IBlog | null>(null);
@@ -62,8 +65,14 @@ export default function AdminBlogsPage() {
   };
 
   useEffect(() => {
+    setCurrentPage(1);
     fetchBlogs();
   }, [searchTerm, categoryFilter, statusFilter]);
+
+  const paginatedBlogs = blogs.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
 
   const handleToggleStatus = async (blog: IBlog) => {
     const newStatus = blog.status === "Published" ? "Draft" : "Published";
@@ -222,7 +231,7 @@ export default function AdminBlogsPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#EFE8E0]">
-                {blogs.map((blog) => (
+                {paginatedBlogs.map((blog) => (
                   <tr key={blog._id} className="hover:bg-[#F8F6F2]/60 transition-colors">
                     {/* Featured Image Thumbnail */}
                     <td className="px-5 py-3.5">
@@ -325,6 +334,19 @@ export default function AdminBlogsPage() {
           </div>
         )}
       </div>
+
+      {/* Pagination Controls */}
+      {!loading && blogs.length > 0 && (
+        <AdminPagination
+          currentPage={currentPage}
+          totalItems={blogs.length}
+          pageSize={pageSize}
+          onPageChange={setCurrentPage}
+          onPageSizeChange={setPageSize}
+          pageSizeOptions={[10, 25, 50]}
+          itemName="articles"
+        />
+      )}
 
       {/* Delete Confirmation Modal */}
       {deleteTarget && (

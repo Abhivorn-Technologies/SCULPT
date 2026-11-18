@@ -15,7 +15,7 @@ export default function CookiePreferencesButton({
   };
 
   return (
-    <button type="button" onClick={handleClick} className={className}>
+    <button type="button" onClick={handleClick} className={className} suppressHydrationWarning>
       <Cookie className="w-3.5 h-3.5 text-[#F6B73C]" />
       <span>Cookie Preferences</span>
     </button>

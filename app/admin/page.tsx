@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import connectToDatabase from "@/lib/mongodb";
 import Appointment from "@/lib/models/Appointment";
 import Blog from "@/lib/models/Blog";
@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Database,
   Sparkles,
+  MessageSquare,
 } from "lucide-react";
 
 export default async function AdminDashboardPage() {
@@ -20,7 +21,7 @@ export default async function AdminDashboardPage() {
 
   let totalAppointments = 0;
   let newAppointments = 0;
-  let completedAppointments = 0;
+  let contactEnquiriesCount = 0;
   let totalBlogs = 0;
   let recentAppointments: any[] = [];
   let dbConnected = false;
@@ -32,7 +33,7 @@ export default async function AdminDashboardPage() {
 
       totalAppointments = await Appointment.countDocuments();
       newAppointments = await Appointment.countDocuments({ status: "New" });
-      completedAppointments = await Appointment.countDocuments({ status: "Completed" });
+      contactEnquiriesCount = await Appointment.countDocuments({ source: "Contact Page" });
       totalBlogs = await Blog.countDocuments();
 
       recentAppointments = await Appointment.find({})
@@ -106,20 +107,20 @@ export default async function AdminDashboardPage() {
           <p className="text-xs text-[#777777]">Requires follow-up by clinic staff</p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white border border-[#EFE8E0] shadow-sm space-y-3">
+        <Link href="/admin/contact-enquiries" className="p-6 rounded-2xl bg-white border border-[#EFE8E0] shadow-sm space-y-3 hover:border-[#E6663A] transition-all group block">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-[#555555]">
-              Completed
+              Contact Enquiries
             </span>
-            <div className="p-2.5 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200">
-              <CheckCircle2 className="w-5 h-5" />
+            <div className="p-2.5 rounded-xl bg-purple-50 text-purple-700 border border-purple-200 group-hover:bg-[#E6663A] group-hover:text-white transition-colors">
+              <MessageSquare className="w-5 h-5" />
             </div>
           </div>
-          <div className="text-3xl font-black text-emerald-600">
-            {completedAppointments}
+          <div className="text-3xl font-black text-purple-700 group-hover:text-[#E6663A] transition-colors">
+            {contactEnquiriesCount}
           </div>
-          <p className="text-xs text-[#777777]">Successful consults & treatments</p>
-        </div>
+          <p className="text-xs text-[#777777]">Messages from Contact Page</p>
+        </Link>
 
         <div className="p-6 rounded-2xl bg-white border border-[#EFE8E0] shadow-sm space-y-3">
           <div className="flex items-center justify-between">

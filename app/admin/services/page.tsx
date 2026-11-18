@@ -14,6 +14,7 @@ import {
   AlertTriangle,
   Layers,
 } from "lucide-react";
+import AdminPagination from "@/components/admin/AdminPagination";
 
 interface IService {
   _id: string;
@@ -41,7 +42,7 @@ export default function AdminServicesPage() {
   const [deleting, setDeleting] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 9;
+  const [pageSize, setPageSize] = useState(9);
 
   const fetchServices = async () => {
     setLoading(true);
@@ -113,10 +114,9 @@ export default function AdminServicesPage() {
   );
   const categoryOptions = Array.from(new Set([...defaultCategories, ...dbCategories]));
 
-  const totalPages = Math.ceil(services.length / ITEMS_PER_PAGE);
   const paginatedServices = services.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
   );
 
   return (
@@ -300,59 +300,16 @@ export default function AdminServicesPage() {
       )}
 
       {/* Pagination Controls */}
-      {totalPages > 1 && (
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-[#EFE8E0]">
-          <p className="text-xs text-[#555555]">
-            Showing{" "}
-            <strong className="text-[#151515]">
-              {(currentPage - 1) * ITEMS_PER_PAGE + 1}–{Math.min(currentPage * ITEMS_PER_PAGE, services.length)}
-            </strong>{" "}
-            of <strong className="text-[#151515]">{services.length}</strong> services
-          </p>
-
-          <div className="flex items-center gap-1.5">
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-xl border border-[#EFE8E0] bg-white text-xs font-bold text-[#151515] disabled:opacity-40 hover:border-[#E6663A] hover:text-[#E6663A] transition-all cursor-pointer"
-            >
-              ‹ Prev
-            </button>
-
-            {Array.from({ length: totalPages }, (_, i) => i + 1)
-              .filter((p) => p === 1 || p === totalPages || Math.abs(p - currentPage) <= 1)
-              .reduce<(number | "...")[]>((acc, p, i, arr) => {
-                if (i > 0 && p - (arr[i - 1] as number) > 1) acc.push("...");
-                acc.push(p);
-                return acc;
-              }, [])
-              .map((p, i) =>
-                p === "..." ? (
-                  <span key={`ellipsis-${i}`} className="px-1.5 text-[#888888] text-xs">…</span>
-                ) : (
-                  <button
-                    key={p}
-                    onClick={() => setCurrentPage(p as number)}
-                    className={`w-8 h-8 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                      currentPage === p
-                        ? "bg-[#E6663A] text-white shadow-md"
-                        : "bg-white border border-[#EFE8E0] text-[#151515] hover:border-[#E6663A] hover:text-[#E6663A]"
-                    }`}
-                  >
-                    {p}
-                  </button>
-                )
-              )}
-
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-xl border border-[#EFE8E0] bg-white text-xs font-bold text-[#151515] disabled:opacity-40 hover:border-[#E6663A] hover:text-[#E6663A] transition-all cursor-pointer"
-            >
-              Next ›
-            </button>
-          </div>
-        </div>
+      {!loading && services.length > 0 && (
+        <AdminPagination
+          currentPage={currentPage}
+          totalItems={services.length}
+          pageSize={pageSize}
+          onPageChange={setCurrentPage}
+          onPageSizeChange={setPageSize}
+          pageSizeOptions={[9, 18, 27, 45]}
+          itemName="procedures"
+        />
       )}
 
       {/* Delete Confirmation Modal */}

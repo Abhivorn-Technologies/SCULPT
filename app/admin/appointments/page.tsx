@@ -10,7 +10,9 @@ import {
   Trash2,
   AlertCircle,
   AlertTriangle,
+  FileText,
 } from "lucide-react";
+import AdminPagination from "@/components/admin/AdminPagination";
 
 interface IAppointment {
   _id: string;
@@ -21,6 +23,13 @@ interface IAppointment {
   message?: string;
   status: "New" | "Contacted" | "Scheduled" | "Completed" | "Cancelled";
   notes?: string;
+  originalFee?: number;
+  discountPercent?: number;
+  amountPaid?: number;
+  paymentStatus?: "Pending" | "Paid" | "Failed";
+  source?: string;
+  razorpayOrderId?: string;
+  razorpayPaymentId?: string;
   createdAt: string;
 }
 
@@ -30,6 +39,8 @@ export default function AdminAppointmentsPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("All");
   const [updatingId, setUpdatingId] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   // Custom Delete Modal State (No browser alert)
   const [deleteTarget, setDeleteTarget] = useState<IAppointment | null>(null);
@@ -98,6 +109,11 @@ export default function AdminAppointmentsPage() {
     }
   };
 
+  // Reset page when filter or search changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, statusFilter]);
+
   // Filtering
   const filteredAppointments = appointments.filter((item) => {
     const matchesSearch =
@@ -111,16 +127,21 @@ export default function AdminAppointmentsPage() {
     return matchesSearch && matchesStatus;
   });
 
+  const paginatedAppointments = filteredAppointments.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  );
+
   return (
     <div className="space-y-6 max-w-7xl mx-auto font-sans">
       {/* Header Bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-[#151515] tracking-tight font-serif">
-            Lead Inquiries & Appointments
+            Consultation Bookings
           </h1>
           <p className="text-[#555555] text-sm mt-0.5">
-            Manage incoming client inquiries, update statuses, and follow up.
+            Doctor consultation appointments, payment verifications, and schedules.
           </p>
         </div>
 
@@ -130,48 +151,50 @@ export default function AdminAppointmentsPage() {
           className="self-start md:self-auto flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[#EFE8E0] text-[#151515] hover:border-[#E6663A] hover:text-[#E6663A] text-xs font-semibold shadow-xs transition-all disabled:opacity-50 cursor-pointer"
         >
           <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin text-[#E6663A]" : ""}`} />
-          <span>Refresh Leads</span>
+          <span>Refresh Bookings</span>
         </button>
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="p-4 rounded-2xl bg-white border border-[#EFE8E0] shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Search */}
-        <div className="relative w-full sm:w-80">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#777777]" />
-          <input
-            type="text"
-            placeholder="Search by name, phone, or service..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-[#F8F6F2] border border-[#EFE8E0] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#151515] placeholder-[#888888] focus:outline-none focus:border-[#E6663A] transition-all"
-          />
-        </div>
+      <div className="p-4 rounded-2xl bg-white border border-[#EFE8E0] shadow-sm space-y-3">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          {/* Search */}
+          <div className="relative w-full sm:w-80">
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#777777]" />
+            <input
+              type="text"
+              placeholder="Search by name, phone, or service..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full bg-[#F8F6F2] border border-[#EFE8E0] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#151515] placeholder-[#888888] focus:outline-none focus:border-[#E6663A] transition-all"
+            />
+          </div>
 
-        {/* Status Filter */}
-        <div className="flex items-center gap-2 w-full sm:w-auto">
-          <Filter className="w-4 h-4 text-[#777777] shrink-0" />
-          <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto">
-            {["All", "New", "Contacted", "Scheduled", "Completed", "Cancelled"].map(
-              (status) => (
-                <button
-                  key={status}
-                  onClick={() => setStatusFilter(status)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
-                    statusFilter === status
-                      ? "bg-[#E6663A] text-white shadow-md shadow-[#E6663A]/20"
-                      : "bg-[#F8F6F2] text-[#555555] hover:text-[#151515] border border-[#EFE8E0]"
-                  }`}
-                >
-                  {status}
-                </button>
-              )
-            )}
+          {/* Status Filter */}
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <Filter className="w-4 h-4 text-[#777777] shrink-0" />
+            <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto">
+              {["All", "New", "Contacted", "Scheduled", "Completed", "Cancelled"].map(
+                (status) => (
+                  <button
+                    key={status}
+                    onClick={() => setStatusFilter(status)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
+                      statusFilter === status
+                        ? "bg-[#E6663A] text-white shadow-md shadow-[#E6663A]/20"
+                        : "bg-[#F8F6F2] text-[#555555] hover:text-[#151515] border border-[#EFE8E0]"
+                    }`}
+                  >
+                    {status}
+                  </button>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Leads Table */}
+      {/* Bookings Table */}
       <div className="rounded-2xl bg-white border border-[#EFE8E0] shadow-sm overflow-hidden">
         {loading ? (
           <div className="p-16 text-center text-[#555555] space-y-3">
@@ -194,7 +217,8 @@ export default function AdminAppointmentsPage() {
               <thead className="bg-[#F8F6F2] uppercase tracking-wider text-[#555555] border-b border-[#EFE8E0]">
                 <tr>
                   <th className="px-5 py-3.5 font-semibold">Client Info</th>
-                  <th className="px-5 py-3.5 font-semibold">Service Requested</th>
+                  <th className="px-5 py-3.5 font-semibold">Service</th>
+                  <th className="px-5 py-3.5 font-semibold">Payment Details</th>
                   <th className="px-5 py-3.5 font-semibold">Message</th>
                   <th className="px-5 py-3.5 font-semibold">Status</th>
                   <th className="px-5 py-3.5 font-semibold">Submitted</th>
@@ -202,7 +226,7 @@ export default function AdminAppointmentsPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#EFE8E0]">
-                {filteredAppointments.map((item) => (
+                {paginatedAppointments.map((item) => (
                   <tr key={item._id} className="hover:bg-[#F8F6F2]/60 transition-colors">
                     {/* Client Info */}
                     <td className="px-5 py-4">
@@ -221,6 +245,13 @@ export default function AdminAppointmentsPage() {
                           </span>
                         )}
                       </div>
+                      {item.source && (
+                        <div className="pt-1.5">
+                          <span className="inline-block px-2 py-0.5 rounded text-[10px] font-semibold bg-[#F8F6F2] text-[#666666] border border-[#EFE8E0]">
+                            {item.source}
+                          </span>
+                        </div>
+                      )}
                     </td>
 
                     {/* Service */}
@@ -228,6 +259,37 @@ export default function AdminAppointmentsPage() {
                       <span className="px-2.5 py-1 rounded-lg bg-[#F8F6F2] border border-[#EFE8E0] text-[#151515] font-bold">
                         {item.service}
                       </span>
+                    </td>
+
+                    {/* Payment Details */}
+                    <td className="px-5 py-4">
+                      {item.paymentStatus === "Paid" ? (
+                        <div className="space-y-1">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                            PAID ₹{item.amountPaid}
+                          </span>
+                          {item.originalFee && item.originalFee > (item.amountPaid || 0) && (
+                            <div className="text-[10px] text-[#777777]">
+                              {item.discountPercent}% off (Orig: ₹{item.originalFee})
+                            </div>
+                          )}
+                          {item.razorpayPaymentId && (
+                            <div className="text-[10px] font-mono text-[#888888] truncate max-w-[140px]" title={item.razorpayPaymentId}>
+                              ID: {item.razorpayPaymentId}
+                            </div>
+                          )}
+                        </div>
+                      ) : item.paymentStatus === "Failed" ? (
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200">
+                          PAYMENT FAILED
+                        </span>
+                      ) : (
+                        <div className="space-y-0.5">
+                          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200">
+                            PENDING {item.amountPaid ? `(₹${item.amountPaid})` : ""}
+                          </span>
+                        </div>
+                      )}
                     </td>
 
                     {/* Message */}
@@ -284,13 +346,26 @@ export default function AdminAppointmentsPage() {
 
                     {/* Actions */}
                     <td className="px-5 py-4 text-right">
-                      <button
-                        onClick={() => setDeleteTarget(item)}
-                        className="p-2 rounded-lg text-[#777777] hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
-                        title="Delete lead"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
+                      <div className="flex items-center justify-end gap-1.5">
+                        {item.paymentStatus === "Paid" && (
+                          <a
+                            href={`/receipt/${item._id}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 rounded-lg text-[#555555] hover:text-[#E6663A] hover:bg-[#E6663A]/10 transition-colors inline-flex items-center"
+                            title="View / Print Official Invoice Receipt"
+                          >
+                            <FileText className="w-4 h-4" />
+                          </a>
+                        )}
+                        <button
+                          onClick={() => setDeleteTarget(item)}
+                          className="p-2 rounded-lg text-[#777777] hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
+                          title="Delete booking"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -299,6 +374,19 @@ export default function AdminAppointmentsPage() {
           </div>
         )}
       </div>
+
+      {/* Pagination Controls */}
+      {!loading && filteredAppointments.length > 0 && (
+        <AdminPagination
+          currentPage={currentPage}
+          totalItems={filteredAppointments.length}
+          pageSize={pageSize}
+          onPageChange={setCurrentPage}
+          onPageSizeChange={setPageSize}
+          pageSizeOptions={[10, 25, 50]}
+          itemName="consultation bookings"
+        />
+      )}
 
       {/* Custom Delete Confirmation Modal */}
       {deleteTarget && (

@@ -14,6 +14,8 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
+  MessageSquare,
+  BadgePercent,
 } from "lucide-react";
 import { signOut } from "next-auth/react";
 
@@ -52,9 +54,19 @@ export default function AdminSidebar({
       icon: Sparkles,
     },
     {
-      label: "Leads & Bookings",
+      label: "Consultation Bookings",
       href: "/admin/appointments",
       icon: Users,
+    },
+    {
+      label: "Contact Enquiries",
+      href: "/admin/contact-enquiries",
+      icon: MessageSquare,
+    },
+    {
+      label: "Pricing & Discount",
+      href: "/admin/pricing",
+      icon: BadgePercent,
     },
     {
       label: "Blogs",

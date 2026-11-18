@@ -6,7 +6,7 @@ import Appointment from "@/lib/models/Appointment";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { firstName, lastName, name, phone, email, service, message } = body;
+    const { firstName, lastName, name, phone, email, service, message, source } = body;
 
     const fullName = (name || `${firstName || ""} ${lastName || ""}`).trim();
 
@@ -51,6 +51,7 @@ export async function POST(req: Request) {
           service: sanitizedService,
           message: sanitizedMessage,
           status: "New",
+          source: source || "Website",
         });
         console.log("Appointment saved to MongoDB successfully");
       } catch (dbError) {

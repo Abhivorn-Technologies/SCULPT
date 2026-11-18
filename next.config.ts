@@ -2,8 +2,24 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    unoptimized: true,
     minimumCacheTTL: 60,
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.cloudinary.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "**.cloudinary.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
       {
         protocol: "https",
         hostname: "i.ytimg.com",
@@ -17,11 +33,6 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
         pathname: "/**",
       },
     ],

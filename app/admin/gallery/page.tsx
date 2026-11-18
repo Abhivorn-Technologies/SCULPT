@@ -19,6 +19,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { servicesData } from "@/lib/servicesData";
+import AdminPagination from "@/components/admin/AdminPagination";
 
 interface IGalleryResult {
   _id: string;
@@ -63,7 +64,7 @@ export default function AdminGalleryPage() {
   const [deleting, setDeleting] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const ITEMS_PER_PAGE = 9;
+  const [pageSize, setPageSize] = useState(9);
 
   const fetchResults = async () => {
     setLoading(true);
@@ -351,7 +352,7 @@ export default function AdminGalleryPage() {
           {/* Visual Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {results
-              .slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE)
+              .slice((currentPage - 1) * pageSize, currentPage * pageSize)
               .map((item) => (
                 <div
                   key={item._id}
@@ -465,48 +466,16 @@ export default function AdminGalleryPage() {
           </div>
 
           {/* Admin Gallery Pagination Bar */}
-          {Math.ceil(results.length / ITEMS_PER_PAGE) > 1 && (
-            <div className="p-4 bg-white border border-[#EFE8E0] rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 shadow-xs">
-              <span className="text-xs text-[#555555]">
-                Showing <strong className="text-[#151515]">{(currentPage - 1) * ITEMS_PER_PAGE + 1}</strong> - <strong className="text-[#151515]">{Math.min(currentPage * ITEMS_PER_PAGE, results.length)}</strong> of <strong className="text-[#E6663A]">{results.length}</strong> gallery results
-              </span>
-
-              <div className="flex items-center gap-2">
-                <button
-                  disabled={currentPage === 1}
-                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                  className="px-3.5 py-1.5 rounded-xl border border-[#EFE8E0] bg-[#F8F6F2] text-xs font-bold text-[#151515] hover:border-[#E6663A] hover:text-[#E6663A] transition-all disabled:opacity-40 disabled:pointer-events-none"
-                >
-                  Previous
-                </button>
-
-                <div className="flex items-center gap-1">
-                  {Array.from({ length: Math.ceil(results.length / ITEMS_PER_PAGE) }, (_, i) => i + 1).map(
-                    (pageNum) => (
-                      <button
-                        key={pageNum}
-                        onClick={() => setCurrentPage(pageNum)}
-                        className={`w-8 h-8 rounded-xl text-xs font-bold transition-all ${
-                          currentPage === pageNum
-                            ? "bg-[#E6663A] text-white shadow-xs"
-                            : "bg-[#F8F6F2] text-[#555555] hover:text-[#151515] border border-[#EFE8E0]"
-                        }`}
-                      >
-                        {pageNum}
-                      </button>
-                    )
-                  )}
-                </div>
-
-                <button
-                  disabled={currentPage === Math.ceil(results.length / ITEMS_PER_PAGE)}
-                  onClick={() => setCurrentPage((p) => Math.min(Math.ceil(results.length / ITEMS_PER_PAGE), p + 1))}
-                  className="px-3.5 py-1.5 rounded-xl border border-[#EFE8E0] bg-[#F8F6F2] text-xs font-bold text-[#151515] hover:border-[#E6663A] hover:text-[#E6663A] transition-all disabled:opacity-40 disabled:pointer-events-none"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
+          {!loading && results.length > 0 && (
+            <AdminPagination
+              currentPage={currentPage}
+              totalItems={results.length}
+              pageSize={pageSize}
+              onPageChange={setCurrentPage}
+              onPageSizeChange={setPageSize}
+              pageSizeOptions={[9, 18, 27, 45]}
+              itemName="gallery results"
+            />
           )}
         </div>
       )}

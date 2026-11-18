@@ -1339,7 +1339,7 @@ export const servicesData: ServiceItem[] = [
       "Plastic Surgery"
     ],
     "featured": true,
-    "image": "/assets/UPDATED SERVICES/Rhinoplasty.png",
+    "image": "https://res.cloudinary.com/grm13j3k/image/upload/v1789990795/sculpt_aesthetics/assets/UPDATED_SERVICES/Rhinoplasty.png",
     "isEmpty": false,
     "shortDescription": "Rhinoplasty enhances nasal shape and facial harmony while maintaining a natural appearance and normal breathing function. At Sculpt Aesthetics in Madhapur, Hyderabad, Rhinoplasty is performed by experienced plastic surgeons Dr. Jagadish Kiran and Dr. Suma Sandhyala, using modern techniques and a patient-first approach — so you always know what to expect, step by step.",
     "heroHeadline": "Refined nasal shape, natural facial harmony",
@@ -4388,7 +4388,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Is Blepharoplasty Safe in Hyderabad? Procedure, Risks, Recovery & Results",
           category: "Facial Aesthetics",
           readTime: "7 min read",
-          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
           excerpt:
             "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids. Learn about procedure safety, recovery, and results in Hyderabad.",
         },
@@ -4423,7 +4423,7 @@ export function getServiceRelatedBlogs(slug: string): ServiceRelatedBlog[] {
           title: "Is Blepharoplasty Safe in Hyderabad? Procedure, Risks, Recovery & Results",
           category: "Facial Aesthetics",
           readTime: "7 min read",
-          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aestheticshttps://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
+          image: "https://res.cloudinary.com/grm13j3k/image/upload/v1789990740/sculpt_aesthetics/assets/BLOGS/BLEPHAROPLASTY.png",
           excerpt:
             "Blepharoplasty, also known as eyelid surgery, is a cosmetic procedure designed to address excess skin, fat, and muscle around the eyelids.",
         },

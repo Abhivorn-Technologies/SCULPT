@@ -7,7 +7,16 @@ export interface IAppointment extends Document {
   service: string;
   message?: string;
   status: "New" | "Contacted" | "Scheduled" | "Completed" | "Cancelled";
+  source?: "Contact Page" | "Home Page" | "Consultation Popup" | "Website";
   notes?: string;
+  originalFee?: number;
+  discountPercent?: number;
+  amountPaid?: number;
+  currency?: string;
+  paymentStatus: "Pending" | "Paid" | "Failed";
+  razorpayOrderId?: string;
+  razorpayPaymentId?: string;
+  razorpaySignature?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -43,7 +52,45 @@ const AppointmentSchema = new Schema<IAppointment>(
       enum: ["New", "Contacted", "Scheduled", "Completed", "Cancelled"],
       default: "New",
     },
+    source: {
+      type: String,
+      enum: ["Contact Page", "Home Page", "Consultation Popup", "Website"],
+      default: "Website",
+    },
     notes: {
+      type: String,
+      default: "",
+    },
+    originalFee: {
+      type: Number,
+      default: 0,
+    },
+    discountPercent: {
+      type: Number,
+      default: 0,
+    },
+    amountPaid: {
+      type: Number,
+      default: 0,
+    },
+    currency: {
+      type: String,
+      default: "INR",
+    },
+    paymentStatus: {
+      type: String,
+      enum: ["Pending", "Paid", "Failed"],
+      default: "Pending",
+    },
+    razorpayOrderId: {
+      type: String,
+      default: "",
+    },
+    razorpayPaymentId: {
+      type: String,
+      default: "",
+    },
+    razorpaySignature: {
       type: String,
       default: "",
     },
