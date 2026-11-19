@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ChevronLeft, ChevronRight, Award, Users, ShieldCheck, Cpu, Sparkles, Calendar, ArrowRight } from "lucide-react";
+import { openConsultationPopup } from "@/components/ui/ConsultationPopup";
 
 const heroSlides = [
   {
@@ -284,13 +285,13 @@ export default function Hero() {
                 }}
                 className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 sm:pt-4"
               >
-                <Link
-                  href={heroSlides[currentSlide].primaryHref}
-                  className="btn-sculpt-gradient px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transition-all"
+                <button
+                  onClick={() => openConsultationPopup()}
+                  className="btn-sculpt-gradient px-7 py-3.5 sm:px-8 sm:py-4 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase flex items-center justify-center gap-3 shadow-xl hover:shadow-2xl transition-all cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>{heroSlides[currentSlide].primaryCta}</span>
-                </Link>
+                </button>
 
                 <Link
                   href={heroSlides[currentSlide].secondaryHref}

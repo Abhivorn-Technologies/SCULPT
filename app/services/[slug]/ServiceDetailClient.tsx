@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { openConsultationPopup } from "@/components/ui/ConsultationPopup";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Calendar,
@@ -169,13 +170,13 @@ export default function ServiceDetailClient({
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <Link
-                  href="/contact"
-                  className="w-full btn-sculpt-gradient py-2.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg"
+                <button
+                  onClick={() => openConsultationPopup(service.name)}
+                  className="w-full btn-sculpt-gradient py-2.5 px-4 rounded-full font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg cursor-pointer"
                 >
                   <Calendar className="w-3.5 h-3.5" />
                   <span>BOOK CONSULTATION</span>
-                </Link>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -219,13 +220,13 @@ export default function ServiceDetailClient({
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                href="/contact"
-                className="btn-sculpt-gradient py-3.5 px-8 rounded-full font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all"
+              <button
+                onClick={() => openConsultationPopup(service.name)}
+                className="btn-sculpt-gradient py-3.5 px-8 rounded-full font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 <span>SCHEDULE A CONSULTATION</span>
-              </Link>
+              </button>
               <a
                 href="tel:+919639635454"
                 className="py-3.5 px-6 rounded-full border border-[#151515] text-[#151515] hover:bg-[#151515] hover:text-white font-bold text-xs uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-all"
@@ -849,14 +850,14 @@ export default function ServiceDetailClient({
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10 pt-2">
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto btn-sculpt-gradient py-4 px-8 rounded-full font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl transition-all"
+            <button
+              onClick={() => openConsultationPopup(service.name)}
+              className="w-full sm:w-auto btn-sculpt-gradient py-4 px-8 rounded-full font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl transition-all cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>BOOK A CONSULTATION NOW</span>
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </button>
             <Link
               href="/our-services"
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-white/20 transition-all"

@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Phone, Menu, X, Calendar, ChevronRight } from "lucide-react";
+import { Phone, Menu, X, Calendar, ChevronRight, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { openConsultationPopup } from "@/components/ui/ConsultationPopup";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -13,6 +14,7 @@ const navLinks = [
   { name: "Our Services", href: "/our-services" },
   { name: "Gallery", href: "/gallery" },
   { name: "Blog", href: "/blog" },
+  { name: "Trichova", href: "https://www.trichova.in/", external: true },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -36,13 +38,8 @@ export default function Navbar() {
   }, []);
 
   const handleBookClick = (e: React.MouseEvent) => {
-    if (pathname === "/") {
-      e.preventDefault();
-      const el = document.getElementById("contact");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+    e.preventDefault();
+    openConsultationPopup();
   };
 
   // Transparent over Hero section on homepage; solid #080603 when scrolled past Hero or on all other pages
@@ -75,9 +72,26 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navLinks.map((link) => {
               const isActive =
-                pathname === link.href ||
-                (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/"))) ||
-                (link.href === "/gallery" && (pathname === "/gallery" || pathname === "/results"));
+                !link.external &&
+                (pathname === link.href ||
+                  (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/"))) ||
+                  (link.href === "/gallery" && (pathname === "/gallery" || pathname === "/results")));
+
+              if (link.external) {
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2 text-sm font-medium rounded-full transition-all duration-200 text-white/90 hover:text-white hover:bg-white/10 flex items-center gap-1 group"
+                  >
+                    <span>{link.name}</span>
+                    <ExternalLink className="w-3 h-3 text-[#E6663A] opacity-75 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                );
+              }
+
               return (
                 <Link
                   key={link.name}
@@ -106,14 +120,13 @@ export default function Navbar() {
               <span className="hidden xl:inline">+91 96396 35454</span>
             </a>
 
-            <Link
-              href={pathname === "/" ? "#contact" : "/contact"}
+            <button
               onClick={handleBookClick}
-              className="btn-sculpt-gradient px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md hover:shadow-lg transition-all"
+              className="btn-sculpt-gradient px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Appointment</span>
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -150,9 +163,30 @@ export default function Navbar() {
             <div className="flex flex-col space-y-2">
               {navLinks.map((link) => {
                 const isActive =
-                  pathname === link.href ||
-                  (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/"))) ||
-                  (link.href === "/gallery" && (pathname === "/gallery" || pathname === "/results"));
+                  !link.external &&
+                  (pathname === link.href ||
+                    (link.href === "/our-services" && (pathname === "/services" || pathname.startsWith("/services/"))) ||
+                    (link.href === "/gallery" && (pathname === "/gallery" || pathname === "/results")));
+
+                if (link.external) {
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors text-white hover:bg-white/10"
+                    >
+                      <span className="flex items-center gap-1.5">
+                        {link.name}
+                        <ExternalLink className="w-3.5 h-3.5 text-[#E6663A]" />
+                      </span>
+                      <ChevronRight className="w-4 h-4 opacity-60" />
+                    </a>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.name}
@@ -179,17 +213,16 @@ export default function Navbar() {
                   <span>Call: +91 96396 35454</span>
                 </a>
 
-                <Link
-                  href={pathname === "/" ? "#contact" : "/contact"}
+                <button
                   onClick={(e) => {
                     setMobileMenuOpen(false);
                     handleBookClick(e);
                   }}
-                  className="btn-sculpt-gradient py-3.5 px-4 rounded-xl text-center font-bold text-sm flex items-center justify-center gap-2 shadow-lg"
+                  className="btn-sculpt-gradient py-3.5 px-4 rounded-xl text-center font-bold text-sm flex items-center justify-center gap-2 shadow-lg w-full cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" />
                   <span>Book Appointment Now</span>
-                </Link>
+                </button>
               </div>
             </div>
           </motion.div>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { openConsultationPopup } from "@/components/ui/ConsultationPopup";
 import { motion, useInView, Variants } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
@@ -248,13 +249,13 @@ export default function AboutPage() {
                 variants={fadeInUp}
                 className="pt-2"
               >
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#E6663A] via-[#F28C28] to-[#F6B73C] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-[0_8px_25px_rgba(230,102,58,0.35)] hover:shadow-[0_12px_35px_rgba(230,102,58,0.5)] transition-all duration-300 transform hover:-translate-y-0.5"
+                <button
+                  onClick={() => openConsultationPopup()}
+                  className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#E6663A] via-[#F28C28] to-[#F6B73C] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-[0_8px_25px_rgba(230,102,58,0.35)] hover:shadow-[0_12px_35px_rgba(230,102,58,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
                 >
                   <span>BOOK A CONSULTATION</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
+                </button>
               </motion.div>
             </div>
 
@@ -859,14 +860,14 @@ export default function AboutPage() {
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E6663A] via-[#F28C28] to-[#F6B73C] text-white text-sm font-semibold uppercase tracking-wider shadow-[0_10px_30px_rgba(230,102,58,0.35)] hover:shadow-[0_15px_40px_rgba(230,102,58,0.55)] transition-all duration-300 transform hover:-translate-y-0.5"
+            <button
+              onClick={() => openConsultationPopup()}
+              className="w-full sm:w-auto group inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#E6663A] via-[#F28C28] to-[#F6B73C] text-white text-sm font-semibold uppercase tracking-wider shadow-[0_10px_30px_rgba(230,102,58,0.35)] hover:shadow-[0_15px_40px_rgba(230,102,58,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>BOOK A CONSULTATION</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-            </Link>
+            </button>
 
             <Link
               href="/our-services"

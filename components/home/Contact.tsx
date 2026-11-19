@@ -35,7 +35,7 @@ interface IPricing {
 
 export default function Contact() {
   const pathname = usePathname();
-  const leadSource = pathname?.includes("contact") ? "Contact Page" : "Home Page";
+  const leadSource = "Home Page";
 
   const [formData, setFormData] = useState({
     firstName: "",

@@ -79,16 +79,29 @@ export default function Footer() {
                 { name: "Expert Doctors & Surgeons", href: "/#doctors" },
                 { name: "Patient Transformations", href: "/#transformation" },
                 { name: "Blog & Patient Guide", href: "/blog" },
+                { name: "Trichova Clinic", href: "https://www.trichova.in/", external: true },
                 { name: "Book Consultation", href: "/contact" },
               ].map((link, idx) => (
                 <li key={idx}>
-                  <Link
-                    href={link.href}
-                    className="hover:text-[#E6663A] flex items-center gap-1.5 transition-colors group"
-                  >
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#E6663A] opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span>{link.name}</span>
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#E6663A] flex items-center gap-1.5 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#E6663A] opacity-70 group-hover:opacity-100 transition-opacity" />
+                      <span>{link.name}</span>
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="hover:text-[#E6663A] flex items-center gap-1.5 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#E6663A] opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>{link.name}</span>
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

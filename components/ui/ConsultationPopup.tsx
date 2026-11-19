@@ -30,6 +30,14 @@ interface IPricing {
   razorpayKeyId?: string;
 }
 
+export function openConsultationPopup(service?: string) {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(
+      new CustomEvent("open-consultation-popup", { detail: { service } })
+    );
+  }
+}
+
 export default function ConsultationPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -49,6 +57,24 @@ export default function ConsultationPopup() {
     appointmentId?: string;
   } | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Listen for programmatic open requests from any button on the site
+  useEffect(() => {
+    const handleOpenEvent = (e: Event) => {
+      const customEvent = e as CustomEvent<{ service?: string }>;
+      if (customEvent.detail?.service) {
+        setFormData((prev) => ({ ...prev, service: customEvent.detail.service || "" }));
+      }
+      setIsOpen(true);
+      setStatus("idle");
+      setErrorMessage("");
+    };
+
+    window.addEventListener("open-consultation-popup", handleOpenEvent);
+    return () => {
+      window.removeEventListener("open-consultation-popup", handleOpenEvent);
+    };
+  }, []);
 
   // Fetch dynamic consultation pricing from database
   useEffect(() => {

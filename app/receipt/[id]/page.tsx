@@ -35,6 +35,7 @@ export default async function ReceiptPage({
   const { id } = await params;
   const sParams = await searchParams;
   const autoPrint = sParams.print === "1" || sParams.print === "true";
+  const autoDownload = sParams.download === "1" || sParams.download === "true";
 
   if (!id || id.length !== 24) {
     return (
@@ -108,5 +109,5 @@ export default async function ReceiptPage({
     createdAt: appointment.createdAt ? new Date(appointment.createdAt).toISOString() : new Date().toISOString(),
   };
 
-  return <ReceiptClient receipt={receiptData} autoPrint={autoPrint} />;
+  return <ReceiptClient receipt={receiptData} autoPrint={autoPrint} autoDownload={autoDownload} />;
 }

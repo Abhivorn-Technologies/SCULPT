@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Printer,
@@ -15,7 +15,9 @@ import {
   CreditCard,
   Building2,
   Share2,
+  Loader2,
 } from "lucide-react";
+import { downloadDirectInvoicePdf } from "@/lib/pdfDownloader";
 
 export interface IReceiptData {
   id: string;
@@ -38,9 +40,12 @@ export interface IReceiptData {
 interface ReceiptClientProps {
   receipt: IReceiptData;
   autoPrint?: boolean;
+  autoDownload?: boolean;
 }
 
-export default function ReceiptClient({ receipt, autoPrint }: ReceiptClientProps) {
+export default function ReceiptClient({ receipt, autoPrint, autoDownload }: ReceiptClientProps) {
+  const [downloading, setDownloading] = useState(false);
+
   useEffect(() => {
     if (autoPrint) {
       const timer = setTimeout(() => {
@@ -48,10 +53,25 @@ export default function ReceiptClient({ receipt, autoPrint }: ReceiptClientProps
       }, 600);
       return () => clearTimeout(timer);
     }
-  }, [autoPrint]);
+    if (autoDownload) {
+      const timer = setTimeout(() => {
+        handleDownloadPdf();
+      }, 800);
+      return () => clearTimeout(timer);
+    }
+  }, [autoPrint, autoDownload]);
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const handleDownloadPdf = async () => {
+    setDownloading(true);
+    try {
+      await downloadDirectInvoicePdf(receipt);
+    } finally {
+      setDownloading(false);
+    }
   };
 
   const discountAmount = Math.max(0, receipt.originalFee - receipt.amountPaid);
@@ -74,6 +94,21 @@ export default function ReceiptClient({ receipt, autoPrint }: ReceiptClientProps
 
   return (
     <div className="min-h-screen bg-[#F8F6F2] py-8 sm:py-12 px-4 sm:px-6 font-sans">
+      <style jsx global>{`
+        @media print {
+          html, body {
+            background: #ffffff !important;
+            color: #000000 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+          @page {
+            size: A4 portrait;
+            margin: 10mm;
+          }
+        }
+      `}</style>
+
       {/* Action Bar (Hidden during Print) */}
       <div className="max-w-3xl mx-auto mb-6 flex flex-wrap items-center justify-between gap-3 print:hidden">
         <Link
@@ -95,10 +130,28 @@ export default function ReceiptClient({ receipt, autoPrint }: ReceiptClientProps
 
           <button
             onClick={handlePrint}
-            className="btn-sculpt-gradient inline-flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-[#EFE8E0] text-xs font-semibold text-[#151515] hover:border-[#E6663A] hover:text-[#E6663A] transition-all shadow-xs cursor-pointer"
           >
-            <Printer className="w-4 h-4" />
-            <span>Print / Save as PDF</span>
+            <Printer className="w-3.5 h-3.5" />
+            <span>Print</span>
+          </button>
+
+          <button
+            onClick={handleDownloadPdf}
+            disabled={downloading}
+            className="btn-sculpt-gradient inline-flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all cursor-pointer disabled:opacity-60"
+          >
+            {downloading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                <span>Generating PDF...</span>
+              </>
+            ) : (
+              <>
+                <Download className="w-4 h-4" />
+                <span>Download PDF</span>
+              </>
+            )}
           </button>
         </div>
       </div>
