@@ -39,9 +39,12 @@ export async function POST(req: Request) {
     const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID;
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
-    if (!keyId || !keySecret) {
+    if (!keyId || !keySecret || keyId.includes("your_razorpay") || keySecret.includes("your_razorpay")) {
       return NextResponse.json(
-        { error: "Razorpay credentials are not configured on the server" },
+        {
+          error:
+            "Razorpay API Keys are not configured. Please add your actual Razorpay Key ID and Secret in your .env.local file (and in Vercel environment variables for production).",
+        },
         { status: 500 }
       );
     }
@@ -109,8 +112,13 @@ export async function POST(req: Request) {
     });
   } catch (error: any) {
     console.error("Razorpay order creation error:", error);
+    const detail =
+      error?.error?.description ||
+      error?.description ||
+      error?.message ||
+      (typeof error === "string" ? error : "Failed to create payment order");
     return NextResponse.json(
-      { error: error?.message || "Failed to create payment order" },
+      { error: detail },
       { status: 500 }
     );
   }

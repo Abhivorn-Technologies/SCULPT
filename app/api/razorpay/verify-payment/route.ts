@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     }
 
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
-    if (!keySecret) {
+    if (!keySecret || keySecret.includes("your_razorpay")) {
       return NextResponse.json(
         { error: "Razorpay secret is not configured on server" },
         { status: 500 }
