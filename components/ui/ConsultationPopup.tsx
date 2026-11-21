@@ -208,6 +208,12 @@ export default function ConsultationPopup() {
         throw new Error(orderData.error || "Unable to initiate payment");
       }
 
+      // If account uses hosted Payment Link fallback
+      if (orderData.paymentLinkUrl && !orderData.orderId) {
+        window.location.href = orderData.paymentLinkUrl;
+        return;
+      }
+
       // 2. Open Razorpay Checkout Gateway
       await openRazorpayCheckout({
         key: orderData.keyId,

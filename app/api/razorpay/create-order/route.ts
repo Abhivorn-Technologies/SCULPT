@@ -36,8 +36,13 @@ export async function POST(req: Request) {
       );
     }
 
-    const keyId = process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || process.env.RAZORPAY_KEY_ID;
-    const keySecret = process.env.RAZORPAY_KEY_SECRET;
+    const rawKeyId = (process.env.RAZORPAY_KEY_ID || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "");
+    const rawKeySecret = (process.env.RAZORPAY_KEY_SECRET || "");
+
+    const keyId = rawKeyId.replace(/^["'\[]|["'\]]$/g, "").trim();
+    const keySecret = rawKeySecret.replace(/^["'\[]|["'\]]$/g, "").trim();
+
+    console.log(`Razorpay Key Check: KeyId starts with '${keyId.slice(0, 10)}...' (length ${keyId.length}), Secret length is ${keySecret.length}`);
 
     if (!keyId || !keySecret || keyId.includes("your_razorpay") || keySecret.includes("your_razorpay")) {
       return NextResponse.json(
@@ -63,19 +68,91 @@ export async function POST(req: Request) {
       key_secret: keySecret,
     });
 
-    // Create Razorpay Order (amount in smallest currency unit: paise)
-    const orderOptions = {
-      amount: Math.round(payableAmount * 100),
-      currency: settings.currency || "INR",
-      receipt: `sculpt_${Date.now()}_${digitsOnly.slice(-4)}`,
-      notes: {
-        fullName: fullName.slice(0, 40),
-        phone: cleanPhone.slice(0, 20),
-        service: service.slice(0, 40),
-      },
-    };
+    const isTestKey = keyId.startsWith("rzp_test_");
+    const isLiveKey = keyId.startsWith("rzp_live_");
 
-    const order = await razorpay.orders.create(orderOptions);
+    // Quick direct diagnostic fetch to inspect Razorpay's exact auth response
+    try {
+      const authHeader = "Basic " + Buffer.from(`${keyId}:${keySecret}`).toString("base64");
+      const testRes = await fetch("https://api.razorpay.com/v1/payments?count=1", {
+        headers: { Authorization: authHeader },
+      });
+      const testJson = await testRes.json();
+      console.log(`Razorpay Direct Auth Probe: HTTP ${testRes.status}`, testJson?.error || "Auth successful!");
+    } catch (e: any) {
+      console.warn("Razorpay Probe network error:", e?.message || e);
+    }
+
+    let order: any = null;
+    let paymentLink: any = null;
+    let orderCreateError: any = null;
+
+    // 1. First attempt standard Order creation
+    try {
+      const orderOptions = {
+        amount: Math.round(payableAmount * 100),
+        currency: settings.currency || "INR",
+        receipt: `sculpt_${Date.now()}_${digitsOnly.slice(-4)}`,
+        notes: {
+          fullName: fullName.slice(0, 40),
+          phone: cleanPhone.slice(0, 20),
+          service: service.slice(0, 40),
+        },
+      };
+
+      order = await razorpay.orders.create(orderOptions);
+    } catch (err: any) {
+      orderCreateError = err;
+      console.warn("Razorpay standard order creation failed:", err?.error?.description || err?.message || err);
+
+      // 2. If orders.create failed (e.g. Access Denied on Payment-Links-only merchant account), attempt Payment Link
+      try {
+        const linkOptions = {
+          amount: Math.round(payableAmount * 100),
+          currency: settings.currency || "INR",
+          accept_partial: false,
+          description: `Consultation Booking: ${service.slice(0, 40)}`,
+          customer: {
+            name: fullName.slice(0, 40),
+            contact: cleanPhone.slice(0, 20),
+            email: typeof email === "string" && email.includes("@") ? email.trim() : undefined,
+          },
+          notify: {
+            sms: true,
+            email: typeof email === "string" && email.includes("@"),
+          },
+          reminder_enable: true,
+          notes: {
+            fullName: fullName.slice(0, 40),
+            phone: cleanPhone.slice(0, 20),
+            service: service.slice(0, 40),
+          },
+        };
+
+        paymentLink = await (razorpay as any).paymentLink.create(linkOptions);
+      } catch (linkErr: any) {
+        console.error("Razorpay paymentLink creation also failed:", linkErr?.error?.description || linkErr?.message || linkErr);
+      }
+    }
+
+    if (!order && !paymentLink) {
+      const desc = orderCreateError?.error?.description || orderCreateError?.message || "Access Denied";
+      let hint = "";
+
+      if (desc.toLowerCase().includes("access denied")) {
+        hint = isLiveKey
+          ? " (Access Denied: Your Razorpay account is in Live mode. If your account KYC / activation is still under review with Axis Bank/Razorpay, or if IP whitelisting is active on your dashboard, live API calls are restricted. For local development & testing, please switch your Razorpay dashboard to 'Test Mode' and use your rzp_test_... key)."
+          : " (Access Denied: Please verify that your Key ID and Key Secret match and that your account has API access permissions enabled in your Razorpay Dashboard).";
+      }
+
+      return NextResponse.json(
+        {
+          error: `${desc}${hint}`,
+          details: orderCreateError?.error || orderCreateError?.message,
+        },
+        { status: 500 }
+      );
+    }
 
     // Create an Appointment lead in DB with status "Pending" payment
     const appointment = await Appointment.create({
@@ -90,15 +167,17 @@ export async function POST(req: Request) {
       amountPaid: payableAmount,
       currency: settings.currency || "INR",
       paymentStatus: "Pending",
-      razorpayOrderId: order.id,
+      razorpayOrderId: order ? order.id : (paymentLink?.id || "PL_" + Date.now()),
       source: source || "Website",
     });
 
     return NextResponse.json({
       success: true,
-      orderId: order.id,
-      amount: order.amount,
-      currency: order.currency,
+      orderId: order?.id || null,
+      paymentLinkId: paymentLink?.id || null,
+      paymentLinkUrl: paymentLink?.short_url || null,
+      amount: order?.amount || paymentLink?.amount || Math.round(payableAmount * 100),
+      currency: order?.currency || paymentLink?.currency || settings.currency || "INR",
       keyId,
       appointmentId: String(appointment._id),
       payableAmount,
